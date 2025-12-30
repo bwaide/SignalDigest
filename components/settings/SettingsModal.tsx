@@ -1,6 +1,7 @@
 'use client'
 
 import { useSettingsStore } from '@/lib/stores/settings-store'
+import { EmailSourceForm } from './EmailSourceForm'
 
 export function SettingsModal() {
   const { isOpen, closeSettings } = useSettingsStore()
@@ -32,7 +33,7 @@ export function SettingsModal() {
           </div>
         </div>
         <div className="mb-6">
-          <p className="text-gray-500">Email configuration form will go here (Task 7)</p>
+          <EmailSourceForm />
         </div>
         <div className="flex justify-end gap-3">
           <button
