@@ -2,6 +2,47 @@
 
 > Transform newsletter overload into a personalized, AI-curated news digest
 
+## Quick Start
+
+### Prerequisites
+- Node.js 20+
+- Supabase CLI
+- Supabase account (for production)
+
+### Local Development
+
+1. **Clone and install:**
+   ```bash
+   git clone https://github.com/yourusername/signal-digest.git
+   cd signal-digest
+   npm install
+   ```
+
+2. **Start Supabase:**
+   ```bash
+   supabase start
+   ```
+
+3. **Configure environment:**
+   ```bash
+   cp .env.example .env.local
+   # Update with Supabase credentials from 'supabase start' output
+   ```
+
+4. **Run development server:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open dashboard:**
+   Navigate to http://localhost:3000
+
+### Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for Coolify deployment instructions.
+
+---
+
 ## Overview
 
 Signal Digest is an AI-powered web application that transforms email newsletters into actionable, prioritized "nuggets" of information. Instead of drowning in unread newsletters, users get a personalized newspaper organized by topic with AI-ranked content.
