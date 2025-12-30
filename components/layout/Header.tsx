@@ -1,14 +1,17 @@
 'use client'
 
+import { ConnectionStatus } from '@/components/settings/ConnectionStatus'
+import { useSettingsStore } from '@/lib/stores/settings-store'
+
 export function Header() {
+  const openSettings = useSettingsStore((state) => state.openSettings)
+
   return (
     <header className="border-b bg-white">
       <div className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <h1 className="text-2xl font-bold text-primary">Signal Digest</h1>
-          <span className="text-sm text-muted-foreground">
-            Last sync: Never
-          </span>
+          <ConnectionStatus status="not_configured" onClick={openSettings} />
         </div>
         <div className="flex items-center gap-4">
           <button
@@ -18,8 +21,8 @@ export function Header() {
             🔄 Check Now
           </button>
           <button
+            onClick={openSettings}
             className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent"
-            disabled
           >
             ⚙️ Settings
           </button>
