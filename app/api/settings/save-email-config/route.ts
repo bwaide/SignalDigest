@@ -16,12 +16,18 @@ export async function POST(request: Request) {
     // Check authentication
     const { data: { user }, error: authError } = await supabase.auth.getUser()
 
-    if (authError || !user) {
+    // TODO: Remove DEV_MODE bypass before production deployment
+    const DEV_MODE = process.env.NODE_ENV === 'development'
+
+    if (!DEV_MODE && (authError || !user)) {
       return NextResponse.json(
         { success: false, error: 'Unauthorized' },
         { status: 401 }
       )
     }
+
+    // For dev mode without auth, use a mock user ID
+    const userId = user?.id || 'dev-user-00000000-0000-0000-0000-000000000000'
 
     const body: SaveConfigRequest = await request.json()
 
@@ -65,7 +71,7 @@ export async function POST(request: Request) {
     const { data: currentSettings, error: fetchError } = await supabase
       .from('user_settings')
       .select('signal_sources')
-      .eq('user_id', user.id)
+      .eq('user_id', userId)
       .single()
 
     if (fetchError && fetchError.code !== 'PGRST116') {
@@ -84,7 +90,7 @@ export async function POST(request: Request) {
     const { error: updateError } = await supabase
       .from('user_settings')
       .upsert({
-        user_id: user.id,
+        user_id: userId,
         signal_sources: updatedSources,
       })
 

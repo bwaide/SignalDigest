@@ -11,13 +11,17 @@ export default async function Home() {
 
   const { data: { user } } = await supabase.auth.getUser()
 
+  // TODO: Remove DEV_MODE bypass before production deployment
+  const DEV_MODE = process.env.NODE_ENV === 'development'
+  const userId = user?.id || (DEV_MODE ? 'dev-user-00000000-0000-0000-0000-000000000000' : null)
+
   let emailStatus: SignalSourceStatus = 'not_configured'
 
-  if (user) {
+  if (userId) {
     const { data: settings } = await supabase
       .from('user_settings')
       .select('signal_sources')
-      .eq('user_id', user.id)
+      .eq('user_id', userId)
       .single()
 
     if (settings?.signal_sources) {
