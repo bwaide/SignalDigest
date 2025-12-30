@@ -2,8 +2,13 @@
 
 import { ConnectionStatus } from '@/components/settings/ConnectionStatus'
 import { useSettingsStore } from '@/lib/stores/settings-store'
+import type { SignalSourceStatus } from '@/types/signal-sources'
 
-export function Header() {
+interface HeaderProps {
+  emailStatus?: SignalSourceStatus
+}
+
+export function Header({ emailStatus = 'not_configured' }: HeaderProps) {
   const openSettings = useSettingsStore((state) => state.openSettings)
 
   return (
@@ -11,7 +16,7 @@ export function Header() {
       <div className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <h1 className="text-2xl font-bold text-primary">Signal Digest</h1>
-          <ConnectionStatus status="not_configured" onClick={openSettings} />
+          <ConnectionStatus status={emailStatus} onClick={openSettings} />
         </div>
         <div className="flex items-center gap-4">
           <button
