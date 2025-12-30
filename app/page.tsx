@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
 import { EmptyState } from '@/components/dashboard/EmptyState'
+import { SettingsModal } from '@/components/settings/SettingsModal'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           <EmptyState />
         </main>
       </div>
+      <SettingsModal />
     </div>
   )
 }
