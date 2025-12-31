@@ -77,6 +77,23 @@ async function getEmailConfig(supabase: ReturnType<typeof createClient>, userId:
   return emailSource.config
 }
 
+async function getPasswordFromVault(supabase: ReturnType<typeof createClient>, vaultSecretId: string): Promise<string> {
+  // Use Supabase Vault to retrieve the password
+  const { data, error } = await supabase.rpc('vault_read_secret', {
+    secret_id: vaultSecretId
+  })
+
+  if (error) {
+    throw new Error(`Failed to retrieve password from Vault: ${error.message}`)
+  }
+
+  if (!data || !data.decrypted_secret) {
+    throw new Error('Password not found in Vault')
+  }
+
+  return data.decrypted_secret
+}
+
 async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): Promise<EmailMessage[]> {
   // Select INBOX
   await client.mailboxOpen('INBOX')
@@ -269,13 +286,14 @@ Deno.serve(async (req) => {
     // Get email config
     const emailConfig = await getEmailConfig(supabase, user.id)
 
-    // For MVP: password is stored in config (not Vault yet)
-    // TODO: Retrieve from Vault using vault_secret_id
+    // Retrieve password from Vault
+    const password = await getPasswordFromVault(supabase, emailConfig.vault_secret_id)
+
     const imapConfig: ImapConfig = {
       host: emailConfig.host,
       port: emailConfig.port,
       username: emailConfig.username,
-      password: 'PLACEHOLDER', // Will be from Vault
+      password: password,
       use_tls: emailConfig.use_tls,
     }
 
