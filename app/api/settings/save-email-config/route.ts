@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 
 interface SaveConfigRequest {
@@ -11,13 +11,14 @@ interface SaveConfigRequest {
 
 export async function POST(request: Request) {
   try {
-    const supabase = await createClient()
+    // TODO: Remove DEV_MODE bypass before production deployment
+    const DEV_MODE = process.env.NODE_ENV === 'development'
+
+    // In dev mode, use service role client to bypass RLS
+    const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
 
     // Check authentication
     const { data: { user }, error: authError } = await supabase.auth.getUser()
-
-    // TODO: Remove DEV_MODE bypass before production deployment
-    const DEV_MODE = process.env.NODE_ENV === 'development'
 
     if (!DEV_MODE && (authError || !user)) {
       return NextResponse.json(
