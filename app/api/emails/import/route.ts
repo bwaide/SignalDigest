@@ -38,12 +38,18 @@ export async function POST() {
       )
     }
 
+    // Get session token to pass to Edge Function
+    const { data: { session } } = await supabase.auth.getSession()
+
+    // In dev mode without session, use service role key
+    const authToken = session?.access_token || process.env.SUPABASE_SERVICE_ROLE_KEY
+
     // Invoke Edge Function
     const functionUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/import-emails`
     const response = await fetch(functionUrl, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`,
+        'Authorization': `Bearer ${authToken}`,
         'Content-Type': 'application/json',
       },
     })
