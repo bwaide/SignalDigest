@@ -2,17 +2,17 @@ import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
 import { EmptyState } from '@/components/dashboard/EmptyState'
 import { SettingsModal } from '@/components/settings/SettingsModal'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import type { SignalSource, SignalSourceStatus } from '@/types/signal-sources'
 
 export default async function Home() {
-  // Fetch user settings to determine email connection status
-  const supabase = await createClient()
-
-  const { data: { user } } = await supabase.auth.getUser()
-
   // TODO: Remove DEV_MODE bypass before production deployment
   const DEV_MODE = process.env.NODE_ENV === 'development'
+
+  // In dev mode, use service role client to bypass RLS
+  const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
+
+  const { data: { user } } = await supabase.auth.getUser()
   const userId = user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : null)
 
   let emailStatus: SignalSourceStatus = 'not_configured'
