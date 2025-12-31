@@ -1,5 +1,24 @@
 import { createClient } from 'supabase'
 import { ImapFlow } from 'npm:imapflow@1.0.164'
+import { Readability } from 'npm:@mozilla/readability@0.5.0'
+import { JSDOM } from 'npm:jsdom@23.2.0'
+
+function extractReadableContent(html: string): string | null {
+  try {
+    const dom = new JSDOM(html)
+    const reader = new Readability(dom.window.document)
+    const article = reader.parse()
+
+    return article?.textContent || null
+  } catch (error) {
+    console.error('Readability extraction failed:', error)
+    return null
+  }
+}
+
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+}
 
 interface ImapConfig {
   host: string
@@ -120,24 +139,34 @@ async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
   const envelope = message.envelope
   const from = envelope.from?.[0]
 
-  // Parse body content
   let bodyText = ''
   let bodyHtml = ''
 
-  // Simple body extraction (will enhance with Readability later)
   if (message.source) {
     const source = new TextDecoder().decode(message.source)
 
-    // Very basic parsing - extract plain text or HTML
+    // Extract text and HTML parts
     const textMatch = source.match(/Content-Type: text\/plain[\s\S]*?\n\n([\s\S]*?)(?=\n--|\n\r\n--|\r\n\r\n--)/i)
     const htmlMatch = source.match(/Content-Type: text\/html[\s\S]*?\n\n([\s\S]*?)(?=\n--|\n\r\n--|\r\n\r\n--)/i)
 
-    bodyText = textMatch ? textMatch[1].trim() : ''
-    bodyHtml = htmlMatch ? htmlMatch[1].trim() : ''
+    const rawText = textMatch ? textMatch[1].trim() : ''
+    const rawHtml = htmlMatch ? htmlMatch[1].trim() : ''
 
-    if (!bodyText && bodyHtml) {
-      // Fallback: strip HTML tags for now (will use Readability later)
-      bodyText = bodyHtml.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+    // Priority: plain text > Readability extraction > stripped HTML
+    if (rawText) {
+      bodyText = rawText
+      bodyHtml = rawHtml
+    } else if (rawHtml) {
+      bodyHtml = rawHtml
+
+      // Try Readability extraction
+      const readable = extractReadableContent(rawHtml)
+      if (readable) {
+        bodyText = readable
+      } else {
+        // Fallback to stripped HTML
+        bodyText = stripHtml(rawHtml)
+      }
     }
   }
 
