@@ -187,6 +187,48 @@ async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
   }
 }
 
+async function isDuplicate(supabase: ReturnType<typeof createClient>, userId: string, messageId: string): Promise<boolean> {
+  const { data, error } = await supabase
+    .from('signals')
+    .select('id')
+    .eq('user_id', userId)
+    .eq('metadata->>message_id', messageId)
+    .limit(1)
+
+  if (error) {
+    console.error('Duplicate check error:', error)
+    return false
+  }
+
+  return data && data.length > 0
+}
+
+async function createSignal(supabase: ReturnType<typeof createClient>, userId: string, email: EmailMessage) {
+  const { error } = await supabase
+    .from('signals')
+    .insert({
+      user_id: userId,
+      signal_type: 'email',
+      title: email.subject,
+      raw_content: email.bodyText,
+      source_identifier: email.from,
+      source_url: null,
+      received_date: email.date.toISOString(),
+      status: 'pending',
+      metadata: {
+        message_id: email.messageId,
+        from_name: email.fromName,
+        has_attachments: email.hasAttachments,
+        to: email.to,
+        cc: email.cc,
+      },
+    })
+
+  if (error) {
+    throw new Error(`Failed to create signal: ${error.message}`)
+  }
+}
+
 Deno.serve(async (req) => {
   try {
     if (req.method === 'OPTIONS') {
@@ -244,18 +286,48 @@ Deno.serve(async (req) => {
       // Fetch unread emails
       const emails = await fetchUnreadEmails(client, 50)
 
-      // Disconnect
+      let imported = 0
+      let skipped = 0
+      let failed = 0
+      const errors: Array<{ subject: string; from: string; error: string }> = []
+
+      for (const email of emails) {
+        try {
+          // Check for duplicates
+          const duplicate = await isDuplicate(supabase, user.id, email.messageId)
+          if (duplicate) {
+            skipped++
+            continue
+          }
+
+          // Create signal
+          await createSignal(supabase, user.id, email)
+
+          // Mark as SEEN in mailbox
+          await client.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
+
+          imported++
+        } catch (error) {
+          failed++
+          errors.push({
+            subject: email.subject,
+            from: email.from,
+            error: error.message,
+          })
+          console.error(`Failed to import email "${email.subject}":`, error)
+        }
+      }
+
       await client.logout()
 
       return new Response(
         JSON.stringify({
-          success: true,
-          imported: emails.length,
-          emails: emails.map(e => ({
-            subject: e.subject,
-            from: e.from,
-            date: e.date,
-          }))
+          success: failed === 0,
+          imported,
+          skipped,
+          failed,
+          hasMore: emails.length === 50,
+          errors: errors.length > 0 ? errors : undefined,
         }),
         { headers: { 'Content-Type': 'application/json' } }
       )
