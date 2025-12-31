@@ -38,19 +38,38 @@ export async function POST() {
       )
     }
 
-    // Get session token to pass to Edge Function
+    // In dev mode, skip Edge Function and return mock response for now
+    // TODO: Fix Edge Function authentication in local development
+    if (DEV_MODE) {
+      console.log('DEV MODE: Skipping Edge Function call, returning mock response')
+      return NextResponse.json({
+        success: true,
+        imported: 0,
+        skipped: 0,
+        failed: 0,
+        hasMore: false,
+        message: 'Edge Function integration pending - local dev mode'
+      })
+    }
+
+    // Production: Invoke Edge Function
     const { data: { session } } = await supabase.auth.getSession()
+    const authToken = session?.access_token
 
-    // In dev mode without session, use service role key
-    const authToken = session?.access_token || process.env.SUPABASE_SERVICE_ROLE_KEY
+    if (!authToken) {
+      return NextResponse.json(
+        { success: false, error: 'No authentication token available' },
+        { status: 401 }
+      )
+    }
 
-    // Invoke Edge Function
     const functionUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/import-emails`
     const response = await fetch(functionUrl, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${authToken}`,
         'Content-Type': 'application/json',
+        'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
       },
     })
 
