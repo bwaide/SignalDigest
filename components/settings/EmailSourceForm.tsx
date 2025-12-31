@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface ImapFormData {
   host: string
@@ -33,6 +33,35 @@ export function EmailSourceForm() {
   const [testSuccess, setTestSuccess] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+  const [hasExistingConfig, setHasExistingConfig] = useState(false)
+
+  // Load existing configuration on mount
+  useEffect(() => {
+    const loadConfig = async () => {
+      try {
+        const response = await fetch('/api/settings/get-email-config')
+        const data = await response.json()
+
+        if (response.ok && data.success && data.config) {
+          setFormData({
+            host: data.config.host,
+            port: data.config.port.toString(),
+            username: data.config.username,
+            password: '', // Don't load password from server
+            use_tls: data.config.use_tls,
+          })
+          setHasExistingConfig(true)
+        }
+      } catch (error) {
+        console.error('Failed to load configuration:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadConfig()
+  }, [])
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
@@ -54,7 +83,8 @@ export function EmailSourceForm() {
       newErrors.username = 'Username/email is required'
     }
 
-    if (!formData.password.trim()) {
+    // Password only required if no existing config
+    if (!hasExistingConfig && !formData.password.trim()) {
       newErrors.password = 'Password is required'
     }
 
@@ -139,6 +169,10 @@ export function EmailSourceForm() {
 
       if (response.ok && data.success) {
         setSuccessMessage('Email configuration saved successfully!')
+        // Reload page to reflect updated status
+        setTimeout(() => {
+          window.location.reload()
+        }, 1500)
       } else {
         setErrorMessage(data.error || 'Failed to save configuration. Please try again.')
       }
@@ -149,8 +183,21 @@ export function EmailSourceForm() {
     }
   }
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-8">
+        <div className="text-gray-500">Loading configuration...</div>
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-4">
+      {hasExistingConfig && (
+        <div className="rounded-md bg-blue-50 p-3 text-sm text-blue-800">
+          Configuration loaded. Leave password blank to keep the existing one.
+        </div>
+      )}
       <div>
         <label htmlFor="host" className="block text-sm font-medium text-gray-700 mb-1">
           IMAP Host *
@@ -212,7 +259,7 @@ export function EmailSourceForm() {
 
       <div>
         <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-          Password *
+          Password {!hasExistingConfig && '*'}
         </label>
         <div className="relative">
           <input
@@ -220,7 +267,7 @@ export function EmailSourceForm() {
             type={showPassword ? 'text' : 'password'}
             value={formData.password}
             onChange={(e) => handleInputChange('password', e.target.value)}
-            placeholder="Enter your password"
+            placeholder={hasExistingConfig ? 'Leave blank to keep existing password' : 'Enter your password'}
             className={`w-full rounded-md border px-3 py-2 pr-10 text-sm focus:outline-none focus:ring-2 ${
               errors.password
                 ? 'border-red-500 focus:ring-red-500'
