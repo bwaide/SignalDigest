@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     }
 
     // For dev mode without auth, use a mock user ID
-    const userId = user?.id || 'dev-user-00000000-0000-0000-0000-000000000000'
+    const userId = user?.id || '00000000-0000-0000-0000-000000000000'
 
     const body: SaveConfigRequest = await request.json()
 

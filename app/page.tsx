@@ -13,7 +13,7 @@ export default async function Home() {
 
   // TODO: Remove DEV_MODE bypass before production deployment
   const DEV_MODE = process.env.NODE_ENV === 'development'
-  const userId = user?.id || (DEV_MODE ? 'dev-user-00000000-0000-0000-0000-000000000000' : null)
+  const userId = user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : null)
 
   let emailStatus: SignalSourceStatus = 'not_configured'
 
