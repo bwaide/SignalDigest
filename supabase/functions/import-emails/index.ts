@@ -291,6 +291,30 @@ async function createSignal(supabase: ReturnType<typeof createClient>, userId: s
   }
 }
 
+async function moveEmailToFolder(
+  client: ImapFlow,
+  uid: number,
+  targetFolder: string
+): Promise<void> {
+  try {
+    // Ensure target folder exists, create if not
+    const list = await client.list()
+    const folderExists = list.some((mailbox) => mailbox.path === targetFolder)
+
+    if (!folderExists) {
+      console.log(`Creating folder: ${targetFolder}`)
+      await client.mailboxCreate(targetFolder)
+    }
+
+    // Move the message to target folder
+    console.log(`Moving UID ${uid} to ${targetFolder}`)
+    await client.messageMove(uid, targetFolder, { uid: true })
+  } catch (error) {
+    console.error(`Failed to move email UID ${uid} to ${targetFolder}:`, error)
+    // Don't throw - we don't want to fail the import if archive fails
+  }
+}
+
 Deno.serve(async (req) => {
   try {
     if (req.method === 'OPTIONS') {
@@ -368,6 +392,13 @@ Deno.serve(async (req) => {
 
           // Mark as SEEN in mailbox
           await client.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
+
+          // Move to archive folder if configured
+          const archiveFolder = emailConfig.archive_folder
+          if (archiveFolder && archiveFolder.trim()) {
+            console.log(`Moving email to archive folder: ${archiveFolder}`)
+            await moveEmailToFolder(client, email.uid, archiveFolder.trim())
+          }
 
           imported++
         } catch (error) {

@@ -8,6 +8,7 @@ interface ImapFormData {
   username: string
   password: string
   use_tls: boolean
+  archive_folder: string
 }
 
 interface FormErrors {
@@ -24,6 +25,7 @@ export function EmailSourceForm() {
     username: '',
     password: '',
     use_tls: true,
+    archive_folder: 'Archive/Newsletters',
   })
 
   const [errors, setErrors] = useState<FormErrors>({})
@@ -50,6 +52,7 @@ export function EmailSourceForm() {
             username: data.config.username,
             password: '', // Don't load password from server
             use_tls: data.config.use_tls,
+            archive_folder: data.config.archive_folder || 'Archive/Newsletters',
           })
           setHasExistingConfig(true)
         }
@@ -124,6 +127,7 @@ export function EmailSourceForm() {
           username: formData.username.trim(),
           password: formData.password,
           use_tls: formData.use_tls,
+          archive_folder: formData.archive_folder.trim(),
         }),
       })
 
@@ -162,6 +166,7 @@ export function EmailSourceForm() {
           username: formData.username.trim(),
           password: formData.password,
           use_tls: formData.use_tls,
+          archive_folder: formData.archive_folder.trim(),
         }),
       })
 
@@ -293,6 +298,23 @@ export function EmailSourceForm() {
           </button>
         </div>
         {errors.password && <p className="mt-1 text-xs text-red-600">{errors.password}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="archive_folder" className="block text-sm font-medium text-gray-700 mb-1">
+          Archive Folder
+        </label>
+        <input
+          id="archive_folder"
+          type="text"
+          value={formData.archive_folder}
+          onChange={(e) => handleInputChange('archive_folder', e.target.value)}
+          placeholder="Archive/Newsletters"
+          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+        <p className="mt-1 text-xs text-gray-500">
+          Imported newsletters will be moved to this folder. Leave blank to keep them in INBOX.
+        </p>
       </div>
 
       <div className="flex items-center">

@@ -84,6 +84,30 @@ export async function connectToImap(config: ImapConfig): Promise<ImapFlow> {
   return client
 }
 
+export async function moveEmailToFolder(
+  client: ImapFlow,
+  uid: number,
+  targetFolder: string
+): Promise<void> {
+  try {
+    // Ensure target folder exists, create if not
+    const list = await client.list()
+    const folderExists = list.some((mailbox) => mailbox.path === targetFolder)
+
+    if (!folderExists) {
+      console.log(`Creating folder: ${targetFolder}`)
+      await client.mailboxCreate(targetFolder)
+    }
+
+    // Move the message to target folder
+    console.log(`Moving UID ${uid} to ${targetFolder}`)
+    await client.messageMove(uid, targetFolder, { uid: true })
+  } catch (error) {
+    console.error(`Failed to move email UID ${uid} to ${targetFolder}:`, error)
+    // Don't throw - we don't want to fail the import if archive fails
+  }
+}
+
 export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
   const envelope = message.envelope
   const from = envelope.from?.[0]

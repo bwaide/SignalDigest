@@ -1,7 +1,7 @@
 import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 import type { SignalSource } from '@/types/signal-sources'
-import { connectToImap, fetchUnreadEmails } from '@/lib/email-import'
+import { connectToImap, fetchUnreadEmails, moveEmailToFolder } from '@/lib/email-import'
 
 export async function POST() {
   try {
@@ -129,6 +129,13 @@ export async function POST() {
 
               // Mark as SEEN in mailbox
               await client.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
+
+              // Move to archive folder if configured
+              const archiveFolder = emailSource.config.archive_folder
+              if (archiveFolder && archiveFolder.trim()) {
+                console.log(`Moving email to archive folder: ${archiveFolder}`)
+                await moveEmailToFolder(client, email.uid, archiveFolder.trim())
+              }
 
               imported++
               console.log(`Import count: ${imported}`)

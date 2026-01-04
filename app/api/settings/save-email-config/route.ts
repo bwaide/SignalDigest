@@ -7,6 +7,7 @@ interface SaveConfigRequest {
   username: string
   password?: string  // Optional - only provided if user wants to update it
   use_tls: boolean
+  archive_folder?: string
 }
 
 export async function POST(request: Request) {
@@ -107,6 +108,7 @@ export async function POST(request: Request) {
         username: body.username.trim(),
         vault_secret_id: vaultSecretId,
         use_tls: body.use_tls,
+        archive_folder: body.archive_folder?.trim() || '',
       },
       status: 'connected' as const,
       last_tested_at: new Date().toISOString(),
