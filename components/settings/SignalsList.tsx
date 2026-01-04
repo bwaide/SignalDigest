@@ -17,6 +17,7 @@ export function SignalsList() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [reanalyzing, setReanalyzing] = useState<string | null>(null)
+  const [deleting, setDeleting] = useState<string | null>(null)
 
   const fetchSignals = async () => {
     try {
@@ -65,6 +66,37 @@ export function SignalsList() {
       setError('Network error')
     } finally {
       setReanalyzing(null)
+    }
+  }
+
+  const handleDelete = async (signalId: string) => {
+    if (deleting || !confirm('Delete this signal and all its nuggets? This cannot be undone.')) return
+
+    setDeleting(signalId)
+
+    try {
+      const response = await fetch('/api/signals/delete', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          signal_id: signalId,
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        // Refresh the signals list
+        await fetchSignals()
+      } else {
+        setError(data.error || 'Failed to delete signal')
+      }
+    } catch {
+      setError('Network error')
+    } finally {
+      setDeleting(null)
     }
   }
 
@@ -154,14 +186,25 @@ export function SignalsList() {
                   </span>
                 </div>
 
-                <button
-                  onClick={() => handleReanalyze(signal.id)}
-                  disabled={reanalyzing === signal.id}
-                  className="rounded-md border px-3 py-1.5 text-xs font-medium hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed"
-                  title="Delete existing nuggets and re-extract from this email"
-                >
-                  {reanalyzing === signal.id ? '⏳' : '🔄'} Re-analyze
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleReanalyze(signal.id)}
+                    disabled={reanalyzing === signal.id || deleting === signal.id}
+                    className="rounded-md border px-3 py-1.5 text-xs font-medium hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Delete existing nuggets and re-extract from this email"
+                  >
+                    {reanalyzing === signal.id ? '⏳' : '🔄'} Re-analyze
+                  </button>
+
+                  <button
+                    onClick={() => handleDelete(signal.id)}
+                    disabled={deleting === signal.id || reanalyzing === signal.id}
+                    className="rounded-md border border-red-200 px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Delete this signal and all its nuggets"
+                  >
+                    {deleting === signal.id ? '⏳' : '🗑️'} Delete
+                  </button>
+                </div>
               </div>
             </div>
           </div>
