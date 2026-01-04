@@ -1,6 +1,7 @@
 import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 import type { SignalSource } from '@/types/signal-sources'
+import { connectToImap, fetchUnreadEmails } from '@/lib/email-import'
 
 export async function POST() {
   try {
@@ -38,18 +39,135 @@ export async function POST() {
       )
     }
 
-    // In dev mode, skip Edge Function and return mock response for now
-    // TODO: Fix Edge Function authentication in local development
+    // In dev mode, run import logic directly in API route
+    // (Edge Function has auth issues with local `supabase functions serve`)
     if (DEV_MODE) {
-      console.log('DEV MODE: Skipping Edge Function call, returning mock response')
-      return NextResponse.json({
-        success: true,
-        imported: 0,
-        skipped: 0,
-        failed: 0,
-        hasMore: false,
-        message: 'Edge Function integration pending - local dev mode'
-      })
+      console.log('DEV MODE: Running import logic directly in API route')
+
+      try {
+        // Get password from Vault
+        const { data: vaultData, error: vaultError } = await supabase
+          .from('decrypted_secrets')
+          .select('decrypted_secret')
+          .eq('id', emailSource.config.vault_secret_id)
+          .single()
+
+        if (vaultError || !vaultData?.decrypted_secret) {
+          console.error('Vault retrieval error:', vaultError)
+          return NextResponse.json(
+            { success: false, error: 'Failed to retrieve password from Vault' },
+            { status: 500 }
+          )
+        }
+
+        // Connect to IMAP
+        const client = await connectToImap({
+          host: emailSource.config.host,
+          port: emailSource.config.port,
+          username: emailSource.config.username,
+          password: vaultData.decrypted_secret,
+          use_tls: emailSource.config.use_tls,
+        })
+
+        try {
+          // Fetch unread emails
+          const emails = await fetchUnreadEmails(client, 50)
+          console.log(`Found ${emails.length} unread emails`)
+
+          let imported = 0
+          let skipped = 0
+          let failed = 0
+          const errors: Array<{ subject: string; from: string; error: string }> = []
+
+          for (const email of emails) {
+            try {
+              console.log(`Processing email: ${email.subject} (messageId: ${email.messageId})`)
+
+              // Check for duplicates
+              const { data: existing } = await supabase
+                .from('signals')
+                .select('id')
+                .eq('user_id', userId)
+                .eq('metadata->>message_id', email.messageId)
+                .limit(1)
+
+              if (existing && existing.length > 0) {
+                console.log(`Skipping duplicate email: ${email.subject}`)
+                skipped++
+                continue
+              }
+
+              console.log(`Inserting new signal for: ${email.subject}`)
+
+              // Create signal
+              const { error: insertError } = await supabase
+                .from('signals')
+                .insert({
+                  user_id: userId,
+                  signal_type: 'email',
+                  title: email.subject,
+                  raw_content: email.bodyText,
+                  source_identifier: email.from,
+                  source_url: null,
+                  received_date: email.date.toISOString(),
+                  status: 'pending',
+                  metadata: {
+                    message_id: email.messageId,
+                    from_name: email.fromName,
+                    has_attachments: email.hasAttachments,
+                    to: email.to,
+                    cc: email.cc,
+                  },
+                })
+
+              if (insertError) {
+                console.error(`Insert error for ${email.subject}:`, insertError)
+                throw insertError
+              }
+
+              console.log(`Successfully inserted signal, marking as SEEN`)
+
+              // Mark as SEEN in mailbox
+              await client.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
+
+              imported++
+              console.log(`Import count: ${imported}`)
+            } catch (error: unknown) {
+              failed++
+              const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+              errors.push({
+                subject: email.subject,
+                from: email.from,
+                error: errorMessage,
+              })
+              console.error(`Failed to import email "${email.subject}":`, error)
+            }
+          }
+
+          return NextResponse.json({
+            success: failed === 0,
+            imported,
+            skipped,
+            failed,
+            hasMore: emails.length === 50,
+            errors: errors.length > 0 ? errors : undefined,
+          })
+        } finally {
+          // Always close the IMAP connection
+          try {
+            await client.logout()
+          } catch {
+            // Ignore logout errors (connection may already be closed)
+          }
+        }
+      } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+        console.error('Import error:', error)
+        return NextResponse.json(
+          { success: false, error: errorMessage },
+          { status: 500 }
+        )
+      }
     }
 
     // Production: Invoke Edge Function

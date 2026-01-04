@@ -1,0 +1,1993 @@
+Return-Path: <bounces+31366032-ca52-news=net-positive.de@em8370.daily.therundown.ai>
+Authentication-Results:  kundenserver.de; dkim=pass header.i=@daily.therundown.ai
+Received: from o168.ptr7383.mail.beehiiv.com ([159.183.140.223]) by
+ mx.kundenserver.de (mxeue102 [217.72.192.67]) with ESMTPS (Nemesis) id
+ 1MEDKd-1vj47f1rDp-009wzm for <news@net-positive.de>; Fri, 02 Jan 2026
+ 11:03:03 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=daily.therundown.ai;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:from:subject:to;
+	s=b92; bh=Otv2JHZj7YFhRXfX3LEAMea4MptXgE/CbbHtoMMuq8Y=;
+	b=E9EhHDQuiN4YwVZFXBAD/3h/nW+Tf0yyOxWdYJ7P/HyH+SKSpUHC0I9JiqQ/RdgJbBde
+	pDC3lDRMCtsGkv1+7mfs+I7E7PkOuhgoS2UHbrXITQLYT0LdhAs58J1PB7ebS/3Ol/PlWn
+	LVh08FaidndMV+Zg+QyYvJH2ehHOAWLu7Ka2HTMHaOnvY/HvcDFeoR/IrG0Id1eVVqjPXt
+	7jwijH1HpDuQWAzkayGfVcW3cOq3IqvaFBYWJlWC8S6mJkYcS6vu5Fo0r6pWociSdrZ9ws
+	vbqL3l82v/9GGWacGACg+NWUs6GGDiBVGvWao2SYVVFzG/8OONqbvKymW4rGQU5Q==
+Received: by recvd-678ccb598b-2887h with SMTP id recvd-678ccb598b-2887h-1-695797A8-F
+	2026-01-02 10:02:16.08983378 +0000 UTC m=+1338938.247398374
+Received: from MzEzNjYwMzI (unknown)
+	by geopod-ismtpd-61 (SG) with HTTP
+	id 8ehuULwpRnu6MU1mw24XMg
+	Fri, 02 Jan 2026 10:02:16.053 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=512368e3dd5152c6a5254c877fa997f8ab69bd00e21a2bb8db1a88f53681
+Date: Fri, 02 Jan 2026 10:02:22 +0000 (UTC)
+From: The Rundown AI <news@daily.therundown.ai>
+Mime-Version: 1.0
+Message-ID: <8ehuULwpRnu6MU1mw24XMg@geopod-ismtpd-61>
+Subject: =?UTF-8?B?8J+TuA==?= Instagram's AI-driven identity crisis
+Reply-To: The Rundown AI <news@daily.therundown.ai>
+Feedback-ID: 
+ =?us-ascii?Q?9ca7926f-2ed0-4d83-9317-b14d0179f17c=3Anewsletter=3A4d03390d-2481-?=
+ =?us-ascii?Q?4299-b949-ffd8b38b4c38=3A8c08a5f75db6ca3?=
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3A4d03390d-2481-4299-b949-ffd8b38b4c38+77b17868-d889-429?=
+ =?us-ascii?Q?7-a705-f4c56fbb524a+9ca7926f-2ed0-4d83-?=
+ =?us-ascii?Q?9317-b14d0179f17c=40unsub=2Ebeehiiv=2Ecom=3E=2C?=
+ =?us-ascii?Q?_=3Chttps=3A=2F=2Fwww=2Etherundown=2Eai=2Funsubscribe=2FeyJ0eXAiOiJKV1QiLCJhbGc?=
+ =?us-ascii?Q?iOiJIUzI1NiJ9=2EeyJzdWJzY3JpYmVyX2lkIjoiN?=
+ =?us-ascii?Q?zdiMTc4NjgtZDg4OS00Mjk3LWE3MDUtZjRjNTZm?=
+ =?us-ascii?Q?YmI1MjRhIiwicG9zdF9pZCI6IjljYTc5MjZmLTJ?=
+ =?us-ascii?Q?lZDAtNGQ4My05MzE3LWIxNGQwMTc5ZjE3YyIsIm?=
+ =?us-ascii?Q?xhc3RfcmVzb3VyY2VfZ3VpZCI6IlBvc3Q6OWNhN?=
+ =?us-ascii?Q?zkyNmYtMmVkMC00ZDgzLTkzMTctYjE0ZDAxNzlm?=
+ =?us-ascii?Q?MTdjIn0=2E4aIZTwIAmoLrhz4roGUBzudZXVQIjk2?=
+ =?us-ascii?Q?RjmCMlRgQ4g8=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+sId: 4d03390d-2481-4299-b949-ffd8b38b4c38
+x-beehiiv-ids: 
+ =?us-ascii?Q?{=22account=5Fname=22=3A=22https=3A=2F=2Fwww=2Etherundown=2Eai=2F=22=2C=22campaign=5Fid=22=3A=229c?=
+ =?us-ascii?Q?a7926f-2ed0-4d83-9317-b14d0179f17c=22=2C=22ca?=
+ =?us-ascii?Q?tegory=22=3A=22newsletter=22=2C=22email=5Fgenerated=5Fa?=
+ =?us-ascii?Q?t=22=3A1767348135=2C=22user=5Fid=22=3A=224d03390d-2481-?=
+ =?us-ascii?Q?4299-b949-ffd8b38b4c38=22}?=
+x-beehiiv-type: newsletter
+x-list-id: 4d03390d-2481-4299-b949-ffd8b38b4c38
+x-list-owner: <mailto:news@daily.therundown.ai>
+x-newsletter: https://www.therundown.ai/p/instagrams-ai-driven-identity-crisis
+x-newsletter-id: https://www.therundown.ai/
+x-newsletter-signup: https://www.therundown.ai/subscribe
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EvjTgaxEIK4Z6shiRUA3RtDCgacyLeo06clZ9=2FcY1MWQti7SHfiMyEQ3DE?=
+ =?us-ascii?Q?jt1d8geDAHeRYlVAT6Fp2q4RpucRFR4VCtIPlL=2F?=
+ =?us-ascii?Q?kNXptuT1Z2neOW01ue33CMa2aXSay0EE54sZi1u?=
+ =?us-ascii?Q?MxmjioaS05X3kbtNVYcgM8x4kl7jJULLO6yOW6w?=
+ =?us-ascii?Q?GWTadKVQG+mMbGcWVfzRRglqJkYzE4xWnGazy4I?=
+ =?us-ascii?Q?n806x6hleI5ALbFh8RKTuUutdFxeBwILUhNBK29?= =?us-ascii?Q?pIiD?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprC4cBUZJCrQVYjCO?=
+ =?us-ascii?Q?0A=2FxUMByK=2FNQsc2nkXPXUrDeE1tS=2FhpJjcZNZdI?=
+ =?us-ascii?Q?zeRKGyHeS18upbY+HVE1wbYcc16nINfpBluwmvZ?=
+ =?us-ascii?Q?wL0h9F3NJiuI+CGH0CWYrXxgZULB6Ccv0s8PROX?=
+ =?us-ascii?Q?cmeOjRW8scD5ZR57KtbOs1FonfXa2k0TOSBQGhp?=
+ =?us-ascii?Q?EYUyBzIwcV0+JwxavY6CPRBOp4XiW57RHvp2Nb0?=
+ =?us-ascii?Q?OZrfLUUKOnvPU23ikJtvpyatSzyJo14Fs8aK7yu?=
+ =?us-ascii?Q?8KSjFsWR9GPzX9q0wcUngvWzACg4OQscSb5YR+5?=
+ =?us-ascii?Q?c+RxmzKZ3vyYf+5KpH1aixOEVFzsVMX+JuuiT32?=
+ =?us-ascii?Q?m3+BrcFtrGINuEkeEja+ypblGsVj7pHBVzbQ+=2F9?=
+ =?us-ascii?Q?5ijAHE7C4BVL4lgeIYSgcLFI66R72hHbngvXLcD?=
+ =?us-ascii?Q?EmzmSanJcEsm8DYx2v0CLWz1UPKvbMP6G6+cMb1?=
+ =?us-ascii?Q?iyKtQ=3D?=
+To: "news@net-positive.de" <news@net-positive.de>
+X-Entity-ID: u001.oBU2ZOo8/mG7n42Yjl/juw==
+Envelope-To: <news@net-positive.de>
+UI-InboundReport: unknown:2;M01:P0:t6u5klM17Kg=;y4klcIuKKKFX8KdnJmFaY7kgUolI
+ jYp9pKXnuO3u2DN+tVhC+4LmQKhekRYg0gLuOJiddxRE2m3xZIy4FyAKhdt3U6v+g6QZjZX1e
+ bwCF5/jbtr5tM0B9kcqGF49fT+tcag1LjBPs7p+BbnrpsT0JncCTqKHwp8EpXtztPq6166Bsq
+ B5ORjweufEsz0ayABDdX/tXgrTKCGLemVk/emSvvWenExR9rI/KiAaMBWpzumaFYZzAkGASsO
+ o8FKFKu7OE0Yy8v2Uj/+CzU34ORfqWWoueZuIEtUOfZmNTcqepDuIqXzDwVWFMTU0dGOpOzRC
+ 9HRLT2zbfV86sUouLz2d5AHtznYNNuYufdZ2Xuts2jTFL7Uk9yjGCy1FBbxgyuV2xnZs5SUHP
+ AjZgo/lI4wpNZPP26aQLv0SjV1zYmBzayMzC3i2pW9IHyec/gBnm06Y5jCWuZ1URE3gfM4Z0V
+ +hHF2aW8pxg2Gjzg72nKlQVPi+McdlpRl0IVpgpY55+ly9eNd6f6vKHyA4AFg04WOq+vYTEzr
+ 1uS6JMobAq2cLQ/Y6o/ysQAQxAX+E4/V3bdcAmma1GUSU/vBGw1sXTLvoN4RYcsENLz2JydSM
+ Q3ec5JfkNCFu6FJQutR+/KDid50y1ILyLET270xiYz5MMIywqQSW+ydSg5KnVncOazSeZVRMZ
+ UlgdGe2RBaH6XUmy8NLSuq8dGSi/TyvDZTLY+FPGWPXYsbN3jPiwTowSMvsr1L2QJyVfyNzFc
+ /9YERcTTWRnYn+59s2b0a8nfvV4s28pETRThRE95VJl1gZeo6uiPLeDR3uvLIoP5gppYt2MID
+ iG272/A6cNBCzo0/bQkjMI54/LCHNIoBXZvlEeCGhj/EmixVS0ZZVrDQMW48AL2tKRReX3u44
+ TjqZt5gjBqdSahy3jj1b5n3//O3sQ5f9nsrBAuOo65+HZne0NE5F5cxBu5QL8EJ7a6NHxsvwM
+ jP7GOq/+Q2bCvV9rx8UHfpJvOa1lPJURzRopkWvTvKkyMm4FYvm7rxEhybECQb6b5YHbCEm6Y
+ PYY70vbWOTmyNJGco/D74PvbB/rriETNbHqWArfoYJTn/+4Zugt53k+yFdxdnCCTFgrdUcGTZ
+ Dr2YSqYwdjT15heNz/fO8ZN6eDBFze198r8j8eoWL4ngC6BOPmjSHjY8v/HLC4iLfZbsBkv4n
+ kerCeWgX7QyyBeGaCi9rg15ryaAwe/gLy4J70GD5bhyXIZ9/luQ1hKkp7BxLCBUV+CZop0Kq9
+ 2FkEvzgZSiSIqdDQa8RrELS186Fk5b/pXf5fOT23G+JnXsSwMOBRM/naE7cD+KdfZs+/BTG0E
+ TgdPqkYo1ZgHNbXAUdQHLHUuCjJOJd3nm3Wna7IVPi6iPiQy9s9ykoxyIwzxlObAmxubi8Iut
+ 2h0PGXxMrZRTivWCRQVezmXWlqNaTThkSGaRQkBv+R1/vAyvGh9vwzqLken6fm9LFWxsRawRv
+ gdjCNa+B4HzHCunO7hACBzCORPrC05JvsAgO4R37vVaR4YzNYpkh3dBZMWAVyr0hV3QeeuHd4
+ Xe428tux9kgUAQp7HcIMesvpdhATyyPw2Eg8XxdrCIv/LA3fXz4tFVkHSGlKoyvIz+xytoxU1
+ tTYeG7dzze5kR4Aj8LvzbN6zzHid2elpcpwU8IbSK3ojw2dJsV2niCcxxyPF4VVra6M+lrd5n
+ 7MCTaThtUojbui162cWva2NTcb99IN6GUI839K7i7YriOdxmQ2okroUh4eJ4eoE1NDIxjUpbm
+ gOXVUrS2qRZi55ceABidtFVqlLETs9s+sj4tTzFve1vC7qAyCfF6uokGRqzEy4tm7Jh2XcP4/
+ mc3hZEHV7ly+S7ZvTnMs99a3kfmejS8cJQoeSersk3rsxfMTc3/toA3XhjEbRW/ljU3YaAYLa
+ Q/EFa+GWEBXe/y/pR1dZ7UEHb1h+lPXX0+wfr/sklM8fL0D2bSvwz6UDrlCiW0C/q4fKStKQ/
+ ru+4TRWvLu6LyuQfb2mWUZLRkhJJl3b65cUhblLkZBMIWXPdSBLIBZ24ywPM6W5oyG6Z7Nv+0
+ KG5bSOHL1n3rZ+HqXiRC/uOH+NlgYFjfEQPedZ3pf0nVyjj1Q0+k98oxto2x/6Hh0HKELNuZj
+ bg7+abxpF5LCoJ2K7IyJgAz5n2BbhZcYadEEMGy40BKopL5atCuGTFPFU2pQSmQtIanbYV6sV
+ PiLti2pYPIQZmRjaTXQSD9ZOr5Jz/OO7zvephHXy8F+kqSNmu+mdAXJQqBGFzqCHxU/7KI1r9
+ MhkEGTABjovAB1UFdZ6Jqz2pAAX8iez46y/R1HV4vijM+8JwsCJ4cjvQYXGEbGZW9HtSTjz5B
+ /OleuAx6oADjDaXE+XTon8NWJBP0nswfFC/UqD77sSh5gA/QZumqgpXBQ7HRv5rs9RUV9bADk
+ wlYvE/1+46oGaPTwCK9hBCZvUnDanW3xFuyF6I02oIoaTZWcrRq/gbJIxr6U6SYIneW7IYOfZ
+ UYvFimCduqqoS/EOLXTTsCsKMBcArxNzF3xevArnT+49Dk0kt3di4TZCK98hS3Vh/dpS0u6Tg
+ 4xXG4Z2LA3LIqIby+E1yHUQQvvMVDYzPEAi84xJN1NGX2Zzr98e1DoLMquRpCZtgERc1lVvQm
+ yJw1/tACf8untjZZvMuuusK1US6n/DjfHjZt8yAhIts/rwefCQzP1fXNitBJL2J1JYgklO7ci
+ O+RjXLnWFnwslw0LJljfhn4GxiSoBg6Ua4BjMjF6DyG3WJOks53mXgeG9s66KcCXkHSi79mDF
+ RWXfRyZbN4pmIh5xs7xXgFVKM9I2nTs+0OAYLzi3avhVwvoh0MODCS1Bk3xv39REzIzaJpx7x
+ SuEl4K6f2SVfNWs+0KuM6d5zWw1qC970DJd9wQp4l12+VIb05HUbdhMaRQ0GOjb3SCVeSk0ZU
+ SBEidO+/i1LZpUEQusEvTmJvrWoNGl4CVXHDnNz9H8mlPMXubSpvl01yuLjdQzrYbpvA1f2ef
+ 46CaRwAOkbVIdeKybLLhhmv635fdU8GSMwYAhOLN04cjsJZP0ZbRH9ixWbxWIrbNHahWgEqKk
+ Z8JudRDjg6kyh5G4H7nZc2IqWitOwZm+4DpJCSHy1O1XKPQKhvnToHJYQoivFwNhgw42AZTLQ
+ HAgLCOFYtWMwYAvCczZujfpVLChXdC6DTvIg2IoruVWbnXYKAnmv4dmVbh0cctj793GPgHP+k
+ tBhrsjORIrMhLAX+LtKP/3IKiCbYrrZUJ+VMuV50NMCnCjWw8qCyXgPHT9iZ2Zzmtyo81nHeq
+ 9TK6/AaiIEtabJ3u4WkconuIDtIQ4TYg9O7jstgxoAxt1ebO3ZosZgYPC+dLRy6BaAAEsneC2
+ /EV805kjP9ZHajDosLhHDpSu5pllgALNxvVXgoUkJp0vk5ikyAi+tuuOP4XcaDu44HLPYmVDk
+ F9ZKUSxgmnmWOWuvELfrUGN9Acti+kd/QVORsLpyR6wD3HbwmStfnjHa/fH9HuBIEc/E5NsCB
+ EpKnYYRLr1pUa5fz7bAojQ2+Z6mNh+cN/4zVRP+R2qICukpf332vzCaln8bY7KNv/nJlC1Pga
+ OUUc2rcv7gWLsREu/uSvoirb1G7SAL4oFANNz6djDjYQr09T1TGHfGKPLBSDc5Nf3yVnQzjNF
+ PaR7Vg4AeCj8ftCrJHFAGJ8jaKC+lOm0Vwtzx/Okv9phtjRtg8ddL4XKpD+4Fpk9087EFF9iL
+ 8KquhuN1yKlQ08Ga/CGPcS3t2+PUqC413NeQQ9Gz9jboow7bi+lErOJqQUcf3rezm8+bPgv0j
+ 0nwFL1VomgYAMEFZcmJ9WpdoGQCyZra6EksJSxPKcCr1E37XVE2A6d+MLP602FesZ52vzXc9j
+ xCBJlokw/g3JD31sloefGZtqoRyWOebVNt5R9oNE2zalYF5o3Ty7uXqt2oLcYYzVx1GLt24An
+ p/oSXaan7aUHbVhDtihCw7+6tVY7C7AEnG57mWEXj6fNvDPqDU6d+9dk73G1iAbeL71vk5BrU
+ 1cyVrdy1adaypM3I4TkbHoWo/cay1HH+zBCPiPid646J/0AFVeONCqThvnCsBqbpB3ou1zRCO
+ G3baMwZAFQdVzo6+WtE1V9Fkr2clwVtynAqfqLw0DQ9hKe7tCIODtiT9AeOKQySj35elvu3V2
+ BGEdHPixr7TSyqF9e9ZGc+cKfbfYaV/SNCdHHtlweNh8CqnKKcp78HSMQHt/9yBI4dMK1wHZw
+ ElasJe9z39t1WTbEjbTOCG7Pyh+rJokOujqV4VLkkYaCtHSXXJl6GAqzHg2mjulOmy4306KUD
+ ZPpWG1vrqbe5T+AMQKKrPrLOmVZVOaHxXm4xPgG4v+K76M/eCWjp0jXs1POv18ftZeOfmZQSH
+ mOy5l8yfPJOMf0Z2gn62IOkgWsKnoFbIrhSpKPhpdTir6tk1eMMMSrXOxzFEOY69zTTAcJ+NI
+ m0NLVdW0hhgIRYwfpFQhoJQtcuCb/9qXwoXj9qTnOToTCQC6ukLG6aGbVOXNsYmcXYxYL4dJJ
+ SswXqFxYH8eFp+PdsO77etA3PT3q1kUgSKH+3MBKM+Lxq+JN9q+xNXF9oLzlA1GryxGlaacnr
+ vXMmzFDN9lHmXNJh62/UfgNE=
+
+--512368e3dd5152c6a5254c877fa997f8ab69bd00e21a2bb8db1a88f53681
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+^**[Read Online](https://www.therundown.ai/p/instagrams-ai-driven-identity-=
+crisis?_bhlid=3D4eaa234680798ad3bdb45514b5705f029891f88c&jwt_token=3DeyJ0eX=
+AiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJzY3JpYmVyX2lkIjoiNzdiMTc4NjgtZDg4OS00=
+Mjk3LWE3MDUtZjRjNTZmYmI1MjRhIiwicHVibGljYXRpb25faWQiOiI0ZDAzMzkwZC0yNDgxLTQ=
+yOTktYjk0OS1mZmQ4YjM4YjRjMzgiLCJhY2Nlc3NfdHlwZSI6InJlYWQtb25seSIsImV4cCI6MT=
+c2NzUyMDkzNCwiaXNzIjoiaHR0cHM6Ly9hcHAuYmVlaGlpdi5jb20iLCJpYXQiOjE3NjczNDgxM=
+zR9.H-Wckr_OfZ2fIcjl_2E2PtJ-yiyvBQ1sCA4DO6q8ctc)**^^ | ^^**[Sign Up](https:=
+//www.therundown.ai/subscribe)**^^ | ^^**[Advertise](https://therundownai.t=
+ypeform.com/to/kraZ1TSO)**^
+
+----------
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/77d4a6c6-979c-4=
+e0b-bc1e-145a4c3e2041/nebius-header.jpg?t=3D1767288541)
+Follow image link: (https://nebius.com/services/token-factory/post-training=
+?utm_source=3Dyoloco-rundown&utm_medium=3Dnewsletter&utm_campaign=3Dpost-tr=
+aining)
+Caption:=20
+
+
+----------
+
+----------
+**Good morning, AI enthusiasts.** The app that pioneered filter culture is =
+now declaring the curated aesthetic dead.
+
+Instagram head Adam Mosseri says AI content has made polished posts worthle=
+ss as proof of authenticity =E2=80=94 and the platform that built its empir=
+e on the perfect grid is quickly scrambling to evolve to the new dynamics o=
+f social media in the AI age.
+
+=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=
+=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=
+=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=
+=E2=80=94=E2=80=94
+
+**In today=E2=80=99s AI rundown:**
+
+* IG head says platform must =E2=80=9Cevolve fast=E2=80=9D due to AI
+
+* DeepSeek hints at next-gen AI architecture
+
+* Use Codex to write code on the web with AI agents
+
+* Report: OAI overhauling audio for upcoming device
+
+* 4 new AI tools, community workflows, and more
+
+
+----------
+
+----------
+**LATEST DEVELOPMENTS**
+
+
+----------
+
+----------
+###### INSTAGRAM
+
+#### =F0=9F=93=B8 **_[IG head says platform must =E2=80=9Cevolve fast=E2=80=
+=9D due to AI](https://www.threads.com/@mosseri/post/DS76UiklIDf/media)_**
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/130ec4ee-c886-4=
+bb2-a897-fd3ebd645eea/mosseri.jpg?t=3D1767302288)
+Caption: Image source: @mosseri on Threads / The Rundown
+
+**The Rundown: **Instagram leader Adam Mosseri just [posted](https://www.th=
+reads.com/@mosseri/post/DS76UiklIDf/media) a year-end essay arguing that AI=
+-generated content has killed the curated aesthetic that made the app famou=
+s, saying that raw, unpolished posts are now the only proof that something =
+is real.
+
+**The details: **
+
+* Mosseri says most users under 25 have already abandoned the polished grid=
+ for more personal direct message photos and "unflattering candids."
+
+* He also pushed for camera makers to cryptographically sign photos at capt=
+ure to verify real media instead of just weeding out fakes.
+
+* Mosseri said Instagram needs to =E2=80=9Cevolve=E2=80=9D fast,  predictin=
+g a shift from trusting what images you see to scrutinizing who posted it.
+
+* Instagram plans to label AI content, surface more context about accounts,=
+ and build tools so creators can compete with AI.
+
+**Why it matters: **IG was one of the pioneers of social media=E2=80=99s =
+=E2=80=9Cfilter culture=E2=80=9D, so there=E2=80=99s some irony in now decl=
+aring the death of authenticity. But the trend feels accurate, with both a =
+shift in how younger users communicate and the flood of AI images, video, a=
+nd content completely upending traditional dynamics of social media platfor=
+ms.=20
+
+
+----------
+
+----------
+###### TOGETHER WITH NEBIUS
+
+#### =F0=9F=92=BB **[_Nebius Token Factory =E2=80=94 Post-training Launch_]=
+(https://nebius.com/services/token-factory/post-training?utm_source=3Dyoloc=
+o-rundown&utm_medium=3Dnewsletter&utm_campaign=3Dpost-training)**
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/a28bfdf2-38dc-4=
+795-9196-907b8aa7b9e7/image3__5_.jpg?t=3D1767288844)
+Follow image link: (https://nebius.com/services/token-factory/post-training=
+?utm_source=3Dyoloco-rundown&utm_medium=3Dnewsletter&utm_campaign=3Dpost-tr=
+aining)
+Caption:=20
+
+**The Rundown:** Nebius Token Factory just launched Post-training =E2=80=94=
+ the missing layer for teams building production-grade AI on open-source [m=
+odels](https://nebius.com/services/token-factory/post-training?utm_source=
+=3Dyoloco-rundown&utm_medium=3Dnewsletter&utm_campaign=3Dpost-training). Yo=
+u can now fine-tune frontier models like DeepSeek V3, GPT-OSS 20B & 120B, a=
+nd Qwen3 Coder across multi-node GPU clusters with stability up to 131k con=
+text.
+
+**What you get with Post-training:**
+
+* Models deeply adapted to your domain, tone, structure, and workflows
+
+* One-click deployment with dedicated endpoints, SLAs, and zero-retnetino p=
+rivacy
+
+* Shift from generic base models to custom production engines
+
+_[Start fine-tuning now](https://nebius.com/services/token-factory/post-tra=
+ining?utm_source=3Dyoloco-rundown&utm_medium=3Dnewsletter&utm_campaign=3Dpo=
+st-training)_ =E2=80=93 GPT-OSS 20B & 120B (Full FT + LoRA FT) is free unti=
+l Jan 9.
+
+
+----------
+
+----------
+###### DEEPSEEK
+
+#### =F0=9F=93=88 **_[DeepSeek hints at next-gen model architecture](https:=
+//arxiv.org/pdf/2512.24880)_**
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/cfc52c45-0786-4=
+e13-858a-d84e9dcb1e0e/whale-1.jpg?t=3D1767296034)
+Caption: Image source: Nano Banana Pro / The Rundown
+
+**The Rundown:** DeepSeek just [published](https://arxiv.org/pdf/2512.24880=
+) new research that proposes changes to how neural networks are structured =
+for breakthroughs in model cost and stability, a potential preview of effic=
+iency gains heading into its next major release.
+
+**The details: **
+
+* The paper introduces mHC, a technique that stabilizes and improves AI tra=
+ining at a large scale while adding minimal extra computing cost.
+
+* CEO Liang Wenfeng co-authored and personally uploaded the paper to arXiv,=
+ signaling continued hands-on involvement in the startup=E2=80=99s research=
+.=20
+
+* Tests on 3B, 9B, and 27B parameter models showed improved benchmark score=
+s over existing methods, especially reasoning tasks.
+
+* The timing aligns with previous papers telegraphing DeepSeek=E2=80=99s mo=
+ves, with similar research dropping before R1 and V3.=20
+
+**Why it matters: **Last year=E2=80=99s DeepSeek moment made waves with R1 =
+nearing frontier models at a fraction of the cost, and this paper hints tha=
+t they may not be done finding efficiencies. Between increased access to ad=
+vanced AI chips and these types of research breakthroughs, China=E2=80=99s =
+releases will be more competitive than ever in 2026.
+
+
+----------
+
+----------
+###### AI TRAINING
+
+#### =F0=9F=92=BB **_[Use Codex to write code on the web with AI agents](ht=
+tps://app.therundown.ai/guides/use-codex-to-write-code-on-the-web-with-ai-a=
+gents)_**
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/5236a930-32e5-4=
+237-93e2-8d463b698179/unnamed__36_.jpg?t=3D1767303174)
+Caption:=20
+
+**The Rundown:** In this tutorial, you will learn how to use OpenAI's Codex=
+ to ship your first change from a GitHub repository without writing code by=
+ hand =E2=80=94 connecting a repo, planning changes, implementing them with=
+ AI agents, and opening pull requests.
+
+**Step-by-step:**
+
+1. Go to ChatGPT, open the left sidebar, and click "Codex" to access it
+
+2. Click "Manage environment," select your GitHub organization and repo, th=
+en configure code execution settings
+
+3. Choose "Plan" to discuss scope without coding, or "Execute" to make chan=
+ges on a branch =E2=80=94 example: "Can you give insights on what this proj=
+ect is about?"
+
+4. Enter implementation prompt (e.g., "Turn this static landing page into a=
+ website where users can paste their own stories and poetry"), preview chan=
+ges with "Run this code and show me the site," then click "Create PR" when =
+satisfied
+
+**Pro tip:** Use branches for safety. Avoid writing code directly to main u=
+nless required.
+
+
+----------
+
+----------
+###### PRESENTED BY CDATA
+
+#### =F0=9F=9A=82** **_[**You bought the AI train =E2=80=94 did you build t=
+he data track?**](https://www.cdata.com/lp/ai-data-connectivity-report-2026=
+?utm_source=3Drundown&utm_medium=3Dnewsletter_0102&utm_campaign=3D24Q4_Stat=
+e-of-AI-Connectivity)_
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/726e1da2-7cbe-4=
+96a-9098-b3874ba6ac61/StateofAI_ADs_2025_1920x1080_V2__1_.png?t=3D176728890=
+0)
+Follow image link: (https://www.cdata.com/lp/ai-data-connectivity-report-20=
+26?utm_source=3Drundown&utm_medium=3Dnewsletter_0102&utm_campaign=3D24Q4_St=
+ate-of-AI-Connectivity)
+Caption:=20
+
+**The Rundown:** CData's 2026 State of AI Data Connectivity Report surveyed=
+ 200+ data and AI leaders on what's working (and breaking) when connecting =
+AI to enterprise systems at scale.
+
+**The report covers:**
+
+* Why only 6% of companies are satisfied with their data integration archit=
+ecture for AI adoption
+
+* How real-time connectivity and semantic intelligence define AI maturity
+
+* What leading orgs are building to scale GenAI and agentic AI systems in 2=
+026
+
+_[Click here to read the report](https://www.cdata.com/lp/ai-data-connectiv=
+ity-report-2026?utm_source=3Drundown&utm_medium=3Dnewsletter_0102&utm_campa=
+ign=3D24Q4_State-of-AI-Connectivity)_.
+
+
+----------
+
+----------
+###### OPENAI
+
+#### =F0=9F=8E=99=EF=B8=8F **_[Report: OAI overhauling audio for upcoming d=
+evice](https://www.theinformation.com/articles/openai-ramps-audio-ai-effort=
+s-ahead-device)_**
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/692885b1-df31-4=
+1f5-b8e7-208540d1b235/openai-voice.jpg?t=3D1767293779)
+Caption: Image source: OpenAI
+
+**The Rundown: **OpenAI has reportedly [consolidated](https://www.theinform=
+ation.com/articles/openai-ramps-audio-ai-efforts-ahead-device) multiple tea=
+ms to improve its audio AI models, according to The Information =E2=80=94 l=
+aying the groundwork for the company=E2=80=99s Jony Ive-led, voice-first pe=
+rsonal device expected in about a year.
+
+**The details:**
+
+* OAI=E2=80=99s voice models are reportedly behind the text-based ChatGPT i=
+n accuracy and response speed, prompting the internal restructuring.
+
+* An upgraded model due in Q1 2026 will let users talk over the AI mid-resp=
+onse without breaking conversation flow for more natural interactions.=20
+
+* The first device launch is reportedly still around a year out and will pr=
+ioritize voice over screens, with glasses and a smart speaker also discusse=
+d.=20
+
+* Ive's design firm io, [acquired](https://www.therundown.ai/p/openai-jony-=
+ive-join-forces-in-6-5b-acquisition) for ~$6.5B in May, is leading the hard=
+ware =E2=80=94 with an explicit goal of avoiding smartphone-style addiction=
+.
+
+**Why it matters: **OpenAI's device ambitions are well publicized at this p=
+oint, and the ultimate reveal of the form factor for its hardware will be a=
+ big moment to watch in 2026. Ive's involvement brings the pedigree and hyp=
+e, but a graveyard of other AI wearables shows the category is still waitin=
+g for a true breakout success.=20
+
+
+----------
+
+----------
+**QUICK HITS**
+
+
+----------
+
+----------
+### =F0=9F=9B=A0=EF=B8=8F _**[Trending AI Tools](https://www.rundown.ai/too=
+ls)**_
+
+* =F0=9F=93=91 [Qwen Image Layered](https://www.rundown.ai/tools/qwen-image=
+-layered) - Image AI that breaks outputs into layers for edits
+
+* =F0=9F=8C=8C [ChatGPT Images](https://www.rundown.ai/tools/chatgpt) - Ope=
+nAI=E2=80=99s upgraded image generation system
+
+* =F0=9F=A4=96=C2=A0[GLM-4.7](https://www.rundown.ai/tools/glm-4-7) - Z AI'=
+s new SOTA open-source model
+
+* =F0=9F=93=AA [CC](https://www.rundown.ai/tools/cc) - Google Labs=E2=80=99=
+ experimental AI productivity agent in Gmail
+
+
+----------
+
+----------
+### =F0=9F=93=B0 **_[Everything else in AI today](https://www.rundown.ai/)_=
+**
+
+**Chinese AI lab IQuest Labs **[released](https://github.com/IQuestLab/IQue=
+st-Coder-V1/blob/main/papers/IQuest_Coder_Technical_Report.pdf) IQuest-Code=
+r-V1, a new model family that claims to surpass rivals like Claude Sonnet 4=
+.5 and GPT 5.1 on coding benchmarks.=20
+
+**LMArena** [posted](https://x.com/arena/status/2006502790395473990/photo/1=
+) the 2025 results for top AI models, with Google=E2=80=99s Gemini 3 Pro le=
+ading text, vision, and search, and Veo 3.1 models topping video rankings. =
+=20
+
+**Chinese AI startup Kimi** reportedly [raised](https://www.scmp.com/tech/t=
+ech-trends/article/3338334/chinas-moonshot-ai-raises-us500-million-latest-f=
+unding-round-report) $500M in a new Series C round, bringing the company=E2=
+=80=99s valuation to $4.3B.=20
+
+**SoftBank** is [acquiring](https://www.wsj.com/business/deals/softbank-gro=
+up-to-buy-data-center-investment-firm-digitalbridge-b229f7e5) DigitalBridge=
+ for $4B, adding a data center and digital infrastructure portfolio to the =
+Japanese giant=E2=80=99s growing AI bet.=20
+
+**X user Martin_DeVido** [shared](https://x.com/d33v33d0/status/20062214073=
+40867881?s=3D20) an experiment giving Claude full control of keeping a toma=
+to plant alive for over a month, controlling systems without human interven=
+tion.=20
+
+
+----------
+
+----------
+**COMMUNITY**
+
+
+----------
+
+----------
+### =F0=9F=A4=9D** **_**[Community AI workflows](https://docs.google.com/fo=
+rms/d/e/1FAIpQLSfH4UPzu72HTpdb08Qlm-0dLwKJIjdcAwCcAvVywcHD6mwKig/viewform)*=
+*_
+
+Every newsletter, we showcase how a reader is using AI to work smarter, sav=
+e time, or make life easier.
+
+Today=E2=80=99s workflow comes from reader **Prasanna A.** in Atlanta, GA:
+
+"When reading e-books, it can be difficult to retain and connect key concep=
+ts. To solve this, I leverage Google Gemini=E2=80=99s large context window =
+by uploading the book's text. I have the AI explain the key points of each =
+chapter and analyze how they relate to previous sections using real-world e=
+xamples tailored to my specific goals.=20
+
+To ensure mastery, I conclude each chapter with a knowledge check and perfo=
+rm a comprehensive exam once the book is finished. The real 'magic' happens=
+ at the intersection of the book=E2=80=99s theory and practical application=
+."
+
+How do you use AI? Tell us [here](https://docs.google.com/forms/d/e/1FAIpQL=
+SfH4UPzu72HTpdb08Qlm-0dLwKJIjdcAwCcAvVywcHD6mwKig/viewform).
+
+
+----------
+
+----------
+### **=F0=9F=8E=93 **_**[Highlights: News, Guides &amp; Events](https://app=
+.therundown.ai/)**_
+
+* Read our last AI newsletter: [The Rundown=E2=80=99s 2025 year in review](=
+https://www.therundown.ai/p/the-rundowns-2025-year-in-review)
+
+* Read our last Tech newsletter: [Meta buys AI startup Manus for $2B](https=
+://tech.therundown.ai/p/meta-buys-ai-startup-manus-for-2b)
+
+* Read our last Robotics newsletter: [Robotaxis that plug into your brain](=
+https://robotnews.therundown.ai/p/robotaxis-that-plug-into-your-brain)
+
+* Today=E2=80=99s AI tool guide: [Use Codex to write code on the web with A=
+I agents](https://app.therundown.ai/guides/use-codex-to-write-code-on-the-w=
+eb-with-ai-agents)
+
+
+----------
+
+----------
+See you soon,
+
+_Rowan, Joey, Zach, Shubham, and Jennifer =E2=80=94 the humans behind The R=
+undown_
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/b105d547-252f-4=
+914-8821-3eb7236b1257/TheRundown_EditorialTeam.png?t=3D1755849086)
+Caption:=20
+
+
+----------
+
+
+=E2=80=94=E2=80=94=E2=80=94
+
+You are reading a plain text version of this post. For the best experience,=
+ copy and paste this link in your browser to view the post online:
+https://www.therundown.ai/p/instagrams-ai-driven-identity-crisis
+
+--512368e3dd5152c6a5254c877fa997f8ab69bd00e21a2bb8db1a88f53681
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" style=3D"font-size:16px;"><head></head><head><meta charset=
+=3D"utf-8"/><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=
+=3D"IE=3Dedge"/><!--<![endif]--><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"/><meta name=3D"x-apple-disable-message-refo=
+rmatting"/><meta name=3D"format-detection" content=3D"telephone=3Dno,addres=
+s=3Dno,email=3Dno,date=3Dno,url=3Dno"/><meta name=3D"color-scheme" content=
+=3D"light"/><meta name=3D"supported-color-schemes" content=3D"light"/><titl=
+e>=F0=9F=93=B8 Instagram&#39;s AI-driven identity crisis</title><!--[if mso=
+]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:Pixels=
+PerInch></o:OfficeDocumentSettings></xml><![endif]--><style>
+  :root { color-scheme: light; supported-color-schemes: light; }
+  body { margin: 0; padding: 0; min-width: 100%!important; -ms-text-size-ad=
+just: 100% !important; -webkit-transform: scale(1) !important; -webkit-text=
+-size-adjust: 100% !important; -webkit-font-smoothing: antialiased !importa=
+nt; }
+  .body { word-wrap: normal; word-spacing:normal; }
+  table.mso { width: 100%; border-collapse: collapse; padding: 0; table-lay=
+out: fixed; }
+  img { border: 0; outline: none; }
+  table {  mso-table-lspace: 0px; mso-table-rspace: 0px; }
+  td, a, span {  mso-line-height-rule: exactly; }
+  #root [x-apple-data-detectors=3Dtrue],
+  a[x-apple-data-detectors=3Dtrue],
+  #MessageViewBody a { color: inherit !important; text-decoration: inherit =
+!important; font-size: inherit !important; font-family: inherit !important;=
+ font-weight: inherit !important; line-height: inherit !important; }
+  span.MsoHyperlink { color: inherit !important; mso-style-priority: 99 !im=
+portant; }
+  span.MsoHyperlinkFollowed { color: inherit !important; mso-style-priority=
+: 99 !important; }
+  .a { background-color:#ffffff; }
+  .b { background-color:#222222; }
+  .c  { background-color:#ffffff; }
+  .d { background-color:#f0f4ff; }
+  .d2 { background-color:#f8f8f8; }
+  .d3 { background-color:#FFFFFF; }
+  h1 a { text-decoration:underline;color:#255bee !important;font-weight:bol=
+d; }
+  h2 a { text-decoration:underline;color:#255bee !important;font-weight:bol=
+d; }
+  h3 a { text-decoration:underline;color:#255bee !important;font-weight:bol=
+d; }
+  h4 a { text-decoration:underline;color:#255bee !important;font-weight:bol=
+d; }
+  h5 a { text-decoration:underline;color:#255bee !important;font-weight:bol=
+d; }
+  h6 a { text-decoration:underline;color:#255bee !important;font-weight:bol=
+d; }
+  h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, ul, li, ol, p=
+, p a { margin: 0;padding: 0; }
+  h1 { font-family:'Helvetica',Arial,sans-serif;font-weight:700;font-size:2=
+8px;color:#000000;line-height:1.75;padding-bottom:4px;padding-top:16px;mso-=
+margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h2 { font-family:'Helvetica',Arial,sans-serif;font-weight:700;font-size:2=
+4px;color:#000000;line-height:1.5;padding-bottom:4px;padding-top:16px;mso-m=
+argin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h3 { font-family:'Helvetica',Arial,sans-serif;font-weight:700;font-size:2=
+2px;color:#000000;line-height:1.25;padding-bottom:4px;padding-top:12px;mso-=
+margin-top-alt:12px;mso-margin-bottom-alt:4px }
+  h4 { font-family:'Helvetica',Arial,sans-serif;font-weight:700;font-size:2=
+2px;color:#000000;line-height:1.125;padding-bottom:4px;padding-top:px;mso-m=
+argin-top-alt:px;mso-margin-bottom-alt:4px }
+  h5 { font-family:'Helvetica',Arial,sans-serif;font-weight:400;font-size:1=
+8px;color:#000000;line-height:1;padding-bottom:4px;padding-top:16px;mso-mar=
+gin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h6 { font-family:'Helvetica',Arial,sans-serif;font-weight:400;font-size:1=
+4px;color:#000000;line-height:0.875;padding-bottom:10px;padding-top:12px;ms=
+o-margin-top-alt:12px;mso-margin-bottom-alt:10px }
+  p { font-family:'Helvetica',Arial,sans-serif;font-weight:400;color:#00000=
+0;font-size:16px;line-height:1.5;padding-bottom:8px;padding-top:8px;mso-mar=
+gin-top-alt:8px;mso-margin-bottom-alt:8px; }
+  p a, .e a, ul a, li a, .h a, .h2 a, .h3 a { word-break:break-word;color:#=
+255bee !important;text-decoration:underline;text-decoration-color:#255bee;f=
+ont-weight:bold; }
+  p a span, .e a span, ul a span, li a span { color: inherit }
+  p .bold { font-weight:bold;color:#000000; }
+  p span[style*=3D"font-size"] { line-height: 1.6; }
+  .f p { font-size:12px;line-height:15px;color:#000000;padding:0; }
+  .f p a { color:#000000 !important; }
+  .g p { font-family:'Helvetica',Arial,sans-serif;font-size:14px;line-heigh=
+t:20px;font-weight:normal;margin:0; }
+  .g p a  { text-decoration: underline; }
+  .i p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-size=
+:16px;color:#000000; }
+  .i p a { color:#000000 !important; }
+  .i2 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-siz=
+e:15px;color:#2D2D2D; }
+  .i2 p a { color:#2D2D2D !important; }
+  .i3 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.8;font-siz=
+e:24px;color:#2D2D2D; }
+  .i3 p a { color:#2D2D2D !important; }
+  .h p a { color:#595959 !important; }
+  .h2 p a { color:#595959 !important; }
+  .h3 p a { color:#595959 !important; }
+  .f p a, .i p a, .i2 p a, .i3 p a, .h p a, .h2 p a, .h3 p a { text-decorat=
+ion:underline; }
+  .j { border-top:2px Solid #494949; }
+  .k p { padding-left:15px;padding-bottom:0px;padding-top:6px;mso-margin-to=
+p-alt:6px;mso-margin-bottom-alt:0px;mso-margin-left-alt:15px; }
+  .o { background-color:#FFFFFF;border:1px solid #F1F1F1;border-radius:6px;=
+ }
+  .o p { font-family:'Helvetica',Arial,sans-serif;padding:0px;margin:0px; }
+  .l p,
+  .l p a, .l a { font-size:14px;line-height:20px;font-weight: bold;color:#2=
+D2D2D;padding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .m p,
+  .m p a { font-size:13px;line-height:18px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .n p,
+  .n p a { font-size:12px;line-height:17px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .p { background-color:#FFFFFF;max-width:520px;border:1px solid #E1E8ED;bo=
+rder:1px solid rgba(80, 80, 80, 0.3);border-radius:5px; }
+  .q { font-size:16px;font-family:Helvetica,Roboto,Calibri,sans-serif !impo=
+rtant;border:1px solid #e1e8ed;border:1px solid rgba(80, 80, 80, 0.3);borde=
+r-radius:10px;background-color:#FFFFFF; }
+  .q p { font-size:16px;font-family:system-ui,Helvetica,Roboto,Calibri,sans=
+-serif !important;color:#222222;padding:4px 0; }
+  .r { border:1px solid #E1E8ED !important;border-radius:5px; }
+  .s p { font-size: 14px; line-height: 17px; font-weight: 400; color: #6978=
+82; text-decoration: none; }
+  .t p { font-family:'Helvetica',Arial,sans-serif;font-size:12px;line-heigh=
+t:1.5;font-weight:400;color:#222222;font-style:italic;padding:0px; }
+  .v { border-radius:6px;border:solid 3px #2581ee;background-color:#2581ee;=
+font-family:'Helvetica',Arial,sans-serif;color:#ffffff; }
+  .v a { text-decoration:none;display:block;color:#ffffff; }
+  .w p { font-size:12px;line-height:15px;font-weight:400;color:#FFFFFF; }
+  .w p a { text-decoration: underline !important;color:#FFFFFF !important; =
+}
+  ul { font-family:'Helvetica',Arial,sans-serif;margin:0px 0px 0px 25px !im=
+portant;padding:0px !important;color:#222222;line-height:24px;list-style:di=
+sc;font-size:16px; }
+  ul > li { font-family:'Helvetica',Arial,sans-serif;margin:5px 0px 0px 0px=
+ !important;padding: 0px 0px 0px 0px !important; color: #222222; list-style=
+:disc; }
+  ol { font-family:'Helvetica',Arial,sans-serif;margin: 0px 0px 0px 25px !i=
+mportant;padding:0px !important;color:#222222;line-height:24px;list-style:d=
+ecimal;font-size:16px; }
+  ol > li { font-family:'Helvetica',Arial,sans-serif;margin:5px 0px 0px 0px=
+ !important;padding: 0px 0px 0px 0px !important; color: #222222; }
+  .e h3,
+  .e p,
+  .e span { padding-bottom:0px;padding-top:0px;mso-margin-top-alt:0px;mso-m=
+argin-bottom-alt:0px; }
+  .e span,
+  .e li { font-family:'Helvetica',Arial,sans-serif;font-size:16px;color:#00=
+0000;line-height:24px; }
+  .rec { font-family:  ui-sans-serif, system-ui, -apple-system, BlinkMacSys=
+temFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-ser=
+if, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color E=
+moji" !important; }
+  .rec__button:hover { background-color: #f9fafb !important; }
+  .copyright a {color: inherit !important; text-decoration: none !important=
+; font-size: inherit !important; font-family: inherit !important; font-weig=
+ht: inherit !important; line-height: inherit !important;}
+  .txt_social p { padding: 0; word-break: break-all; }
+  .table, .table-c, .table-h { border: 1px solid #C0C0C0; }
+  .table-c { padding:5px; background-color:#FFFFFF; }
+  .table-c p { color: #2D2D2D; font-family:'Helvetica',Arial,sans-serif !im=
+portant;overflow-wrap: break-word; }
+  .table-h { padding:5px; background-color:#F1F1F1; }
+  .table-h p { color: #2A2A2A; font-family:'Trebuchet MS','Lucida Grande',T=
+ahoma,sans-serif !important;overflow-wrap: break-word; }
+  @media only screen and (max-width:667px) {
+    .aa, .w100pc { width: 100% !important; }
+    .bb img { width: 100% !important; height: auto !important; max-width: n=
+one !important; }
+    .cc { padding: 0px 8px !important; }
+    .ee { padding-top:10px !important;padding-bottom:10px !important; }
+    .ff ul, .ff ol { margin: 0px 0px 0px 10px !important;padding: 0px !impo=
+rtant; }
+    .ff li { margin:5px 0px 0px 10px !important; }
+    .r {height:140px !important;}
+    .s p { font-size:13px !important;line-height:15px !important; }
+    .mob-hide {display:none !important;}
+    .mob-show {display: block !important; width: auto !important; overflow:=
+ visible !important; float: none !important; max-height: inherit !important=
+; line-height: inherit !important;}
+    .mob-stack {width:100% !important;display:block !important;}
+    .mob-w-full {width:100% !important;}
+    .mob-block {display:block !important;}
+    .embed-img {padding:0px 0px 12px 0px !important;}
+    .socialShare {padding-top:15px !important;}
+    .rec { padding-left:15px!important;padding-right:15px!important; }
+    .bodyWrapper { padding:10px 4px 10px 4px !important; }
+    .social-mobile {float:left !important;margin-top:10px !important;}
+  }
+  @media screen and (max-width: 480px) {
+    u + .a .gg { width: 100% !important; width: 100vw !important; }
+    .tok-heart { padding-top:75% !important; }
+    .tok-play { padding-top: 250px !important; }
+  }
+  @media screen and (max-width: 320px) {
+    .tok-heart { padding-top:65% !important; }
+  }
+    .f {
+    display: none;
+}
+  .u { border: 1px solid #CACACA !important; border-radius: 2px !important;=
+ background-color: #ffffff !important; padding: 0px 13px 0px 13px !importan=
+t; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Se=
+goe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif !important;fon=
+t-size: 12px !important; color: #767676 !important; }
+  .u a { text-decoration: none; display: block !important; color: #767676 !=
+important; margin: 0px !important; }
+  .u span, .u img { color: #767676 !important;margin:0px !important; max-he=
+ight:32px !important;background-color:#ffffff !important; }
+</style><!--[if mso]><style type=3D"text/css">
+    h1, h2, h3, h4, h5, h6 {font-family: Arial, sans-serif !important;}
+    body, table, td, p, a, span {font-family: Arial, sans-serif !important;=
+}
+    sup { font-size: 100% !important;vertical-align: .5em !important;mso-te=
+xt-raise: -1.5% !important;line-height: 0 !important; }
+    ul { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ul li { margin-left: 0px !important; mso-special-format: decimal; }
+    ol { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ol li { margin-left: 0px !important; mso-special-format: decimal; }
+    li.listItem { margin-left:15px !important; margin-top:0px !important; }
+    .paddingDesktop { padding: 10px 0 !important; }
+    .edm_outlooklist { margin-left: -20px !important; }
+    .embedImage { display:none !important; }
+</style><![endif]--><!-- __merge_tags_in_links__ --><style></style></head><=
+body class=3D"a" style=3D"margin:0px auto;padding:0px;word-wrap:normal;word=
+-spacing:normal;background-color:#ffffff;"><div role=3D"article" aria-roled=
+escription=3D"email" aria-label=3D"email_name" lang=3D"en" style=3D"font-si=
+ze:1rem"><div style=3D"display:none;max-height:0px;overflow:hidden;"> PLUS:=
+ New DeepSeek paper hints at next-gen model architecture &#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#16=
+0;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&=
+#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#820=
+4;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#=
+8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160=
+;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#=
+160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204=
+;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8=
+204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;=
+&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#1=
+60;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;=
+&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#82=
+04;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&#8204;&#160;&=
+#8204;&#160;&#8204;&#160;&#8204; </div><table role=3D"none" width=3D"100%" =
+border=3D"0" cellspacing=3D"0" align=3D"center" cellpadding=3D"0" class=3D"=
+gg"><tr><td align=3D"center" valign=3D"top"><table role=3D"none" width=3D"6=
+70" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"aa" style=3D"=
+width:670px;table-layout:fixed;"><tr><td class=3D"bodyWrapper" align=3D"cen=
+ter" valign=3D"top" style=3D"padding:10px 2px 10px 2px;"><table role=3D"non=
+e" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D=
+"center"><tr><td align=3D"center" valign=3D"top" style=3D"border-width:0px =
+0px 0px 0px;border-style: solid; border-color: #ffffff;border-radius:10px 1=
+0px 0px 0px;background-color:#ffffff;" class=3D"c"><table role=3D"none" wid=
+th=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"cente=
+r"><tr id=3D"header"><td style=3D"padding:15px 15px 0px 15px;"><div style=
+=3D"padding-top:0px;padding-right:0px;padding-bottom:20px;padding-left:0px;=
+"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" align=3D"center"><tr><td class=3D"f" align=3D"Left" valign=3D"t=
+op"><p> &nbsp; <a href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dS=
+nm3kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_H-d-Qvprh27_tHD1P4-4g3tsXbJjCfR55pm=
+gEah01t-CknLGvWU2fewF90SkJ5qGfqxSzLtSb-82eT2A1KVc2nsLw5PnOEG4m8GcFVrXjxO1kb=
+LpQejUDT7b_tAmKmFqxa1XhvdJG__I8Fu9aW_76fc73fY9aFBNP7sfbApyz7n583gmawkMTn2kt=
+jUFIQOn8Mym4ywmBPhgk0fCXXYkLNhu4q0cgkZTM81HJ3tNkbk62mIkWaONY2e7_uEgL7PZ5GQy=
+OJYIoEOK28mwg8545hjB7V9MuyYGfP3GlZdslT3OMUopBdTBOEbYMYZmetaOh2xXoXcLyq_BtCp=
+XgWCZj846HxRGZMX3PEZjyRRrivruudvoB0uVgu4wJ1K5iWq83wMvt5mgby5xh8bcDGLfCKDjSU=
+UfUHNdhL85hO0oAGX7Q5dox2mztzoYwHRd16RpEpiGKX23EgA6S9qHK_gpXVkdzgl-MC_3DBZOf=
+7hTcabmefYsRhOouIvWcpva87TdErL-zpOeHy0GlwIM6LP4nNQ2Rvgwf-EusEnJJUZu0f52_xO7=
+ZVkEmFn0v5lg0IO1MSrFN2KwTAgWsxI2lA0qQpU0VdBMzeG9nYv2UL9pjBzV9rcf0TxCid7nv5P=
+x-TaYdv16_cXXfkLVjB1m6bS_DjAD8dOUEO_0Ce5QoVE4r_D8zytF3WYModPQOajgRMG7YG73PW=
+H8tPKM8FOEOtA1MINAhq-YbspwxdrsaA2Btf2F6oQD4IlsvIN-7PvM9jt5Gg-TJg_kV3fxJ2ncY=
+bfXlSbV0C1SSpFUqJJ7vHL1vYyNL7TtMxdVVtd5dsQdejI-Q/4my/KnoaNglGS0SzCF8hNtNtCg=
+/h0/h001.gJ-cIn5Q1MD1TsG63y3QwktQP9bx9s4XzGIS4p9Sz94"><span class=3D"transl=
+ation_missing" title=3D"translation missing: en.templates.posts.email.heade=
+r.read_online">Read Online</span></a></p></td></tr><tr><td style=3D"line-he=
+ight:0;"><div data-open-tracking=3D"true"> <img src=3D"https://elinke1c.dai=
+ly.therundown.ai/ss/o/u001.7o2JdNgFMvCjDUXDAQ6CdA/4my/KnoaNglGS0SzCF8hNtNtC=
+g/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1p=
+x !important;width:1px !important;border-width:0 !important;margin-top:0 !i=
+mportant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0=
+ !important;padding-top:0 !important;padding-bottom:0 !important;padding-ri=
+ght:0 !important;padding-left:0 !important;"/> </div></td></tr></table></di=
+v></td></tr><tr id=3D"content-blocks"><td class=3D"email-card-body" align=
+=3D"center" valign=3D"top" style=3D"padding-bottom:px;"><table role=3D"none=
+" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"=
+center"><tr><td class=3D"dd" align=3D"right" style=3D"padding:0px 15px;text=
+-align:right;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%=
+;"><sup><b><a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/s=
+s/c/u001.dSnm3kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_H-d-Qvprh27_tHD1P4-4g3ts=
+XbJjCfR55pmgEah01t-GUfQ6F2umUmDCLMnJtkhaHMwx9fU1nme81nVmBAe6lGAYn3XyGCSqHX8=
+64Xr6OPN44ICUcYd3u4xjCOsScWPFagwN8PRPRp_-nir6X8O-E3bu6jKQAyxT2CrmYHUChYWkD7=
+E7NsS3jptkLKLAR7pi_genZNzzon2sNEjJlA2y3s0cruG9aj1gJLWps5EIUCZFsjK3A_KDsuFM2=
+vCbKSl5kFd0DO5TxlMRJ5DBr7h_WfT55wo5doiHCCVZF8L1QLQd_3m-_vTqdNsh9GwW_uCyRhS3=
+3rzbBK61TN2p-PmCa9OiRhkNoXSMbivgUYA-DJwNf8N4FfrKEjdu3isl0LlWrGyRjoBC6vfU74_=
+ZumlnRh4X9GYcBNZmIiys49G_DSgy6dG5NSUZCX6bca43yToRvOtDXM9mEn-AHiJsplVVKGnvdk=
+9xdYRU2JV0SuUfXETEyiyk1gAKT3IRTZEMDTXRmAWfidNHJrAnelLsBSlef0GUDYBWVUyEoLojt=
+xg8EMoVW-fXKxhs5f8ejCDNc_O59Uemta8bLaql4G9LvagMVF28EugAn4gqZaQhvP0R3iNA/4my=
+/KnoaNglGS0SzCF8hNtNtCg/h1/h001.eAFdNmQsNU61NlugwzjfWms9WgBb-r1QzwHayuCweJM=
+" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Read Online<=
+/span></a></b></sup><span style=3D"color:rgb(34, 34, 34);font-family:Helvet=
+ica, Arial, sans-serif;font-size:16px;"><sup> | </sup></span><sup><b><a cla=
+ss=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaG=
+d0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_H4wpkqf8EGTk1iM5Wu0HuoFIsKQVYDu_ovIaAd89V=
+_Nvs2jsW_lRswn84NkqTYMu8JVnw2IsjtESfB6_5xHNXcGwNRkUtsyoJavFVFku7A6LI7YSvRGt=
+qv9649DJaQE4lZ2uNsSYMV7AAhmq8Czz4T7EdrFgL2fyN3F20iYtloYDhyylymOpqva4zQLTyfz=
+DE0Hmv8XZeqOtMVlxDa_GWiIDVmGF156CRVTCSN1Wen6uQX5qkgpV4yy5bQZdnEiYfoYCS0kHE4=
+TzN_2bBKcVMYbsdatukBts6_thy5tabS6Mm2NfQzUYWdJprrMxUyL0v6cm7k0kvw8GFve0SyAKo=
+IUyQph4k_Ij7_gY2oBkrZQTry-OR79f_dKebityGGfUX0Fan-gY_rxn9_ri1JR3Y6zu8AwhXKMU=
+TH3moWfvHAbjF_ZGtlj6u475gENrA4z4-ex-ogJwlBqZPf4paTqsGxgokzOabrNDR9gjjaQ-MD5=
+kkYJ-A4OUQygLTlY1_hUGnfnVr9nF2WZwdyeA8RXflIfVNowaPQ3-zYQLEWM3IDTvimEZraLrB5=
+tVO_L0zi2bNeMOBJO5YJZJ9OegN6YqYLjoGno2xJYwDWNvXCXn0IzlcyitX7TYzD_LXCpvPIGeu=
+UFop8lTozLQpeKWffZykPWjGZiv_slmDi4u1pKn_fzZY28Ggg6Edx3vbWg6Cdq8Ha2Ryf14v7VO=
+UcCxi6rgDjWBaNHaZgn46oN8VNIwa-CD0nKHy_0Za-Z9_Zwu3d0QWV8b88-yCs1WxlfCpctaz5/=
+4my/KnoaNglGS0SzCF8hNtNtCg/h2/h001.YhHylkLYCYHwh-i869-MnjKAfdm9bnK0ux1al_DU=
+-9I" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Sign Up</=
+span></a></b></sup><span style=3D"color:rgb(34, 34, 34);font-family:Helveti=
+ca, Arial, sans-serif;font-size:16px;"><sup> | </sup></span><sup><b><a clas=
+s=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.KT4rQsO6s=
+HS_v2VASG2xutt47WToq2lGcecIVNNQSNJJXsTbyja0MNJkdxClNtOPO7bWVC8G5SNwtEqed4o5=
+5-00goYqJiaXPJPhuWHyeesA0OI3ZJih68-CfGaEPCcYF2MGS7C-eqpV0iwNmMg5fa0IfYZ4mpq=
+YaLYfnndmb4lVh7jOYg8MtfhhtiyLSGNcm-_35RTu75SkMFE3CInjusjkVrSVWbNTZZNT6Qkfsb=
+wkuP7ANTXQCH31GU8Tyid5Y3fkgn4rVH1p6X97fsLEsQ/4my/KnoaNglGS0SzCF8hNtNtCg/h3/=
+h001.EBnmRpjxoY0qKKFetJHRvEmkdc6Ed1Fj7PzIvKFJyJ4" target=3D"_blank" rel=3D"=
+noopener noreferrer nofollow"><span>Advertise</span></a></b></sup></p></td>=
+</tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#000000" style=3D"ba=
+ckground-color:#000000;border-color:#000000;border-radius:10px;border-style=
+:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"no=
+ne" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td=
+ align=3D"center" valign=3D"top" style=3D"padding-bottom:8px;padding-left:1=
+5px;padding-right:15px;padding-top:2px; " class=3D"dd"><table role=3D"none"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 =
+auto;"><tr><td align=3D"center" valign=3D"top" style=3D"width:636px;"><a hr=
+ef=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.DrYDwug-xrpEbNqFhzTCdX=
+bYDepEG9Xkjyf7S3AIwOdXcusbZustUi6s2Q6rW3xKelBJZPwZEcdw7AGEuEFyAo4cdKpWlbP7Q=
+c3m6s3gYiIrQYb7j1zcghyERYi_t2B9Qh0Tj2yXLNRtGBtagONGml4DlwXR005MrxAdFCP9maVN=
+3AVMK7UcuDsG0bwwb6gZ6JvpJ0H40H3dCaVbAV24kuZrh97w6qqHFD2qOa-d6LsauSm6UjtLpwC=
+RDAlerpMI/4my/KnoaNglGS0SzCF8hNtNtCg/h4/h001.LNz4rI7i7zIl7sCSF-RseHyU4zmJQU=
+r5vPUOVNr2ObE" rel=3D"noopener noreferrer nofollow" style=3D"text-decoratio=
+n:none;" target=3D"_blank"><img src=3D"https://media.beehiiv.com/cdn-cgi/im=
+age/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/=
+asset/file/77d4a6c6-979c-4e0b-bc1e-145a4c3e2041/nebius-header.jpg?t=3D17672=
+88541" alt=3D"" height=3D"auto" width=3D"636" style=3D"display:block;width:=
+100%;" border=3D"0"/></a></td></tr></table></td></tr></table></td></tr></ta=
+ble></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px=
+;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:15=
+0.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#FFFFF=
+F" style=3D"background-color:#FFFFFF;border-color:#000000;border-radius:10p=
+x;border-style:solid;border-width:2px;padding:5.0px 0.0px 5.0px 0.0px;"><ta=
+ble role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0"><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-a=
+lign:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;">=
+<span style=3D""><b>Good morning, AI enthusiasts.</b></span><span style=3D"=
+"> The app that pioneered filter culture is now declaring the curated aesth=
+etic dead.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D=
+"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-l=
+ine-height-alt:150.0%;"><span style=3D"">Instagram head Adam Mosseri says A=
+I content has made polished posts worthless as proof of authenticity =E2=80=
+=94 and the platform that built its empire on the perfect grid is quickly s=
+crambling to evolve to the new dynamics of social media in the AI age.</spa=
+n></p></td></tr><tr><td align=3D"center" valign=3D"top" style=3D"font-size:=
+0px;line-height:0px;padding:12px 0px 12px;" class=3D"dd"><table class=3D"j"=
+ role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center"><tr><td> &nbsp; </td></tr></table></td></tr><tr><td cl=
+ass=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-br=
+eak:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">=
+<b>In today=E2=80=99s AI rundown:</b></span></p></td></tr><tr><td style=3D"=
+padding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:0px;" =
+class=3D"ee"><div style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul =
+style=3D"font-weight:400;list-style-type:disc;margin-bottom:8px !important;=
+margin-top:8px !important;padding:0px 0px 0px 0px;"><li class=3D"listItem u=
+ltext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;w=
+ord-break:break-word;"><span style=3D"">IG head says platform must =E2=80=
+=9Cevolve fast=E2=80=9D due to AI</span></p></li><li class=3D"listItem ulte=
+xt"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word=
+-break:break-word;"><span style=3D"">DeepSeek hints at next-gen AI architec=
+ture</span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-heig=
+ht-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span sty=
+le=3D"">Use Codex to write code on the web with AI agents</span></p></li><l=
+i class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:=
+0px;text-align:left;word-break:break-word;"><span style=3D"">Report: OAI ov=
+erhauling audio for upcoming device</span></p></li><li class=3D"listItem ul=
+text"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wo=
+rd-break:break-word;"><span style=3D"">4 new AI tools, community workflows,=
+ and more</span></p></li></ul></div></td></tr></table></td></tr></table></t=
+d></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-a=
+lign:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;">=
+</p></td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#000000" styl=
+e=3D"background-color:#000000;border-color:#000000;border-style:solid;borde=
+r-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D=
+"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd=
+" align=3D"center" style=3D"padding:0px 15px;text-align:center;word-break:b=
+reak-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"color:#=
+FFFFFF;"><b>LATEST DEVELOPMENTS</b></span></p></td></tr></table></td></tr><=
+/table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 1=
+5px;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt=
+:150.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#F=
+FFFFF" style=3D"background-color:#FFFFFF;border-color:#000000;border-radius=
+:10px;border-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"=
+><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0"><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"colo=
+r:#000000;font-weight:Normal;padding:0px 15px;text-align:left;"><h6 style=
+=3D"color:#000000;font-weight:Normal;mso-line-height-alt:87.5%;"><span styl=
+e=3D"">INSTAGRAM</span></h6></td></tr><tr><td class=3D"dd" align=3D"left" v=
+align=3D"top" style=3D"color:#000000;font-weight:Bold;padding:0px 15px;text=
+-align:left;"><h4 style=3D"color:#000000;font-weight:Bold;mso-line-height-a=
+lt:112.5%;">=F0=9F=93=B8<span style=3D"">=C2=A0</span><span style=3D""><b><=
+span style=3D"text-decoration:underline;"><a class=3D"link" href=3D"https:/=
+/elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMfyI2f2kos1bEWL1=
+RmJb8S7nTRMpH_ppuNHdJNA-wuV6qlpi2ZsjN5I3ihtCTT7o1YB1vnvnZnxsX6jsQ7HvV-NhZoy=
+tpJf5tRdp33p3r7zDUMaC-3BBz2Tjm2aQVctE6RE22YYrAft2JjBRzyIsenntR8axUmjr7qO1AF=
+3FzNzamXiOqTBNEpN2eGWWUndmJwFxmnzJsrkCRbXnT43FFUDcotasVPxbgb0N2qeAvxS5Znmem=
+ziVrYO1sFsVBp8HoCd5ufSww9gN-RjHGOCWeIWg/4my/KnoaNglGS0SzCF8hNtNtCg/h5/h001.=
+vvyrCCyZqmPvKQgr24fwub32qOJQNDW-4Yu86gh4QwQ" target=3D"_blank" rel=3D"noope=
+ner noreferrer nofollow"><span>IG head says platform must =E2=80=9Cevolve f=
+ast=E2=80=9D due to AI</span></a></span></b></span></h4></td></tr><tr><td a=
+lign=3D"center" valign=3D"top" style=3D"padding-bottom:8px;padding-left:15p=
+x;padding-right:15px;padding-top:2px; " class=3D"dd"><table role=3D"none" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 au=
+to;"><tr><td align=3D"center" valign=3D"top" style=3D"width:636px;"><img sr=
+c=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto=
+,onerror=3Dredirect,quality=3D80/uploads/asset/file/130ec4ee-c886-4bb2-a897=
+-fd3ebd645eea/mosseri.jpg?t=3D1767302288" alt=3D"" height=3D"auto" width=3D=
+"636" style=3D"display:block;width:100%;border-radius:0px 0px 0px 0px;borde=
+r-style:solid;border-width:0px 0px 0px 0px;box-sizing:border-box;border-col=
+or:#E5E7EB;" border=3D"0"/></td></tr><tr><td align=3D"left" valign=3D"top" =
+class=3D"t" style=3D"width:636px; padding: 4px 0px 4px 0px;"><p><span style=
+=3D"">Image source: @mosseri on Threads / The Rundown</span></p></td></tr><=
+/table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 1=
+5px;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt=
+:150.0%;"><span style=3D""><b>The Rundown: </b></span><span style=3D"">Inst=
+agram leader Adam Mosseri just </span><span style=3D""><a class=3D"link" hr=
+ef=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMfy=
+I2f2kos1bEWL1RmJb8S7nTRMpH_ppuNHdJNA-wuV6qlpi2ZsjN5I3ihtCTT7o1YB1vnvnZnxsX6=
+jsQ7HvV-NhZoytpJf5tRdp33p3r7zDUMaC-3BBz2Tjm2aQVctE6RE22YYrAft2JjBRzyIsenntR=
+8axUmjr7qO1AF3FzNzamXiOqTBNEpN2eGWWUndmJwMwMnLShmLNDr8EGTeV0OUjhNk7w18HVpj8=
+5NEd7m3v1piUVE5NjcdygEDEcyz_futSyYJUSG5hbcmaljo2v8D4/4my/KnoaNglGS0SzCF8hNt=
+NtCg/h6/h001.hGnnf2iY3crPoIn80gRi1BjccfS9IAuvYewFgZcFGHs" target=3D"_blank"=
+ rel=3D"noopener noreferrer nofollow"><span>posted</span></a></span><span s=
+tyle=3D""> a year-end essay arguing that AI-generated content has killed th=
+e curated aesthetic that made the app famous, saying that raw, unpolished p=
+osts are now the only proof that something is real.</span></p></td></tr><tr=
+><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;=
+word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span styl=
+e=3D""><b>The details: </b></span></p></td></tr><tr><td style=3D"padding-bo=
+ttom:10px;padding-left:25px;padding-right:25px;padding-top:0px;" class=3D"e=
+e"><div style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"f=
+ont-weight:400;list-style-type:disc;margin-bottom:8px !important;margin-top=
+:8px !important;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p =
+style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:=
+break-word;"><span style=3D"">Mosseri says most users under 25 have already=
+ abandoned the polished grid for more personal direct message photos and &q=
+uot;unflattering candids.&quot;</span></p></li><li class=3D"listItem ultext=
+"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-b=
+reak:break-word;"><span style=3D"">He also pushed for camera makers to cryp=
+tographically sign photos at capture to verify real media instead of just w=
+eeding out fakes.</span></p></li><li class=3D"listItem ultext"><p style=3D"=
+mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-wor=
+d;"><span style=3D"">Mosseri said Instagram needs to =E2=80=9Cevolve=E2=80=
+=9D fast, predicting a shift from trusting what images you see to scrutiniz=
+ing who posted it.</span></p></li><li class=3D"listItem ultext"><p style=3D=
+"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-wo=
+rd;"><span style=3D"">Instagram plans to label AI content, surface more con=
+text about accounts, and build tools so creators can compete with AI.</span=
+></p></li></ul></div></td></tr><tr><td class=3D"dd" align=3D"left" style=3D=
+"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-l=
+ine-height-alt:150.0%;"><span style=3D""><b>Why it matters: </b></span><spa=
+n style=3D"">IG was one of the pioneers of social media=E2=80=99s =E2=80=9C=
+filter culture=E2=80=9D, so there=E2=80=99s some irony in now declaring the=
+ death of authenticity. But the trend feels accurate, with both a shift in =
+how younger users communicate and the flood of AI images, video, and conten=
+t completely upending traditional dynamics of social media platforms. </spa=
+n></p></td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" al=
+ign=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-wor=
+d;"><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><table r=
+ole=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" style=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"background-color:#FFFFFF;=
+border-color:#000000;border-radius:10px;border-style:solid;border-width:2px=
+;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"=
+left" valign=3D"top" style=3D"color:#000000;font-weight:Normal;padding:0px =
+15px;text-align:left;"><h6 style=3D"color:#000000;font-weight:Normal;mso-li=
+ne-height-alt:87.5%;"><span style=3D"">TOGETHER WITH NEBIUS</span></h6></td=
+></tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#00=
+0000;font-weight:Bold;padding:0px 15px;text-align:left;"><h4 style=3D"color=
+:#000000;font-weight:Bold;mso-line-height-alt:112.5%;"><span style=3D"">=F0=
+=9F=92=BB </span><span style=3D""><b><a class=3D"link" href=3D"https://elin=
+ke1c.daily.therundown.ai/ss/c/u001.DrYDwug-xrpEbNqFhzTCdXbYDepEG9Xkjyf7S3AI=
+wOdXcusbZustUi6s2Q6rW3xKelBJZPwZEcdw7AGEuEFyAo4cdKpWlbP7Qc3m6s3gYiIrQYb7j1z=
+cghyERYi_t2B9Qh0Tj2yXLNRtGBtagONGml4DlwXR005MrxAdFCP9maVN3AVMK7UcuDsG0bwwb6=
+gZqNmYzz-uiyeghRoVVF61JyNRHckGL-iYehPSFQ9regwtfRdielwtJtPPvdsADzbu/4my/Knoa=
+NglGS0SzCF8hNtNtCg/h7/h001.zFdB1FuQOhXZbM1O8XHgkyrqfWEa6BgOD_ii-vL8rpY" tar=
+get=3D"_blank" rel=3D"noopener noreferrer nofollow"><span><span style=3D"te=
+xt-decoration:underline;">Nebius Token Factory =E2=80=94 Post-training Laun=
+ch</span></span></a></b></span></h4></td></tr><tr><td align=3D"center" vali=
+gn=3D"top" style=3D"padding-bottom:8px;padding-left:15px;padding-right:15px=
+;padding-top:2px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=
+=3D"center" valign=3D"top" style=3D"width:636px;"><a href=3D"https://elinke=
+1c.daily.therundown.ai/ss/c/u001.DrYDwug-xrpEbNqFhzTCdXbYDepEG9Xkjyf7S3AIwO=
+dXcusbZustUi6s2Q6rW3xKelBJZPwZEcdw7AGEuEFyAo4cdKpWlbP7Qc3m6s3gYiIrQYb7j1zcg=
+hyERYi_t2B9Qh0Tj2yXLNRtGBtagONGml4DlwXR005MrxAdFCP9maVN3AVMK7UcuDsG0bwwb6gZ=
+xHX0FrSN8VgAT-36YcrKyBwheF3nIks6wi7oBIvG-905yWRuN1PETsuhRzcRLs9_/4my/KnoaNg=
+lGS0SzCF8hNtNtCg/h8/h001.X--9YrcGJ_AdgmknRp8hgT_PLnvJORQgeRToSw3gj14" rel=
+=3D"noopener noreferrer nofollow" style=3D"text-decoration:none;" target=3D=
+"_blank"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-do=
+wn,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/a28bfdf=
+2-38dc-4795-9196-907b8aa7b9e7/image3__5_.jpg?t=3D1767288844" alt=3D"" heigh=
+t=3D"auto" width=3D"636" style=3D"display:block;width:100%;border-radius:0p=
+x 0px 0px 0px;border-style:solid;border-width:0px 0px 0px 0px;box-sizing:bo=
+rder-box;border-color:#E5E7EB;" border=3D"0"/></a></td></tr></table></td></=
+tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align=
+:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><spa=
+n style=3D""><b>The Rundown:</b></span><span style=3D""> Nebius Token Facto=
+ry just launched Post-training =E2=80=94 the missing layer for teams buildi=
+ng production-grade AI on open-source </span><span style=3D""><a class=3D"l=
+ink" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.DrYDwug-xrpEbNq=
+FhzTCdXbYDepEG9Xkjyf7S3AIwOdXcusbZustUi6s2Q6rW3xKelBJZPwZEcdw7AGEuEFyAo4cdK=
+pWlbP7Qc3m6s3gYiIrQYb7j1zcghyERYi_t2B9Qh0Tj2yXLNRtGBtagONGml4DlwXR005MrxAdF=
+CP9maVN3AVMK7UcuDsG0bwwb6gZK_-9AJlV1vp2gR0VIPgBiUtgn4sdBSzbs4VCEmZWA9IhRB2x=
+6qcSMMfJRBSYsY37/4my/KnoaNglGS0SzCF8hNtNtCg/h9/h001.mtx9yfmfY7LIXYkxYl27_m_=
+sY2gNv6ewmkOASYCvUsc" target=3D"_blank" rel=3D"noopener noreferrer nofollow=
+"><span>models</span></a></span><span style=3D"">. You can now fine-tune fr=
+ontier models like DeepSeek V3, GPT-OSS 20B & 120B, and Qwen3 Coder across =
+multi-node GPU clusters with stability up to 131k context.</span></p></td><=
+/tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-alig=
+n:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><sp=
+an style=3D""><b>What you get with Post-training:</b></span></p></td></tr><=
+tr><td style=3D"padding-bottom:10px;padding-left:25px;padding-right:25px;pa=
+dding-top:0px;" class=3D"ee"><div style=3D"margin-left:0px;" class=3D"edm_o=
+utlooklist"><ul style=3D"font-weight:400;list-style-type:disc;margin-bottom=
+:8px !important;margin-top:8px !important;padding:0px 0px 0px 0px;"><li cla=
+ss=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;t=
+ext-align:left;word-break:break-word;"><span style=3D"">Models deeply adapt=
+ed to your domain, tone, structure, and workflows</span></p></li><li class=
+=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;tex=
+t-align:left;word-break:break-word;"><span style=3D"">One-click deployment =
+with dedicated endpoints, SLAs, and zero-retnetino privacy</span></p></li><=
+li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding=
+:0px;text-align:left;word-break:break-word;"><span style=3D"">Shift from ge=
+neric base models to custom production engines</span></p></li></ul></div></=
+td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-=
+align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"=
+><span style=3D""><span style=3D"text-decoration:underline;"><a class=3D"li=
+nk" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.DrYDwug-xrpEbNqF=
+hzTCdXbYDepEG9Xkjyf7S3AIwOdXcusbZustUi6s2Q6rW3xKelBJZPwZEcdw7AGEuEFyAo4cdKp=
+WlbP7Qc3m6s3gYiIrQYb7j1zcghyERYi_t2B9Qh0Tj2yXLNRtGBtagONGml4DlwXR005MrxAdFC=
+P9maVN3AVMK7UcuDsG0bwwb6gZzj2FFgqTQP7HGhVDcyIgFD8uwiBI7zokW4bJj_urGZPurcgvQ=
+eE_Cx_gk-a3f4SH/4my/KnoaNglGS0SzCF8hNtNtCg/h10/h001.WJQrQzbMgGybku5AcvdX8nV=
+vQLA0uYs3r00zsxYu-lI" target=3D"_blank" rel=3D"noopener noreferrer nofollow=
+"><span>Start fine-tuning now</span></a></span></span><span style=3D""> =E2=
+=80=93 GPT-OSS 20B & 120B (Full FT + LoRA FT) is free until Jan 9.</span></=
+p></td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" align=
+=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"=
+><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><table role=
+=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" s=
+tyle=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"background-color:#FFFFFF;bor=
+der-color:#000000;border-radius:10px;border-style:solid;border-width:2px;pa=
+dding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"le=
+ft" valign=3D"top" style=3D"color:#000000;font-weight:Normal;padding:0px 15=
+px;text-align:left;"><h6 style=3D"color:#000000;font-weight:Normal;mso-line=
+-height-alt:87.5%;"><span style=3D"">DEEPSEEK</span></h6></td></tr><tr><td =
+class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#000000;font-weig=
+ht:Bold;padding:0px 15px;text-align:left;"><h4 style=3D"color:#000000;font-=
+weight:Bold;mso-line-height-alt:112.5%;">=F0=9F=93=88<span style=3D"">=C2=
+=A0</span><span style=3D""><b><span style=3D"text-decoration:underline;"><a=
+ class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.Q334=
+NVcZU4O6L6VKRz8ijMNgampOZl8dF7lEf1g2D9OONJ6TCJgbTYZy7dQtwk4Cik8si7T6y7EbZQS=
+OVIy2c945nQ2UqW7BhGZ0H1JhxX9s4kHOTy3GZqdfM_kQY8B36qZ_7WSnwvpK-Q_7dHsv_0_P3U=
+IsComQBigWVo18sYMJmnygBgEnkQFRe0z5XWGBwo3qk4oANdthKz0s7eJQShpiqeVtoKHPVSgxA=
+j2ikNEJ8mWiqRwhJ3lxDah9jMO1/4my/KnoaNglGS0SzCF8hNtNtCg/h11/h001.f7zcqB9t5nO=
+5KMRHwqcFrwR8S5wi3Osts39Sc1i4-Gg" target=3D"_blank" rel=3D"noopener norefer=
+rer nofollow"><span>DeepSeek hints at next-gen model architecture</span></a=
+></span></b></span></h4></td></tr><tr><td align=3D"center" valign=3D"top" s=
+tyle=3D"padding-bottom:8px;padding-left:15px;padding-right:15px;padding-top=
+:2px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"center" va=
+lign=3D"top" style=3D"width:636px;"><img src=3D"https://media.beehiiv.com/c=
+dn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80=
+/uploads/asset/file/cfc52c45-0786-4e13-858a-d84e9dcb1e0e/whale-1.jpg?t=3D17=
+67296034" alt=3D"" height=3D"auto" width=3D"636" style=3D"display:block;wid=
+th:100%;border-radius:0px 0px 0px 0px;border-style:solid;border-width:0px 0=
+px 0px 0px;box-sizing:border-box;border-color:#E5E7EB;" border=3D"0"/></td>=
+</tr><tr><td align=3D"left" valign=3D"top" class=3D"t" style=3D"width:636px=
+; padding: 4px 0px 4px 0px;"><p><span style=3D"">Image source: Nano Banana =
+Pro / The Rundown</span></p></td></tr></table></td></tr><tr><td class=3D"dd=
+" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break=
+-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>The Ru=
+ndown:</b></span><span style=3D""> DeepSeek just </span><span style=3D""><a=
+ class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.Q334=
+NVcZU4O6L6VKRz8ijMNgampOZl8dF7lEf1g2D9OONJ6TCJgbTYZy7dQtwk4Cik8si7T6y7EbZQS=
+OVIy2c945nQ2UqW7BhGZ0H1JhxX9s4kHOTy3GZqdfM_kQY8B36qZ_7WSnwvpK-Q_7dHsv_0_P3U=
+IsComQBigWVo18sYMJmnygBgEnkQFRe0z5XWGBXVc1wDjh7PbSOK3tMdnx94IyrN36p8LzUzKtx=
+YTzMCj5ztbie6DPrPjbAOlDslGu/4my/KnoaNglGS0SzCF8hNtNtCg/h12/h001._0_YjnQ6jlE=
+Dec-dd_AICA3ZazV1-D68FiFfCNbtyTI" target=3D"_blank" rel=3D"noopener norefer=
+rer nofollow"><span>published</span></a></span><span style=3D""> new resear=
+ch that proposes changes to how neural networks are structured for breakthr=
+oughs in model cost and stability, a potential preview of efficiency gains =
+heading into its next major release.</span></p></td></tr><tr><td class=3D"d=
+d" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:brea=
+k-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>The d=
+etails: </b></span></p></td></tr><tr><td style=3D"padding-bottom:10px;paddi=
+ng-left:25px;padding-right:25px;padding-top:0px;" class=3D"ee"><div style=
+=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:40=
+0;list-style-type:disc;margin-bottom:8px !important;margin-top:8px !importa=
+nt;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"mso-=
+line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;">=
+<span style=3D"">The paper introduces mHC, a technique that stabilizes and =
+improves AI training at a large scale while adding minimal extra computing =
+cost.</span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-hei=
+ght-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span st=
+yle=3D"">CEO Liang Wenfeng co-authored and personally uploaded the paper to=
+ arXiv, signaling continued hands-on involvement in the startup=E2=80=99s r=
+esearch. </span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line=
+-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><spa=
+n style=3D"">Tests on 3B, 9B, and 27B parameter models showed improved benc=
+hmark scores over existing methods, especially reasoning tasks.</span></p><=
+/li><li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;pa=
+dding:0px;text-align:left;word-break:break-word;"><span style=3D"">The timi=
+ng aligns with previous papers telegraphing DeepSeek=E2=80=99s moves, with =
+similar research dropping before R1 and V3. </span></p></li></ul></div></td=
+></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-al=
+ign:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><=
+span style=3D""><b>Why it matters: </b></span><span style=3D"">Last year=E2=
+=80=99s DeepSeek moment made waves with R1 nearing frontier models at a fra=
+ction of the cost, and this paper hints that they may not be done finding e=
+fficiencies. Between increased access to advanced AI chips and these types =
+of research breakthroughs, China=E2=80=99s releases will be more competitiv=
+e than ever in 2026.</span></p></td></tr></table></td></tr></table></td></t=
+r><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:=
+left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p><=
+/td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"=
+background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-sty=
+le:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"=
+none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><=
+td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#000000;font-w=
+eight:Normal;padding:0px 15px;text-align:left;"><h6 style=3D"color:#000000;=
+font-weight:Normal;mso-line-height-alt:87.5%;"><span style=3D"">AI TRAINING=
+</span></h6></td></tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" st=
+yle=3D"color:#000000;font-weight:Bold;padding:0px 15px;text-align:left;"><h=
+4 style=3D"color:#000000;font-weight:Bold;mso-line-height-alt:112.5%;"><spa=
+n style=3D"">=F0=9F=92=BB </span><span style=3D""><b><span style=3D"text-de=
+coration:underline;"><a class=3D"link" href=3D"https://elinke1c.daily.theru=
+ndown.ai/ss/c/u001.Q334NVcZU4O6L6VKRz8ijB1TBWraWSjSa1EgItxTfJGQ-jANxj95qxcp=
+QckVwf8-ucECc7npd-UD-xqdnTw7xv5lR-nwV9ApS8K3ERC4be6763epMgikgg0pwBUOM_IZE4q=
+BWnCtG-Wy7x9vfriVi_R6lz6Ul8ym-Gwbp_hVxYZCrvG8oW1F-TK2UoGQm_GNjHijyPJBPJM-4C=
+DnRtYIWb_8wPV8PysJWnhb1P9v9hCxe4b-FsHsF7zpsz-niZUDMOkn8mE3P-vgP2DEXN5bfSMOA=
+ZX_wOLboaft-9Xwmqhn92NyfGmLbyLSfAbasKu9/4my/KnoaNglGS0SzCF8hNtNtCg/h13/h001=
+.VfzjKySOS3AAbC-zf2rfvSxyzmQW-A8j8T9X3uR3VfA" target=3D"_blank" rel=3D"noop=
+ener noreferrer nofollow"><span>Use Codex to write code on the web with AI =
+agents</span></a></span></b></span></h4></td></tr><tr><td align=3D"center" =
+valign=3D"top" style=3D"padding-bottom:8px;padding-left:15px;padding-right:=
+15px;padding-top:2px; " class=3D"dd"><table role=3D"none" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td ali=
+gn=3D"center" valign=3D"top" style=3D"width:636px;"><img src=3D"https://med=
+ia.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredir=
+ect,quality=3D80/uploads/asset/file/5236a930-32e5-4237-93e2-8d463b698179/un=
+named__36_.jpg?t=3D1767303174" alt=3D"" height=3D"auto" width=3D"636" style=
+=3D"display:block;width:100%;border-radius:0px 0px 0px 0px;border-style:sol=
+id;border-width:0px 0px 0px 0px;box-sizing:border-box;border-color:#E5E7EB;=
+" border=3D"0"/></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"l=
+eft" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p s=
+tyle=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>The Rundown:</b></=
+span><span style=3D""> In this tutorial, you will learn how to use OpenAI&#=
+39;s Codex to ship your first change from a GitHub repository without writi=
+ng code by hand =E2=80=94 connecting a repo, planning changes, implementing=
+ them with AI agents, and opening pull requests.</span></p></td></tr><tr><t=
+d class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;wor=
+d-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=
+=3D""><b>Step-by-step:</b></span></p></td></tr><tr><td style=3D"padding-bot=
+tom:10px;padding-left:25px;padding-right:25px;padding-top:0px;" class=3D"ee=
+"><div style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ol start=3D"1"=
+ style=3D"list-style-type:decimal;margin:0px 0px;padding:0px 0px 0px 0px;">=
+<li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;paddin=
+g:0px;text-align:left;word-break:break-word;"><span style=3D"">Go to ChatGP=
+T, open the left sidebar, and click &quot;Codex&quot; to access it</span></=
+p></li><li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%=
+;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">Click=
+ &quot;Manage environment,&quot; select your GitHub organization and repo, =
+then configure code execution settings</span></p></li><li class=3D"listItem=
+ ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left=
+;word-break:break-word;"><span style=3D"">Choose &quot;Plan&quot; to discus=
+s scope without coding, or &quot;Execute&quot; to make changes on a branch =
+=E2=80=94 example: &quot;Can you give insights on what this project is abou=
+t?&quot;</span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-=
+height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span=
+ style=3D"">Enter implementation prompt (e.g., &quot;Turn this static landi=
+ng page into a website where users can paste their own stories and poetry&q=
+uot;), preview changes with &quot;Run this code and show me the site,&quot;=
+ then click &quot;Create PR&quot; when satisfied</span></p></li></ol></div>=
+</td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;tex=
+t-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%=
+;"><span style=3D""><b>Pro tip:</b></span><span style=3D""> Use branches fo=
+r safety. Avoid writing code directly to main unless required.</span></p></=
+td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"l=
+eft" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p s=
+tyle=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><table role=3D"n=
+one" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"background-color:#FFFFFF;border-=
+color:#000000;border-radius:10px;border-style:solid;border-width:2px;paddin=
+g:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" v=
+align=3D"top" style=3D"color:#000000;font-weight:Normal;padding:0px 15px;te=
+xt-align:left;"><h6 style=3D"color:#000000;font-weight:Normal;mso-line-heig=
+ht-alt:87.5%;"><span style=3D"">PRESENTED BY CDATA</span></h6></td></tr><tr=
+><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#000000;font=
+-weight:Bold;padding:0px 15px;text-align:left;"><h4 style=3D"color:#000000;=
+font-weight:Bold;mso-line-height-alt:112.5%;">=F0=9F=9A=82<span style=3D"">=
+<b>=C2=A0</b></span><span style=3D""><span style=3D"text-decoration:underli=
+ne;"><a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u0=
+01.dSnm3kaGd0BkNqLYPjeMf_HVzImcvJvp1qXIym09RhMQT0XpVOIiWfbKCer1EQkh7jYOBndH=
+gWv5g0DG89dGO40fctKRIto1TmsKDcLs_4qrEceE_0wGPs1oTmW_o0c9w63VtvMdT7c_Ln4uhTl=
+DML1NHNu5DrMJBSbrF3iQJmwqozCTwblCvx-unT1ggJA5hlYV9iQHV6_wUuc3kWxpqJlbnqSoyW=
+gKK7jgMnFZZAxC07kj9MrNVi3amMHcwMGY-5pm9ivhOq6C6vKZ-EmXsQ/4my/KnoaNglGS0SzCF=
+8hNtNtCg/h14/h001.G28FcoH7DI7qqQRpt6zHFTVtZqWEFQ0qZ3BbV5OgdVg" target=3D"_b=
+lank" rel=3D"noopener noreferrer nofollow"><span><b>You bought the AI train=
+ =E2=80=94 did you build the data track?</b></span></a></span></span></h4><=
+/td></tr><tr><td align=3D"center" valign=3D"top" style=3D"padding-bottom:8p=
+x;padding-left:15px;padding-right:15px;padding-top:2px; " class=3D"dd"><tab=
+le role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"=
+margin:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"top" style=3D"wid=
+th:636px;"><a href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3k=
+aGd0BkNqLYPjeMf_HVzImcvJvp1qXIym09RhMQT0XpVOIiWfbKCer1EQkh7jYOBndHgWv5g0DG8=
+9dGO40fctKRIto1TmsKDcLs_4qrEceE_0wGPs1oTmW_o0c9w63VtvMdT7c_Ln4uhTlDML1NHNu5=
+DrMJBSbrF3iQJmwqozCTwblCvx-unT1ggJA5hlYV9iQHV6_wUuc3kWxpqG5KXK1HwMfXa3U65-V=
+i-oJuEWtEU9aViT3-Kd_BB35ueNFrToE8iK0aBehvceUwhw/4my/KnoaNglGS0SzCF8hNtNtCg/=
+h15/h001.pM43psDGEJ5NcFcWUMfxQtohCwcSSV5CBMRx7THyna8" rel=3D"noopener noref=
+errer nofollow" style=3D"text-decoration:none;" target=3D"_blank"><img src=
+=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,=
+onerror=3Dredirect,quality=3D80/uploads/asset/file/726e1da2-7cbe-496a-9098-=
+b3874ba6ac61/StateofAI_ADs_2025_1920x1080_V2__1_.png?t=3D1767288900" alt=3D=
+"" height=3D"auto" width=3D"636" style=3D"display:block;width:100%;border-r=
+adius:0px 0px 0px 0px;border-style:solid;border-width:0px 0px 0px 0px;box-s=
+izing:border-box;border-color:#E5E7EB;" border=3D"0"/></a></td></tr></table=
+></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;te=
+xt-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0=
+%;"><span style=3D""><b>The Rundown:</b></span><span style=3D""> CData&#39;=
+s 2026 State of AI Data Connectivity Report surveyed 200+ data and AI leade=
+rs on what&#39;s working (and breaking) when connecting AI to enterprise sy=
+stems at scale.</span></p></td></tr><tr><td class=3D"dd" align=3D"left" sty=
+le=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"=
+mso-line-height-alt:150.0%;"><span style=3D""><b>The report covers:</b></sp=
+an></p></td></tr><tr><td style=3D"padding-bottom:10px;padding-left:25px;pad=
+ding-right:25px;padding-top:0px;" class=3D"ee"><div style=3D"margin-left:0p=
+x;" class=3D"edm_outlooklist"><ul style=3D"font-weight:400;list-style-type:=
+disc;margin-bottom:8px !important;margin-top:8px !important;padding:0px 0px=
+ 0px 0px;"><li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:15=
+0.0%;padding:0px;text-align:left;word-break:break-word;"><span style=3D"">W=
+hy only 6% of companies are satisfied with their data integration architect=
+ure for AI adoption</span></p></li><li class=3D"listItem ultext"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"><span style=3D"">How real-time connectivity and semantic intelligen=
+ce define AI maturity</span></p></li><li class=3D"listItem ultext"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"><span style=3D"">What leading orgs are building to scale GenAI and =
+agentic AI systems in 2026</span></p></li></ul></div></td></tr><tr><td clas=
+s=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-brea=
+k:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><s=
+pan style=3D"text-decoration:underline;"><a class=3D"link" href=3D"https://=
+elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf_HVzImcvJvp1qXI=
+ym09RhMQT0XpVOIiWfbKCer1EQkh7jYOBndHgWv5g0DG89dGO40fctKRIto1TmsKDcLs_4qrEce=
+E_0wGPs1oTmW_o0c9w63VtvMdT7c_Ln4uhTlDML1NHNu5DrMJBSbrF3iQJmwqozCTwblCvx-unT=
+1ggJA5hlYV9iQHV6_wUuc3kWxpqBErQLzerA1lQZi_6iLyc32nvEEGLsHO5Vmb0ECDHQWiCL7XU=
+D-4C-z1hUXVAc9Sag/4my/KnoaNglGS0SzCF8hNtNtCg/h16/h001.K4zsSs7yZeG7cDOBCP8vm=
+3YHE_UR1wMV5IxzxDm0Q6o" target=3D"_blank" rel=3D"noopener noreferrer nofoll=
+ow"><span>Click here to read the report</span></a></span></span><span style=
+=3D"">.</span></p></td></tr></table></td></tr></table></td></tr><tr><td cla=
+ss=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-bre=
+ak:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr>=
+<td><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" style=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"background-co=
+lor:#FFFFFF;border-color:#000000;border-radius:10px;border-style:solid;bord=
+er-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D=
+"dd" align=3D"left" valign=3D"top" style=3D"color:#000000;font-weight:Norma=
+l;padding:0px 15px;text-align:left;"><h6 style=3D"color:#000000;font-weight=
+:Normal;mso-line-height-alt:87.5%;"><span style=3D"">OPENAI</span></h6></td=
+></tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#00=
+0000;font-weight:Bold;padding:0px 15px;text-align:left;"><h4 style=3D"color=
+:#000000;font-weight:Bold;mso-line-height-alt:112.5%;"><span style=3D"">=F0=
+=9F=8E=99=EF=B8=8F </span><span style=3D""><b><span style=3D"text-decoratio=
+n:underline;"><a class=3D"link" href=3D"https://elinke1c.daily.therundown.a=
+i/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf4_pVCvgnnuS9csEAS3pWhukjN77GK_f-3nAppvJRQH=
+B3vFCRgC4_wRrEcLt9aNL5E6x3-_47TsLRhaiulLCyQW2GZwMYlN6_caku2X7loTfyp6PQiQlxq=
+0H2aJ3ncHgxVKt41UnYWk7cPPyRMqTtB_wDGYRaooUzFsj4s9HKcIDBVpZnflkn4OMFdjKFKAur=
+TRYePrmKaqiTv1wQvpy445jx2CtgZmHve1s52MZ1peGQIRrWhwG9AhJJQBZMLTfteuKfXJKMuBL=
+eieZuKeSZOWk4NWUlOzStyJQ2ji8Y5m3/4my/KnoaNglGS0SzCF8hNtNtCg/h17/h001.lnezF5=
+amGfWirSFlX5ShqaUE_F_MJyLMcXDcZtl4i3U" target=3D"_blank" rel=3D"noopener no=
+referrer nofollow"><span>Report: OAI overhauling audio for upcoming device<=
+/span></a></span></b></span></h4></td></tr><tr><td align=3D"center" valign=
+=3D"top" style=3D"padding-bottom:8px;padding-left:15px;padding-right:15px;p=
+adding-top:2px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"=
+center" valign=3D"top" style=3D"width:636px;"><img src=3D"https://media.bee=
+hiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,qu=
+ality=3D80/uploads/asset/file/692885b1-df31-41f5-b8e7-208540d1b235/openai-v=
+oice.jpg?t=3D1767293779" alt=3D"" height=3D"auto" width=3D"636" style=3D"di=
+splay:block;width:100%;border-radius:0px 0px 0px 0px;border-style:solid;bor=
+der-width:0px 0px 0px 0px;box-sizing:border-box;border-color:#E5E7EB;" bord=
+er=3D"0"/></td></tr><tr><td align=3D"left" valign=3D"top" class=3D"t" style=
+=3D"width:636px; padding: 4px 0px 4px 0px;"><p><span style=3D"">Image sourc=
+e: OpenAI</span></p></td></tr></table></td></tr><tr><td class=3D"dd" align=
+=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"=
+><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>The Rundown: =
+</b></span><span style=3D"">OpenAI has reportedly </span><span style=3D""><=
+a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSn=
+m3kaGd0BkNqLYPjeMf4_pVCvgnnuS9csEAS3pWhukjN77GK_f-3nAppvJRQHB3vFCRgC4_wRrEc=
+Lt9aNL5E6x3-_47TsLRhaiulLCyQW2GZwMYlN6_caku2X7loTfyp6PQiQlxq0H2aJ3ncHgxVKt4=
+1UnYWk7cPPyRMqTtB_wDGYRaooUzFsj4s9HKcIDBVpZnflkn4OMFdjKFKAurTRYePrmKaqiTv1w=
+Qvpy445jx2CtgZmHve1s52MZ1peGUg2LC4Y9tuCaD6PaWDT6NLICQ-Ju3khx6ql2ptiVVoT58qD=
+ak6147cggX_yJDxGn/4my/KnoaNglGS0SzCF8hNtNtCg/h18/h001.b8loJELTFJ-jPFnh3C9wG=
+GNNVhbyTioznympRj6Z_VE" target=3D"_blank" rel=3D"noopener noreferrer nofoll=
+ow"><span>consolidated</span></a></span><span style=3D""> multiple teams to=
+ improve its audio AI models, according to The Information =E2=80=94 laying=
+ the groundwork for the company=E2=80=99s Jony Ive-led, voice-first persona=
+l device expected in about a year.</span></p></td></tr><tr><td class=3D"dd"=
+ align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-=
+word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>The det=
+ails:</b></span></p></td></tr><tr><td style=3D"padding-bottom:10px;padding-=
+left:25px;padding-right:25px;padding-top:0px;" class=3D"ee"><div style=3D"m=
+argin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:400;lis=
+t-style-type:disc;margin-bottom:8px !important;margin-top:8px !important;pa=
+dding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D"mso-line-=
+height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span=
+ style=3D"">OAI=E2=80=99s voice models are reportedly behind the text-based=
+ ChatGPT in accuracy and response speed, prompting the internal restructuri=
+ng.</span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-heigh=
+t-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span styl=
+e=3D"">An upgraded model due in Q1 2026 will let users talk over the AI mid=
+-response without breaking conversation flow for more natural interactions.=
+ </span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-height-=
+alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D"">The first device launch is reportedly still around a year out and wil=
+l prioritize voice over screens, with glasses and a smart speaker also disc=
+ussed. </span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-h=
+eight-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span =
+style=3D"">Ive&#39;s design firm io, </span><span style=3D""><a class=3D"li=
+nk" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLY=
+PjeMf75St_4h4uVDlb2B1USeB_F2FLowsCkZeJLuOTObDNqP2bJZqugk2AvoGQEikNsqyMJ_Ziq=
+SFezyQbzJrMTTNsdDzo9MpHvF9Y2umqq5wvE6Lqtd6teKVPbKsYPwogzXktEX4j7pYrfplIYwbC=
+j2xm61_y6SIr1bulwBcQmmYO85ILvjpQisFnXnhOIB_zkwTa7EpI7SG0xkYJIAi3pKq7r8ueKc1=
+AggNnYPlD0RmxG-g9SKfSZBvXq15EUlpdg7B5BvcI64a69-tnwbvRQRMslN9I4DAIWpqlMbQGk6=
+bT93IWcn0jOsyNrZdYuJ647LB9CtsjyIVf9_kMbAj3tCuvlKx6j1kvwkkQ20aLZ-FoB4iBSbuJ1=
+y4lj_0aRueghnSWN-WPd1BZ9qIELXht-EgaGmD1u1n0_7_OUkMwACrqSeeUbi0oZVrO78MnUUyR=
+uypEFjuVLnlwzZlRWpUBKllcMOq6HlJtN_6JLFipqWKKaQlyI08zSlaThpBIF7DVy87NVCPBvSY=
+U0tUL6aIHBnz_9AyXOMXcZuhkrtvrj2uDqPz3BQu5bs9DU0MmsNcMr1W6GMyszTHcsY4Ug1L-N5=
+CmQNMS2v8PENM7r50u-1vPQypLULrkCld1yAqvq3LpxBie3MFomWhD4GO9QSb_aIoeenmesDzr-=
+KicopIy6cytZg-uBkHttnKjLvAl91dNlGHKc1DeuU566KWNZ5XjQ568ETkKRcisNd4e0ldxpav-=
+vQbOn2U8zVf3Q6auaORWg9lynNB6crONBlQeEaAZx2AV-E88dOyB_0vUzksSd6DfnE1zI71T3uf=
+wXALjnoHMDMiKsNwzt5EOuW7g63aMAPaa57xPVeoWBT58eU5QJb4kUD/4my/KnoaNglGS0SzCF8=
+hNtNtCg/h19/h001.nCc2QLYzycw_0cp_C67tw1zsTFPnliGY44oMi9aiwgA" target=3D"_bl=
+ank" rel=3D"noopener noreferrer nofollow"><span>acquired</span></a></span><=
+span style=3D""> for ~$6.5B in May, is leading the hardware =E2=80=94 with =
+an explicit goal of avoiding smartphone-style addiction.</span></p></li></u=
+l></div></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px =
+15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-al=
+t:150.0%;"><span style=3D""><b>Why it matters: </b></span><span style=3D"">=
+OpenAI&#39;s device ambitions are well publicized at this point, and the ul=
+timate reveal of the form factor for its hardware will be a big moment to w=
+atch in 2026. Ive&#39;s involvement brings the pedigree and hype, but a gra=
+veyard of other AI wearables shows the category is still waiting for a true=
+ breakout success. </span></p></td></tr></table></td></tr></table></td></tr=
+><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:l=
+eft;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p></=
+td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#000000" style=3D"b=
+ackground-color:#000000;border-color:#000000;border-style:solid;border-widt=
+h:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" alig=
+n=3D"center" style=3D"padding:0px 15px;text-align:center;word-break:break-w=
+ord;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"color:#FFFFFF=
+;"><b>QUICK HITS</b></span></p></td></tr></table></td></tr></table></td></t=
+r><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:=
+left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p><=
+/td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspaci=
+ng=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"=
+background-color:#FFFFFF;border-color:#000000;border-radius:10px;border-sty=
+le:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=3D"=
+none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><=
+td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#000000;font-w=
+eight:Bold;padding:0px 15px;text-align:left;"><h3 style=3D"color:#000000;fo=
+nt-weight:Bold;mso-line-height-alt:125.0%;"><span style=3D"">=F0=9F=9B=A0=
+=EF=B8=8F </span><span style=3D""><span style=3D"text-decoration:underline;=
+"><b><a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u0=
+01.dSnm3kaGd0BkNqLYPjeMf_DKThdpaPaB9_aROy42m38SWULb4gYNTf9_76RMjqVZPTvY2-tP=
+H0ookACNgroqx2Ixjo4iQErggh0XUKwSeWPQ0BJtFGbFiiehTvitEKFbnmBQzolYTrnMdEWZ0xv=
+2JWeQYTqnNyGImmyoFcbQzZJyr69dOWgXDwoFayr_TNFDQvvuDsg1AVMClKMsqh-_B0vcrz4g-c=
+_OrRGBx3l-w1PW1CxUp2H7rHZqWYP3wH09/4my/KnoaNglGS0SzCF8hNtNtCg/h20/h001.yQ36=
+jJxLauKY0Pa9o78C-GgfIqHesw7VI8MlsMFC25g" target=3D"_blank" rel=3D"noopener =
+noreferrer nofollow"><span>Trending AI Tools</span></a></b></span></span></=
+h3></td></tr><tr><td style=3D"padding-bottom:10px;padding-left:25px;padding=
+-right:25px;padding-top:0px;" class=3D"ee"><div style=3D"margin-left:0px;" =
+class=3D"edm_outlooklist"><ul style=3D"font-weight:400;list-style-type:disc=
+;margin-bottom:8px !important;margin-top:8px !important;padding:0px 0px 0px=
+ 0px;"><li class=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%=
+;padding:0px;text-align:left;word-break:break-word;"> =F0=9F=93=91<span sty=
+le=3D"">=C2=A0</span><span style=3D""><a class=3D"link" href=3D"https://eli=
+nke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf_DKThdpaPaB9_aROy4=
+2m38CFQtmxXlNyWY6MC4df_qirvkZZ4xF2NrL9IqVuJWwlC1SQvEsL1h4ZFGFuQDyzQIGFxh7ob=
+Q5UBofChu0HPkdCVVk6245Un_sUCiwzfxCs-o33C-lMJM3ULTQNNVuzLrYwbhE0z8XEB5YlUHIo=
+0BvrWK3LbYvVFhjX0XTqR2qUuOinFVXuCiBzZVY0KVhX7A8OBwSCwdPfnX_Qe_BhZlQCfGzxNOx=
+vl94G7iXm05tYw/4my/KnoaNglGS0SzCF8hNtNtCg/h21/h001.MoR5IQJdh8YtRQVd3KRESGGo=
+-FskT1AkGAU9IVWqjzo" target=3D"_blank" rel=3D"noopener noreferrer nofollow"=
+><span>Qwen Image Layered</span></a></span><span style=3D""> - Image AI tha=
+t breaks outputs into layers for edits</span></p></li><li class=3D"listItem=
+ ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left=
+;word-break:break-word;"> =F0=9F=8C=8C<span style=3D"">=C2=A0</span><span s=
+tyle=3D""><a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss=
+/c/u001.dSnm3kaGd0BkNqLYPjeMf_DKThdpaPaB9_aROy42m3_Ud6KHGC_mep02m3U8ltTm4od=
+kS8MWy8dxg97hD5JohM0lD9KqJ5PN0CviICVAqma9x27m1Wu2pTLA0QIcA-3mwVhtfH8ASdR1Ze=
+FQ8j0I_rnuL_yWkXNuE5qyMlDpYoNETb3Ugr6BhZM1Ao1N_b_OclOM8ikX0Kw9cisglys1hwuQ6=
+oeyNC3MKvC1xGnYRBYHZ-Eo7u1gnx8HenQJdsuRu8hDvc9Ucu88gf0_6tgAxw/4my/KnoaNglGS=
+0SzCF8hNtNtCg/h22/h001.RJ3IcIgEEetQZuwaIqI9zoy-a0vqfls6MvsSyMKbhqo" target=
+=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>ChatGPT Images</span=
+></a></span><span style=3D""> - OpenAI=E2=80=99s upgraded image generation =
+system</span></p></li><li class=3D"listItem ultext"><p style=3D"mso-line-he=
+ight-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"> =F0=9F=
+=A4=96<span style=3D"">=C2=A0</span><span style=3D""><a class=3D"link" href=
+=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf_DK=
+ThdpaPaB9_aROy42m38iidXF3Cy_6IpaFs6XgK8fZcypLdg5z9-d_fR9ORaBubC_RBWBrAWROgF=
+hTvSPplphJupu5kp0twzfFyG_Iz87EPXNhfrdC13zuxkX1HqpODF__yzlktPmRBgIVLiCFhEz4-=
+seZBSoU8Au1wJ7aBcHuBvrESGKWBzWSG8fVvbzso3yzaNaccLdkjgUmQOxJnc01wlknuIVek3Fk=
+9YhRVKyqX5CyE9GIawsquS9paB1-A/4my/KnoaNglGS0SzCF8hNtNtCg/h23/h001.77eMFngeQ=
+KDM4GTnvpgRxlohOBHUd1QUuswD_edHdNY" target=3D"_blank" rel=3D"noopener noref=
+errer nofollow"><span>GLM-4.7</span></a></span><span style=3D""> - Z AI&#39=
+;s new SOTA open-source model</span></p></li><li class=3D"listItem ultext">=
+<p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-bre=
+ak:break-word;"><span style=3D"">=F0=9F=93=AA </span><span style=3D""><a cl=
+ass=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3ka=
+Gd0BkNqLYPjeMf_DKThdpaPaB9_aROy42m3-1P_LuETXHdsyjffcqvUQ2kqknKNVAm1NLud2m4I=
+Y2bCkpbq1AH-hV7YK_zAs8wsgv76Qx5y_XLEAXmeUG4oEodQ3kRIZ4g-35bRY0ujE1SRYMMDDkg=
+hmgr4M4S2k-cN0DcfFLFDKBNquRUINzrRfvmSt9xH3swgSZSyyDAcNY0GmZUR3lzWdShZ3oY8id=
+M5pOIsp_ZwM19B8oH32QWF5b/4my/KnoaNglGS0SzCF8hNtNtCg/h24/h001.mykWDmxkJBzNq_=
+zx_h0ZEfagiJW_zlw-yixQdKtuZIk" target=3D"_blank" rel=3D"noopener noreferrer=
+ nofollow"><span>CC</span></a></span><span style=3D""> - Google Labs=E2=80=
+=99 experimental AI productivity agent in Gmail</span></p></li></ul></div><=
+/td></tr></table></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"=
+left" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p =
+style=3D"mso-line-height-alt:150.0%;"></p></td></tr><tr><td><table role=3D"=
+none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D""><tr><td bgcolor=3D"#FFFFFF" style=3D"background-color:#FFFFFF;border-=
+color:#000000;border-radius:10px;border-style:solid;border-width:2px;paddin=
+g:0.0px 0.0px 0.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0=
+" cellspacing=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" v=
+align=3D"top" style=3D"color:#000000;font-weight:Bold;padding:0px 15px;text=
+-align:left;"><h3 style=3D"color:#000000;font-weight:Bold;mso-line-height-a=
+lt:125.0%;">=F0=9F=93=B0<span style=3D"">=C2=A0</span><span style=3D""><b><=
+span style=3D"text-decoration:underline;"><a class=3D"link" href=3D"https:/=
+/elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf0gyeM8tESkQ4qm=
+vKtcxeZ9VF4gSf4tgZVDQsuZ_Acw8iIahfP6WnHODmGttT3LfOgwebRvFrl1CwXa66DjaXFSqiS=
+1OOwiUPApwptp5MxAJhjvoHg1pZx698Qt1jS_leZOJMq0xb3X1W0BhU9H3EsAeQr_nhSprp_FT2=
+eW7HoyWERO9q43isaryfMN1kNu5pg2u0xMaEsQ4XS2D20Xs9AzmBtdWgfzKFTudVwAjS-QH/4my=
+/KnoaNglGS0SzCF8hNtNtCg/h25/h001.RH2H3erxqkiS6jc7-UF7H1f7jRO44CgZfz3_Gq69F1=
+M" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Everything =
+else in AI today</span></a></span></b></span></h3></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>=
+Chinese AI lab IQuest Labs </b></span><span style=3D""><a class=3D"link" hr=
+ef=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.siHJl2oxYc5G1hfeCOvt3Z=
+WuDZHQmUjBtHVAoC-RPVPR0TCmFqDdfouTunVXw-0_-ErsooYCh4Q8P8qgD8KaBVRjkg11lLBap=
+v-tYU-AL_WbPuFOUTWpeYlWWw98f58JWCla-eYhKkkNSBm3R8XJIrj7tJF1SYqcXEVpNkltV1UG=
+4YOSj9ZEUeDCvD9wEc5kuDip-wuo5bQYrpiRmWkdaBquFgf2sSsJ6_i-AstJ6LnhAi6TC8UGnK1=
+El61EcMenYy4lzAH0vjqKx71JeZ5MK_Bt9fJ3MUAgxBpk50JVQbqsm2gH7XHrmhru99NaepOZ79=
+ljcBUPMMaMOlnO8D-94g/4my/KnoaNglGS0SzCF8hNtNtCg/h26/h001.B9qCbS-CbKo4mTuKS6=
+4mRsNryfFMDvnH5J7oOvtxlsI" target=3D"_blank" rel=3D"noopener noreferrer nof=
+ollow"><span>released</span></a></span><span style=3D""> IQuest-Coder-V1, a=
+ new model family that claims to surpass rivals like Claude Sonnet 4.5 and =
+GPT 5.1 on coding benchmarks. </span></p></td></tr><tr><td class=3D"dd" ali=
+gn=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-word=
+;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>LMArena</b>=
+</span><span style=3D"">=C2=A0</span><span style=3D""><a class=3D"link" hre=
+f=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.6k0_SAz8nrOuu_-LoNX1HeQ=
+r5uzZ6yf3JLXnAmPapFZE0BKNcN74JS3cLd4gYuohoI-ycSuaT3nL0sCXv1rpNvvIWyR0UDV7ZT=
+elvjxPJVm8QDlxnbwTv-FBmFSu8W4sEypfZJh07j2pIii9iHIMqHvOfNTs9u79uRqTcdFCnwq3S=
+3aLSVTS4WdOzlQio8rlXC6ONUBlNHfUGmUPC0Zo6zTNXX3z1U4Qg3LcpkwHSQ3yRvxr45NYI3sg=
+jNJYe-Zh3BEHOxmPTxv6U9gblzxCv10cY0r0Zz4K_Zp2btn-fCU/4my/KnoaNglGS0SzCF8hNtN=
+tCg/h27/h001.T_-fuoiAgqfiEtMWsjhlUFjUgCQ55aJ6erBidG4iWM4" target=3D"_blank"=
+ rel=3D"noopener noreferrer nofollow"><span>posted</span></a></span><span s=
+tyle=3D""> the 2025 results for top AI models, with Google=E2=80=99s Gemini=
+ 3 Pro leading text, vision, and search, and Veo 3.1 models topping video r=
+ankings. </span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"=
+padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-li=
+ne-height-alt:150.0%;"><span style=3D""><b>Chinese AI startup Kimi</b></spa=
+n><span style=3D""> reportedly </span><span style=3D""><a class=3D"link" hr=
+ef=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf_=
+0HjYbGgJTuJu4z6z0pZAXEkWk-eFdYtw3WSPwxXUYUG4yToTIiMngwXfd-DWfhgpcLYX1Hk_dFB=
+_9DHV-LVxmwanSjOautip1PdrtNA1X6Ilj0NgzN0uR21mHM3BMrdx8I6aar3mSpf4eDkSAiOuOV=
+87qTHkqs3YEp2JAQPGt_uS9BcM6pwtpKQVpf6Y0p60IdkY9wivx5dBfUW3eqVcDYosU6HTgsAjo=
+OwW3U2bfs6HeKYayhbx3X0DU6nA5w1szp5ie9sO8dFwm94Ki5AvQX62MLmbZWcfWkCD87s6JOAO=
+7jKX9o7lhHfPoB8vRpF2ti9gTfYEQ9uWHvmPMSMtlN0lLh8PJWh81WH3kO0A1V/4my/KnoaNglG=
+S0SzCF8hNtNtCg/h28/h001.mMkY_ml0VYo_zpn0V1Vq2SjzBv4At3G3qK35om4mUTU" target=
+=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>raised</span></a></s=
+pan><span style=3D""> $500M in a new Series C round, bringing the company=
+=E2=80=99s valuation to $4.3B. </span></p></td></tr><tr><td class=3D"dd" al=
+ign=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-wor=
+d;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D""><b>SoftBank</=
+b></span><span style=3D""> is </span><span style=3D""><a class=3D"link" hre=
+f=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf-L=
+-leG5ARdLRAfqLlPc19iXbTZbZodXIQDMCwLCuHR-8jsWGcpMnuY1x8rVsc39H0Jodl_KAaJzbw=
+Mvj9oFjANH35XVq1EyAYM7Jzv6EY2BQFZunnyPMK_23GwyjIcGEuZHaEDwLE9ni6S0tQfSC8cjn=
+QdHaUFyLLN1prMBDFJstLGPUv2YJkIz2Z5qXy1_D0I31r6dgjx36cimS-_mvcSLIS4q8WcHvNMp=
+-7J_5xw9_eCc_3wmeUup4aUjrCS7FGqu8uJtbGp8O5nTcJQiaFqgzL_SDtFB3qkU1KDFcZP9Nd7=
+JW371QSlyxpByuppIORXZwx9gunmxBwta1lU6CsE/4my/KnoaNglGS0SzCF8hNtNtCg/h29/h00=
+1.Ed_UWhTrayMK4AQ13MIWbOsFjjQu5pcd_cePk0kIOcc" target=3D"_blank" rel=3D"noo=
+pener noreferrer nofollow"><span>acquiring</span></a></span><span style=3D"=
+"> DigitalBridge for $4B, adding a data center and digital infrastructure p=
+ortfolio to the Japanese giant=E2=80=99s growing AI bet. </span></p></td></=
+tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align=
+:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><spa=
+n style=3D""><b>X user Martin_DeVido</b></span><span style=3D"">=C2=A0</spa=
+n><span style=3D""><a class=3D"link" href=3D"https://elinke1c.daily.therund=
+own.ai/ss/c/u001.6k0_SAz8nrOuu_-LoNX1HXs6JMbVU1pQ6MUjZCu94KcI8smpcrVBFQUs16=
+B5GO3TO6Rpcoxx7KtYqVC1VSvJPbRDqf9VdzqN3kIjkV1ALg69Mr3KdOuSoicqMVT5n4O8xAgmV=
+gq2RkODRbjrv9MH-pJUtMo-ugUSZD-Zg80QK1j7at_6TstkL8R89RRL0AtQD_FfccRDikdLY6-o=
+ORZljktBn7IcsI-GHOA_ionJDg80Ut57Ik0iGzPP74eMiXYxx59hfpdv7D2t6Y6PzxQvcpObQwX=
+6TzyDqZrFYcuSRnA/4my/KnoaNglGS0SzCF8hNtNtCg/h30/h001.Km33C-A22LxY8DHvrcy-PH=
+blbmIfXOpW1OMQY5KPwJk" target=3D"_blank" rel=3D"noopener noreferrer nofollo=
+w"><span>shared</span></a></span><span style=3D""> an experiment giving Cla=
+ude full control of keeping a tomato plant alive for over a month, controll=
+ing systems without human intervention. </span></p></td></tr></table></td><=
+/tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:=
+0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-heigh=
+t-alt:150.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=
+=3D"#000000" style=3D"background-color:#000000;border-color:#000000;border-=
+style:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=
+=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><=
+tr><td class=3D"dd" align=3D"center" style=3D"padding:0px 15px;text-align:c=
+enter;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><spa=
+n style=3D"color:#FFFFFF;"><b>COMMUNITY</b></span></p></td></tr></table></t=
+d></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"paddi=
+ng:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-he=
+ight-alt:150.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolo=
+r=3D"#FFFFFF" style=3D"background-color:#FFFFFF;border-color:#000000;border=
+-radius:10px;border-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px =
+0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" valign=3D"top" style=
+=3D"color:#000000;font-weight:Bold;padding:0px 15px;text-align:left;"><h3 s=
+tyle=3D"color:#000000;font-weight:Bold;mso-line-height-alt:125.0%;">=F0=9F=
+=A4=9D<span style=3D""><b>=C2=A0</b></span><span style=3D""><span style=3D"=
+text-decoration:underline;"><b><a class=3D"link" href=3D"https://elinke1c.d=
+aily.therundown.ai/ss/c/u001.s9F2vg9H0NMFC01qj9PgtJ1BueGfQF0K1FBTeiiccnln2F=
+OG6RYQolS0Wl9EmehrSV3jD5YNXH1HXvl3N7oXpCYehdA-i-4-f3n_HcFK5I-2VuOzPrld04_MA=
+y3CBMOwLWMvO0LukVcapPF_CaXeDpdgs6vzXf4IFtmcKzd78e0PvN7KgkCw5whKiRV9v0bxfu_q=
+vA0SaUH5hocJf2uOur8h2VV5yVvD_DT2y0djw-hw74VABYGCao19b5KFgMUNYTsBLCVr870i3nQ=
+DSnL0S_fMF8e1vMlkQ9jVxsM2_jU1nYzP_9cbY3WycqNb2tQi4v0Im4jHhkGjz6IgworBauSvVP=
+CE8CP4Wcrm0_NDV94/4my/KnoaNglGS0SzCF8hNtNtCg/h31/h001.5EdXwpFYalTCcmK1soExe=
+mNkuGqNPuDZKKgkHT0kSGs" target=3D"_blank" rel=3D"noopener noreferrer nofoll=
+ow"><span>Community AI workflows</span></a></b></span></span></h3></td></tr=
+><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:l=
+eft;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span =
+style=3D"">Every newsletter, we showcase how a reader is using AI to work s=
+marter, save time, or make life easier.</span></p></td></tr><tr><td class=
+=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break=
+:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">Tod=
+ay=E2=80=99s workflow comes from reader </span><span style=3D""><b>Prasanna=
+ A.</b></span><span style=3D""> in Atlanta, GA:</span></p></td></tr><tr><td=
+ class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;word=
+-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D=
+"">&quot;When reading e-books, it can be difficult to retain and connect ke=
+y concepts. To solve this, I leverage Google Gemini=E2=80=99s large context=
+ window by uploading the book&#39;s text. I have the AI explain the key poi=
+nts of each chapter and analyze how they relate to previous sections using =
+real-world examples tailored to my specific goals. </span></p></td></tr><tr=
+><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-align:left;=
+word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span styl=
+e=3D"">To ensure mastery, I conclude each chapter with a knowledge check an=
+d perform a comprehensive exam once the book is finished. The real &#39;mag=
+ic&#39; happens at the intersection of the book=E2=80=99s theory and practi=
+cal application.&quot;</span></p></td></tr><tr><td class=3D"dd" align=3D"le=
+ft" style=3D"padding:0px 15px;text-align:left;word-break:break-word;"><p st=
+yle=3D"mso-line-height-alt:150.0%;"><span style=3D"">How do you use AI? Tel=
+l us </span><span style=3D""><a class=3D"link" href=3D"https://elinke1c.dai=
+ly.therundown.ai/ss/c/u001.s9F2vg9H0NMFC01qj9PgtJ1BueGfQF0K1FBTeiiccnln2FOG=
+6RYQolS0Wl9EmehrSV3jD5YNXH1HXvl3N7oXpCYehdA-i-4-f3n_HcFK5I-2VuOzPrld04_MAy3=
+CBMOwLWMvO0LukVcapPF_CaXeDpdgs6vzXf4IFtmcKzd78e0PvN7KgkCw5whKiRV9v0bxfu_qvA=
+0SaUH5hocJf2uOur8h2VV5yVvD_DT2y0djw-hw74VABYGCao19b5KFgMUNYTsBLCVr870i3nQDS=
+nL0S1l7HyG0xsh_yn3tibN7pEdH2fM-mTD58MPg1rWwiZoPTV4rRDfBrTZRrpafT89YV2BgOAPB=
+GNYaFMTWjhBlQBc/4my/KnoaNglGS0SzCF8hNtNtCg/h32/h001.irV5y77imQJU68w_zPOpNI0=
+jRxWv4UxNoEYQce3T5_0" target=3D"_blank" rel=3D"noopener noreferrer nofollow=
+"><span>here</span></a></span><span style=3D"">.</span></p></td></tr></tabl=
+e></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"=
+padding:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-li=
+ne-height-alt:150.0%;"></p></td></tr><tr><td><table role=3D"none" width=3D"=
+100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td b=
+gcolor=3D"#FFFFFF" style=3D"background-color:#FFFFFF;border-color:#000000;b=
+order-radius:10px;border-style:solid;border-width:2px;padding:0.0px 0.0px 0=
+.0px 0.0px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0"><tr><td class=3D"dd" align=3D"left" valign=3D"top"=
+ style=3D"color:#000000;font-weight:Bold;padding:0px 15px;text-align:left;"=
+><h3 style=3D"color:#000000;font-weight:Bold;mso-line-height-alt:125.0%;"><=
+span style=3D""><b>=F0=9F=8E=93 </b></span><span style=3D""><span style=3D"=
+text-decoration:underline;"><b><a class=3D"link" href=3D"https://elinke1c.d=
+aily.therundown.ai/ss/c/u001.Q334NVcZU4O6L6VKRz8ijB1TBWraWSjSa1EgItxTfJHHUz=
+KlcPyxmXPwyW5p_uI_EuRMdyCjr_usQz9ahXa2ah2Wwh9e7B2sKvqtrD8cElJ7S-I5LY9Hh06Ym=
+oMbeAc0c3-BLbFNiu6Ty3RpuHxztv4uGtfmxUZnFM9mks600VyKTHstdf-C7pPVoEneDBDtYSxJ=
+keO52QN5G7ZXyQACQRdhX21JvH8EX8ayLycoCRSeUU0Sc76F-fjyBDTKgIAY/4my/KnoaNglGS0=
+SzCF8hNtNtCg/h33/h001.ntMftDAuBYxQRmjPaelYZiBueB0fGy_VkimV01oivoU" target=
+=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Highlights: News, Gu=
+ides & Events</span></a></b></span></span></h3></td></tr><tr><td style=3D"p=
+adding-bottom:10px;padding-left:25px;padding-right:25px;padding-top:0px;" c=
+lass=3D"ee"><div style=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul s=
+tyle=3D"font-weight:400;list-style-type:disc;margin-bottom:8px !important;m=
+argin-top:8px !important;padding:0px 0px 0px 0px;"><li class=3D"listItem ul=
+text"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wo=
+rd-break:break-word;"><span style=3D"">Read our last AI newsletter: </span>=
+<span style=3D""><a class=3D"link" href=3D"https://elinke1c.daily.therundow=
+n.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_Hd7-3pWnonClVVeuoI=
+7sbtqrHmbwcA2IFlGRrmaAAEJlAMqds8W3PhHQoVa_a-eFt1nhU_1dKHt_57x0Uh18ycMuCBXDz=
+sgLXwCbGrXD3LBrRfNod9SaIMrIj-mFC6TBzcoD4xUQltXU4fiwK1_8iXm6NsqUSuiwWw0VlOgH=
+LEM8eqoQyycINUJoErg_JD7JgRupQZ2CMmPfZz_S6xdgdHVw0M5RomLjWQ6rs2IaNH08_sPuIGr=
+r1-9rx7Gwn4oUKFqi2hK7FxLcEwvjmP3R2PejqGqKUR0cZnoZaUmzgFPyVIWT3gdMWJN5ksTAij=
+EBYdA19y4Sp2nEOB6NZhazGdNtItyabjZv8ewdcX2HiMIzd2spq2LR3cGP68KKlFwD_mCXr9jTL=
+oyLMu41tzqhN74yPTOYl4TLo_eN4fYSIbWh4nEAhGNI1aqIYCqtmfEA6JfpviTz_poAS4oUk6xY=
+wxs4Oz8u33XWAmrxoQd2iunWTaZbuhXqyi90B6YeSHJBSZixJK3mP5jdU974EXeLj7tvLryIghf=
+92y2vZrXyysgVdukQWFe4PGdLQ8iugod0aPcPn5CVjKsvTr2XW3dp4kc_amHAvUNAmiz3FGLLZx=
+K6u3NCU_IEzC2wS_H_kZRqfCJYD8ZY63l_2d6ztzGe4aMLSDMY5cWzMvnHtrjEXto1hgjpdRRXy=
+hg7TUAAQ2hn1D7ZQE5gzJFnnIThIBBtpWdLOAB1WkVTGW4uH7WB4Nue51wsZOg4saHcZEIecxND=
+3IbCDN77ZKqEJrvc1kdU7EkEGMS_a2T52VFRA7vi9pKSW99vOsq3gqhDClTsORnSc/4my/KnoaN=
+glGS0SzCF8hNtNtCg/h34/h001.l0vRY92QHUqvd3-5S-GlCqFsalIepChftv50-ktoG6A" tar=
+get=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>The Rundown=E2=80=
+=99s 2025 year in review</span></a></span></p></li><li class=3D"listItem ul=
+text"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wo=
+rd-break:break-word;"><span style=3D"">Read our last Tech newsletter: </spa=
+n><span style=3D""><a class=3D"link" href=3D"https://elinke1c.daily.therund=
+own.ai/ss/c/u001.KT4rQsO6sHS_v2VASG2xuiVDGMvQlgKBoZjlv2WcjqZsCGDw0HDcHaQfU8=
+wvI8_Coapy-pgfBZ26cqDpySUSS6xVKYA-10nacFA6AHDd03B8hQL0cxpLBrZC20ZSux0qRlteJ=
+6jKt_s3EjBQBvgTzAwC-hqebplXBE21VTxZXnYMwK9XsJ-EoFrJzYzV9NVfYAmR9ot-lEzfosil=
+ZQSwxUqsWvqTSSuoPYu2uwGVKd720uMscbkBpfh6zXpfNoWx-QgCGSJR9tYWp6V45ZiKTmwkklE=
+q6S8zakZK9e0NwXQ/4my/KnoaNglGS0SzCF8hNtNtCg/h35/h001.g72VLUdgKQFjbFQjaANNAf=
+HIrC6KSYZN76tX8GOcBoE" target=3D"_blank" rel=3D"noopener noreferrer nofollo=
+w"><span>Meta buys AI startup Manus for $2B</span></a></span></p></li><li c=
+lass=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px=
+;text-align:left;word-break:break-word;"><span style=3D"">Read our last Rob=
+otics newsletter: </span><span style=3D""><a class=3D"link" href=3D"https:/=
+/elinke1c.daily.therundown.ai/ss/c/u001.NN3LcSSNlElMIHwAnhfMXbqH1kLo0grZs6b=
+Pex8TEvoJpI5ny1A3FzhDfAuAi3fsaAWt-i3SHp1gI2jOMvYJPtSEfO945zN_3IX8AZYsMp-56W=
+44S5okCI7k73nfX4OqAoicTIx4LbqjoCIhz7nucm2q69BtTCul8-VCEF-YUc0chQs3IuuSorQWN=
+t0d793xlXVQKQME0tocdMXfxvPw-WbPh-yen8T4KwvRjNiJNj6JtMGFFRwKvz6n4NGuKHexLEOy=
+YdOroGp9arAgpSLf9KxLoynpjjIVFmT93ZghURPVMmjiVdxUTe7bquwdPc23/4my/KnoaNglGS0=
+SzCF8hNtNtCg/h36/h001.xAsykooMgat_d4gndHKlRRHXrt14zBq6g4A0VAUlgMo" target=
+=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Robotaxis that plug =
+into your brain</span></a></span></p></li><li class=3D"listItem ultext"><p =
+style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:=
+break-word;"><span style=3D"">Today=E2=80=99s AI tool guide: </span><span s=
+tyle=3D""><a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss=
+/c/u001.Q334NVcZU4O6L6VKRz8ijB1TBWraWSjSa1EgItxTfJGQ-jANxj95qxcpQckVwf8-ucE=
+Cc7npd-UD-xqdnTw7xv5lR-nwV9ApS8K3ERC4be6763epMgikgg0pwBUOM_IZE4qBWnCtG-Wy7x=
+9vfriVi_R6lz6Ul8ym-Gwbp_hVxYZCrvG8oW1F-TK2UoGQm_GNjHijyPJBPJM-4CDnRtYIWb_8w=
+PV8PysJWnhb1P9v9hCxe4b-FsHsF7zpsz-niZUDfhl1DgyI0C-IeZFVJOTUeIFSQO5M5993kJwi=
+RbOifbtPH2FrSLHAhOyQrVE0crZ2/4my/KnoaNglGS0SzCF8hNtNtCg/h37/h001.BOlLfTGqXw=
+rpV8G5r1_gKGfmgbwmIiLSIt5Dq2oDJJ8" target=3D"_blank" rel=3D"noopener norefe=
+rrer nofollow"><span>Use Codex to write code on the web with AI agents</spa=
+n></a></span></p></li></ul></div></td></tr></table></td></tr></table></td><=
+/tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 15px;text-alig=
+n:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p=
+></td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"#FFFFFF" style=
+=3D"background-color:#FFFFFF;border-color:#000000;border-radius:10px;border=
+-style:solid;border-width:2px;padding:0.0px 0.0px 0.0px 0.0px;"><table role=
+=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><=
+tr><td class=3D"e" align=3D"left" valign=3D"top" style=3D"padding:15px 15px=
+ 8px;"><h3 style=3D"">That&#39;s it for today!</h3><p style=3D"">Before you=
+ go we=E2=80=99d love to know what you thought of today&#39;s newsletter to=
+ help us improve The Rundown experience for you.</p></td></tr><tr><td class=
+=3D"ee e " style=3D"padding:0px 15px 15px;"><div style=3D"margin-left:0px;"=
+ class=3D"edm_outlooklist"><table role=3D"none" border=3D"0" cellspacing=3D=
+"4" cellpadding=3D"0" align=3D"left" style=3D"min-width:300px;"><tr><td sty=
+le=3D"width:100%;border:1px solid rgba(50, 50, 50, 0.17);padding:6px 12px; =
+border-radius:4px;"><a style=3D"font-style:normal;text-decoration:none;" hr=
+ef=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3kaGd0BkNqLYPjeMf7=
+5St_4h4uVDlb2B1USeB_E10kZbxTKUcaUGWe6T1cw3jJ_rhJAAdhA-a57LkuMgT7ZkUFa_DVrGV=
+W2lwkZ-2VbwfIAZMQlGIrFItJb0FggJmPLIa7MLoWxS_V8Skkv_ZQ4JbPvTERd39mcVwl_k539L=
+fXU3fBomuUL8U_au2Bsdjw5gdxYjkF4lAhB5apMiK9BUcIrKyfwMTNVDzWzeVO0a5E1eAtNL0hY=
+9yR73ey-8OiStPnTT4nIRlY2g0MzYanULabmlRuZxCv-zXtKJa4EhDry9wV4aIqssnkT97iXJIy=
+6cxHx7VIgYrhCtPiVcVyjTiLYcQSdzi7kHFVhAX2pQDF4kbUDbzH6idrqlFvYhiYUNJ4hVG7LJB=
+n51gdo0GKtjg9T4EXy_NqPAQI_D0gI-Uojj2IxenNxrckVuG4ZQDykGWq6VU9e00ENVt8A0pxyZ=
+uDliCsT3EHOwmy9MFZuNaQ5_oeGY6RMjTZp0_00yJs7bkm6i-J8K5i2K-WVDNBMws0EQVSdCRmV=
+o3zypQtNCaZdpMxm94S0sXp39g5OxBH95nab_sB2IqVZt_sAJkeo39pH4hprMeglswenrrGZRxu=
+kcCO9fBkYr_IfNML0pTtQkyjboLHS3KzmqY4A1KCrFnBcyseGfeGx729T6jyVZyXHAr6ujOHR6Q=
+UQhPfh22zWucpG_AAVVt7ED-AzlKGZq52WW-hnMDvwtpeHvgQCKRJRMnf-RJKFvc40UhJR4nRZs=
+V_S7r3zEChCL_D0NA4mxzjvDUgjplj91h38l7sW1F_eT7SoyqgICIRptOkX6MueVE1p67QOjng1=
+0BUJihClyqCO7J83IQVXFzLc293XfwMOvwucPMcAjFR2AdN_4JHFg8-QfkbVC_sXZOdYxZDhRR6=
+2xN6LJdlxMeD4gUi91myjJBMxzioKtd6FDCqTpbOV6OLAZioXcutlo7zEGSlZvkmgNB3sB608-E=
+plPLulctKLIcIfmctO2FRo8EpZBA3GB24bb9eChm25NJb4T1BO92oYNMYv5F9IFageNXg0/4my/=
+KnoaNglGS0SzCF8hNtNtCg/h38/h001._aSInG0xYbC38UQssQxS2nNmImZwvHJJD--TCmfiWfk=
+"><p style=3D"font-size:14px;color:inherit;"> =E2=AD=90=EF=B8=8F=E2=AD=90=
+=EF=B8=8F=E2=AD=90=EF=B8=8F=E2=AD=90=EF=B8=8F=E2=AD=90=EF=B8=8F Nailed it <=
+/p></a></td></tr><tr><td style=3D"width:100%;border:1px solid rgba(50, 50, =
+50, 0.17);padding:6px 12px; border-radius:4px;"><a style=3D"font-style:norm=
+al;text-decoration:none;" href=3D"https://elinke1c.daily.therundown.ai/ss/c=
+/u001.dSnm3kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_E10kZbxTKUcaUGWe6T1cw3jJ_rh=
+JAAdhA-a57LkuMgT7ZkUFa_DVrGVW2lwkZ-2VYN2-fF6Asnl1MF6wGxUlvF8S72_jIMAvhMiMQ1=
+4d9nSiR5s3MbReAqlzGLv3qfKyMPkMgLdABinbeyn2QKidUP-3ITgVdDcSfyPk273WJULsb3bSB=
+kgaOihM3Be8F0HzYNx8ltr0Xgu4YrdKkCiu80ikkVuMCVW6SN_JHmJLvW9xwyO9BYXch3gO8azW=
+hnMIIynO0WAYGrE3TgFhhrsg9TwR1umkdsS1VOVlEdsubd90oQA87HZcbR1WWT1lOPTn0GFIzDk=
+K5sYAO6AbwH2nmsq32Ctpu6U6FXkQD4cpDAyxt4wuby7cKw_tSxWm759cSR3KJZSsLMDMyc1WWR=
+LEaqAkw_6NvUkL-vaaV3VeEHQSyBsISvQrWVLErw5GUmU7b1BriFRxpfvJAzjiFevP3vEhq9K0Q=
+mEjd4idB8N1djtD_8O0F0fSvvwpdsfxprBsb9GWyjPpBNkJpO4uXc85CO3Sce9l7dV6r12eOZaY=
+jE1yvIZ4-FWlWSfWrlCKT8yQX0eB5MnsO3p4mbIukeYeNptIpSUGV26tUOgpRGxKDDWtYlkD_5P=
+ZZWe6EUgupPNYtJZSmQKvegez7lJx8Qx67NSviOFEUSPhJNFluPWC9jyrdMp534X-pqJirjWRpk=
+k2wVHc-Nu_zv30Q8FwINaReH0ju4XzzuhUEdJJNBIYCINozefiyo-ZBguClhhDkgiacXCtAhemG=
+Dt2SsxM3oiz7NJHgT79fr2DUbWXihQRHuVxvpvmhjZcnHxYKvA3aZ-FclR3x4ZKckGFjw-miyVA=
+NUUP04BFXMBiC9ABFza2HNJ2fV--bD0ucZLd9wL3i-tnqYF6nMddEWsAJSjD9M2ETsjG8Sz_Uzp=
+lPRp3ylBGJGqKBdrlavIxdW0YwdgRd3vcVJ7WD35R14mTnS3RFwAP186wisaXq_6V0NLtvCHzK_=
+zbPEIf2Dj0kPvCLYYWm5wfA/4my/KnoaNglGS0SzCF8hNtNtCg/h39/h001.f4FReOQoRb1jg-m=
+JBXSPdKlxB-exSuX1UWIoqTwDSW0"><p style=3D"font-size:14px;color:inherit;"> =
+=E2=AD=90=EF=B8=8F=E2=AD=90=EF=B8=8F=E2=AD=90=EF=B8=8F Average </p></a></td=
+></tr><tr><td style=3D"width:100%;border:1px solid rgba(50, 50, 50, 0.17);p=
+adding:6px 12px; border-radius:4px;"><a style=3D"font-style:normal;text-dec=
+oration:none;" href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3=
+kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_E10kZbxTKUcaUGWe6T1cw3jJ_rhJAAdhA-a57L=
+kuMgT7ZkUFa_DVrGVW2lwkZ-2VYV04V4piiddmnd8y9qE4i3-k1Eh7MZ_g6aUo7_92Bp5EWt0SV=
+w27y17m1NgAMpF9Jrzvth1hnQefGyjyGDkK-nUaLpJnexZ6tCJSFuQRKjYUvY4csk3tqF9Mh7mW=
+Cqlg-E-qZ_wkycNR-W5gf7emH34d3ONNR3RAk0aFrwruJ_-MRj2rRYnXbrbehXQs_FASl0mDstG=
+4CldjI8dTwEZY0Eie-flRRkGDA8mLINpIG5PeQcDadYxAYInoF7Me1-Ndbn5Am6kHojreN_QAzc=
+5f9HqgUtk7cZ2dQT_90EzX3qYo3EIFWS8yeb2oF4LsCF9TfTBmk0mZj7XaZTVRWx6531MqYej8J=
+KACUPeNvwZBFsyRTgjUX3_kY3wXLDGMrDY0j4pyIAvmRxwXNJTvP-ASfZfv_CtvL-ehKBIVOGWx=
+qHi3wBFJsdT6VkEnOPIy2rqx0FV0kcKmHsIKXtyo63ohSKdJXBp-6ywPFxIsqCSZH_2WsO7m7Qk=
+NY9APB7KJi_lywp9GC7bAK81gb0LT5nFkQotKsrjzkdZ2HwSPQc4KjF76DP5amyjiTT_Blt6OE7=
+nxqA4taw9EK_T45qdJDvKXBCmGwpYh-dnD6zd5Ku59hIbDhVAYl5C3wRKwhebfxm_5BZhDOC0fN=
+i52Yy3IvXpxsPwqQCMLhsa4pbdybtIB6a8BupqFVlpeUuuYxgg-DGO9EmQDBJTQJFNHzrQmys5b=
+sjBdQZ-m6o-cf5jgeOaaECSaUIm5GbBQVWEQOPRGWXxHmiOdsZVZCyJbtGM8QhR3Vsz8d4uzF5D=
+3s9Nhi65QBSdJ6vbR3cidBS5b4sD-j0DADrR6BjGa8VkL5-o3Hveg4d1XJ6fFzgf2V_aHaZV9xp=
+9CpA8D2rqHL1tjR39Oh3JcQi31OeH1f2eILD3Jts6eypEUW9Jlgn5PeuUmOOAxVA6P2lQ2C9HfN=
+3T-QhyNLa3Zc/4my/KnoaNglGS0SzCF8hNtNtCg/h40/h001.R2FZTInYIJQAWShDBM7940a6X7=
+rD_SISVNHGctdIJxM"><p style=3D"font-size:14px;color:inherit;"> =E2=AD=90=EF=
+=B8=8F Fail </p></a></td></tr></table></div></td></tr><tr><td class=3D"dd" =
+align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:break-w=
+ord;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"">See you soo=
+n,</span></p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding=
+:0px 15px;text-align:left;word-break:break-word;"><p style=3D"mso-line-heig=
+ht-alt:150.0%;"><span style=3D""><i>Rowan, Joey, Zach, Shubham, and Jennife=
+r =E2=80=94 the humans behind The Rundown</i></span></p></td></tr><tr><td a=
+lign=3D"left" valign=3D"top" style=3D"padding-bottom:8px;padding-left:15px;=
+padding-right:15px;padding-top:2px; " class=3D"dd"><table role=3D"none" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"margin:0 auto 0 0;">=
+<tr><td align=3D"center" valign=3D"top" style=3D"width:254px;"><img src=3D"=
+https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,oner=
+ror=3Dredirect,quality=3D80/uploads/asset/file/b105d547-252f-4914-8821-3eb7=
+236b1257/TheRundown_EditorialTeam.png?t=3D1755849086" alt=3D"" height=3D"au=
+to" width=3D"254" style=3D"display:block;width:100%;" border=3D"0"/></td></=
+tr></table></td></tr></table></td></tr></table></td></tr><tr><td class=3D"d=
+d" align=3D"left" style=3D"padding:0px 15px;text-align:left;word-break:brea=
+k-word;"><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr></table></t=
+d></tr></table></td></tr><tr><td align=3D"center" valign=3D"top"><table rol=
+e=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center"><tr><td><tr><td class=3D"b" align=3D"center" valign=3D"top=
+" bgcolor=3D"#222222" style=3D"padding:0px 0px 0px 0px;border-style:solid;b=
+order-width: 0px 0px 0px 0px;border-color: #ffffff;border-bottom-left-radiu=
+s:10px;border-bottom-right-radius:10px;"><table role=3D"none" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td=
+ align=3D"center" valign=3D"top" bgcolor=3D"#255bee" style=3D"padding:12px"=
+><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" align=3D"center"><tr><td><span style=3D"padding-left:1px;"></spa=
+n></td><td align=3D"center" valign=3D"middle" width=3D"75" style=3D"width:7=
+5px;"><a href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.KT4rQsO6sHS=
+_v2VASG2xupM-pq8N3JAdCf8W79jjoS08JjE4uBIAS4_xq5rVj_2sC4AahLq_scIr3u8X_VVErR=
+hr_JO5zSQgzwMI2Yqd03wZ67tlIaGWD82pMCW8te-PkxksZPbz6w-TkSYFQ5_OWJpSSccRrISss=
+xGNN3N2MpVdddUx3G1jk5VzntTo-CKs6Qqto5CURzbmkrFtr0yGi4VIRMr0dR5JZjTIhZtO5Yub=
+HaEby2Yf5tguwMQe3phL/4my/KnoaNglGS0SzCF8hNtNtCg/h41/h001.dW7ko98dRNPHLbmxUE=
+a9gmblaiSQBfcUzCZ392xoxmQ" style=3D"text-decoration:none;"><img width=3D"22=
+" height=3D"22" alt=3D"tw" border=3D"0" style=3D"display:block;max-width:22=
+px;color:Light" src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-=
+down,format=3Dauto,onerror=3Dredirect,quality=3D80/static_assets/x_light.pn=
+g"/></a></td><td align=3D"center" valign=3D"middle" width=3D"75" style=3D"w=
+idth:75px;"><a href=3D"https://elinke1c.daily.therundown.ai/ss/c/u001.dSnm3=
+kaGd0BkNqLYPjeMf1e7JMP5b6PDmCYdhQ7iJ-gM3-SOxYsbNCuU6Bh1BmqHmnANOa4I2fY3y8Bn=
+h69vVcMtZUYPHtuYb_CiFJnZ_AQL5o-vpBWnAXu2QRScI1qAoFHK8e9Jpp9gbyp2WghLn00srmK=
+kRg61hk6afqDLauf6utxzZE-p5qMEWMJUZ99oDdeM-EWb4B_uqAMumU_rypvi7L1cFlJXt9TENH=
+uKlC21jMEorP9llu3SBGdDL47Pv5mNRlolTIpUc3jJ2YVtCA/4my/KnoaNglGS0SzCF8hNtNtCg=
+/h42/h001.IX_ozZjP_1gxBc4b0KF2Ple2Nz6Xcr3ZImXb_YRha5E" style=3D"text-decora=
+tion:none;"><img width=3D"22" height=3D"22" alt=3D"ig" border=3D"0" style=
+=3D"display:block;max-width:22px;color:Light" src=3D"https://media.beehiiv.=
+com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=
+=3D80/static_assets/instagram_light.png"/></a></td><td align=3D"center" val=
+ign=3D"middle" width=3D"75" style=3D"width:75px;"><a href=3D"https://elinke=
+1c.daily.therundown.ai/ss/c/u001.qfYj2NCVNYWxQpHjnkNP6ZIMYEvaSMAESv24GZdjnG=
+1BXkJmsTHXv9UxhDwCZR7_rNIWMKP0KpQaK4fiVX9kpE3OeuWht7Tag7bLr-AHr9qqt_a4X5UBw=
+DFgBCU0luafLfSqRvWpJWKgYchS0H2MMseqU8QuAKa_3EmgLiorq0bmRrn9IFDV9ZaVtfgOJ2L2=
+gHyO-mZpoI7rJuXOERliI0Dxax4QIY1fcYIkPEekdPr1bKqHU8VyaFF5MT5Di2pLkCaS6adjGK7=
+nm6c739HR-Q/4my/KnoaNglGS0SzCF8hNtNtCg/h43/h001.X9OMYSUkX9eZPMHhLFdOv1gDVvA=
+rX13o7b6KuSmjYbY" style=3D"text-decoration:none;"><img width=3D"22" height=
+=3D"22" alt=3D"in" border=3D"0" style=3D"display:block;max-width:22px;color=
+:Light" src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,for=
+mat=3Dauto,onerror=3Dredirect,quality=3D80/static_assets/linkedin_light.png=
+"/></a></td><td><span style=3D"padding-left:1px;"></span></td></tr></table>=
+</td></tr><tr><td class=3D"dd" align=3D"center" style=3D"padding:0px 15px;t=
+ext-align:center;word-break:break-word;"><p style=3D"mso-line-height-alt:15=
+0.0%;"><span style=3D"color:#FFFFFF;font-size:0.8rem;">Want to sponsor us a=
+nd get in front of 1,000,000+ AI enthusiasts?</span><span style=3D"color:#F=
+FFFFF;font-size:0.8rem;"><b>=C2=A0</b></span><span style=3D"color:#FFFFFF;f=
+ont-size:0.8rem;"><b><a class=3D"link" href=3D"https://elinke1c.daily.theru=
+ndown.ai/ss/c/u001.KT4rQsO6sHS_v2VASG2xutt47WToq2lGcecIVNNQSNJJXsTbyja0MNJk=
+dxClNtOPO7bWVC8G5SNwtEqed4o55-00goYqJiaXPJPhuWHyeesA0OI3ZJih68-CfGaEPCcYF2M=
+GS7C-eqpV0iwNmMg5fa0IfYZ4mpqYaLYfnndmb4lVh7jOYg8MtfhhtiyLSGNcm-_35RTu75SkMF=
+E3CInjulrwvSF5uXMmzjEsLZ-8DhJVqMXK1UyCzOH7qScefKV-LeO2XB4KPvUsNoqmCSLdTA/4m=
+y/KnoaNglGS0SzCF8hNtNtCg/h44/h001.PZAjzt5u0Y2XuPm19FYemHPuc7JqgMUX5mAeJTYgu=
+X4" target=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Get in tou=
+ch</span></a></b></span><span style=3D"color:#FFFFFF;font-size:0.8rem;"><b>=
+.</b></span></p></td></tr><tr><td class=3D"dd" align=3D"center" style=3D"pa=
+dding:0px 15px;text-align:center;word-break:break-word;"><p style=3D"mso-li=
+ne-height-alt:150.0%;"><span style=3D"color:#FFFFFF;font-size:0.8rem;">Was =
+this email forwarded to you? </span><span style=3D"color:#FFFFFF;font-size:=
+0.8rem;"><b><a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/=
+ss/c/u001.dSnm3kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_H4wpkqf8EGTk1iM5Wu0HuoF=
+IsKQVYDu_ovIaAd89V_Nvs2jsW_lRswn84NkqTYMu8JVnw2IsjtESfB6_5xHNXcGwNRkUtsyoJa=
+vFVFku7A6LI7YSvRGtqv9649DJaQE4lZ2uNsSYMV7AAhmq8Czz4TBONg7FP3d6QyO9pPw9ph2OP=
+FvuvfJAfGcUxJIAMMVrBnt-vbnRXs8Mtk3Rm9irqrL5maTZvdXsXzTf1TgeTf2dh6tliMrc653Q=
+nv2-Aqnw9acAzm2EWgy0mJvswb5o945dCIwOyWtVZz5Inmfob4sYvakwEIBzWNaRgzGvpJYOhnA=
+i4rFV-9mzD-1lfTuQVjoSPuSjiGAOr3O257b3vl5-6vwUB3jNshAp_0ThdYn2zjM4CObdmn6M0d=
+6nxoBcivn9FZWAaz9eM4SUFWuSwWo-QXNquWy0B5UZf5K_6pevtbukYxhSjP6TRRhrTs1aOtzS-=
+jpm5D3dxF-GN6y6-VSlPlp_qx2Q8Ud8yZpmwkYNB_4RamH2BL-TXYwBCluBKAOYvObmVI9jRtza=
+1h3RdCsU8EpbAh603_L5KqHtQ2L6cac3rrQFbz8UYgY5BgdbFGc022JAND2n5V6R91uy4axP3VB=
+95bVarTLI0BWuc9xQQAehEyruUFx7ncSLVDeMpMEeRHAMuOloR7qTsyT-HiQ3IFW02X8yRjrUkI=
+KY9GsanhJtQJHAsBTSXqJcxk1TU3N4qMUHxpuGPiUmP7iJLaRULnyQfZT1w-8Td3D4tq_yrgmG_=
+AXPBqn3qP_Tpiu5iw/4my/KnoaNglGS0SzCF8hNtNtCg/h45/h001.dFfldj1lIQrdadg1DPtH6=
+J2E7Wzsv6UJAw_sNYcscDk" target=3D"_blank" rel=3D"noopener noreferrer nofoll=
+ow"><span>Sign up for free here</span></a></b></span><span style=3D"color:#=
+FFFFFF;font-size:0.8rem;"><b>.</b></span></p></td></tr><tr><td class=3D"dd"=
+ align=3D"center" style=3D"padding:0px 15px;text-align:center;word-break:br=
+eak-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"color:#F=
+FFFFF;font-size:0.8rem;">Interested in podcasts? </span><span style=3D"colo=
+r:#FFFFFF;font-size:0.8rem;"><b><a class=3D"link" href=3D"https://elinke1c.=
+daily.therundown.ai/ss/c/u001.eCbm_1zon7G0lMoXTECWay9Klwe_9Q5JwYYR35vHVJGhL=
+TKAvXkEGfjpivf9ppHpk-tjqtqzAvPi3L3y79Rl45HdLkIxKpowF43fTv6uHd0hcXUaRDF04G3Q=
+YkkTWTKcYenmuOHp8MXfl1G9p8wNdZjhYGgUgpCJI0OtH7-lULLAzSaiZgg8PYP4qcCw7njfEot=
+7vfEU3t2jSynl17B5jFwyGcY85_6_C3NvAhuI9C8eVWkFFh8hiydo39sokkci4VqzSU1soyi5YX=
+W0RnFS-WjYSutFHu0MCeeBj0r4QLY/4my/KnoaNglGS0SzCF8hNtNtCg/h46/h001.0mEb7VMab=
+I_PiGgEK6ucqrrhGxdQMVP16jWNX_o12sI" target=3D"_blank" rel=3D"noopener noref=
+errer nofollow"><span>Check out ours here</span></a></b></span><span style=
+=3D"color:#FFFFFF;font-size:0.8rem;"><b>.</b></span></p></td></tr><tr><td c=
+lass=3D"dd" align=3D"center" style=3D"padding:0px 15px;text-align:center;wo=
+rd-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span style=
+=3D"color:#FFFFFF;font-size:0.8rem;">Go deeper? </span><span style=3D"color=
+:#FFFFFF;font-size:0.8rem;"><b><a class=3D"link" href=3D"https://elinke1c.d=
+aily.therundown.ai/ss/c/u001.NN3LcSSNlElMIHwAnhfMXU6KHmur7bwaQblVUOresUDRGu=
+9zQCOecTRqc_0N_j4BogYt4fC92j_CK6d5Q79nHQ0cKO4l8XXjXNlTWT8r2EbKDekwLi7S-gPg9=
+apaHOeFk8x_mfiPo-0u7iRXbPjclj6IZnpJVOUhqSOyVch5L2zdmeP5qdwJVUq5pVZZEeQwy1kP=
+KmjMOe4bin3ZelVKsm2cvf8zY9LES8n7jMWmGhD-CHdc8Ffr3HKLxlTWAMsn/4my/KnoaNglGS0=
+SzCF8hNtNtCg/h47/h001.Q19YCRidkQZuXpHIIQcB4aysB4Lauzy2iHcIBvqnDGM" target=
+=3D"_blank" rel=3D"noopener noreferrer nofollow"><span>Join the AI Universi=
+ty</span></a></b></span><span style=3D"color:#FFFFFF;font-size:0.8rem;"><b>=
+.</b></span></p></td></tr><tr><td class=3D"w" align=3D"center" valign=3D"to=
+p" style=3D"padding:15px 15px 15px 15px;"><table role=3D"none" width=3D"100=
+%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><t=
+d align=3D"center" valign=3D"top"><p style=3D"font-family:'Verdana',Geneva,=
+sans-serif;color:#FFFFFF!important;"> Update your email preferences or unsu=
+bscribe <a class=3D"link" href=3D"https://elinke1c.daily.therundown.ai/ss/c=
+/u001.dSnm3kaGd0BkNqLYPjeMf75St_4h4uVDlb2B1USeB_EembtyKl265XkH6dv-bVUEyCNFk=
+Cz8Rfdp07qeqOctwW8TPloGy8PAC5XfByxRu3IyvOncgIbVti1wT1Km82Wpc2RUHFLUjmhkbDuE=
+ke6zhHVWSJd2D2LxQUIZUBIJ_Vv2Pxzwtg6ojZKnigO1RiozQoKvqFMzx0qRgr1vcuJS3cGQQdn=
+sZcwUVicX1WLjNaxCSR4U_giJyWB_7nqoGUBsrChtUi3MWFGYG_-V-gvI9KGgrwiGimSF6OcfZZ=
+ZMp4NMcNClcq8fsAyOAw3Dz1jN6CBKu8JQq0bCLUflAUZ0MPp6RwzhdCUNGUXgizBTO_7u0tcrq=
+HCry_iUxRuJtLdg-a2m6J8lhbTjE2uRpwkcWPNkFbLnhE52ENnmCEeJbuOQl3Ya1RdmwcMCcN5G=
+dNxEwj94nNM-6ApxTBnh9XkZCXeQV_HWsrN-Zd46bgrypw5FuAHV1k7rS67SFuR4A7IyLlAlveh=
+2vwjVWEoMkYFpFS5Ibk6CE3kunKwwTQNQ56ZUiPFI8aSRA823qirFpn0JH2dZGetirntbUFNDdI=
+B1X9hn9adqSL-IAWpjjfM6S5CG5G8u4V9ti8S1M-IPszaNNQzJVt0w93LaeD8pwzNyGlchQXMkM=
+iaRsH6tvrJDZ-0qSEheOqaYnanDpI3ZCRFR9vXiFZmnYttMKxQRrzPUS6ZsCkh4z2zLaG6V70mc=
+BPh_6L4df_kmZBTysfGWFWI_2sItQS6tC5Mmjz2tueUMl8tCI8ZOWf4MmowdDRSJzCcfmvRKxUz=
+92hIZ6P6aPDwSg7IdFl_IQkTLzyR56-eSYDyr56-VAQ4cxDqWFGKSLg5fI7V33MyrZ0B72ZpoRZ=
+efELKacru1QfHn2J9joLttPwspaYWKC-GAPtGoCG1wJyrkCQrhD4KM2_wKUqfxQOF2UtjGtxGal=
+evPPW0U5LC3KDBqrdSlOFNTuWZA4Hgdt_Y-qgxGI6bi95o2WgKwZNIXf9C-fBDqZMDKpN2cG2ZN=
+ew/4my/KnoaNglGS0SzCF8hNtNtCg/h48/h001.-bRyjXmV35TFVgoVQa7P0Ydi2LRPOfCvPoL1=
+KWMAW5E" style=3D"text-decoration:underline;text-decoration-color:#FFFFFF!i=
+mportant;color:#FFFFFF!important;"> here</a></p><p class=3D"copyright" styl=
+e=3D"font-family:'Verdana',Geneva,sans-serif;color:#FFFFFF!important;"> &co=
+py; 2026 The Rundown AI, Inc </p><p style=3D"font-family:'Verdana',Geneva,s=
+ans-serif;color:#FFFFFF!important;"> 333 Seymour St<br>Vancouver, BC V6B 5A=
+7, Canada </p></td></tr><tr><td align=3D"left" valign=3D"top" height=3D"2" =
+style=3D"height:2px;"><a href=3D'https://elinke1c.daily.therundown.ai/ss/c/=
+u001.ZY5Y0CT8KZaZ1y9TVLsmfxFqyGZuiFK1f30O4i38bn3W0PtKADzEj3TdX34a-1QfU-nu1f=
+7v8Br3UzXC9NvDem9gNzqEgrWgw1-xzkbvNKg/4my/KnoaNglGS0SzCF8hNtNtCg/h49/h001.M=
+UZJnfOvJcXwEyzu9AbLf1xFYewskWLV4N8-b13oiIA' style=3D"color: #222222 !import=
+ant; cursor: default; font-size: 1px; text-decoration: none;"> Terms of Ser=
+vice </a></td></tr></table></td></tr></table></td></tr></td></tr></table></=
+td></tr></table></td></tr></table></td></tr></table></div></body></html>
+--512368e3dd5152c6a5254c877fa997f8ab69bd00e21a2bb8db1a88f53681--

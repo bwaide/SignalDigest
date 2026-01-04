@@ -5,7 +5,7 @@ interface SaveConfigRequest {
   host: string
   port: number
   username: string
-  password: string
+  password?: string  // Optional - only provided if user wants to update it
   use_tls: boolean
 }
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const body: SaveConfigRequest = await request.json()
 
     // Validate required fields
-    if (!body.host || !body.username || !body.password) {
+    if (!body.host || !body.username) {
       return NextResponse.json(
         { success: false, error: 'Missing required fields' },
         { status: 400 }
@@ -46,26 +46,6 @@ export async function POST(request: Request) {
         { success: false, error: 'Port must be between 1 and 65535' },
         { status: 400 }
       )
-    }
-
-    // TODO: In production, get vault_secret_id from test-email-connection response
-    // For MVP, use mock vault ID
-    const mockVaultSecretId = `mock-vault-${Date.now()}`
-
-    // Create signal source object
-    const signalSource = {
-      id: crypto.randomUUID(),
-      type: 'email' as const,
-      enabled: true,
-      config: {
-        host: body.host.trim(),
-        port: body.port,
-        username: body.username.trim(),
-        vault_secret_id: mockVaultSecretId,
-        use_tls: body.use_tls,
-      },
-      status: 'connected' as const,
-      last_tested_at: new Date().toISOString(),
     }
 
     // Get current user settings
@@ -84,9 +64,57 @@ export async function POST(request: Request) {
       )
     }
 
-    // Update or insert signal_sources
     const currentSources = currentSettings?.signal_sources || []
-    const updatedSources = [...currentSources, signalSource]
+    const existingEmailSource = currentSources.find((s: { type: string }) => s.type === 'email')
+
+    let vaultSecretId: string
+
+    // If password provided, store it in Vault
+    if (body.password && body.password.trim()) {
+      const { data: vaultData, error: vaultError } = await supabase.rpc('create_secret', {
+        new_secret: body.password,
+        new_name: `email-password-${body.username}-${Date.now()}`,
+      })
+
+      if (vaultError) {
+        console.error('Vault storage error:', vaultError)
+        return NextResponse.json(
+          { success: false, error: 'Failed to store password securely' },
+          { status: 500 }
+        )
+      }
+
+      vaultSecretId = vaultData
+    } else if (existingEmailSource) {
+      // Keep existing vault secret ID
+      vaultSecretId = existingEmailSource.config.vault_secret_id
+    } else {
+      // New config without password - error
+      return NextResponse.json(
+        { success: false, error: 'Password is required for new configuration' },
+        { status: 400 }
+      )
+    }
+
+    // Create or update signal source object
+    const signalSource = {
+      id: existingEmailSource?.id || crypto.randomUUID(),
+      type: 'email' as const,
+      enabled: true,
+      config: {
+        host: body.host.trim(),
+        port: body.port,
+        username: body.username.trim(),
+        vault_secret_id: vaultSecretId,
+        use_tls: body.use_tls,
+      },
+      status: 'connected' as const,
+      last_tested_at: new Date().toISOString(),
+    }
+
+    // Update or insert signal_sources
+    const otherSources = currentSources.filter((s: { type: string }) => s.type !== 'email')
+    const updatedSources = [...otherSources, signalSource]
 
     const { error: updateError } = await supabase
       .from('user_settings')

@@ -71,6 +71,7 @@ export interface Database {
           source: string
           published_date: string
           relevancy_score: number
+          topic: string
           tags: string[]
           duplicate_group_id: string | null
           is_primary: boolean
@@ -91,6 +92,7 @@ export interface Database {
           source: string
           published_date: string
           relevancy_score: number
+          topic: string
           tags?: string[]
           duplicate_group_id?: string | null
           is_primary?: boolean
@@ -111,6 +113,7 @@ export interface Database {
           source?: string
           published_date?: string
           relevancy_score?: number
+          topic?: string
           tags?: string[]
           duplicate_group_id?: string | null
           is_primary?: boolean
@@ -127,6 +130,7 @@ export interface Database {
           interests_description: string | null
           relevancy_threshold: number
           approved_topics: string[]
+          taxonomy_topics: string[]
           email_check_frequency: string
           created_at: string
           updated_at: string
@@ -136,6 +140,7 @@ export interface Database {
           interests_description?: string | null
           relevancy_threshold?: number
           approved_topics?: string[]
+          taxonomy_topics?: string[]
           email_check_frequency?: string
           created_at?: string
           updated_at?: string
@@ -145,6 +150,7 @@ export interface Database {
           interests_description?: string | null
           relevancy_threshold?: number
           approved_topics?: string[]
+          taxonomy_topics?: string[]
           email_check_frequency?: string
           created_at?: string
           updated_at?: string

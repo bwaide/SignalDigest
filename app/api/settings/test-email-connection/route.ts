@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server'
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { connectToImap } from '@/lib/email-import'
 
 interface TestConnectionRequest {
   host: string
@@ -28,17 +30,43 @@ export async function POST(request: Request) {
       )
     }
 
-    // TODO: In production, this would:
-    // 1. Store password in Supabase Vault
-    // 2. Call Edge Function to test IMAP connection
-    // 3. Return real vault_secret_id
+    // Test IMAP connection
+    try {
+      const client = await connectToImap({
+        host: body.host,
+        port: body.port,
+        username: body.username,
+        password: body.password,
+        use_tls: body.use_tls,
+      })
+      await client.logout()
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+      return NextResponse.json(
+        { success: false, error: `IMAP connection failed: ${errorMessage}` },
+        { status: 400 }
+      )
+    }
 
-    // For MVP: Mock successful connection
-    const mockVaultSecretId = `mock-vault-${Date.now()}`
+    // Store password in Supabase Vault
+    const supabase = createServiceRoleClient()
+
+    const { data: vaultData, error: vaultError } = await supabase.rpc('create_secret', {
+      new_secret: body.password,
+      new_name: `email-password-${body.username}-${Date.now()}`,
+    })
+
+    if (vaultError) {
+      console.error('Vault storage error:', vaultError)
+      return NextResponse.json(
+        { success: false, error: 'Failed to store password securely' },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json({
       success: true,
-      vault_secret_id: mockVaultSecretId,
+      vault_secret_id: vaultData,
     })
   } catch (error) {
     console.error('Test connection error:', error)

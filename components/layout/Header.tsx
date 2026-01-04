@@ -21,21 +21,46 @@ export function Header({ emailStatus = 'not_configured' }: HeaderProps) {
     setCheckResult(null)
 
     try {
-      const response = await fetch('/api/emails/import', {
+      // Step 1: Import emails
+      setCheckResult('Importing emails...')
+      const importResponse = await fetch('/api/emails/import', {
         method: 'POST',
       })
 
-      const data = await response.json()
+      const importData = await importResponse.json()
 
-      if (response.ok && data.success) {
-        setCheckResult(`✓ Imported ${data.imported} emails`)
+      if (!importResponse.ok || !importData.success) {
+        setCheckResult(`✗ Import failed: ${importData.error}`)
+        return
+      }
 
-        // Reload page after 2 seconds to show new signals
+      const imported = importData.imported || 0
+
+      if (imported === 0) {
+        setCheckResult('✓ No new emails')
+        setTimeout(() => {
+          setCheckResult(null)
+        }, 3000)
+        return
+      }
+
+      // Step 2: Process signals to extract nuggets
+      setCheckResult(`Processing ${imported} email(s)...`)
+      const processResponse = await fetch('/api/signals/process', {
+        method: 'POST',
+      })
+
+      const processData = await processResponse.json()
+
+      if (processResponse.ok && processData.success) {
+        setCheckResult(`✓ Imported ${imported}, extracted ${processData.processed} nuggets`)
+
+        // Reload page after 2 seconds to show new nuggets
         setTimeout(() => {
           window.location.reload()
         }, 2000)
       } else {
-        setCheckResult(`✗ Import failed: ${data.error}`)
+        setCheckResult(`⚠ Imported ${imported}, but processing failed`)
       }
     } catch {
       setCheckResult('✗ Network error')

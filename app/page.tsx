@@ -1,6 +1,4 @@
-import { Header } from '@/components/layout/Header'
-import { Sidebar } from '@/components/layout/Sidebar'
-import { EmptyState } from '@/components/dashboard/EmptyState'
+import { DashboardV2 } from '@/components/v2/DashboardV2'
 import { SettingsModal } from '@/components/settings/SettingsModal'
 import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import type { SignalSource, SignalSourceStatus } from '@/types/signal-sources'
@@ -34,16 +32,22 @@ export default async function Home() {
     }
   }
 
+  // Fetch nuggets
+  const { data: nuggets } = userId
+    ? await supabase
+        .from('nuggets')
+        .select('*')
+        .eq('user_id', userId)
+        .eq('is_archived', false)
+        .order('relevancy_score', { ascending: false })
+        .order('created_at', { ascending: false })
+        .limit(50)
+    : { data: null }
+
   return (
-    <div className="flex h-screen flex-col">
-      <Header emailStatus={emailStatus} />
-      <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        <main className="flex-1 overflow-y-auto bg-gray-50 p-8">
-          <EmptyState />
-        </main>
-      </div>
+    <>
+      <DashboardV2 nuggets={nuggets || []} emailStatus={emailStatus} />
       <SettingsModal />
-    </div>
+    </>
   )
 }

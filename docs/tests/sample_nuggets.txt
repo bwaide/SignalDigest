@@ -1,0 +1,14 @@
+Nugget 1: Instagram Declares the End of Aesthetic
+Instagram's head, Adam Mosseri, states that AI content has rendered curated posts irrelevant, prompting a need for rapid platform evolution.
+
+Nugget 2: Nebius Launches Post-training for AI Models
+Nebius has launched Post-training, enabling teams to fine-tune AI models for production-grade applications effectively.
+
+Nugget 3: DeepSeek Proposes Next-Gen AI Architecture
+DeepSeek has introduced a new research paper hinting at structural changes in neural networks to improve training efficiency.
+
+Nugget 4: Using Codex to Automate Coding Tasks
+OpenAI's Codex allows users to write code on GitHub using AI agents, streamlining development without manual coding.
+
+Nugget 5: Instagram's Shift Toward Raw Content
+Amid AI-driven changes, Instagram aims to promote unfiltered content as a new measure of authenticity.

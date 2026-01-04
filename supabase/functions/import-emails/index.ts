@@ -2,6 +2,7 @@ import { createClient } from 'supabase'
 import { ImapFlow } from 'npm:imapflow@1.0.164'
 import { Readability } from 'npm:@mozilla/readability@0.5.0'
 import { JSDOM } from 'npm:jsdom@23.2.0'
+import { classifyEmail } from './email-classifier.ts'
 
 function extractReadableContent(html: string): string | null {
   try {
@@ -40,6 +41,7 @@ interface EmailMessage {
   bodyText: string
   bodyHtml?: string
   hasAttachments: boolean
+  headers?: Record<string, string>
 }
 
 async function connectToImap(config: ImapConfig): Promise<ImapFlow> {
@@ -79,9 +81,11 @@ async function getEmailConfig(supabase: ReturnType<typeof createClient>, userId:
 
 async function getPasswordFromVault(supabase: ReturnType<typeof createClient>, vaultSecretId: string): Promise<string> {
   // Use Supabase Vault to retrieve the password
-  const { data, error } = await supabase.rpc('vault_read_secret', {
-    secret_id: vaultSecretId
-  })
+  const { data, error } = await supabase
+    .from('decrypted_secrets')
+    .select('decrypted_secret')
+    .eq('id', vaultSecretId)
+    .single()
 
   if (error) {
     throw new Error(`Failed to retrieve password from Vault: ${error.message}`)
@@ -108,6 +112,7 @@ async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): Promise<
   // Limit to first 50
   const uids = searchResults.slice(0, limit)
   const emails: EmailMessage[] = []
+  let skippedNonNewsletters = 0
 
   // Fetch email details
   for await (const message of client.fetch(uids, {
@@ -117,6 +122,27 @@ async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): Promise<
   })) {
     try {
       const email = await parseEmail(message)
+
+      // Classify email as newsletter or not
+      const classification = classifyEmail(email)
+
+      if (!classification.isNewsletter) {
+        console.log(`Skipping non-newsletter (confidence: ${classification.confidence}%):`, {
+          from: email.from,
+          subject: email.subject,
+          signals: classification.signals,
+          reason: classification.reason
+        })
+        skippedNonNewsletters++
+        continue
+      }
+
+      console.log(`Accepting newsletter (confidence: ${classification.confidence}%):`, {
+        from: email.from,
+        subject: email.subject,
+        signals: classification.signals
+      })
+
       emails.push(email)
     } catch (error) {
       console.error(`Failed to parse email UID ${message.uid}:`, error)
@@ -124,6 +150,7 @@ async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): Promise<
     }
   }
 
+  console.log(`Fetched ${emails.length} newsletters, skipped ${skippedNonNewsletters} non-newsletters`)
   return emails
 }
 
@@ -158,9 +185,26 @@ async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
 
   let bodyText = ''
   let bodyHtml = ''
+  const headers: Record<string, string> = {}
 
   if (message.source) {
     const source = new TextDecoder().decode(message.source)
+
+    // Extract headers (everything before first blank line)
+    const headerEnd = source.search(/\r?\n\r?\n/)
+    if (headerEnd !== -1) {
+      const headerSection = source.substring(0, headerEnd)
+      const headerLines = headerSection.split(/\r?\n/)
+
+      for (const line of headerLines) {
+        const colonIndex = line.indexOf(':')
+        if (colonIndex !== -1) {
+          const key = line.substring(0, colonIndex).trim()
+          const value = line.substring(colonIndex + 1).trim()
+          headers[key] = value
+        }
+      }
+    }
 
     // Extract text and HTML parts
     const textMatch = source.match(/Content-Type: text\/plain[\s\S]*?\n\n([\s\S]*?)(?=\n--|\n\r\n--|\r\n\r\n--)/i)
@@ -201,6 +245,7 @@ async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
     bodyText,
     bodyHtml,
     hasAttachments,
+    headers,
   }
 }
 

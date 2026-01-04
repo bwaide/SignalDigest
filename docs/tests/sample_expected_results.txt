@@ -1,0 +1,15 @@
+Nugget: IG head says platform must “evolve fast” due to AI
+Nugget: DeepSeek hints at next-gen AI architecture
+Nugget: Use Codex to write code on the web with AI agents
+Nugget: Report: OpenAI overhauling audio for upcoming device
+
+Not a nugget:
+About the Nebius story: This seems more like an ad, as the header "TOGETHER WITH NEBIUS" suggest. Also, the section doesn't end with "Why it matters" as the other content sections do.
+
+In "📰 Everything else in AI today":
+Nugget: Chinese AI lab IQuest Labs released IQuest-Coder-V1, a new model family that claims to surpass rivals like Claude Sonnet 4.5 and GPT 5.1 on coding benchmarks.
+Nugget: LMArena posted the 2025 results for top AI models, with Google’s Gemini 3 Pro leading text, vision, and search, and Veo 3.1 models topping video rankings.
+Nugget: Chinese AI startup Kimi reportedly raised $500M in a new Series C round, bringing the company’s valuation to $4.3B.
+Nugget: SoftBank is acquiring DigitalBridge for $4B, adding a data center and digital infrastructure portfolio to the Japanese giant’s growing AI bet.
+Nugget: X user Martin_DeVido shared an experiment giving Claude full control of keeping a tomato plant alive for over a month, controlling systems without human intervention.
+
