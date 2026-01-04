@@ -1,6 +1,7 @@
 import { ImapFlow } from 'imapflow'
 import { Readability } from '@mozilla/readability'
 import { JSDOM } from 'jsdom'
+import { classifyEmail } from './email-classifier'
 
 export interface ImapConfig {
   host: string
@@ -22,6 +23,7 @@ export interface EmailMessage {
   bodyText: string
   bodyHtml?: string
   hasAttachments: boolean
+  headers?: Record<string, string>
 }
 
 export interface EmailAddress {
@@ -88,9 +90,26 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
 
   let bodyText = ''
   let bodyHtml = ''
+  const headers: Record<string, string> = {}
 
   if (message.source) {
     const source = new TextDecoder().decode(message.source)
+
+    // Extract headers (everything before first blank line)
+    const headerEnd = source.search(/\r?\n\r?\n/)
+    if (headerEnd !== -1) {
+      const headerSection = source.substring(0, headerEnd)
+      const headerLines = headerSection.split(/\r?\n/)
+
+      for (const line of headerLines) {
+        const colonIndex = line.indexOf(':')
+        if (colonIndex !== -1) {
+          const key = line.substring(0, colonIndex).trim()
+          const value = line.substring(colonIndex + 1).trim()
+          headers[key] = value
+        }
+      }
+    }
 
     // Extract boundary from Content-Type header
     const boundaryMatch = source.match(/boundary=([^\s;]+)/i)
@@ -156,6 +175,7 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
     bodyText,
     bodyHtml,
     hasAttachments,
+    headers,
   }
 }
 
@@ -171,6 +191,7 @@ export async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): P
 
   const uids = resultsArray.slice(0, limit)
   const emails: EmailMessage[] = []
+  let skippedNonNewsletters = 0
 
   console.log(`Fetching ${uids.length} email(s) by UID:`, uids)
 
@@ -188,6 +209,27 @@ export async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): P
         console.log(`Parsing email UID ${message.uid}`)
         const email = await parseEmail(message as ImapMessage)
         console.log(`Successfully parsed email: ${email.subject}`)
+
+        // Classify email as newsletter or not
+        const classification = classifyEmail(email)
+
+        if (!classification.isNewsletter) {
+          console.log(`Skipping non-newsletter (confidence: ${classification.confidence}%):`, {
+            from: email.from,
+            subject: email.subject,
+            signals: classification.signals,
+            reason: classification.reason
+          })
+          skippedNonNewsletters++
+          continue
+        }
+
+        console.log(`Accepting newsletter (confidence: ${classification.confidence}%):`, {
+          from: email.from,
+          subject: email.subject,
+          signals: classification.signals
+        })
+
         emails.push(email)
       } catch (error) {
         console.error(`Failed to parse email UID ${message.uid}:`, error)
@@ -197,6 +239,6 @@ export async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): P
     console.error('Fetch error:', error)
   }
 
-  console.log(`Returning ${emails.length} parsed email(s)`)
+  console.log(`Fetched ${emails.length} newsletters, skipped ${skippedNonNewsletters} non-newsletters`)
   return emails
 }
