@@ -36,30 +36,52 @@ function checkSenderSignal(email: EmailMessage): boolean {
   const from = email.from.toLowerCase()
   const fromName = email.fromName?.toLowerCase() || ''
 
-  // Negative patterns first (stronger signal) - indicates NOT a newsletter
+  // Check for known newsletter platforms first (most specific)
+  const newsletterPlatforms = [
+    'substack.com',
+    'beehiiv.com',
+    'convertkit.com',
+    'ghost.org',
+    'mailchimp.com',
+  ]
+
+  const isFromNewsletterPlatform = newsletterPlatforms.some(platform => from.endsWith(platform))
+
+  // Positive patterns - newsletter indicators
+  const newsletterPatterns = [
+    /^(newsletter|news|digest|brief|update|roundup)@/,
+  ]
+
+  const hasNewsletterPrefix = newsletterPatterns.some(p => p.test(from) || p.test(fromName))
+
+  // If from newsletter platform OR has newsletter prefix, it's a newsletter
+  if (isFromNewsletterPlatform || hasNewsletterPrefix) {
+    return true
+  }
+
+  // Negative patterns - indicates NOT a newsletter
   const personalPatterns = [
     /@gmail\.com$/,
     /@yahoo\.com$/,
     /@outlook\.com$/,
     /@hotmail\.com$/,
     /@icloud\.com$/,
-    /^(receipt|invoice|order|shipping|support|billing|notification|alert)@/,
-    // noreply@ but NOT from known newsletter platforms
-    /^(noreply|no-reply|donotreply)@(?!.*(substack|beehiiv|convertkit|mailchimp|ghost))/,
+  ]
+
+  const transactionalPatterns = [
+    /^(receipt|invoice|order|shipping|support|billing|notification|alert|noreply|no-reply|donotreply)@/,
   ]
 
   if (personalPatterns.some(p => p.test(from))) {
     return false
   }
 
-  // Positive patterns - newsletter indicators
-  const newsletterPatterns = [
-    /^(newsletter|news|digest|brief|update|roundup)@/,
-    /@(substack|beehiiv|convertkit|ghost|mailchimp)\.com$/,
-    /^(team|hello|info)@.*\.(substack|beehiiv|convertkit)\.com$/,
-  ]
+  if (transactionalPatterns.some(p => p.test(from))) {
+    return false
+  }
 
-  return newsletterPatterns.some(p => p.test(from) || p.test(fromName))
+  // Default: not a newsletter (conservative approach)
+  return false
 }
 
 /**
