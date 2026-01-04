@@ -1,19 +1,26 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 
 export async function POST(request: Request) {
   try {
-    const supabase = await createClient()
+    // TODO: Remove DEV_MODE bypass before production deployment
+    const DEV_MODE = process.env.NODE_ENV === 'development'
+
+    // In dev mode, use service role client to bypass RLS
+    const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
 
     // Check authentication
     const { data: { user }, error: authError } = await supabase.auth.getUser()
 
-    if (authError || !user) {
+    if (!DEV_MODE && (authError || !user)) {
       return NextResponse.json(
         { success: false, error: 'Unauthorized' },
         { status: 401 }
       )
     }
+
+    // For dev mode without auth, use a mock user ID
+    const userId = user?.id || '00000000-0000-0000-0000-000000000000'
 
     // Parse request body
     const body = await request.json()
@@ -31,7 +38,7 @@ export async function POST(request: Request) {
       .from('signals')
       .select('id')
       .eq('id', signal_id)
-      .eq('user_id', user.id)
+      .eq('user_id', userId)
       .single()
 
     if (fetchError || !signal) {
@@ -60,7 +67,7 @@ export async function POST(request: Request) {
       .from('signals')
       .delete()
       .eq('id', signal_id)
-      .eq('user_id', user.id)
+      .eq('user_id', userId)
 
     if (deleteError) {
       console.error('Error deleting signal:', deleteError)
