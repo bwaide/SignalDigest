@@ -18,9 +18,7 @@ export function SettingsModal() {
   useEffect(() => {
     const loadUser = async () => {
       const { data: { user } } = await supabase.auth.getUser()
-      // In dev mode without auth, use the same mock user ID as API endpoints
-      const DEV_MODE = process.env.NODE_ENV === 'development'
-      setUserId(user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : undefined))
+      setUserId(user?.id)
     }
     loadUser()
   // eslint-disable-next-line react-hooks/exhaustive-deps

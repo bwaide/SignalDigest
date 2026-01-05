@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { connectToImap } from '@/lib/email-import'
+import { authenticateRequest } from '@/lib/auth/server-auth'
 
 interface TestConnectionRequest {
   host: string
@@ -12,19 +13,12 @@ interface TestConnectionRequest {
 
 export async function POST(request: Request) {
   try {
-    // TODO: Remove DEV_MODE bypass before production deployment
-    const DEV_MODE = process.env.NODE_ENV === 'development'
-    const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
+    // Authenticate the request
+    const auth = await authenticateRequest()
+    if (auth.error) return auth.error
 
-    const { data: { user } } = await supabase.auth.getUser()
-    const userId = user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : null)
-
-    if (!userId) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      )
-    }
+    const userId = auth.userId
+    const supabase = await createClient()
 
     const body: TestConnectionRequest = await request.json()
 

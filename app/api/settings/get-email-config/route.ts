@@ -1,27 +1,16 @@
-import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 import type { SignalSource } from '@/types/signal-sources'
+import { authenticateRequest } from '@/lib/auth/server-auth'
 
 export async function GET() {
   try {
-    // TODO: Remove DEV_MODE bypass before production deployment
-    const DEV_MODE = process.env.NODE_ENV === 'development'
+    // Authenticate the request
+    const auth = await authenticateRequest()
+    if (auth.error) return auth.error
 
-    // In dev mode, use service role client to bypass RLS
-    const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
-
-    // Check authentication
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-
-    if (!DEV_MODE && (authError || !user)) {
-      return NextResponse.json(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
-      )
-    }
-
-    // For dev mode without auth, use a mock user ID
-    const userId = user?.id || '00000000-0000-0000-0000-000000000000'
+    const userId = auth.userId
+    const supabase = await createClient()
 
     // Get current user settings
     const { data: settings, error: fetchError } = await supabase

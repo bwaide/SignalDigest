@@ -1,24 +1,27 @@
 import { DashboardV2 } from '@/components/v2/DashboardV2'
 import { SettingsModal } from '@/components/settings/SettingsModal'
-import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 import type { SignalSource, SignalSourceStatus } from '@/types/signal-sources'
+import { redirect } from 'next/navigation'
 
 export default async function Home() {
-  // TODO: Remove DEV_MODE bypass before production deployment
-  const DEV_MODE = process.env.NODE_ENV === 'development'
-
-  // In dev mode, use service role client to bypass RLS
-  const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
+  const supabase = await createClient()
 
   const { data: { user } } = await supabase.auth.getUser()
-  const userId = user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : null)
+
+  // Redirect to login if not authenticated
+  if (!user) {
+    redirect('/auth/login')
+  }
+
+  const userId = user.id
 
   let emailStatus: SignalSourceStatus = 'not_configured'
 
   let autoSyncEnabled = false
   let autoSyncIntervalMinutes = 30
 
-  if (userId) {
+  {
     const { data: settings } = await supabase
       .from('user_settings')
       .select('signal_sources, auto_sync_enabled, auto_sync_interval_minutes')
@@ -39,27 +42,23 @@ export default async function Home() {
   }
 
   // Fetch nuggets (unread and saved, excluding archived)
-  const { data: nuggets } = userId
-    ? await supabase
-        .from('nuggets')
-        .select('*')
-        .eq('user_id', userId)
-        .in('status', ['unread', 'saved'])
-        .order('relevancy_score', { ascending: false })
-        .order('created_at', { ascending: false })
-        .limit(50)
-    : { data: null }
+  const { data: nuggets } = await supabase
+    .from('nuggets')
+    .select('*')
+    .eq('user_id', userId)
+    .in('status', ['unread', 'saved'])
+    .order('relevancy_score', { ascending: false })
+    .order('created_at', { ascending: false })
+    .limit(50)
 
   // Fetch archived nuggets separately
-  const { data: archivedNuggets } = userId
-    ? await supabase
-        .from('nuggets')
-        .select('*')
-        .eq('user_id', userId)
-        .eq('status', 'archived')
-        .order('created_at', { ascending: false })
-        .limit(100)
-    : { data: null }
+  const { data: archivedNuggets } = await supabase
+    .from('nuggets')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('status', 'archived')
+    .order('created_at', { ascending: false })
+    .limit(100)
 
   return (
     <>
