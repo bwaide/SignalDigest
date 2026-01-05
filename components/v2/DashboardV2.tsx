@@ -1,11 +1,17 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import { CommandBar } from './CommandBar'
 import { FilterRail } from './FilterRail'
 import { NuggetCard } from './NuggetCard'
+import { InboxView } from './InboxView'
+import { ArchiveView } from './ArchiveView'
 import { EmptyStateV2 } from './EmptyStateV2'
+import { useAutoSync } from '@/lib/hooks/use-auto-sync'
 import type { SignalSourceStatus } from '@/types/signal-sources'
+
+type NuggetStatus = 'unread' | 'archived' | 'saved'
+type ViewMode = 'inbox' | 'saved' | 'archive'
 
 interface Nugget {
   id: string
@@ -19,45 +25,109 @@ interface Nugget {
   topic: string
   tags: string[]
   is_read: boolean
+  status: NuggetStatus
 }
 
 interface DashboardV2Props {
   nuggets: Nugget[]
+  archivedNuggets: Nugget[]
   emailStatus?: SignalSourceStatus
+  autoSyncEnabled?: boolean
+  autoSyncIntervalMinutes?: number
 }
 
-export function DashboardV2({ nuggets: initialNuggets, emailStatus }: DashboardV2Props) {
+export function DashboardV2({
+  nuggets: initialNuggets,
+  archivedNuggets: initialArchived,
+  emailStatus,
+  autoSyncEnabled = false,
+  autoSyncIntervalMinutes = 30
+}: DashboardV2Props) {
   const [nuggets, setNuggets] = useState(initialNuggets)
+  const [archivedNuggets, setArchivedNuggets] = useState(initialArchived)
+  const [viewMode, setViewMode] = useState<ViewMode>('inbox')
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null)
-  const [unreadOnly, setUnreadOnly] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
+
+  const handleAutoSync = useCallback(async () => {
+    try {
+      // Import emails
+      const importResponse = await fetch('/api/emails/import', {
+        method: 'POST',
+      })
+      const importData = await importResponse.json()
+
+      if (!importResponse.ok || !importData.success || importData.imported === 0) {
+        return
+      }
+
+      // Process signals
+      await fetch('/api/signals/process', {
+        method: 'POST',
+      })
+
+      // Reload page to show new nuggets
+      window.location.reload()
+    } catch (error) {
+      console.error('Auto-sync error:', error)
+    }
+  }, [])
+
+  useAutoSync({
+    enabled: autoSyncEnabled && emailStatus === 'connected',
+    intervalMinutes: autoSyncIntervalMinutes,
+    onSync: handleAutoSync
+  })
 
   useEffect(() => {
     setNuggets(initialNuggets)
   }, [initialNuggets])
 
-  const handleNuggetUpdate = (nuggetId: string, isRead: boolean) => {
-    setNuggets((prev) =>
+  useEffect(() => {
+    setArchivedNuggets(initialArchived)
+  }, [initialArchived])
+
+  const handleStatusUpdate = (nuggetId: string, status: NuggetStatus) => {
+    // Update in appropriate list
+    const updateNugget = (prev: Nugget[]) =>
       prev.map((nugget) =>
-        nugget.id === nuggetId ? { ...nugget, is_read: isRead } : nugget
+        nugget.id === nuggetId
+          ? {
+              ...nugget,
+              status,
+              is_read: status !== 'unread'
+            }
+          : nugget
       )
-    )
+
+    setNuggets(updateNugget)
+    setArchivedNuggets(updateNugget)
   }
 
-  // Filter nuggets
+  // Separate nuggets by status
+  const inboxNuggets = useMemo(() =>
+    nuggets.filter(n => n.status === 'unread'),
+    [nuggets]
+  )
+
+  const savedNuggets = useMemo(() =>
+    nuggets.filter(n => n.status === 'saved'),
+    [nuggets]
+  )
+
+  // Filter nuggets based on current view
   const filteredNuggets = useMemo(() => {
-    return nuggets.filter((nugget) => {
-      // Filter by topic (using the structured topic field, not tags)
+    const currentList = viewMode === 'inbox' ? inboxNuggets :
+                       viewMode === 'saved' ? savedNuggets :
+                       archivedNuggets
+
+    return currentList.filter((nugget) => {
+      // Filter by topic
       if (selectedTopic && nugget.topic !== selectedTopic) {
         return false
       }
 
-      // Filter by unread status
-      if (unreadOnly && nugget.is_read) {
-        return false
-      }
-
-      // Filter by search query (search in title, description, tags, and topic)
+      // Filter by search query
       if (searchQuery) {
         const query = searchQuery.toLowerCase()
         const matchesTitle = nugget.title.toLowerCase().includes(query)
@@ -73,56 +143,76 @@ export function DashboardV2({ nuggets: initialNuggets, emailStatus }: DashboardV
 
       return true
     })
-  }, [nuggets, selectedTopic, unreadOnly, searchQuery])
+  }, [viewMode, inboxNuggets, savedNuggets, archivedNuggets, selectedTopic, searchQuery])
 
-  // Sort by relevancy score (highest first)
+  // Sort saved nuggets by relevancy
   const sortedNuggets = useMemo(() => {
+    if (viewMode !== 'saved') return filteredNuggets
     return [...filteredNuggets].sort((a, b) => b.relevancy_score - a.relevancy_score)
-  }, [filteredNuggets])
+  }, [filteredNuggets, viewMode])
+
+  // Get all nuggets for current view for topic counting
+  const nuggetsForCounting = viewMode === 'inbox' ? inboxNuggets :
+                             viewMode === 'saved' ? savedNuggets :
+                             archivedNuggets
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Command Bar */}
-      <CommandBar
-        emailStatus={emailStatus}
-        onSearch={setSearchQuery}
-        unreadOnly={unreadOnly}
-        onUnreadOnlyChange={setUnreadOnly}
-      />
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
+        <CommandBar
+          emailStatus={emailStatus}
+          onSearch={setSearchQuery}
+          showUnreadFilter={false}
+        />
+      </div>
 
-      {/* Main Content Area */}
-      <main className="flex-1 pt-24 pb-32 px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          {sortedNuggets.length > 0 ? (
-            <>
-              {/* Stats Header */}
-              <div className="mb-8">
-                <h2 className="font-display font-black text-5xl md:text-6xl tracking-tighter mb-2">
-                  {selectedTopic ? selectedTopic.toUpperCase() : 'YOUR NUGGETS'}
-                </h2>
-                <p className="font-serif text-lg text-foreground/60">
-                  {sortedNuggets.length} insight{sortedNuggets.length !== 1 ? 's' : ''} from your newsletters
-                  {searchQuery && (
-                    <span className="ml-2">
-                      · searching for &quot;{searchQuery}&quot;
-                    </span>
-                  )}
-                </p>
-              </div>
+      {/* View Tabs - separate fixed element below command bar */}
+      <div className="fixed top-[84px] left-0 right-0 z-40 bg-white border-b-2 border-black/10">
+        <div className="max-w-screen-2xl mx-auto px-6 flex gap-1">
+          <button
+            onClick={() => setViewMode('inbox')}
+            className={`px-6 py-3 font-display font-black text-sm transition-all border-r-2 border-black/10 ${
+              viewMode === 'inbox'
+                ? 'bg-[hsl(var(--electric-blue))] text-white'
+                : 'bg-white text-black hover:bg-black/5'
+            }`}
+          >
+            INBOX {inboxNuggets.length > 0 && `(${inboxNuggets.length})`}
+          </button>
+          <button
+            onClick={() => setViewMode('saved')}
+            className={`px-6 py-3 font-display font-black text-sm transition-all border-r-2 border-black/10 ${
+              viewMode === 'saved'
+                ? 'bg-[hsl(var(--neon-green))] text-black'
+                : 'bg-white text-black hover:bg-black/5'
+            }`}
+          >
+            SAVED {savedNuggets.length > 0 && `(${savedNuggets.length})`}
+          </button>
+          <button
+            onClick={() => setViewMode('archive')}
+            className={`px-6 py-3 font-display font-black text-sm transition-all ${
+              viewMode === 'archive'
+                ? 'bg-black text-white'
+                : 'bg-white text-black hover:bg-black/5'
+            }`}
+          >
+            ARCHIVE {archivedNuggets.length > 0 && `(${archivedNuggets.length})`}
+          </button>
+        </div>
+      </div>
 
-              {/* Masonry Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
-                {sortedNuggets.map((nugget, index) => (
-                  <NuggetCard
-                    key={nugget.id}
-                    nugget={nugget}
-                    onToggleRead={handleNuggetUpdate}
-                    index={index}
-                  />
-                ))}
-              </div>
-            </>
-          ) : nuggets.length > 0 ? (
+      {/* Main Content Area - padding for both header and tabs */}
+      <main className="flex-1 pt-[148px] pb-32 px-6">
+        {/* Inbox View - Full-screen card interface */}
+        {viewMode === 'inbox' && (
+          filteredNuggets.length > 0 ? (
+            <InboxView
+              nuggets={filteredNuggets}
+              onUpdateStatus={handleStatusUpdate}
+            />
+          ) : inboxNuggets.length > 0 ? (
             <div className="min-h-[60vh] flex items-center justify-center">
               <div className="text-center max-w-md">
                 <h3 className="font-display font-black text-4xl mb-4 tracking-tight">
@@ -134,7 +224,6 @@ export function DashboardV2({ nuggets: initialNuggets, emailStatus }: DashboardV
                 <button
                   onClick={() => {
                     setSelectedTopic(null)
-                    setUnreadOnly(false)
                     setSearchQuery('')
                   }}
                   className="px-8 py-3 bg-black text-white border-2 border-black shadow-brutal hover:shadow-brutal-hover hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all font-display font-black"
@@ -145,14 +234,89 @@ export function DashboardV2({ nuggets: initialNuggets, emailStatus }: DashboardV
             </div>
           ) : (
             <EmptyStateV2 emailStatus={emailStatus} />
-          )}
-        </div>
+          )
+        )}
+
+        {/* Saved View - Magazine-style grid */}
+        {viewMode === 'saved' && (
+          <div className="max-w-screen-2xl mx-auto">
+            {sortedNuggets.length > 0 ? (
+              <>
+                {/* Stats Header */}
+                <div className="mb-8">
+                  <h2 className="font-display font-black text-5xl md:text-6xl tracking-tighter mb-2">
+                    {selectedTopic ? selectedTopic.toUpperCase() : 'SAVED'}
+                  </h2>
+                  <p className="font-serif text-lg text-foreground/60">
+                    {sortedNuggets.length} saved insight{sortedNuggets.length !== 1 ? 's' : ''}
+                    {searchQuery && (
+                      <span className="ml-2">
+                        · searching for &quot;{searchQuery}&quot;
+                      </span>
+                    )}
+                  </p>
+                </div>
+
+                {/* Masonry Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto">
+                  {sortedNuggets.map((nugget, index) => (
+                    <NuggetCard
+                      key={nugget.id}
+                      nugget={nugget}
+                      onUpdateStatus={handleStatusUpdate}
+                      index={index}
+                    />
+                  ))}
+                </div>
+              </>
+            ) : savedNuggets.length > 0 ? (
+              <div className="min-h-[60vh] flex items-center justify-center">
+                <div className="text-center max-w-md">
+                  <h3 className="font-display font-black text-4xl mb-4 tracking-tight">
+                    NO MATCHES
+                  </h3>
+                  <p className="font-serif text-lg text-foreground/60 mb-6">
+                    Try adjusting your filters or search query
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSelectedTopic(null)
+                      setSearchQuery('')
+                    }}
+                    className="px-8 py-3 bg-black text-white border-2 border-black shadow-brutal hover:shadow-brutal-hover hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all font-display font-black"
+                  >
+                    CLEAR FILTERS
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div className="min-h-[60vh] flex items-center justify-center">
+                <div className="text-center max-w-md">
+                  <h3 className="font-display font-black text-4xl mb-4 tracking-tight">
+                    NO SAVED NUGGETS
+                  </h3>
+                  <p className="font-serif text-lg text-foreground/60">
+                    Save important nuggets from your Inbox to see them here
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Archive View - Dense list */}
+        {viewMode === 'archive' && (
+          <ArchiveView
+            nuggets={filteredNuggets}
+            onUpdateStatus={handleStatusUpdate}
+          />
+        )}
       </main>
 
-      {/* Filter Rail */}
-      {nuggets.length > 0 && (
+      {/* Filter Rail - Only show for saved/archive views, count based on current view */}
+      {viewMode !== 'inbox' && nuggetsForCounting.length > 0 && (
         <FilterRail
-          nuggets={nuggets}
+          nuggets={nuggetsForCounting}
           selectedTopic={selectedTopic}
           onTopicChange={setSelectedTopic}
         />

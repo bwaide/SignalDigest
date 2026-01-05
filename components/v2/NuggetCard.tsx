@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { SourceFavicon } from './SourceFavicon'
 
+type NuggetStatus = 'unread' | 'archived' | 'saved'
+
 interface NuggetCardProps {
   nugget: {
     id: string
@@ -16,8 +18,9 @@ interface NuggetCardProps {
     topic: string
     tags: string[]
     is_read: boolean
+    status: NuggetStatus
   }
-  onToggleRead: (id: string, isRead: boolean) => void
+  onUpdateStatus: (id: string, status: NuggetStatus) => void
   index: number
 }
 
@@ -35,27 +38,27 @@ const getRelevancyLabel = (score: number): string => {
   return 'LOW'
 }
 
-export function NuggetCard({ nugget, onToggleRead, index }: NuggetCardProps) {
+export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [isUpdating, setIsUpdating] = useState(false)
 
-  const handleToggleRead = async () => {
+  const handleUpdateStatus = async (newStatus: NuggetStatus) => {
     setIsUpdating(true)
     try {
-      const response = await fetch('/api/nuggets/mark-read', {
+      const response = await fetch('/api/nuggets/update-status', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           nugget_id: nugget.id,
-          is_read: !nugget.is_read,
+          status: newStatus,
         }),
       })
 
       if (response.ok) {
-        onToggleRead(nugget.id, !nugget.is_read)
+        onUpdateStatus(nugget.id, newStatus)
       }
     } catch (error) {
-      console.error('Error toggling read status:', error)
+      console.error('Error updating nugget status:', error)
     } finally {
       setIsUpdating(false)
     }
@@ -71,9 +74,10 @@ export function NuggetCard({ nugget, onToggleRead, index }: NuggetCardProps) {
     <article
       className={`
         ${widthClass}
-        group relative bg-white border-4 border-black
+        group relative bg-white border-4
+        ${nugget.status === 'saved' ? 'border-[hsl(var(--neon-green))]' : 'border-black'}
         transition-all duration-300
-        ${nugget.is_read ? 'opacity-40 hover:opacity-60' : 'opacity-100'}
+        opacity-100
         hover:shadow-brutal hover:translate-x-[-4px] hover:translate-y-[-4px]
         animate-slide-in
         stagger-${Math.min(index + 1, 6)}
@@ -91,21 +95,49 @@ export function NuggetCard({ nugget, onToggleRead, index }: NuggetCardProps) {
         {relevancyLabel} {nugget.relevancy_score}
       </div>
 
-      {/* Archive Button - Only visible on hover */}
-      <button
-        onClick={handleToggleRead}
-        disabled={isUpdating}
-        className={`
-          absolute top-4 right-4 px-4 py-2 border-2 border-black
-          transition-all opacity-0 group-hover:opacity-100
-          ${nugget.is_read ? 'bg-white text-black hover:bg-black hover:text-white' : 'bg-black text-white hover:bg-[hsl(var(--electric-blue))]'}
-          ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}
-          font-display font-black text-xs z-20
-        `}
-        title={nugget.is_read ? 'Unarchive' : 'Archive'}
-      >
-        {nugget.is_read ? '↑ UNARCHIVE' : '↓ ARCHIVE'}
-      </button>
+      {/* Action Buttons - Only visible on hover */}
+      <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+        {nugget.status === 'unread' && (
+          <>
+            <button
+              onClick={() => handleUpdateStatus('archived')}
+              disabled={isUpdating}
+              className={`px-3 py-2 border-2 border-black bg-black text-white hover:bg-[hsl(var(--cyber-pink))] font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              title="Archive this nugget"
+            >
+              ↓ ARCHIVE
+            </button>
+            <button
+              onClick={() => handleUpdateStatus('saved')}
+              disabled={isUpdating}
+              className={`px-3 py-2 border-2 border-black bg-[hsl(var(--neon-green))] text-black hover:bg-[hsl(var(--electric-blue))] hover:text-white font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              title="Save this nugget"
+            >
+              ★ SAVE
+            </button>
+          </>
+        )}
+        {nugget.status === 'saved' && (
+          <>
+            <button
+              onClick={() => handleUpdateStatus('archived')}
+              disabled={isUpdating}
+              className={`px-3 py-2 border-2 border-black bg-black text-white hover:bg-[hsl(var(--cyber-pink))] font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              title="Archive this nugget"
+            >
+              ↓ ARCHIVE
+            </button>
+            <button
+              onClick={() => handleUpdateStatus('unread')}
+              disabled={isUpdating}
+              className={`px-3 py-2 border-2 border-black bg-white text-black hover:bg-[hsl(var(--electric-blue))] hover:text-white font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              title="Mark as unread"
+            >
+              ↑ UNREAD
+            </button>
+          </>
+        )}
+      </div>
 
       <div className="p-6">
         {/* Title */}

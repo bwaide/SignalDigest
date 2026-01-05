@@ -8,11 +8,10 @@ import type { SignalSourceStatus } from '@/types/signal-sources'
 interface CommandBarProps {
   emailStatus?: SignalSourceStatus
   onSearch: (query: string) => void
-  unreadOnly: boolean
-  onUnreadOnlyChange: (checked: boolean) => void
+  showUnreadFilter?: boolean
 }
 
-export function CommandBar({ emailStatus = 'not_configured', onSearch, unreadOnly, onUnreadOnlyChange }: CommandBarProps) {
+export function CommandBar({ emailStatus = 'not_configured', onSearch, showUnreadFilter = true }: CommandBarProps) {
   const openSettings = useSettingsStore((state) => state.openSettings)
   const [isChecking, setIsChecking] = useState(false)
   const [checkResult, setCheckResult] = useState<string | null>(null)
@@ -73,7 +72,7 @@ export function CommandBar({ emailStatus = 'not_configured', onSearch, unreadOnl
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b-4 border-black">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black">
       <div className="max-w-screen-2xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
@@ -107,15 +106,17 @@ export function CommandBar({ emailStatus = 'not_configured', onSearch, unreadOnl
               )}
             </div>
 
-            <label className="flex items-center gap-2 px-4 py-2.5 bg-black text-white border-2 border-black cursor-pointer hover:bg-white hover:text-black transition-colors">
-              <input
-                type="checkbox"
-                checked={unreadOnly}
-                onChange={(e) => onUnreadOnlyChange(e.target.checked)}
-                className="w-4 h-4 accent-[hsl(var(--electric-blue))]"
-              />
-              <span className="text-sm font-serif">Unread</span>
-            </label>
+            {showUnreadFilter && (
+              <label className="flex items-center gap-2 px-4 py-2.5 bg-black text-white border-2 border-black cursor-pointer hover:bg-white hover:text-black transition-colors">
+                <input
+                  type="checkbox"
+                  checked={false}
+                  onChange={() => {}}
+                  className="w-4 h-4 accent-[hsl(var(--electric-blue))]"
+                />
+                <span className="text-sm font-serif">Unread</span>
+              </label>
+            )}
           </div>
 
           {/* Actions */}
