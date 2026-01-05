@@ -1,15 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSettingsStore } from '@/lib/stores/settings-store'
 import { EmailSourceForm } from './EmailSourceForm'
 import { SignalsList } from './SignalsList'
+import { AutoSyncSettings } from './AutoSyncSettings'
+import { createClient } from '@/lib/supabase/client'
 
-type Tab = 'email' | 'signals'
+type Tab = 'email' | 'signals' | 'auto-sync'
 
 export function SettingsModal() {
   const { isOpen, closeSettings } = useSettingsStore()
   const [activeTab, setActiveTab] = useState<Tab>('email')
+  const [userId, setUserId] = useState<string | undefined>()
+  const supabase = createClient()
+
+  useEffect(() => {
+    const loadUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      // In dev mode without auth, use the same mock user ID as API endpoints
+      const DEV_MODE = process.env.NODE_ENV === 'development'
+      setUserId(user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : undefined))
+    }
+    loadUser()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (!isOpen) return null
 
@@ -46,11 +61,22 @@ export function SettingsModal() {
             >
               Signals
             </button>
+            <button
+              onClick={() => setActiveTab('auto-sync')}
+              className={`px-4 py-2 font-medium ${
+                activeTab === 'auto-sync'
+                  ? 'border-b-2 border-primary text-primary'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Auto-Sync
+            </button>
           </div>
         </div>
         <div className="flex-1 overflow-y-auto mb-6">
           {activeTab === 'email' && <EmailSourceForm />}
           {activeTab === 'signals' && <SignalsList />}
+          {activeTab === 'auto-sync' && <AutoSyncSettings />}
         </div>
         <div className="flex justify-end gap-3 border-t pt-4">
           <button
