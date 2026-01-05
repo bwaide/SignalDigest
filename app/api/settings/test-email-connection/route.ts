@@ -1,23 +1,75 @@
 import { NextResponse } from 'next/server'
-import { createServiceRoleClient } from '@/lib/supabase/server'
+import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { connectToImap } from '@/lib/email-import'
 
 interface TestConnectionRequest {
   host: string
   port: number
   username: string
-  password: string
+  password?: string
   use_tls: boolean
 }
 
 export async function POST(request: Request) {
   try {
+    // TODO: Remove DEV_MODE bypass before production deployment
+    const DEV_MODE = process.env.NODE_ENV === 'development'
+    const supabase = DEV_MODE ? createServiceRoleClient() : await createClient()
+
+    const { data: { user } } = await supabase.auth.getUser()
+    const userId = user?.id || (DEV_MODE ? '00000000-0000-0000-0000-000000000000' : null)
+
+    if (!userId) {
+      return NextResponse.json(
+        { success: false, error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+
     const body: TestConnectionRequest = await request.json()
 
     // Validate required fields
-    if (!body.host || !body.username || !body.password) {
+    if (!body.host || !body.username) {
       return NextResponse.json(
         { success: false, error: 'Missing required fields' },
+        { status: 400 }
+      )
+    }
+
+    let passwordToTest = body.password
+
+    // If no password provided, try to retrieve from existing configuration
+    if (!passwordToTest) {
+      const { data: settings } = await supabase
+        .from('user_settings')
+        .select('signal_sources')
+        .eq('user_id', userId)
+        .single()
+
+      if (settings?.signal_sources) {
+        const signalSources = settings.signal_sources as Array<{
+          type: string
+          config: { vault_secret_id?: string }
+        }>
+        const emailSource = signalSources.find(s => s.type === 'email')
+
+        if (emailSource?.config?.vault_secret_id) {
+          const serviceRoleClient = createServiceRoleClient()
+          const { data: secretData, error: vaultError } = await serviceRoleClient.rpc(
+            'read_secret',
+            { secret_id: emailSource.config.vault_secret_id }
+          )
+
+          if (!vaultError && secretData) {
+            passwordToTest = secretData
+          }
+        }
+      }
+    }
+
+    if (!passwordToTest) {
+      return NextResponse.json(
+        { success: false, error: 'Password is required for testing connection' },
         { status: 400 }
       )
     }
@@ -36,7 +88,7 @@ export async function POST(request: Request) {
         host: body.host,
         port: body.port,
         username: body.username,
-        password: body.password,
+        password: passwordToTest,
         use_tls: body.use_tls,
       })
       await client.logout()
@@ -48,25 +100,31 @@ export async function POST(request: Request) {
       )
     }
 
-    // Store password in Supabase Vault
-    const supabase = createServiceRoleClient()
+    // Store password in Supabase Vault only if a new password was provided
+    let vaultSecretId: string | undefined
 
-    const { data: vaultData, error: vaultError } = await supabase.rpc('create_secret', {
-      new_secret: body.password,
-      new_name: `email-password-${body.username}-${Date.now()}`,
-    })
+    if (body.password) {
+      const serviceRoleClient = createServiceRoleClient()
 
-    if (vaultError) {
-      console.error('Vault storage error:', vaultError)
-      return NextResponse.json(
-        { success: false, error: 'Failed to store password securely' },
-        { status: 500 }
-      )
+      const { data: vaultData, error: vaultError } = await serviceRoleClient.rpc('create_secret', {
+        new_secret: body.password,
+        new_name: `email-password-${body.username}-${Date.now()}`,
+      })
+
+      if (vaultError) {
+        console.error('Vault storage error:', vaultError)
+        return NextResponse.json(
+          { success: false, error: 'Failed to store password securely' },
+          { status: 500 }
+        )
+      }
+
+      vaultSecretId = vaultData
     }
 
     return NextResponse.json({
       success: true,
-      vault_secret_id: vaultData,
+      vault_secret_id: vaultSecretId,
     })
   } catch (error) {
     console.error('Test connection error:', error)
