@@ -70,8 +70,8 @@ export async function POST() {
         })
 
         try {
-          // Fetch unread emails
-          const emails = await fetchUnreadEmails(client, 50)
+          // Fetch unread emails with sender history for better classification
+          const emails = await fetchUnreadEmails(client, 50, supabase, userId)
           console.log(`Found ${emails.length} unread emails`)
 
           let imported = 0

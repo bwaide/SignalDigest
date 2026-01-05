@@ -2,6 +2,7 @@ import { ImapFlow } from 'imapflow'
 import { Readability } from '@mozilla/readability'
 import { JSDOM } from 'jsdom'
 import { classifyEmail } from './email-classifier'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 export interface ImapConfig {
   host: string
@@ -203,7 +204,12 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
   }
 }
 
-export async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): Promise<EmailMessage[]> {
+export async function fetchUnreadEmails(
+  client: ImapFlow,
+  limit: number = 50,
+  supabase?: SupabaseClient,
+  userId?: string
+): Promise<EmailMessage[]> {
   await client.mailboxOpen('INBOX')
   const searchResults = await client.search({ seen: false }, { uid: true })
   const resultsArray = Array.isArray(searchResults) ? searchResults : []
@@ -235,7 +241,10 @@ export async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): P
         console.log(`Successfully parsed email: ${email.subject}`)
 
         // Classify email as newsletter or not
-        const classification = classifyEmail(email)
+        const classification = await classifyEmail(
+          { ...email, userId },
+          supabase
+        )
 
         if (!classification.isNewsletter) {
           console.log(`Skipping non-newsletter (confidence: ${classification.confidence}%):`, {

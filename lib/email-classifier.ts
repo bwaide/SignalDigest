@@ -8,6 +8,8 @@
  * - Marketing emails
  */
 
+import type { SupabaseClient } from '@supabase/supabase-js'
+
 export interface ClassificationResult {
   isNewsletter: boolean
   confidence: number  // 0-100
@@ -25,16 +27,42 @@ interface EmailMessage {
   bodyText: string
   bodyHtml?: string
   headers?: Record<string, string>
+  userId?: string  // For database lookups
 }
 
 /**
  * Signal 1: Sender Pattern Matching
  *
  * Checks sender email address and name for newsletter indicators
+ * Also checks database for previously successful newsletter senders
  */
-function checkSenderSignal(email: EmailMessage): boolean {
+async function checkSenderSignal(
+  email: EmailMessage,
+  supabase?: SupabaseClient
+): Promise<boolean> {
   const from = email.from.toLowerCase()
   const fromName = email.fromName?.toLowerCase() || ''
+
+  // First, check if this sender has successfully sent newsletters before
+  if (supabase && email.userId) {
+    try {
+      const { data, error } = await supabase
+        .from('signals')
+        .select('id')
+        .eq('user_id', email.userId)
+        .eq('sender_email', email.from)
+        .eq('status', 'processed')
+        .limit(1)
+
+      // If we found a processed signal from this sender, it's a newsletter
+      if (!error && data && data.length > 0) {
+        return true
+      }
+    } catch (error) {
+      console.log('Error checking sender history:', error)
+      // Continue with pattern matching if database check fails
+    }
+  }
 
   // Check for known newsletter platforms first (most specific)
   const newsletterPlatforms = [
@@ -43,13 +71,15 @@ function checkSenderSignal(email: EmailMessage): boolean {
     'convertkit.com',
     'ghost.org',
     'mailchimp.com',
+    'every.to',          // Added based on your emails
+    'joinsuperhuman.ai', // Added based on your emails
   ]
 
-  const isFromNewsletterPlatform = newsletterPlatforms.some(platform => from.endsWith(platform))
+  const isFromNewsletterPlatform = newsletterPlatforms.some(platform => from.includes(platform))
 
   // Positive patterns - newsletter indicators
   const newsletterPatterns = [
-    /^(newsletter|news|digest|brief|update|roundup)@/,
+    /^(newsletter|news|digest|brief|update|roundup|hello|hi|team)@/,
   ]
 
   const hasNewsletterPrefix = newsletterPatterns.some(p => p.test(from) || p.test(fromName))
@@ -138,8 +168,11 @@ function checkHeadersSignal(email: EmailMessage): boolean {
  *
  * Combines all three signals with 2/3 threshold
  */
-export function classifyEmail(email: EmailMessage): ClassificationResult {
-  const senderSignal = checkSenderSignal(email)
+export async function classifyEmail(
+  email: EmailMessage,
+  supabase?: SupabaseClient
+): Promise<ClassificationResult> {
+  const senderSignal = await checkSenderSignal(email, supabase)
   const structureSignal = checkStructureSignal(email)
   const headersSignal = checkHeadersSignal(email)
 
@@ -171,6 +204,10 @@ export function classifyEmail(email: EmailMessage): ClassificationResult {
 /**
  * Simple boolean check for newsletter classification
  */
-export function isNewsletter(email: EmailMessage): boolean {
-  return classifyEmail(email).isNewsletter
+export async function isNewsletter(
+  email: EmailMessage,
+  supabase?: SupabaseClient
+): Promise<boolean> {
+  const result = await classifyEmail(email, supabase)
+  return result.isNewsletter
 }
