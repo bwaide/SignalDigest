@@ -152,21 +152,21 @@ export function CommandBar({ emailStatus = 'not_configured', onSearch, showUnrea
             {/* Search Toggle */}
             <button
               onClick={toggleSearch}
-              className={`p-2.5 border-2 border-black transition-all ${
+              className={`w-10 h-10 flex items-center justify-center border-2 border-black transition-all ${
                 searchExpanded ? 'bg-black text-white' : 'bg-white hover:bg-black hover:text-white'
               }`}
               aria-label="Search"
             >
-              <span className="text-lg">{searchExpanded ? '✕' : '🔍'}</span>
+              <span className="text-base">{searchExpanded ? '✕' : '🔍'}</span>
             </button>
 
             {/* Burger Menu */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2.5 bg-white border-2 border-black hover:bg-black hover:text-white transition-colors"
+              className="w-10 h-10 flex items-center justify-center bg-white border-2 border-black hover:bg-black hover:text-white transition-colors"
               aria-label="Menu"
             >
-              <div className="w-4 h-4 flex flex-col justify-center gap-1">
+              <div className="w-4 h-3.5 flex flex-col justify-between">
                 <span className="block h-0.5 bg-current"></span>
                 <span className="block h-0.5 bg-current"></span>
                 <span className="block h-0.5 bg-current"></span>

@@ -140,7 +140,7 @@ export function DashboardV2({
       </div>
 
       {/* View Tabs - separate fixed element below command bar */}
-      <div className="fixed top-[69px] md:top-[84px] left-0 right-0 z-40 bg-white border-b-2 border-black/10">
+      <div className="fixed top-[69px] md:top-[84px] left-0 right-0 z-40 bg-white border-b-2 border-black/10 pt-2">
         <div className="max-w-screen-2xl mx-auto px-4 md:px-6 flex gap-0">
           <button
             onClick={() => setViewMode('inbox')}
@@ -176,7 +176,7 @@ export function DashboardV2({
       </div>
 
       {/* Main Content Area - padding for both header and tabs */}
-      <main className="flex-1 pt-[121px] md:pt-[136px] pb-32 px-2 md:px-6">
+      <main className="flex-1 pt-[129px] md:pt-[136px] pb-32 px-2 md:px-6">
         {/* Inbox View - Full-screen card interface */}
         {viewMode === 'inbox' && (
           filteredNuggets.length > 0 ? (
