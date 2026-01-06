@@ -10,19 +10,23 @@ interface ConnectionStatusProps {
 const STATUS_CONFIG = {
   not_configured: {
     color: 'bg-gray-400',
-    text: 'Email not configured',
+    text: 'Not configured',
+    textMobile: 'Setup',
   },
   testing: {
     color: 'bg-yellow-400',
-    text: 'Testing connection...',
+    text: 'Testing...',
+    textMobile: 'Testing',
   },
   connected: {
     color: 'bg-green-500',
-    text: 'Email connected',
+    text: 'Connected',
+    textMobile: 'Connected',
   },
   failed: {
     color: 'bg-red-500',
-    text: 'Connection failed',
+    text: 'Failed',
+    textMobile: 'Failed',
   },
 } as const
 
@@ -33,7 +37,8 @@ export function ConnectionStatus({ status, onClick }: ConnectionStatusProps) {
   const content = (
     <>
       <span className={`h-2 w-2 rounded-full ${config.color} ${isTesting ? 'animate-pulse' : ''}`} />
-      <span>{config.text}</span>
+      <span className="hidden md:inline">{config.text}</span>
+      <span className="md:hidden">{config.textMobile}</span>
     </>
   )
 
