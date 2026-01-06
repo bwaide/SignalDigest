@@ -61,8 +61,8 @@ export async function POST() {
       console.log('DEV MODE: Running import logic directly in API route')
 
       try {
-        // Get password from Vault
-        const { data: vaultData, error: vaultError } = await supabase
+        // Get password from Vault (requires service role)
+        const { data: vaultData, error: vaultError} = await serviceRoleClient
           .from('decrypted_secrets')
           .select('decrypted_secret')
           .eq('id', emailSource.config.vault_secret_id)
