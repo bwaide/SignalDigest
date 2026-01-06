@@ -60,9 +60,9 @@ export async function POST(request: Request) {
 
     let vaultSecretId: string
 
-    // If password provided, store it in Vault
+    // If password provided, store it in Vault (requires service role)
     if (body.password && body.password.trim()) {
-      const { data: vaultData, error: vaultError } = await supabase.rpc('create_secret', {
+      const { data: vaultData, error: vaultError } = await serviceRoleClient.rpc('create_secret', {
         new_secret: body.password,
         new_name: `email-password-${body.username}-${Date.now()}`,
       })
