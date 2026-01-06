@@ -78,7 +78,7 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
         ${nugget.status === 'saved' ? 'border-[hsl(var(--neon-green))]' : 'border-black'}
         transition-all duration-300
         opacity-100
-        hover:shadow-brutal hover:translate-x-[-4px] hover:translate-y-[-4px]
+        md:hover:shadow-brutal md:hover:translate-x-[-4px] md:hover:translate-y-[-4px]
         animate-slide-in
         stagger-${Math.min(index + 1, 6)}
       `}
@@ -91,18 +91,25 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
       />
 
       {/* Relevancy Flag */}
-      <div className={`absolute -top-3 -right-3 px-3 py-1 border-2 border-black ${relevancyColor} font-display font-black text-xs z-10`}>
+      <div className={`absolute -top-2 md:-top-3 -right-2 md:-right-3 px-2 md:px-3 py-0.5 md:py-1 border-2 border-black ${relevancyColor} font-display font-black text-[10px] md:text-xs z-10`}>
         {relevancyLabel} {nugget.relevancy_score}
       </div>
 
-      {/* Action Buttons - Only visible on hover */}
-      <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity z-20">
+      {/* Mobile Swipe Indicator - Always visible on mobile */}
+      <div className="md:hidden absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-1 text-xs text-black/40 font-display font-black">
+        <span>←</span>
+        <span>SWIPE</span>
+        <span>→</span>
+      </div>
+
+      {/* Action Buttons - Always visible on mobile, hover on desktop */}
+      <div className="absolute top-3 md:top-4 right-2 md:right-4 flex gap-1 md:gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-20">
         {nugget.status === 'unread' && (
           <>
             <button
               onClick={() => handleUpdateStatus('archived')}
               disabled={isUpdating}
-              className={`px-3 py-2 border-2 border-black bg-black text-white hover:bg-[hsl(var(--cyber-pink))] font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              className={`px-2 md:px-3 py-1.5 md:py-2 border-2 border-black bg-black text-white hover:bg-[hsl(var(--cyber-pink))] font-display font-black text-[10px] md:text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
               title="Archive this nugget"
             >
               ↓ ARCHIVE
@@ -110,7 +117,7 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
             <button
               onClick={() => handleUpdateStatus('saved')}
               disabled={isUpdating}
-              className={`px-3 py-2 border-2 border-black bg-[hsl(var(--neon-green))] text-black hover:bg-[hsl(var(--electric-blue))] hover:text-white font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              className={`px-2 md:px-3 py-1.5 md:py-2 border-2 border-black bg-[hsl(var(--neon-green))] text-black hover:bg-[hsl(var(--electric-blue))] hover:text-white font-display font-black text-[10px] md:text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
               title="Save this nugget"
             >
               ★ SAVE
@@ -122,7 +129,7 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
             <button
               onClick={() => handleUpdateStatus('archived')}
               disabled={isUpdating}
-              className={`px-3 py-2 border-2 border-black bg-black text-white hover:bg-[hsl(var(--cyber-pink))] font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              className={`px-2 md:px-3 py-1.5 md:py-2 border-2 border-black bg-black text-white hover:bg-[hsl(var(--cyber-pink))] font-display font-black text-[10px] md:text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
               title="Archive this nugget"
             >
               ↓ ARCHIVE
@@ -130,7 +137,7 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
             <button
               onClick={() => handleUpdateStatus('unread')}
               disabled={isUpdating}
-              className={`px-3 py-2 border-2 border-black bg-white text-black hover:bg-[hsl(var(--electric-blue))] hover:text-white font-display font-black text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
+              className={`px-2 md:px-3 py-1.5 md:py-2 border-2 border-black bg-white text-black hover:bg-[hsl(var(--electric-blue))] hover:text-white font-display font-black text-[10px] md:text-xs ${isUpdating ? 'cursor-wait' : 'cursor-pointer'}`}
               title="Mark as unread"
             >
               ↑ UNREAD
@@ -139,7 +146,7 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
         )}
       </div>
 
-      <div className="p-6">
+      <div className="p-4 md:p-6">
         {/* Title */}
         <h2 className="font-display font-black text-xl md:text-2xl leading-tight mb-3 tracking-tight">
           {nugget.title}
@@ -167,32 +174,32 @@ export function NuggetCard({ nugget, onUpdateStatus, index }: NuggetCardProps) {
           </div>
         )}
 
-        {/* Link - Only visible on hover */}
+        {/* Link - Always visible on mobile, hover on desktop */}
         {nugget.link && (
           <a
             href={nugget.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mb-4 px-4 py-2 bg-black text-white border-2 border-black hover:bg-[hsl(var(--electric-blue))] transition-all font-serif text-sm opacity-0 group-hover:opacity-100"
+            className="inline-block mb-4 px-3 md:px-4 py-1.5 md:py-2 bg-black text-white border-2 border-black hover:bg-[hsl(var(--electric-blue))] transition-all font-serif text-xs md:text-sm md:opacity-0 md:group-hover:opacity-100"
           >
             View Source →
           </a>
         )}
 
-        {/* Tags - Only visible on hover */}
-        <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        {/* Tags - Always visible on mobile, hover on desktop */}
+        <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
           {nugget.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 bg-black text-white text-xs font-serif border border-black"
+              className="px-2 py-0.5 md:py-1 bg-black text-white text-[10px] md:text-xs font-serif border border-black"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        {/* Metadata Footer - Only visible on hover */}
-        <div className="pt-4 border-t-2 border-black/10 flex items-center justify-between text-xs font-serif text-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity">
+        {/* Metadata Footer - Always visible on mobile, hover on desktop */}
+        <div className="pt-3 md:pt-4 border-t-2 border-black/10 flex items-center justify-between text-[10px] md:text-xs font-serif text-foreground/60 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
           <span>{nugget.source}</span>
           <span>{new Date(nugget.published_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
         </div>
