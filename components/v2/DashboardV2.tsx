@@ -1,13 +1,12 @@
 'use client'
 
-import { useState, useMemo, useEffect, useCallback } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { CommandBar } from './CommandBar'
 import { FilterRail } from './FilterRail'
 import { NuggetCard } from './NuggetCard'
 import { InboxView } from './InboxView'
 import { ArchiveView } from './ArchiveView'
 import { EmptyStateV2 } from './EmptyStateV2'
-import { useAutoSync } from '@/lib/hooks/use-auto-sync'
 import type { SignalSourceStatus } from '@/types/signal-sources'
 
 type NuggetStatus = 'unread' | 'archived' | 'saved'
@@ -49,35 +48,8 @@ export function DashboardV2({
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
 
-  const handleAutoSync = useCallback(async () => {
-    try {
-      // Import emails
-      const importResponse = await fetch('/api/emails/import', {
-        method: 'POST',
-      })
-      const importData = await importResponse.json()
-
-      if (!importResponse.ok || !importData.success || importData.imported === 0) {
-        return
-      }
-
-      // Process signals
-      await fetch('/api/signals/process', {
-        method: 'POST',
-      })
-
-      // Reload page to show new nuggets
-      window.location.reload()
-    } catch (error) {
-      console.error('Auto-sync error:', error)
-    }
-  }, [])
-
-  useAutoSync({
-    enabled: autoSyncEnabled && emailStatus === 'connected',
-    intervalMinutes: autoSyncIntervalMinutes,
-    onSync: handleAutoSync
-  })
+  // Auto-sync is now handled server-side via pg_cron
+  // No client-side auto-sync needed
 
   useEffect(() => {
     setNuggets(initialNuggets)

@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 import { getExtractionStrategy, generateExtractionPrompt } from '@/lib/nugget-extraction-strategies'
 import { authenticateRequest } from '@/lib/auth/server-auth'
+import { rateLimiters } from '@/lib/simple-rate-limit'
 
 export async function POST() {
   try {
@@ -10,6 +11,29 @@ export async function POST() {
     if (auth.error) return auth.error
 
     const userId = auth.userId
+
+    // Rate limit signal processing to prevent excessive LLM costs
+    const rateLimit = rateLimiters.signalProcess(userId)
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Rate limit exceeded. Please wait before processing more signals.',
+          limit: rateLimit.limit,
+          remaining: rateLimit.remaining,
+          reset: rateLimit.reset.toISOString(),
+        },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': rateLimit.limit.toString(),
+            'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+            'X-RateLimit-Reset': rateLimit.reset.toISOString(),
+          },
+        }
+      )
+    }
+
     const supabase = await createClient()
 
     // Get user's taxonomy topics for extraction

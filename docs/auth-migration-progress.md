@@ -50,6 +50,11 @@ Migrating from DEV_MODE authentication bypass to proper Supabase Authentication 
 - [ ] Configure Supabase email templates for production
 - [ ] Set up proper email service (SMTP) for auth emails
 
+### Additional Production Readiness Tasks Completed
+- ✅ Removed signup functionality from login page (app requires pre-existing users)
+- ✅ Implemented server-side auto-sync using pg_cron (see `docs/server-side-auto-sync.md`)
+- ✅ Removed browser-based AutoSyncManager
+
 ## Migration Pattern
 
 ### Before (DEV_MODE bypass):

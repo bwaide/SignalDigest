@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 import type { SignalSource } from '@/types/signal-sources'
 import { connectToImap, fetchUnreadEmails, moveEmailToFolder } from '@/lib/email-import'
 import { authenticateRequest } from '@/lib/auth/server-auth'
+import { rateLimiters } from '@/lib/simple-rate-limit'
 
 export async function POST() {
   try {
@@ -11,6 +12,29 @@ export async function POST() {
     if (auth.error) return auth.error
 
     const userId = auth.userId
+
+    // Rate limit email imports to prevent IMAP abuse
+    const rateLimit = rateLimiters.emailImport(userId)
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Rate limit exceeded. Please wait before importing again.',
+          limit: rateLimit.limit,
+          remaining: rateLimit.remaining,
+          reset: rateLimit.reset.toISOString(),
+        },
+        {
+          status: 429,
+          headers: {
+            'X-RateLimit-Limit': rateLimit.limit.toString(),
+            'X-RateLimit-Remaining': rateLimit.remaining.toString(),
+            'X-RateLimit-Reset': rateLimit.reset.toISOString(),
+          },
+        }
+      )
+    }
+
     const supabase = await createClient()
     const serviceRoleClient = createServiceRoleClient()
 

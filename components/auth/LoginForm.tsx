@@ -10,7 +10,7 @@ export function LoginForm() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
-  const [mode, setMode] = useState<'login' | 'signup' | 'magic-link'>('login')
+  const [mode, setMode] = useState<'login' | 'magic-link'>('login')
   const router = useRouter()
   const supabase = createClient()
 
@@ -21,29 +21,15 @@ export function LoginForm() {
     setMessage(null)
 
     try {
-      if (mode === 'signup') {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/auth/callback`,
-          },
-        })
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
 
-        if (error) throw error
+      if (error) throw error
 
-        setMessage('Check your email to confirm your account!')
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        })
-
-        if (error) throw error
-
-        router.push('/')
-        router.refresh()
-      }
+      router.push('/')
+      router.refresh()
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred')
     } finally {
@@ -78,12 +64,10 @@ export function LoginForm() {
   return (
     <div className="bg-white p-8 border-4 border-black shadow-brutal">
       <h1 className="font-display font-black text-4xl mb-2">
-        {mode === 'signup' ? 'SIGN UP' : mode === 'magic-link' ? 'MAGIC LINK' : 'LOGIN'}
+        {mode === 'magic-link' ? 'MAGIC LINK' : 'LOGIN'}
       </h1>
       <p className="font-serif text-foreground/60 mb-6">
-        {mode === 'signup'
-          ? 'Create your Signal Digest account'
-          : mode === 'magic-link'
+        {mode === 'magic-link'
           ? 'Sign in with a magic link sent to your email'
           : 'Sign in to your Signal Digest account'}
       </p>
@@ -141,8 +125,6 @@ export function LoginForm() {
         >
           {isLoading
             ? 'LOADING...'
-            : mode === 'signup'
-            ? 'SIGN UP'
             : mode === 'magic-link'
             ? 'SEND MAGIC LINK'
             : 'LOGIN'}
@@ -151,28 +133,20 @@ export function LoginForm() {
 
       <div className="mt-6 pt-6 border-t-2 border-black/10 space-y-3">
         {mode === 'login' && (
-          <>
-            <button
-              onClick={() => setMode('signup')}
-              className="w-full text-center font-serif text-sm text-foreground/60 hover:text-foreground"
-            >
-              Don't have an account? <span className="font-bold">Sign up</span>
-            </button>
-            <button
-              onClick={() => setMode('magic-link')}
-              className="w-full text-center font-serif text-sm text-foreground/60 hover:text-foreground"
-            >
-              Prefer passwordless? <span className="font-bold">Use magic link</span>
-            </button>
-          </>
+          <button
+            onClick={() => setMode('magic-link')}
+            className="w-full text-center font-serif text-sm text-foreground/60 hover:text-foreground"
+          >
+            Prefer passwordless? <span className="font-bold">Use magic link</span>
+          </button>
         )}
 
-        {(mode === 'signup' || mode === 'magic-link') && (
+        {mode === 'magic-link' && (
           <button
             onClick={() => setMode('login')}
             className="w-full text-center font-serif text-sm text-foreground/60 hover:text-foreground"
           >
-            Already have an account? <span className="font-bold">Login</span>
+            Use password instead? <span className="font-bold">Login</span>
           </button>
         )}
       </div>
