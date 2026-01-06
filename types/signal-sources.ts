@@ -11,6 +11,7 @@ export interface EmailSourceConfig {
   username: string
   vault_secret_id: string  // Reference to password in Supabase Vault
   use_tls: boolean
+  archive_folder?: string  // Optional folder to move emails to after processing
 }
 
 export interface SignalSource {

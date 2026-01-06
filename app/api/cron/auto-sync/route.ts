@@ -1,5 +1,5 @@
-import { createClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
+import type { SignalSource, EmailSourceConfig } from '@/types/signal-sources'
 
 /**
  * Auto-Sync Cron Webhook
@@ -86,8 +86,8 @@ export async function POST(request: Request) {
       })
     }
 
-    const emailSources = userSettings.signal_sources.filter(
-      (s: any) => s.type === 'email' && s.status === 'connected'
+    const emailSources = (userSettings.signal_sources as SignalSource[]).filter(
+      (s) => s.type === 'email' && s.status === 'connected'
     )
 
     if (emailSources.length === 0) {
@@ -103,11 +103,13 @@ export async function POST(request: Request) {
     // Import from each email source
     for (const source of emailSources) {
       try {
+        const emailConfig = source.config as EmailSourceConfig
+
         // Get password from Vault
         const { data: vaultData, error: vaultError } = await supabaseAdmin
           .from('decrypted_secrets')
           .select('decrypted_secret')
-          .eq('id', source.config.vault_secret_id)
+          .eq('id', emailConfig.vault_secret_id)
           .single()
 
         if (vaultError || !vaultData?.decrypted_secret) {
@@ -117,11 +119,11 @@ export async function POST(request: Request) {
 
         // Connect to IMAP
         const connection = await connectToImap({
-          host: source.config.host,
-          port: source.config.port,
-          username: source.config.username,
+          host: emailConfig.host,
+          port: emailConfig.port,
+          username: emailConfig.username,
           password: vaultData.decrypted_secret,
-          use_tls: source.config.use_tls,
+          use_tls: emailConfig.use_tls,
         })
 
         try {
@@ -172,7 +174,7 @@ export async function POST(request: Request) {
                 await connection.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
 
                 // Move to archive folder if configured
-                const archiveFolder = source.config.archive_folder
+                const archiveFolder = emailConfig.archive_folder
                 if (archiveFolder && archiveFolder.trim()) {
                   await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
                 }

@@ -5,6 +5,7 @@
  * This script exports user_settings, signals, and nuggets from local dev database
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { createClient } = require('@supabase/supabase-js')
 const fs = require('fs')
 

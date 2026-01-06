@@ -1,6 +1,4 @@
 import { ImapFlow } from 'imapflow'
-import { Readability } from '@mozilla/readability'
-import { JSDOM } from 'jsdom'
 import { classifyEmail } from './email-classifier'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
@@ -52,8 +50,12 @@ export interface ImapMessage {
   source?: Uint8Array
 }
 
-export function extractReadableContent(html: string): string | null {
+export async function extractReadableContent(html: string): Promise<string | null> {
   try {
+    // Dynamic imports to avoid bundling JSDOM in Next.js build
+    const { JSDOM } = await import('jsdom')
+    const { Readability } = await import('@mozilla/readability')
+
     const dom = new JSDOM(html)
     const reader = new Readability(dom.window.document)
     const article = reader.parse()
@@ -159,7 +161,7 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
         bodyHtml = rawHtml
       } else if (rawHtml) {
         bodyHtml = rawHtml
-        const readable = extractReadableContent(rawHtml)
+        const readable = await extractReadableContent(rawHtml)
         if (readable) {
           bodyText = readable
         } else {
@@ -176,7 +178,7 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
         bodyText = simpleTextMatch[1].trim()
       } else if (simpleHtmlMatch) {
         bodyHtml = simpleHtmlMatch[1].trim()
-        const readable = extractReadableContent(bodyHtml)
+        const readable = await extractReadableContent(bodyHtml)
         if (readable) {
           bodyText = readable
         } else {
