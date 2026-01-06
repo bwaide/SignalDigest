@@ -4,6 +4,8 @@ import { getExtractionStrategy, generateExtractionPrompt } from '@/lib/nugget-ex
 import { authenticateRequest } from '@/lib/auth/server-auth'
 import { rateLimiters } from '@/lib/simple-rate-limit'
 
+const DEV_MODE = process.env.NODE_ENV === 'development'
+
 export async function POST() {
   try {
     // Authenticate the request
