@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 import { getExtractionStrategy, generateExtractionPrompt } from '@/lib/nugget-extraction-strategies'
 import { authenticateRequest } from '@/lib/auth/server-auth'
@@ -28,9 +28,9 @@ export async function POST(request: Request) {
         )
       }
 
-      // Get user_id from the signal
-      const supabase = await createClient()
-      const { data: signal } = await supabase
+      // Get user_id from the signal (use service role client for cron requests)
+      const supabaseAdmin = createServiceRoleClient()
+      const { data: signal } = await supabaseAdmin
         .from('signals')
         .select('user_id')
         .eq('id', signalId)

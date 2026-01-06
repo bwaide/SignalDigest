@@ -143,6 +143,12 @@ export async function POST(request: Request) {
 
               if (existing && existing.length > 0) {
                 console.log(`Skipping duplicate email: ${email.subject}`)
+                // Still mark as SEEN and archive duplicates to prevent re-processing
+                await connection.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
+                const archiveFolder = emailConfig.archive_folder
+                if (archiveFolder && archiveFolder.trim()) {
+                  await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
+                }
                 continue
               }
 
