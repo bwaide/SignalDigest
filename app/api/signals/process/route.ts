@@ -6,13 +6,50 @@ import { rateLimiters } from '@/lib/simple-rate-limit'
 
 const DEV_MODE = process.env.NODE_ENV === 'development'
 
-export async function POST() {
+export async function POST(request: Request) {
   try {
-    // Authenticate the request
-    const auth = await authenticateRequest()
-    if (auth.error) return auth.error
+    // Support both user authentication and CRON_API_KEY
+    const authHeader = request.headers.get('Authorization')
+    const cronApiKey = process.env.CRON_API_KEY
+    const isCronRequest = authHeader && cronApiKey && authHeader === `Bearer ${cronApiKey}`
 
-    const userId = auth.userId
+    let userId: string
+    let signalId: string | undefined
+
+    if (isCronRequest) {
+      // For cron requests, get signal_id from body
+      const body = await request.json()
+      signalId = body.signal_id
+
+      if (!signalId) {
+        return NextResponse.json(
+          { success: false, error: 'signal_id is required for cron requests' },
+          { status: 400 }
+        )
+      }
+
+      // Get user_id from the signal
+      const supabase = await createClient()
+      const { data: signal } = await supabase
+        .from('signals')
+        .select('user_id')
+        .eq('id', signalId)
+        .single()
+
+      if (!signal) {
+        return NextResponse.json(
+          { success: false, error: 'Signal not found' },
+          { status: 404 }
+        )
+      }
+
+      userId = signal.user_id
+    } else {
+      // Regular user authentication
+      const auth = await authenticateRequest()
+      if (auth.error) return auth.error
+      userId = auth.userId
+    }
 
     // Rate limit signal processing to prevent excessive LLM costs
     const rateLimit = rateLimiters.signalProcess(userId)
@@ -56,13 +93,22 @@ export async function POST() {
       'Startups & Funding'
     ]
 
-    // Get pending signals
-    const { data: pendingSignals, error: fetchError } = await supabase
+    // Get pending signals - either specific signal from cron, or all pending
+    let query = supabase
       .from('signals')
       .select('id, title')
       .eq('user_id', userId)
       .eq('status', 'pending')
-      .order('received_date', { ascending: false })
+
+    if (signalId) {
+      // Process only the specific signal
+      query = query.eq('id', signalId)
+    } else {
+      // Process all pending signals in order
+      query = query.order('received_date', { ascending: false })
+    }
+
+    const { data: pendingSignals, error: fetchError } = await query
 
     if (fetchError) {
       console.error('Fetch error:', fetchError)
@@ -76,7 +122,7 @@ export async function POST() {
       return NextResponse.json({
         success: true,
         processed: 0,
-        message: 'No pending signals to process',
+        message: signalId ? 'Signal not found or already processed' : 'No pending signals to process',
       })
     }
 

@@ -146,8 +146,8 @@ export async function POST(request: Request) {
                 continue
               }
 
-              // Create signal
-              const { error: insertError } = await supabaseAdmin
+              // Create signal and get the inserted ID
+              const { data: insertedSignal, error: insertError } = await supabaseAdmin
                 .from('signals')
                 .insert({
                   user_id: user_id,
@@ -166,8 +166,10 @@ export async function POST(request: Request) {
                     cc: email.cc,
                   },
                 })
+                .select('id')
+                .single()
 
-              if (!insertError) {
+              if (!insertError && insertedSignal) {
                 totalImported++
 
                 // Mark as SEEN in mailbox
@@ -177,6 +179,25 @@ export async function POST(request: Request) {
                 const archiveFolder = emailConfig.archive_folder
                 if (archiveFolder && archiveFolder.trim()) {
                   await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
+                }
+
+                // Trigger nugget extraction for the signal
+                try {
+                  const processUrl = new URL('/api/signals/process', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
+                  const processResponse = await fetch(processUrl.toString(), {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'Authorization': `Bearer ${process.env.CRON_API_KEY}`,
+                    },
+                    body: JSON.stringify({ signal_id: insertedSignal.id }),
+                  })
+
+                  if (!processResponse.ok) {
+                    console.error(`Failed to process signal ${insertedSignal.id}:`, await processResponse.text())
+                  }
+                } catch (processError) {
+                  console.error(`Failed to trigger processing for signal ${insertedSignal.id}:`, processError)
                 }
               } else {
                 console.error(`Failed to insert signal:`, insertError)
