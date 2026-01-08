@@ -3,6 +3,8 @@
 import { useSearchParams } from 'next/navigation'
 import { SettingsLayout } from '@/components/settings/SettingsLayout'
 import { SourcesTab } from '@/components/settings/SourcesTab'
+import { AutoSyncTab } from '@/components/settings/AutoSyncTab'
+import { PreferencesTab } from '@/components/settings/PreferencesTab'
 import { Suspense } from 'react'
 
 function SettingsContent() {
@@ -12,18 +14,8 @@ function SettingsContent() {
   return (
     <SettingsLayout activeTab={activeTab}>
       {activeTab === 'sources' && <SourcesTab />}
-      {activeTab === 'auto-sync' && (
-        <div className="p-8 border-2 border-black text-center">
-          <p className="font-display font-black text-lg">AUTO-SYNC SETTINGS</p>
-          <p className="text-sm mt-2">Coming soon - migrate existing auto-sync settings here</p>
-        </div>
-      )}
-      {activeTab === 'preferences' && (
-        <div className="p-8 border-2 border-black text-center">
-          <p className="font-display font-black text-lg">PREFERENCES</p>
-          <p className="text-sm mt-2">Coming soon - migrate existing preferences here</p>
-        </div>
-      )}
+      {activeTab === 'auto-sync' && <AutoSyncTab />}
+      {activeTab === 'preferences' && <PreferencesTab />}
     </SettingsLayout>
   )
 }
