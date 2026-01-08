@@ -888,6 +888,24 @@ App
   - Curated public collections
   - Commenting and discussions
 
+## Project Documentation
+
+### Feature Specifications
+
+- **[Sources and Extraction Strategies](./docs/features/sources-and-strategies.md)** - Comprehensive guide to the sources management system and pattern-based extraction strategies for different newsletter types
+- **[UI/UX Improvements](./docs/features/ui-ux-improvements.md)** - Planned UI enhancements including full-page settings redesign, brutalist design system, and pagination
+
+### Technical Documentation
+
+- **[Nugget Extraction Strategies](./docs/nugget-extraction-strategies.md)** - Guide to creating and customizing content extraction strategies for different newsletter formats
+- **[Design Specification](./docs/plans/2025-12-30-signal-digest-design.md)** - Original product design and architecture specification
+- **[Phase 1 Implementation Plan](./docs/plans/2025-12-30-phase1-infrastructure.md)** - Infrastructure implementation roadmap
+
+### Additional Resources
+
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Production deployment guide for Coolify/Hetzner
+- **[CLAUDE.md](./CLAUDE.md)** - Development guidelines for Claude Code assistance
+
 ## License
 
 TBD (To be determined by project owner)
@@ -897,4 +915,4 @@ TBD (To be determined by project owner)
 For questions or issues during implementation, refer to:
 - Supabase Documentation: https://supabase.com/docs
 - Next.js Documentation: https://nextjs.org/docs
-- Design specification: `docs/plans/2025-12-30-signal-digest-design.md`
+- Project documentation listed above

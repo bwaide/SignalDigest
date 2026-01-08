@@ -1,6 +1,6 @@
 import { createClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
-import { getExtractionStrategy, generateExtractionPrompt } from '@/lib/nugget-extraction-strategies'
+import { getStrategy } from '@/lib/extraction-strategies'
 import { authenticateRequest } from '@/lib/auth/server-auth'
 import { rateLimiters } from '@/lib/simple-rate-limit'
 
@@ -139,10 +139,10 @@ export async function POST(request: Request) {
 
         // Call OpenAI directly in dev mode to avoid Edge Function auth issues
         if (DEV_MODE) {
-          // Get full signal data
+          // Get full signal data with source information
           const { data: fullSignal } = await supabase
             .from('signals')
-            .select('*')
+            .select('*, sources!inner(extraction_strategy_id)')
             .eq('id', signal.id)
             .single()
 
@@ -159,15 +159,17 @@ export async function POST(request: Request) {
           }
 
           // Get source-specific extraction strategy
-          const strategy = getExtractionStrategy(fullSignal.source_identifier)
-          const prompt = generateExtractionPrompt(
-            strategy,
-            fullSignal.raw_content,
-            fullSignal.title,
-            taxonomyTopics
-          )
+          const strategyId = fullSignal.sources?.extraction_strategy_id || 'generic'
+          const strategy = getStrategy(strategyId)
 
-          console.log(`Using extraction strategy: ${strategy.sourceName} for ${fullSignal.source_identifier}`)
+          // Build prompt using the strategy
+          const prompt = strategy.buildPrompt({
+            newsletterContent: fullSignal.raw_content,
+            userInterests: 'General technology, AI, and business news',
+            approvedTopics: taxonomyTopics,
+          })
+
+          console.log(`Using extraction strategy: ${strategy.name} (${strategy.id}) for signal: ${fullSignal.title}`)
 
           const response = await fetch(`${aiGatewayUrl}/chat/completions`, {
             method: 'POST',
@@ -205,7 +207,7 @@ export async function POST(request: Request) {
           }
 
           // Parse JSON response
-          let extraction: { nuggets: Array<{ title: string; description: string; content?: string; link?: string; relevancy_score: number; topic: string; tags?: string[] }> }
+          let extraction: { nuggets: Array<{ title: string; content: string; url: string | null; topics: string[]; relevancy_score: number }> }
           try {
             extraction = JSON.parse(content)
           } catch {
@@ -213,22 +215,33 @@ export async function POST(request: Request) {
             throw new Error('Failed to parse AI response as JSON')
           }
 
+          // Validate extraction has nuggets
+          if (!extraction.nuggets || !Array.isArray(extraction.nuggets)) {
+            throw new Error('Invalid extraction format: missing nuggets array')
+          }
+
           // Create nuggets in database
-          const nuggets = extraction.nuggets.map((nugget) => ({
-            user_id: userId,
-            signal_id: signal.id,
-            title: nugget.title,
-            description: nugget.description,
-            content: nugget.content || null,
-            link: nugget.link || null,
-            source: fullSignal.source_identifier,
-            published_date: fullSignal.received_date,
-            relevancy_score: nugget.relevancy_score,
-            topic: nugget.topic,
-            tags: nugget.tags || [],
-            is_read: false,
-            is_archived: false,
-          }))
+          const nuggets = extraction.nuggets.map((nugget) => {
+            // Use first topic as primary topic, rest as tags
+            const primaryTopic = nugget.topics?.[0] || 'Uncategorized'
+            const additionalTags = nugget.topics?.slice(1) || []
+
+            return {
+              user_id: userId,
+              signal_id: signal.id,
+              title: nugget.title,
+              description: nugget.content,
+              content: null,
+              link: nugget.url,
+              source: fullSignal.source_identifier,
+              published_date: fullSignal.received_date,
+              relevancy_score: nugget.relevancy_score,
+              topic: primaryTopic,
+              tags: additionalTags,
+              is_read: false,
+              is_archived: false,
+            }
+          })
 
           const { error: insertError } = await supabase
             .from('nuggets')

@@ -128,7 +128,7 @@ export async function POST(request: Request) {
 
         try {
           // Fetch unread emails
-          const emails = await fetchUnreadEmails(connection, 50, supabaseAdmin, user_id)
+          const emails = await fetchUnreadEmails(connection, 50)
 
           // Save signals to database
           for (const email of emails) {
@@ -143,20 +143,93 @@ export async function POST(request: Request) {
 
               if (existing && existing.length > 0) {
                 console.log(`Skipping duplicate email: ${email.subject}`)
-                // Mark as SEEN to prevent re-import (keep in inbox since not processed)
+                // Mark as SEEN to prevent re-import
                 await connection.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
                 continue
               }
 
-              // Create signal and get the inserted ID
+              // SOURCE DETECTION: Check if source exists
+              const sourceIdentifier = `${email.from}|${email.fromName || email.from.split('@')[0]}`
+
+              const { data: existingSource, error: sourceError } = await supabaseAdmin
+                .from('sources')
+                .select('id, status')
+                .eq('user_id', user_id)
+                .eq('source_type', 'email')
+                .eq('identifier', sourceIdentifier)
+                .maybeSingle()
+
+              let sourceId: string | null = null
+              let shouldProcessSignal = true
+
+              if (!existingSource) {
+                // NEW SOURCE: Create as pending (requires user approval)
+                console.log(`New source detected: ${email.fromName} (${email.from})`)
+
+                const { data: newSource, error: createError } = await supabaseAdmin
+                  .from('sources')
+                  .insert({
+                    user_id: user_id,
+                    source_type: 'email',
+                    identifier: sourceIdentifier,
+                    display_name: email.fromName || email.from.split('@')[0],
+                    status: 'pending',
+                    extraction_strategy_id: 'generic',
+                    last_signal_at: email.date.toISOString()
+                  })
+                  .select('id')
+                  .single()
+
+                if (createError || !newSource) {
+                  console.error('Failed to create source:', createError)
+                }
+
+                // Skip email - wait for user to accept the source
+                console.log(`Source created as pending - skipping email until user approval`)
+                continue
+              } else {
+                sourceId = existingSource.id
+
+                // Update last_signal_at
+                await supabaseAdmin
+                  .from('sources')
+                  .update({ last_signal_at: email.date.toISOString() })
+                  .eq('id', sourceId)
+
+                // Handle based on source status
+                if (existingSource.status === 'rejected') {
+                  console.log(`Skipping email from rejected source: ${email.fromName}`)
+                  // Delete email (mark for spam)
+                  await connection.messageFlagsAdd(email.uid, ['\\Deleted'], { uid: true })
+                  continue
+                } else if (existingSource.status === 'pending') {
+                  console.log(`Skipping email from pending source (awaiting user approval): ${email.fromName}`)
+                  // DO NOT mark as SEEN - leave unread so it can be imported after user accepts the source
+                  continue
+                } else if (existingSource.status === 'paused') {
+                  console.log(`Importing from paused source (no processing): ${email.fromName}`)
+                  shouldProcessSignal = false
+                }
+                // Only status === 'active' proceeds to import
+              }
+
+              // Use bodyText if available, fallback to HTML, or skip if both empty
+              const content = email.bodyText || email.bodyHtml || ''
+              if (!content || content.trim().length === 0) {
+                console.error(`Email has no content: ${email.subject}`)
+                continue
+              }
+
+              // Create signal with source_id
               const { data: insertedSignal, error: insertError } = await supabaseAdmin
                 .from('signals')
                 .insert({
                   user_id: user_id,
                   signal_type: 'email',
                   title: email.subject,
-                  raw_content: email.bodyText,
+                  raw_content: content,
                   source_identifier: email.from,
+                  source_id: sourceId,
                   source_url: null,
                   received_date: email.date.toISOString(),
                   status: 'pending',
@@ -177,29 +250,33 @@ export async function POST(request: Request) {
                 // Mark as SEEN in mailbox
                 await connection.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
 
-                // Move to archive folder if configured
-                const archiveFolder = emailConfig.archive_folder
-                if (archiveFolder && archiveFolder.trim()) {
-                  await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
+                // Move to archive folder if configured (only for active sources)
+                if (shouldProcessSignal) {
+                  const archiveFolder = emailConfig.archive_folder
+                  if (archiveFolder && archiveFolder.trim()) {
+                    await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
+                  }
                 }
 
-                // Trigger nugget extraction for the signal
-                try {
-                  const processUrl = new URL('/api/signals/process', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
-                  const processResponse = await fetch(processUrl.toString(), {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json',
-                      'Authorization': `Bearer ${process.env.CRON_API_KEY}`,
-                    },
-                    body: JSON.stringify({ signal_id: insertedSignal.id }),
-                  })
+                // Trigger nugget extraction only for active sources
+                if (shouldProcessSignal) {
+                  try {
+                    const processUrl = new URL('/api/signals/process', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
+                    const processResponse = await fetch(processUrl.toString(), {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${process.env.CRON_API_KEY}`,
+                      },
+                      body: JSON.stringify({ signal_id: insertedSignal.id }),
+                    })
 
-                  if (!processResponse.ok) {
-                    console.error(`Failed to process signal ${insertedSignal.id}:`, await processResponse.text())
+                    if (!processResponse.ok) {
+                      console.error(`Failed to process signal ${insertedSignal.id}:`, await processResponse.text())
+                    }
+                  } catch (processError) {
+                    console.error(`Failed to trigger processing for signal ${insertedSignal.id}:`, processError)
                   }
-                } catch (processError) {
-                  console.error(`Failed to trigger processing for signal ${insertedSignal.id}:`, processError)
                 }
               } else {
                 console.error(`Failed to insert signal:`, insertError)
@@ -223,10 +300,18 @@ export async function POST(request: Request) {
 
     console.log(`Auto-sync completed for user ${user_id}: imported ${totalImported} emails`)
 
+    // Get pending sources count for notification badge
+    const { count: pendingCount } = await supabaseAdmin
+      .from('sources')
+      .select('*', { count: 'exact', head: true })
+      .eq('user_id', user_id)
+      .eq('status', 'pending')
+
     return NextResponse.json({
       success: true,
       user_id,
-      imported: totalImported
+      imported: totalImported,
+      pending_sources_count: pendingCount || 0
     })
   } catch (error) {
     console.error('Auto-sync cron error:', error)

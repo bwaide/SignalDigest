@@ -86,13 +86,14 @@ export async function POST() {
         })
 
         try {
-          // Fetch unread emails with sender history for better classification
-          const emails = await fetchUnreadEmails(client, 50, supabase, userId)
+          // Fetch unread emails
+          const emails = await fetchUnreadEmails(client, 50)
           console.log(`Found ${emails.length} unread emails`)
 
           let imported = 0
           let skipped = 0
           let failed = 0
+          let newPendingSources = 0
           const errors: Array<{ subject: string; from: string; error: string }> = []
 
           for (const email of emails) {
@@ -109,21 +110,104 @@ export async function POST() {
 
               if (existing && existing.length > 0) {
                 console.log(`Skipping duplicate email: ${email.subject}`)
+                // Mark as SEEN to prevent re-import
+                await client.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
                 skipped++
                 continue
               }
 
+              // SOURCE DETECTION: Check if source exists
+              const sourceIdentifier = `${email.from}|${email.fromName || email.from.split('@')[0]}`
+
+              const { data: existingSource, error: sourceError } = await supabase
+                .from('sources')
+                .select('id, status')
+                .eq('user_id', userId)
+                .eq('source_type', 'email')
+                .eq('identifier', sourceIdentifier)
+                .maybeSingle()
+
+              let sourceId: string | null = null
+              let shouldProcessSignal = true
+
+              if (!existingSource) {
+                // NEW SOURCE: Create as pending (requires user approval)
+                console.log(`New source detected: ${email.fromName} (${email.from})`)
+
+                const { data: newSource, error: createError } = await supabase
+                  .from('sources')
+                  .insert({
+                    user_id: userId,
+                    source_type: 'email',
+                    identifier: sourceIdentifier,
+                    display_name: email.fromName || email.from.split('@')[0],
+                    status: 'pending',
+                    extraction_strategy_id: 'generic',
+                    last_signal_at: email.date.toISOString()
+                  })
+                  .select('id')
+                  .single()
+
+                if (createError || !newSource) {
+                  console.error('Failed to create source:', createError)
+                } else {
+                  newPendingSources++
+                }
+
+                // Skip email - wait for user to accept the source
+                console.log(`Source created as pending - skipping email until user approval`)
+                skipped++
+                continue
+              } else {
+                sourceId = existingSource.id
+
+                // Update last_signal_at
+                await supabase
+                  .from('sources')
+                  .update({ last_signal_at: email.date.toISOString() })
+                  .eq('id', sourceId)
+
+                // Handle based on source status
+                if (existingSource.status === 'rejected') {
+                  console.log(`Skipping email from rejected source: ${email.fromName}`)
+                  // Delete email (mark for spam)
+                  await client.messageFlagsAdd(email.uid, ['\\Deleted'], { uid: true })
+                  skipped++
+                  continue
+                } else if (existingSource.status === 'pending') {
+                  console.log(`Skipping email from pending source (awaiting user approval): ${email.fromName}`)
+                  // DO NOT mark as SEEN - leave unread so it can be imported after user accepts the source
+                  skipped++
+                  continue
+                } else if (existingSource.status === 'paused') {
+                  console.log(`Importing from paused source (no processing): ${email.fromName}`)
+                  shouldProcessSignal = false
+                }
+                // Only status === 'active' proceeds to import
+              }
+
               console.log(`Inserting new signal for: ${email.subject}`)
 
-              // Create signal
+              // Use bodyText if available, fallback to HTML, or throw if both empty
+              const content = email.bodyText || email.bodyHtml || ''
+              if (!content || content.trim().length === 0) {
+                console.error(`Email has no content: ${email.subject}`)
+                console.error(`bodyText length: ${email.bodyText?.length || 0}, bodyHtml length: ${email.bodyHtml?.length || 0}`)
+                console.error(`Email headers:`, email.headers)
+                skipped++
+                continue
+              }
+
+              // Create signal with source_id
               const { error: insertError } = await supabase
                 .from('signals')
                 .insert({
                   user_id: userId,
                   signal_type: 'email',
                   title: email.subject,
-                  raw_content: email.bodyText,
+                  raw_content: content,
                   source_identifier: email.from,
+                  source_id: sourceId,
                   source_url: null,
                   received_date: email.date.toISOString(),
                   status: 'pending',
@@ -172,6 +256,7 @@ export async function POST() {
             imported,
             skipped,
             failed,
+            newPendingSources,
             hasMore: emails.length === 50,
             errors: errors.length > 0 ? errors : undefined,
           })

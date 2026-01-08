@@ -1,0 +1,2379 @@
+Received: from FR2PPFA5724CA07.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d18:2::76)
+ by FRSP281MB5809.DEUP281.PROD.OUTLOOK.COM with HTTPS; Wed, 7 Jan 2026
+ 05:05:07 +0000
+Received: from FR3P281CA0072.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d10:4b::23)
+ by FR2PPFA5724CA07.DEUP281.PROD.OUTLOOK.COM (2603:10a6:d18:2::76) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9499.2; Wed, 7 Jan
+ 2026 05:05:04 +0000
+Received: from FR3PEPF00000485.DEUP281.PROD.OUTLOOK.COM
+ (2603:10a6:d10:4b:cafe::87) by FR3P281CA0072.outlook.office365.com
+ (2603:10a6:d10:4b::23) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9499.1 via Frontend Transport; Wed, 7
+ Jan 2026 05:05:04 +0000
+Authentication-Results: spf=pass (sender IP is 77.32.148.104)
+ smtp.mailfrom=jz.d.sender-sib.com; dkim=pass (signature was verified)
+ header.d=petra-wille.de;dmarc=pass action=none
+ header.from=petra-wille.de;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of jz.d.sender-sib.com
+ designates 77.32.148.104 as permitted sender)
+ receiver=protection.outlook.com; client-ip=77.32.148.104;
+ helo=jz.d.sender-sib.com; pr=C
+Received: from jz.d.sender-sib.com (77.32.148.104) by
+ FR3PEPF00000485.mail.protection.outlook.com (10.167.240.5) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9499.1
+ via Frontend Transport; Wed, 7 Jan 2026 05:05:04 +0000
+DKIM-Signature: a=rsa-sha256; bh=Cm8kqpHNWej8xa80ZxpkBMT/H0F0sjhDzMDivwLkPNs=;
+ c=relaxed/relaxed; d=petra-wille.de;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id:bimi-selector;
+ q=dns/txt; s=brevo1; t=1767762303; v=1;
+ b=fo47FahsjM68Q8TNf3BEhE9w47CnZIEy9bVnAqEGdxFT1b1TBbx0rd1nEGULAttdBOGgkJTi
+ Rw8H1Ofg2GmWobqgDGjlo77f8GD8hWeAYy+VrcFi3wL72QgMuuWhU2LWFhrxvYFd/vKZxQT9mh7
+ KPEFZWupM1kmmMtODnn8XJ2xVRvhq/fnj9KeWurh7A8ggQq+WDxkOh48eCfsLI5abKOgjxgMcO0
+ 0rAB2zWvU0pQ2C/x+U3FF7Oex1283lD6p6fXNH2u5k/GSg85vB4LaWEImKoIyLvCdffqmVHfd9i
+ KtZu6niysSO4jAaaN6WJeRWFHFeHXfkZfJ99uG1D6aYQw==
+To: <bjoern@waide.de>
+Subject: =?utf-8?q?=E2=9D=84=EF=B8=8F_Winter_2026_|_Product_Leadership_Newsletter_?= =?utf-8?q?-_Petra_Wille?=
+Content-Type: multipart/alternative; boundary="-------?=_41244-3471506110717"
+Date: Wed, 07 Jan 2026 05:05:03 +0000
+Feedback-ID: 77.32.148.104:8597261_126:8597261:Sendinblue
+From: STRONG Product People <info@petra-wille.de>
+List-Id: ODU5NzI2MS0zMzQtNw== <ODU5NzI2MS0zMzQtNw==.list-id.mailin.fr>
+List-Unsubscribe: <mailto:unsubscribe@jz.d.sender-sib.com?subject=unsub-1peiyz5nqg7j&body=1peiyz5nqg7j>,<https://f2xm1.r.ag.d.sendibm3.com/mk/un/li/sh/6rqJ8GqndAnmOusakEXuDs5eTsW/jLSgaZMVK8nT>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-Id: <202607010505.1peiyz5nqg7j@jz.d.sender-sib.com>
+Reply-To: <info@petra-wille.de>
+X-Csa-Complaints: csa-complaints@eco.de
+X-Mailer: Sendinblue
+X-Mailin-Campaign: 126
+X-Mailin-Client: 8597261
+X-sib-id: at7FQaBSILESjl_AsnSIrsj8_6Tg_hkMMIGaH60fWdj2JD-GCphnPQEp5ah47lpu8C6O1eMbLwaWRz2LhaAbo5tXsB4tYUyDKKaumGwWFY0YmgjQsOBvR11GL6nh7Xr-Fe8k2zKsuU1myrJPDeS6_VpQb9o-KyMhARCGVtgphuh3ut8V-7-35N99HLC9KfjLqg8uv7xwIfzcEkzr5b2wwj0
+Return-Path: bounces-f2xm1-info=petra-wille.de@jz.d.sender-sib.com
+X-MS-Exchange-Organization-ExpirationStartTime: 07 Jan 2026 05:05:04.2134
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 98c0fdd3-7081-4f77-d240-08de4daa519b
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 4979106e-0799-44f0-8b80-0de20a54b4fb:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: FR3PEPF00000485:EE_|FR2PPFA5724CA07:EE_|FRSP281MB5809:EE_
+X-MS-Exchange-Organization-AuthSource: FR3PEPF00000485.DEUP281.PROD.OUTLOOK.COM
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 98c0fdd3-7081-4f77-d240-08de4daa519b
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|4022899009|29132699027|69100299015|13003099007|8096899003;
+X-Forefront-Antispam-Report: CIP:77.32.148.104;CTRY:FR;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:jz.d.sender-sib.com;PTR:jz.d.sender-sib.com;CAT:NONE;SFS:(13230040)(4022899009)(29132699027)(69100299015)(13003099007)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 Jan 2026 05:05:04.1168
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 98c0fdd3-7081-4f77-d240-08de4daa519b
+X-MS-Exchange-CrossTenant-Id: 4979106e-0799-44f0-8b80-0de20a54b4fb
+X-MS-Exchange-CrossTenant-AuthSource: FR3PEPF00000485.DEUP281.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: FR2PPFA5724CA07
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.2327452
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9499.001
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930201)(20251009114)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?c3RzcUVqOXI2cFg2Q3RldlJVd1JiTUliNW5icU5ZQ2NGVHcxTUpRbk9waTFt?=
+ =?utf-8?B?UWx0eFdZTzRQWi8zQ0lIcVgwMG9zTmdBSnZYZEZNM0FaVnJtVm5NSjUzZWJv?=
+ =?utf-8?B?WFp1MllNQkVEbGF1cmZ6LzdKejdTL3NObVVTOHozUkltWFJCZzJSNFNmNmZt?=
+ =?utf-8?B?alR5enRZb1BQNDl4Ti9MY0s0OFlNUVhYaUpkTlpyYTZjSkh4dmxDNlVVd3pY?=
+ =?utf-8?B?Z3hnWitiSktQTzRwejhtMTVLc3BGQlZpajBjOGU1T0VoUHYxQWpkeGEyaFhN?=
+ =?utf-8?B?NUxEL1VWL3lkZFN6eG5zc1BNOW5JeCtJSTQxRS92Yng3VkNCMXVZMDRnRUhV?=
+ =?utf-8?B?dUdaclVxRlJQUHdNYzZWZGRCdDY2SzBSNXd0d1ZlSUZPeGVmOGVVMjlqbENE?=
+ =?utf-8?B?YzRJNzFIdXpaK1JaVGJ2V05wcXFjR1EwZk5aSDc2NFQ4aTFRdlZKaHhRRDdh?=
+ =?utf-8?B?aVFnYzVkYkgxY3dybnJpZFVUTmZNTlBpLzF2YTE1RGZEazN0VWt3Zm50MU9K?=
+ =?utf-8?B?YUg5N3hUbm1LcXNCcFR4dGg1QlhXTWtUd1FRNk1KRVhkWFYvVnpheXZQeG1B?=
+ =?utf-8?B?YkJobjlVM2pWMWptTkEwOERQYStzTjVnTU5zYkl5a3RiSkRMc3laa2s4N000?=
+ =?utf-8?B?U3B4dU9rZStGdXhTTTE2dENIVzh1VXlGZGdjNGprWmZRUnJtdUFNS1gyaTVt?=
+ =?utf-8?B?RXM5ZlQ2NFNnMzhQeFZBSnkrUEZzWFJmZllQZXJvYVAzdm1wTFdpaWlrVXZY?=
+ =?utf-8?B?Q013WDd2eXpPQmZ4emtvT2gyZDVpd2F6eFNIOW9uKzc5TkpMZHdCcXQ5a2Yw?=
+ =?utf-8?B?dmVzOHhyeEFHWjRVVXdRNXp0ZlRTY1hKS0lNMit6VXZEVmpSY0ppc2FnMXI3?=
+ =?utf-8?B?QmVIKzlFMlZ6MUh2cE5pSjlPTTVUT2JBRkpLZUVDYjNFeUZzVU9ZS29SVDJo?=
+ =?utf-8?B?T2wva0dsVFhRazJRZEJtUGVrM08vbTR4UG5IQUZVdmRoYnY5NEdlL1Q1a2pj?=
+ =?utf-8?B?T28zWVRwM1lRVjlxRi82UlB3OTRWbU8xMjk0NGF4c3JtU3lPL0VPcVcxZW1o?=
+ =?utf-8?B?MHRPeTJ3SlgrSERuaDI1Q3BmM3owbTM4ZmZoS0VZSmlzVlRZbXBlS3BZNFc5?=
+ =?utf-8?B?dWtSa01nTVVPVHI2UnhaZk9aT2pSbWEva1J6cGRDcmlwYitKdWxudWx0Y2Nm?=
+ =?utf-8?B?OS95RGRnZjZrNVBVd21qNW90WU8rUWdUWFUvMkk2aE4xSmM2aDQwK1N1T3hO?=
+ =?utf-8?B?Uys5K0ljU3h0RmhjY01YTXZETG9LM2V6eEZCT0x0V3JjZHJKZW5JeEE3ekdr?=
+ =?utf-8?B?T2YxN2UzTjlPbTNycjFpYmN2M2t5cHIyZmZOa0NrUUxYWStsTk10OWJpcWJV?=
+ =?utf-8?B?c281RkVVOENwbkJNaUtQMk1MWHV6UzRYZUVBUWZZbDhFQ3FUWFlGTEF5OTVp?=
+ =?utf-8?B?bnlLT2NGVWwrYzlGNW1oTFc1Q1hmczVlWVFCd3FsVmpnR3VkRklWSlRBNVEx?=
+ =?utf-8?B?amlxSGt0UytyTkhwYW5OZVU2cHVRaFcvV08vbEpHRDhOOWlWNUsxOEhrMGpZ?=
+ =?utf-8?B?cGhIT2FhdzdnRDlIQi9JR2I3aFUrQ2pSb1BSK0lyeWFPMWlDa1AzakdFYWd2?=
+ =?utf-8?B?cTBpUE9LSGFrRFhxNXpQTjZraEg4dU03S1M0Q1FoU1FHYi9tSmQ0aHNCOVJY?=
+ =?utf-8?B?ZURqMUtoOGJ4NGUvVzJQaUI2TDdldENNNC9VbW94clprdW9Ia0FiTWFMc0pX?=
+ =?utf-8?B?U3hjOFdXTmQzTUp0MnRUMXZxMlI1Q2FJYkxEWjNtVXpPNFA3NDR6VzdkTm1Q?=
+ =?utf-8?B?MVVEZ1F5YWRhZ2xoYUx4cW5yYjl4WlAvbDVWMU9jTUFuT3RjTVlxdVpKejJL?=
+ =?utf-8?B?cFlaOTJHZEFBSks5enUxSldLeVdQMDZNSFdGZUJ3TzBPNzRqYlRNMWhiRXZQ?=
+ =?utf-8?B?V2Rjd3MxSWVuZ2J1MEVvOUFFV2hac2tFZENOQmI0MVVnTWg5dEEvS3Q3K2Iz?=
+ =?utf-8?B?ZTk5RkNCYlBTN2p0NFZXNDdmZFNUVEFFT09tOEYwUlNMM09QT1Y3UGFGRVJ5?=
+ =?utf-8?B?dFViMTJhb2hRYzVQalJPbUFiT1cxWkJMajdEdTZJMU94ZjJHRy9YZU9UM2lE?=
+ =?utf-8?B?d0JBakl5Ymg3MGlPaEFSVVplZjVMRGRjcXBUbmVuWTMxblF0S1A4ajhtWkQ3?=
+ =?utf-8?B?akQ2eStnZ2hkWFVJZE5SQzZuREJOSnRpbGtOeDQyQlUwaHl4L3I4emJvUUtW?=
+ =?utf-8?B?YVc1bWllVTVEOCtvYkV0VWhFOFBJb0pBZS96Skc5bkdjVmRicWExQTRLNEJk?=
+ =?utf-8?B?UGdHbWpOZVdIbFRGVWJweko5dmdlL0pXazJNQ2hDenBqK0NHaTZ3RGNUMjVS?=
+ =?utf-8?B?bytEa1UwSGZGWUtmZjNqOUl5L0R0c1dLQjZxbVVnYVBsNGl3U3grYU1JMXNJ?=
+ =?utf-8?B?d1AwL2pLVTBkSjV4QlVuRUU3WnJlL0hiNzJZZ0gyMnNWKzk1QjJGeDJEN21m?=
+ =?utf-8?B?M2xpZGdxeWNqY3BmUE5pa2xOQUtKS0R3RW1UKzNsSVpGZm9TM3B3UUJDejVO?=
+ =?utf-8?B?TzRCVzRxbW5DdVo5VndNMmhJQ3ZJQ0lMTEpMSnUyeWd5bHVpQTB4NlIzRzRx?=
+ =?utf-8?B?aE43bmptWnNDK0NZQ2lmSEJET2RuREozTGlDM3hFczdNUjBodkZ0WXhGYW94?=
+ =?utf-8?B?VTRKQUJwUURKY1ZwcDRxeno5bHBDLzNsVVIrRXREellrMCt6SDBPdTNiS04r?=
+ =?utf-8?B?c3NoMlJYc1ZkSE5UU0VQUFpnaGVEazFhZ20vemk2K0ZFSllyZHRyUXpCTDRP?=
+ =?utf-8?B?bjJ1MzBEUStMM1RFR2VIdkZ6Q1ZKeXQzNEhiT1ZWMGVlRnRYdFQ0V3lXdHNI?=
+ =?utf-8?B?aHFEYnZEeUhKMlZSaU90b2lucG5kbCt3RHR4a0JqTHBzMDFoZ3VwSW5SKzJY?=
+ =?utf-8?B?R2tSdWdXM1NTZmlnejlQMTEzVWRvMSt4QW4rZW9QeXk4QTdqRVdXV21abmk3?=
+ =?utf-8?B?NDhaUk5vWUZCM2lNUkx2UGdLVllLTjhYQ1BRUUNXYmlWcEhiODZYMG9FbEFu?=
+ =?utf-8?B?b0NPNjEyR25XeWphaDJaaG1waGRTNWZhamxIa3hpOVZJb2xHR3FieUtWdmZU?=
+ =?utf-8?B?dzFGaXlnZ1NKVE8rQVBDeXBuNnQrL0VtLzBxVFpDUWZPbE5qZ212UzNpVVEw?=
+ =?utf-8?B?d1NXVFdyNnkrODFPQkZQRUxDbDM0YkU1N2psWE5UaU8ydHJxYmd3ZURzTjRM?=
+ =?utf-8?B?NW5XV2pZN29wVzFuZGM1MmszL2pWYnZuam45aHV0dXlseUdxNzZKQVU1STM3?=
+ =?utf-8?B?bUZxb0d4NlZVQ3d3LzFJenpKTTdvVEtTeU5aNW5IWkh3UTFoaUJOREJXV3pu?=
+ =?utf-8?B?dU1xYkxnZk5hMktrbFBka1AzWXI5L0twekhYTGE3WjZWNVFocVVvWWF5bXdC?=
+ =?utf-8?Q?BsL1TvnbbDfs95xHa9c=3D?=
+MIME-Version: 1.0
+
+---------?=_41244-3471506110717
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+###Hello, product leaders!
+
+
+=C2=A0
+
+Happy New Year! January often feels like cracking open a new book. We don=
+=E2=80=99t know yet exactly what the year is going to hold. Will it be a th=
+riller? A comedy? Fingers crossed it won=E2=80=99t turn out to be a zombie =
+apocalypse survival guide!
+
+
+When we start with this metaphorical blank page in front of us, we can feel=
+ hopeful that it will turn out to be a narrative where we feel fulfilled an=
+d engaged in our work, inspired by our teams and the goals they=E2=80=99re =
+working toward, and committed to our own professional growth and developmen=
+t.
+
+
+If you=E2=80=99re reading this newsletter, that means you=E2=80=99ve alread=
+y carved some time for yourself on that last point, so you=E2=80=99re doing=
+ a great job so far!
+
+
+In this edition, we=E2=80=99re diving deep into annual reviews and the broa=
+der topic of reflection. How can you remove the administrative burden of re=
+views and make them more meaningful for everyone involved?
+
+
+As always, in addition to everything I=E2=80=99ve just mentioned, you=E2=80=
+=99ll find plenty of other articles, videos, and the usual range of product=
+ leadership resources to explore.
+
+
+###Beyond HR Forms: A Product Leader=E2=80=99s Guide to Running Better Annu=
+al Reviews
+
+
+The main topic for this edition of the newsletter is annual reviews. And si=
+nce this newsletter goes out in January, I bet half of you have already don=
+e yours for last year and the other half still have them coming up. So yes,=
+ dedicating this edition to annual reviews is=E2=80=A6 tricky. But I though=
+t it was still worth doing.
+
+
+Why? Because even if you=E2=80=99ve just filed your forms with HR and wrapp=
+ed all your 1:1 conversations, you might still benefit from taking an hones=
+t look at how you did them. A small reflection now can make next year=E2=80=
+=99s reviews far more impactful. And if your reviews are still ahead of you=
+=E2=80=94even better.
+
+
+####=E2=AD=90 Annual reviews shouldn=E2=80=99t be the only time your people=
+ get feedback
+
+If you=E2=80=99ve read=C2=A0*STRONG Product People*, you already know this =
+is one of the core principles I stand by. (And if you have not, the chapter=
+ on feedback is available as a=C2=A0[free downloadable resource here](https=
+://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dINmNvd1DF12w7HY26S/Avsk_RP=
+u8pEL)).=C2=A0**A once-a-year feedback cycle is never enough to support gro=
+wth.**=C2=A0Our PMs=E2=80=94and frankly all employees=E2=80=94need more fre=
+quent nudges, guidance, and clarity than a single formal conversation can p=
+rovide.
+
+
+The ideal scenario: delivering praise and criticism constantly
+
+
+But here=E2=80=99s the reality I see in many coaching engagements: Annual r=
+eview season is the=C2=A0*only*=C2=A0moment when some people finally receiv=
+e well-prepared, role-specific, structured feedback from their manager.
+
+
+That=E2=80=99s why=E2=80=94if this is the moment your company formalizes=E2=
+=80=94you need to make it count.
+
+
+####=F0=9F=8E=AF Most HR frameworks are role-agnostic. Your feedback should=
+n=E2=80=99t be.
+
+HR forms are designed to work for multiple functions: Finance, Marketing, E=
+ngineering, Product=E2=80=A6 They are useful, but they are=C2=A0**not**=C2=
+=A0specific enough for product roles to be the sole framework you should us=
+e to prepare for your sessions.
+
+
+If you want the review to be meaningful, layer a role-specific lens on top.
+
+
+That means:
+
+
+-=20
+
+Reviewing your PM=E2=80=99s impact=C2=A0*as a product manager*, not just as=
+ an =E2=80=9Cemployee.=E2=80=9D
+
+
+-=20
+
+Assessing discovery work, stakeholder management, prioritization, decision-=
+making, crisp communication, and contribution to team culture.
+
+
+-=20
+
+Grounding your feedback in real examples of product practices, helping them=
+ see where their craft is strong=E2=80=94and where they might need to close=
+ a skill gap or even need extra support.
+
+
+And yes: Using a clear structure helps enormously. Whether it=E2=80=99s my=
+=C2=A0[PMwheel](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIPRQN=
+vAhYQariPTfPU/qblV8GkVmjl3), your own rubric, or another role-specific mode=
+l, choose something and stick with it.
+
+
+####A simple way to strengthen your annual review practice
+
+If you=E2=80=99re still preparing for your upcoming reviews, or want to mak=
+e next year smoother, here are a few reflections you can start with.
+
+
+**=F0=9F=92=9A Are you remembering the human side of your employee?**
+
+
+This may sound like a ridiculous thing to say, but hear me out: Sometimes w=
+hen we=E2=80=99re deeply involved in the technical process of annual review=
+s, we forget to think about our employees as human beings. So it=E2=80=99s =
+important to **make sure you understand their hopes and dreams for the futu=
+re**. If you haven=E2=80=99t already carved out time to have this type of b=
+ig picture conversation with your team members, consider this a sign to do =
+so!
+
+
+=F0=9F=92=A1=C2=A0**Have you given enough feedback throughout the year?**
+
+
+If not, what lightweight rituals could you introduce to make it easier? (We=
+ekly quick feedback, quarterly check-ins, etc.) And remember:=C2=A0**Feedba=
+ck requires awareness**.=C2=A0Make it a habit to actively look for moments =
+to praise people, not just moments to correct their mistakes. Keep a simple=
+ place (a note on your phone, a doc, your Claude code repo, whatever works =
+for you) to capture both positive observations and opportunities for growth=
+. This way, when your next =E2=80=9Cmini feedback=E2=80=9D touchpoint comes=
+ around, you aren=E2=80=99t relying on memory alone.
+
+
+**Do you have a shared language for discussing product skills in your org?*=
+*
+
+
+A=C2=A0[craft-based framework](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh=
+/6rqJfgq8dIR6SqDKBrq8nJXPIiW/nxKGWaKEP0ru)=C2=A0like the PMwheel can make c=
+onversations much clearer. This also ensures that everyone involved in the =
+feedback process=E2=80=94the person who is being reviewed as well as the ma=
+nager or peer who is reviewing them=E2=80=94is using consistent criteria an=
+d limiting bias from this process.
+
+
+**=F0=9F=94=8D Are both of you bringing 360-degree feedback into the conver=
+sation=E2=80=94and do you have a system that makes this easy?**
+
+
+Annual reviews get much richer when both leader and PM talk to a small set =
+of peers, stakeholders, or cross-functional partners. To make this predicta=
+ble and easy to schedule, put a simple rule in place. For example: Both of =
+you pick three people, align on who they are, and inform them upfront. Ever=
+yone knows why these conversations are happening and gets time blocked on t=
+heir calendars. Ideally, this becomes a company-wide habit rather than a pe=
+rsonal workaround=E2=80=94one that makes getting on people=E2=80=99s calend=
+ars less of a hassle.
+
+
+**And are you turning those insights into clear, role-specific examples?**
+
+
+When you have structured 360-degree input, it becomes much easier to pinpoi=
+nt real behaviors. For example: =E2=80=9CSeveral stakeholders mentioned tha=
+t in recent review meetings, your storytelling wasn=E2=80=99t strong enough=
+ to help Sales and Marketing understand why the team worked on a specific i=
+nitiative=E2=80=94or how they could contribute to its success.=E2=80=9D Spe=
+cific examples like this turn vague feedback into something your PM can act=
+ually act on.
+
+
+**Are you evaluating your PM=E2=80=99s actual time distribution?**
+
+
+Many PMs think they spend the majority of their time on important work like=
+ discovery, but their calendars tell a different story.
+
+
+####=F0=9F=93=9D Still ahead of your annual reviews? Borrow this structure:
+
+
+1. Make sure you check in about their larger hopes and dreams from time to =
+time (these conversations are a time for larger self-reflection for your te=
+am members, too).=20
+2.=20
+
+Start with strengths (product-specific ones!).
+
+
+3.=20
+
+Reflect on impact, not effort.
+
+
+4.=20
+
+Clarify skill gaps using a role-based model.
+
+
+5.=20
+
+Discuss time distribution=E2=80=94what they actually spent their days and w=
+eeks on.
+
+
+6.=20
+
+Agree on 2=E2=80=933 development focus areas with clear =E2=80=9Clearning h=
+eadlines.=E2=80=9D (If you are lacking structure here, you could use the=C2=
+=A0[Future Self Canvas](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfg=
+q8dISlVIVTgBFgiufKw1Y/DJAujipH6Rr-)).
+
+
+7.=20
+
+Close with encouragement and commit to ongoing support and regular check-in=
+s.
+
+
+####And if you=E2=80=99ve already completed your reviews=E2=80=A6 reflect a=
+nyway
+
+Ask yourself:
+
+
+-=20
+
+What worked well in my review conversations?
+
+
+-=20
+
+Where did I feel underprepared?
+
+
+-=20
+
+Which parts of the role were hardest to evaluate?
+
+
+-=20
+
+What feedback did I avoid giving? Why?
+
+
+-=20
+
+What structures or habits do I need to build earlier in the year?
+
+
+And here=E2=80=99s a big one for many product leaders:=C2=A0**How much time=
+ did the whole preparation actually take=E2=80=94and where did the time go?=
+=C2=A0**Annual reviews often feel painful not because of the conversation, =
+but because the preparation is so heavy. So reflect on the breakdown. Where=
+ did you spend the majority of your time?
+
+
+-=20
+
+Was it gathering examples?
+
+
+-=20
+
+Was it digging through your notes?
+
+
+-=20
+
+Was it coordinating 360-degree conversations?
+
+
+-=20
+
+Or was it some internal process overhead that really shouldn=E2=80=99t be t=
+his hard?
+
+
+Some effort is valuable=E2=80=94for example, having real conversations with=
+ peers and stakeholders. But if you=E2=80=99re losing hours to admin, messy=
+ templates, unclear expectations, or =E2=80=9Cplease fill out this long for=
+m in three different tools,=E2=80=9D that=E2=80=99s system overhead you can=
+ (and should) challenge, escalate, or help improve ahead of next year.
+
+
+And finally:=C2=A0**What habits do I need to build earlier in the year to m=
+ake this easier next time?**
+
+
+Because the leaders who give feedback regularly and keep simple notes along=
+ the way rarely dread annual review season. They walk into these conversati=
+ons prepared, grounded, and confident. The work is distributed across the y=
+ear, not squeezed into one frantic December (or January!) afternoon.
+
+
+###My recent writing
+
+
+=C2=A0
+
+I=E2=80=99ve been dedicating the majority of my writing time lately to work=
+ on my=C2=A0[Leadership course](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/s=
+h/6rqJfgq8dIUQXkndAUfEeVnGZKa/3kmvI5mej21U), but I=E2=80=99ve still found a=
+ bit of time to share some thoughts and updates on my blog.
+
+
+-=20
+
+[Why Context, Not Just Data, Will Define AI-Ready Product Teams](https://f2=
+xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIW5aD5meo4ma6vCCdc/visRoq-25lrK=
+)=C2=A0=E2=80=93 This topic will look familiar if you remember the last edi=
+tion of this newsletter. But I=E2=80=99m reminding you that it also exists =
+as a blog post in case you=E2=80=99d like to share it with your colleagues.=
+ As a quick refresher, it=E2=80=99s about the importance of providing the a=
+ppropriate context (AKA organizational knowledge, rules, and objectives) to=
+ any AI tool or agent you=E2=80=99re using.
+
+
+I publish on=C2=A0[my blog](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6r=
+qJfgq8dIXkcfNw97UKVi37pwe/3qODNbKEteEh)=C2=A0on a regular basis. So make su=
+re you come visit once in a while or follow me on social media ([LinkedIn](=
+https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIZPf7g5dQtsRJB3TFg/fV=
+mwrU7UcW5C)) to stay up to date on the latest.
+
+
+###Gems I found - I think you=E2=80=99ll like them as well
+
+
+=C2=A0
+
+
+####Books I=E2=80=99m currently reading
+=C2=A0
+
+**=F0=9F=93=96=C2=A0**[***Empire of AI***](https://f2xm1.r.ag.d.sendibm3.co=
+m/mk/cl/f/sh/6rqJfgq8dIb4hZyF7kJQMuIz6Yi/MXqrFSo_dgmn)**=C2=A0=E2=80=93 Kar=
+en Hao******All of us have been witnessing how AI (at least the genAI chatb=
+ot version of it) took the world by storm and is now dominating every conve=
+rsation in our industry. And of course we also know somehow how all of this=
+ unfolded, but reading it in such a dense, well-researched format was=E2=80=
+=A6 let=E2=80=99s say =E2=80=9Cintense.=E2=80=9D This book is a deeply repo=
+rted look at how artificial intelligence is reshaping economies, societies,=
+ and the balance of power worldwide. Karen Hao brings clarity and her inves=
+tigative rigor to unravel who holds influence in the AI landscape, how thes=
+e technologies are built, and what this means for all of us building digita=
+l products. It=E2=80=99s an eye-opening read for anyone who wants to unders=
+tand the forces shaping the systems we work within.
+
+**=F0=9F=93=96=C2=A0**[***Architecture for Flow***](https://f2xm1.r.ag.d.se=
+ndibm3.com/mk/cl/f/sh/6rqJfgq8dIcjk2GOc3iyIVQujrk/bVmfB8Ef490Z)**=C2=A0=E2=
+=80=93 Susanne Kaiser******If you=E2=80=99ve ever heard me talk about org d=
+esign, team topologies, or building more adaptive product organizations, th=
+ere=E2=80=99s a good chance Susanne Kaiser=E2=80=99s name has come up. Sinc=
+e we both live in Hamburg, our conversations=E2=80=94whether at a friend=E2=
+=80=99s dinner party or a professional meetup=E2=80=94always end up circlin=
+g back to how systems shape the way teams collaborate.
+
+
+Susanne has now brought her thinking together in a beautifully structured b=
+ook. And yes, I was lucky enough to get my copy handed to me personally by =
+the author herself, over lunch! I haven=E2=80=99t dived into it yet, but lo=
+ok forward to doing so soon!
+
+
+=E2=86=92 More on books I've read=C2=A0[here](https://f2xm1.r.ag.d.sendibm3=
+.com/mk/cl/f/sh/SMK1E8tHeFuYwWCmerRaQruJSFpI/Ipm8PiuUE3uM)
+
+
+###Articles, posts, & talks
+
+
+=C2=A0
+
+
+####Leadership & Product Organizations
+****
+
+
+-=20
+
+**Product team operations and dysfunction:=C2=A0**John Cutler always stretc=
+hes my thinking. My reaction to his work is usually 80% =E2=80=9CHell yes=
+=E2=80=9D and 20% =E2=80=9CWait, what did he just say?=E2=80=9D So if you w=
+ant to have the same stimulating sensation in your brain, check out=C2=A0[h=
+is conversation with Randy Silver and the accompanying article](https://f2x=
+m1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG1QOf1jq1b4WhD3QYPY/7M7tWEOpUJ2i=
+). This is a fantastic deep dive into how teams operate (or get stuck) and =
+why the =E2=80=9Cshipyard work=E2=80=9D of product is so hard.
+=C2=A0
+
+
+-=20
+
+**The theater of leadership development:=C2=A0**A thoughtful, more philosop=
+hical=C2=A0[take from House of Beautiful Business](https://f2xm1.r.ag.d.sen=
+dibm3.com/mk/cl/f/sh/SMK1E8tHeG8Hqnqh1BkYcWVnOqzo/iVA4S6yckk0q)=C2=A0on how=
+ we think about leadership growth. Since this edition of the newsletter div=
+es deep into development systems, I found this piece a refreshing counterba=
+lance worth reflecting on.
+[=C2=A0](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGF9IwfeCLu2i=
+LoXN9a4/MTMANn_rVXFF)
+
+
+-=20
+
+**The tensions of great PMs:=C2=A0**Thor Mitchell shares a simple but power=
+ful insight for annual reviews=C2=A0[in this LinkedIn post](https://f2xm1.r=
+.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGM0l5UbNW3WoB7HLSAK/rB5jdftbXJlg): G=
+reat PMs navigate contradictory strengths and know when to lean into each. =
+This could be a helpful lens for your next round of performance or growth c=
+onversations. =F0=9F=98=89
+
+
+####AI, Technology & Culture
+
+
+-=20
+
+=F0=9F=8E=A5=C2=A0**Claude Code setup tutorial:=C2=A0**I recommended this o=
+ne in the last newsletter, but wanted to mention it again as =E2=80=9Chow t=
+o start using Claude Code=E2=80=9D comes up in so many coaching conversatio=
+ns.=C2=A0[Carl Vellotti=E2=80=99s walkthrough](https://f2xm1.r.ag.d.sendibm=
+3.com/mk/cl/f/sh/SMK1E8tHeGSsDEJYYgD0u0Q1Jkka/hRqd82WtqWdn)=C2=A0on Aakash =
+Gupta=E2=80=99s Product Growth Podcast was my personal starting point for g=
+etting Claude Code set up properly. Clear, practical, and extremely generou=
+s.
+=C2=A0
+
+
+-=20
+
+**Using Claude Code safely:=C2=A0**Teresa Torres continues to double down o=
+n AI topics, and=C2=A0[this post](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f=
+/sh/SMK1E8tHeGZjfN8VjqMUzpilI3Kq/s_pUiyG6mBgJ)=C2=A0is a must-read if you c=
+are about data security, privacy, and safe usage=E2=80=94which, as leaders,=
+ we all should.
+
+
+-=20
+
+**AI zombies in your org:=C2=A0**[Barry O=E2=80=99Reilly=E2=80=99s Hallowee=
+n post](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGgb7VxSv0Vz5f=
+1VGLv6/tFXMJoHO6qRa)=C2=A0is painfully accurate. He breaks down three types=
+ of doomed AI projects=E2=80=94Zombies, Ghosts, and Ghouls=E2=80=94and I=E2=
+=80=99m sure many of you will recognize at least one. A sharp, funny, and v=
+ery real read.
+
+
+-=20
+
+**Tech fascism:=C2=A0**Paulina Borsook=E2=80=99s=C2=A0*Cyberselfish*=C2=A0d=
+iagnosed Silicon Valley=E2=80=99s toxic techno-libertarian mindset long bef=
+ore the rest of us caught on. Her observations from 25 years ago feel even =
+more relevant today. Reading about her current situation made me stop=E2=80=
+=A6 and donate. If her work moved you, too (or you=E2=80=99d like to learn =
+more about it),=C2=A0[this LinkedIn post](https://f2xm1.r.ag.d.sendibm3.com=
+/mk/cl/f/sh/SMK1E8tHeGnSZemQ6AfTBUKFEeVM/Dd1-tXh3sqfk)=C2=A0(and the associ=
+ated interview) is worth your time.
+
+
+-=20
+
+**OKRs for AI:=C2=A0**In the beginning of December, Sam Altman declared a =
+=E2=80=9Ccode red=E2=80=9D at OpenAI, pausing advertising experiments, AI s=
+hopping agents, health assistants, and a personal assistant called =E2=80=
+=9CPulse,=E2=80=9D all so the company could focus on making ChatGPT faster,=
+ more reliable, and personal.=C2=A0[Christina Wodtke](https://f2xm1.r.ag.d.=
+sendibm3.com/mk/cl/f/sh/SMK1E8tHeGuK1nbNHKoxHJczCx5c/3mh3FzbjGfLG)=C2=A0bre=
+aks down what these actions can teach us about OKRs (even if it=E2=80=99s u=
+nintentional on OpenAI=E2=80=99s part).=C2=A0
+
+
+-=20
+
+**An eco-friendly=C2=A0AI option:=C2=A0**Most AI tools take more than they =
+give, but=C2=A0[Christian Kroll and Ecosia](https://f2xm1.r.ag.d.sendibm3.c=
+om/mk/cl/f/sh/SMK1E8tHeFuabYf4oLkzynVRNt8K/KzahC4C9WiUj)=C2=A0seem to be bu=
+cking that trend. I=E2=80=99d love to see more companies pushing hard to fi=
+nd sustainable AI solutions.=C2=A0
+
+
+-=20
+
+=F0=9F=8E=A7=C2=A0**Tristan Harris on Diary of a CEO:=C2=A0**Speaking of lo=
+ng before everyone else=E2=80=A6 I=E2=80=99ve followed Tristan Harris since=
+ his=C2=A0*Time Well Spent*=C2=A0days (I even wrote about him back in 2017,=
+ but in German). His=C2=A0[recent conversation](https://f2xm1.r.ag.d.sendib=
+m3.com/mk/cl/f/sh/SMK1E8tHeG1S3hU1zVuU4coBMBia/N3itDqlKWb6o)=C2=A0with Stev=
+en Bartlett is an excellent update on his thinking around AI is well worth =
+your commute or workout time.
+
+
+####Product Craft & Strategy
+
+
+-=20
+
+=F0=9F=8E=A5=C2=A0**Storytelling with product data:=C2=A0**Another Product =
+at Heart watch-party recommendation.=C2=A0[Andrey Vinitsky](https://f2xm1.r=
+.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG8JVqIzAg3yAS6vKUIq/PRiD4W4AqsgP)=C2=
+=A0delivers a sharp, funny take on dashboards, data narratives, and how to =
+actually tell a compelling story with the metrics you collect.
+
+
+- =F0=9F=8E=A5=C2=A0**Living in bets:**=C2=A0[Andrew Skotzko](https://f2xm1=
+.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGFAxz7wLqDSGHPfImt6/UXiK208XQZsD)=
+=E2=80=99s Product at Heart talk is another standout=E2=80=94a look at esca=
+ping the =E2=80=9Ccontrol trap=E2=80=9D and moving toward a healthier, more=
+ strategic product cycle.
+
+
+###Upskilling and Reflection Ideas
+
+Given the timing of this newsletter, I imagine you're either deep in annual=
+ review mode or you've just completed yours. We already covered some more s=
+tructured approaches to reflection in the intro (and I'll share a few more =
+at the end of this newsletter).=C2=A0
+
+
+If all this reflection has you thinking about ways you might want to improv=
+e your leadership skills or help your team members develop specific aspects=
+ of their product craft, here are a few specific steps you can take:
+
+
+-=20
+
+Commit to a targeted, ongoing approach to strengthening your leadership pra=
+ctice by signing up for my email course,=C2=A0[From STRONG to Exceptional: =
+Your 52-Week Leadership Journey](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/=
+sh/SMK1E8tHeGM2Q7wtX0MwM6iPH5TM/NyYCZ1Hm3vG4).
+
+
+-=20
+
+Prioritize community and in-person connection with other product leaders by=
+ joining us for the=C2=A0[Product at Heart Leadership Event](https://f2xm1.=
+r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGStsGlqiAWQRw19FO3c/AjRlXX0yuqaE)=
+=C2=A0in April.
+
+
+-=20
+
+Encourage your team's growth by sending them to the=C2=A0[Product at Heart]=
+(https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGZlKPantKfuXlJtDgds/=
+ZH1NPh650w2r)=C2=A0conference or workshops in June.
+
+
+###What's new with *STRONG Product People*?
+
+
+=C2=A0
+
+
+####What I=E2=80=99m up to these days
+
+
+It=E2=80=99s been so exciting to see product leaders commit to their growth=
+ by signing up for From STRONG to Exceptional. And over the next few weeks,=
+ we=E2=80=99re going to be starting our quarterly AMA calls, where particip=
+ants get to share their wins and challenges, get personalized tips and advi=
+ce from me, and connect with peers who are on the same journey.
+
+
+Are you wishing you could be a part of all this? There=E2=80=99s no need to=
+ feel FOMO=E2=80=94the course is open on an ongoing basis and you can enrol=
+l at any time.
+
+
+=F0=9F=91=89[=C2=A0Check out the course details and sign up here](https://f=
+2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGgcmYPl4UpOdacdBzE8/_9Yn1e3ppQ=
+s8)
+
+
+**Happy birthday to=C2=A0*****STRONG Product People*****!**
+
+
+My first book,=C2=A0*STRONG Product People*=C2=A0just celebrated its fifth =
+birthday. For five years now, it=E2=80=99s been on your desks, your shelves=
+, or in your backpacks, providing actionable insights into managing your pr=
+oduct team to its fullest potential. One of my favorite things since publis=
+hing this book has been chatting to you about it in person, either at my co=
+rporate book clubs or when I meet you at events. Please never stop sharing =
+your insights and takeaways with me!
+
+
+**The =F0=9F=A7=AD PMwheel in action******I love seeing how people use my t=
+ools in their day-to-day work, and=C2=A0[this post](https://f2xm1.r.ag.d.se=
+ndibm3.com/mk/cl/f/sh/SMK1E8tHeGnUEhEiFeysjPvNAHoO/biptYt3oAOjc)=C2=A0from =
+Lisa Marie Reidt, Product @ SAG Digital, made me especially happy. She shar=
+es how the PMwheel helped spark clearer conversations around role expectati=
+ons and opened the door to more intentional growth discussions.
+
+
+**Finally diving into Claude Code**
+
+I finally found the time to set up Claude Code (mainly to improve my conten=
+t creation). Teresa Torres and Andrew Skotzko had a big influence on gettin=
+g me to finally make room for it and push it to the top of my to-do list. =
+=F0=9F=98=89
+
+
+While this is more about how I'm operating my business rather than a strict=
+ly product leadership topic, let me know if it's something you'd like me to=
+ share more about in the future.
+
+
+**First-ever PLwheel workshop at MENA Product Summit**
+
+In January, I'll be in Cairo for the=C2=A0[MENA Product Summit](https://f2x=
+m1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGuLgq3fQp8MpFE78aOe/m-t6uwyfM3yl=
+)=E2=80=94and I'm incredibly excited to run the first live workshop based o=
+n the Product Leadership Wheel. Until now, teams and individuals have been =
+using the tool on their own or in coaching with me. This is the first time =
+I'll be guiding a group of product leaders through the wheel, live and in p=
+erson.
+
+
+**Full speed ahead with Product at Heart 2026**=C2=A0
+
+Tickets are now on sale for both the Leadership Event (which has been upgra=
+ded to a 1.5-day event in a new location with even more opportunities to co=
+nnect with your peers) and the main conference. Act fast to take advantage =
+of=C2=A0[Early Bird pricing](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/S=
+MK1E8tHeFucGb7Mxq4PWj6ZJWRM/yLUWE9Po0hU-)!
+
+We=E2=80=99ve also officially announced the star-studded list of keynote sp=
+eakers for the main conference: Christian Idiodi, Elaine Kasket, and Teresa=
+ Torres!
+
+
+And if you=E2=80=99d like even more timely updates of what I=E2=80=99m up t=
+o, you can always=C2=A0[find those here](https://f2xm1.r.ag.d.sendibm3.com/=
+mk/cl/f/sh/SMK1E8tHeG1TijwK90DtcYPJHp1c/c1mO54tbnY-K).
+
+
+####=F0=9F=8E=99=EF=B8=8F Strong Conversations
+
+
+=C2=A0
+
+I now have=C2=A0[a dedicated home for=C2=A0*All Things Product*=C2=A0podcas=
+t episodes on my website](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1=
+E8tHeG8LAslHKANNiNi3G7bs/BxK9lAGU6gHU)=C2=A0where you can find the latest e=
+pisode information or share it with anyone who you think might enjoy it!
+
+
+Here's the list of topics Teresa and I covered this quarter:
+
+
+-=20
+
+[End of Year Reflection](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E=
+8tHeGFCd1aEVKWroD0nEQC8/SPxE66scNPCt) =E2=80=93 December 16, 2025
+
+
+-=20
+
+[Role of Leadership in Transformations](https://f2xm1.r.ag.d.sendibm3.com/m=
+k/cl/f/sh/SMK1E8tHeGM45APBgUgLu2JXCimO/E5esOERGvgUH) =E2=80=93 December 9, =
+2025
+
+
+-=20
+
+[Customer Interview Analysis](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/=
+SMK1E8tHeGSvXJE8reppzrcHB1Me/SmJzwnEoqxGl) =E2=80=93 By the way, after we a=
+ired that episode, Anthropic did exactly what we were warning people about.=
+ Read more about this in [Teresa=E2=80=99s post on LinkedIn](https://f2xm1.=
+r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGZmzS362ozK5gv19Jwu/yhGoVctn9W4H).
+
+
+-=20
+
+[Communities of Practice](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1=
+E8tHeGgeRas3Dz8oBWDl7cXA/ALTcfgj5BAfN) =E2=80=93 November 25, 2025
+
+
+-=20
+
+[Dealing With Setbacks](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8=
+tHeGnVtjh0P9IIHLWV5v7Q/ZcVCfBfJn6uf) =E2=80=93 November 18, 2025
+
+
+-=20
+
+[Global Invoicing](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGu=
+NLsVxaJRmNApF4Dhg/My_Ka7MxVrYI) =E2=80=93 November 11, 2025
+
+
+-=20
+
+[AI At Home And Work](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tH=
+eFudvdZf7KNp4ehhF9kO/sd9uduHFfQak) =E2=80=93 November 4, 2025
+
+
+-=20
+
+[Context is King](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG1V=
+NmOcIUXJAU0RDSKe/hyb5eg6xfRS6) =E2=80=93 October 28, 2025. You may recall t=
+hat this was the topic of last quarter=E2=80=99s newsletter. Teresa and I r=
+ecorded this episode after I wrote that edition, so this episode is a great=
+ complement to that edition and offers a deeper dive with Teresa=E2=80=99s =
+perspective as well.
+
+
+####Guest Appearances
+=C2=A0
+
+No guest appearances as the year was winding down and I focused on all my o=
+wn tasks. Looking forward to getting out there again in 2026!
+
+=C2=A0
+
+
+####=F0=9F=93=85 Chances to meet
+=C2=A0
+
+
+-=20
+
+[MENA Product Summit](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tH=
+eG8MpvDZTegnGJJBBkuu/mPbv_AdqgsfQ), Cairo, Egypt (January 30=E2=80=9331, 20=
+26)
+
+
+-=20
+
+[World Beautiful Business Forum](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/=
+sh/SMK1E8tHeGFEI42WeoqHM8bvA3VA/aXodn3IiA4pP), Athens, Greece (May 7=E2=80=
+=9310, 2026)
+
+
+-=20
+
+[Product at Heart Leadership Event](https://f2xm1.r.ag.d.sendibm3.com/mk/cl=
+/f/sh/SMK1E8tHeGM5kCrTpyzlRxuf8M5Q/Pb4hmynQigTl), Hamburg, Germany (April 2=
+0=E2=80=9321, 2026)
+
+
+-=20
+
+=F0=9F=92=9A=C2=A0[Product at Heart](https://f2xm1.r.ag.d.sendibm3.com/mk/c=
+l/f/sh/SMK1E8tHeGSxCLgR199FXnDP6efg/yZVjpWkgKgeP), Hamburg, Germany (June 2=
+5=E2=80=9326, 2026)
+
+
+###Before You Leave - Last Note: My personal way to reflect=E2=80=94and how=
+ to find yours
+
+
+The last few weeks I found myself doing what I do every year around this ti=
+me: reflecting on the past 12 months and looking ahead to the next.
+
+
+For me, that reflection takes the form of a blog post. I sit down, I write =
+it all out=E2=80=94the highs, the lows, the unexpected turns=E2=80=94and I =
+share it publicly. (If you're curious,[=C2=A0you can read this year's refle=
+ction here](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGZoeUVOCJ=
+IjdcW94xFw/eNwZFhFqkcpA).)
+
+
+But here's the thing: My way isn't the only way.
+
+
+Some people flip through their physical calendar, month by month, rememberi=
+ng what happened when. Others open their "what I'm grateful for" jar and re=
+ad through slips of paper they collected throughout the year. (Of course, t=
+his method assumes you already have the jar and you=E2=80=99ve been adding =
+to it all year!) Some meet with a close friend over coffee and talk through=
+ it together.
+
+
+There's no single "right" way to reflect.=C2=A0**What matters is that you D=
+O it**=E2=80=94that you create space to pause, to notice what shaped you, a=
+nd to think about what comes next.
+
+
+**So here's my question for you as we head into 2026: What is your way of r=
+eflecting?**
+
+
+If you don't have a ritual yet, maybe this is the year to start one. Find a=
+ few=C2=A0[good questions](https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK=
+1E8tHeGgg6dKLNTSDjRot3FqC/eiqwfp8nwPXV). Make them your own. Create the rit=
+ual around it (grab a cup of coffee, light a candle, whatever puts you in a=
+ reflective mood!). And see what you learn about yourself in the process.
+
+
+Wishing you a meaningful start to 2026!
+
+
+**P.S.**=C2=A0I work with Melissa Suzuno on my newsletter, blog, and other =
+written content. If you're looking for support with any of your writing, yo=
+u can=C2=A0[reach out to Melissa on LinkedIn](https://f2xm1.r.ag.d.sendibm3=
+.com/mk/cl/f/sh/SMK1E8tHeGnXYm9IYdbhpH7d1YQS/-ks2mt8JdrxY).
+
+
+**STRONG Product People**
+
+Ritterstr. 8, 22089, Hamburg
+
+This email was sent to bjoern@waide.de
+
+You've received this email because you've subscribed to our newsletter.
+
+[Unsubscribe](https://f2xm1.r.ag.d.sendibm3.com/mk/un/v2/sh/6rqJ8GqndAnmOus=
+akEXuDs5eTsW/jLSgaZMVK8nT)
+
+
+---------?=_41244-3471506110717
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns=3D"http://www.w3.org/1999/xht=
+ml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micros=
+oft-com:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><m=
+eta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"><meta name=3D"form=
+at-detection" content=3D"telephone=3Dno"><meta name=3D"viewport" content=3D=
+"width=3Ddevice-width, initial-scale=3D1.0"><title>=E2=9D=84=EF=B8=8F Winte=
+r 2026 | Product Leadership Newsletter - Petra Wille</title><style type=3D"=
+text/css" emogrify=3D"no">#outlook a { padding:0; } .ExternalClass { width:=
+100%; } .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalCla=
+ss font, .ExternalClass td, .ExternalClass div { line-height: 100%; } table=
+ td { border-collapse: collapse; mso-line-height-rule: exactly; } .editable=
+.image { font-size: 0 !important; line-height: 0 !important; } .nl2go_prehe=
+ader { display: none !important; mso-hide:all !important; mso-line-height-r=
+ule: exactly; visibility: hidden !important; line-height: 0px !important; f=
+ont-size: 0px !important; } body { width:100% !important; -webkit-text-size=
+-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; } img { outli=
+ne:none; text-decoration:none; -ms-interpolation-mode: bicubic; } a img { b=
+order:none; } table { border-collapse:collapse; mso-table-lspace:0pt; mso-t=
+able-rspace:0pt; } th { font-weight: normal; text-align: left; } *[class=3D=
+"gmail-fix"] { display: none !important; } </style><style type=3D"text/css"=
+ emogrify=3D"no"> @media (max-width: 600px) { .gmx-killpill { content: ' \0=
+3D1';} } </style><style type=3D"text/css" emogrify=3D"no">@media (max-width=
+: 600px) { .gmx-killpill { content: ' \03D1';} .r0-o { border-style: solid =
+!important; margin: 0 auto 0 auto !important; width: 320px !important } .r1=
+-i { background-color: #ffffff !important } .r2-c { box-sizing: border-box =
+!important; text-align: center !important; valign: top !important; width: 1=
+00% !important } .r3-o { border-style: solid !important; margin: 0 auto 0 a=
+uto !important; width: 100% !important } .r4-i { background-color: #ffffff =
+!important; padding-bottom: 20px !important; padding-left: 15px !important;=
+ padding-right: 15px !important; padding-top: 20px !important } .r5-c { box=
+-sizing: border-box !important; display: block !important; valign: top !imp=
+ortant; width: 100% !important } .r6-o { border-style: solid !important; wi=
+dth: 100% !important } .r7-i { padding-left: 0px !important; padding-right:=
+ 0px !important } .r8-i { padding-top: 20px !important } .r9-i { padding-bo=
+ttom: 20px !important; padding-left: 0px !important; padding-right: 0px !im=
+portant; padding-top: 20px !important } .r10-c { box-sizing: border-box !im=
+portant; padding-bottom: 15px !important; padding-top: 15px !important; tex=
+t-align: left !important; valign: top !important; width: 100% !important } =
+.r11-c { box-sizing: border-box !important; text-align: left !important; va=
+lign: top !important; width: 100% !important } .r12-o { background-size: au=
+to !important; border-style: solid !important; margin: 0 auto 0 0 !importan=
+t; width: 100% !important } .r13-i { padding-bottom: 15px !important; paddi=
+ng-top: 15px !important } .r14-c { box-sizing: border-box !important; paddi=
+ng-bottom: 30px !important; padding-top: 30px !important; text-align: cente=
+r !important; width: 100% !important } .r15-c { box-sizing: border-box !imp=
+ortant; padding-bottom: 15px !important; padding-top: 15px !important; text=
+-align: center !important; valign: top !important; width: 100% !important }=
+ .r16-c { box-sizing: border-box !important; padding-bottom: 0px !important=
+; padding-top: 15px !important; text-align: center !important; valign: top =
+!important; width: 100% !important } .r17-c { box-sizing: border-box !impor=
+tant; padding-bottom: 15px !important; padding-top: 0px !important; text-al=
+ign: left !important; valign: top !important; width: 100% !important } .r18=
+-c { box-sizing: border-box !important; padding-bottom: 15px !important; pa=
+dding-top: 35px !important; text-align: left !important; valign: top !impor=
+tant; width: 100% !important } .r19-i { background-color: #eff2f7 !importan=
+t; padding-bottom: 20px !important; padding-left: 15px !important; padding-=
+right: 15px !important; padding-top: 20px !important } .r20-o { border-styl=
+e: solid !important; margin: 0 auto 0 0 !important; width: 100% !important =
+} .r21-i { padding-bottom: 0px !important; padding-top: 15px !important; te=
+xt-align: center !important } .r22-i { padding-bottom: 0px !important; padd=
+ing-top: 0px !important; text-align: center !important } .r23-i { padding-b=
+ottom: 15px !important; padding-top: 15px !important; text-align: center !i=
+mportant } body { -webkit-text-size-adjust: none } .nl2go-responsive-hide {=
+ display: none } .nl2go-body-table { min-width: unset !important } .mobshow=
+ { height: auto !important; overflow: visible !important; max-height: unset=
+ !important; visibility: visible !important } .resp-table { display: inline=
+-table !important } .magic-resp { display: table-cell !important } } </styl=
+e><style type=3D"text/css">p, h1, h2, h3, h4, ol, ul, li { margin: 0; } .nl=
+2go-default-textstyle { color: #3b3f44; font-family: arial,helvetica,sans-s=
+erif; font-size: 16px; line-height: 1.5; word-break: break-word } .default-=
+button { color: #ffffff; font-family: arial,helvetica,sans-serif; font-size=
+: 16px; font-style: normal; font-weight: normal; line-height: 1.15; text-de=
+coration: none; word-break: break-word } a, a:link { color: #007c89; text-d=
+ecoration: underline } .default-heading1 { color: #1F2D3D; font-family: ari=
+al,helvetica,sans-serif; font-size: 36px; word-break: break-word } .default=
+-heading2 { color: #1F2D3D; font-family: arial,helvetica,sans-serif; font-s=
+ize: 30px; word-break: break-word } .default-heading3 { color: #1F2D3D; fon=
+t-family: arial,helvetica,sans-serif; font-size: 26px; word-break: break-wo=
+rd } .default-heading4 { color: #1F2D3D; font-family: arial,helvetica,sans-=
+serif; font-size: 21px; word-break: break-word } a[x-apple-data-detectors] =
+{ color: inherit !important; text-decoration: inherit !important; font-size=
+: inherit !important; font-family: inherit !important; font-weight: inherit=
+ !important; line-height: inherit !important; } .no-show-for-you { border: =
+none; display: none; float: none; font-size: 0; height: 0; line-height: 0; =
+max-height: 0; mso-hide: all; overflow: hidden; table-layout: fixed; visibi=
+lity: hidden; width: 0; } </style><!--[if mso]><xml> <o:OfficeDocumentSetti=
+ngs> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:OfficeDocument=
+Settings> </xml><![endif]--><style type=3D"text/css">a:link{color: #007c89;=
+ text-decoration: underline;}</style></head><body bgcolor=3D"#ffffff" text=
+=3D"#3b3f44" link=3D"#007c89" yahoo=3D"fix" style=3D"background-color: #fff=
+fff;"> <table cellpadding=3D"0" border=3D"0" cellspacing=3D"0" style=3D"mso=
+-hide:all; display:none;">
+<tr><td>Taking the pain out of annual reviews + more!=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C=
+ &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp=
+; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=
+=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=80=8C &nbsp; =C2=AD=E2=
+=80=8C &nbsp; =C2=AD</td></tr></table> <!--[if mso]> <img width=3D"1" heigh=
+t=3D"1" src=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/op/sh/6rqJ8GsgchJ5NU72m=
+ariOEaRDp2/V3KmWPSxxe64" /> <![endif]-->
+	<!--[if !mso]> <!----> <img style=3D"display:none" src=3D"https://f2xm1.r.=
+ag.d.sendibm3.com/mk/op/sh/6rqJ8GsgchJ5NU72mariOEaRDp2/V3KmWPSxxe64"> <!-- =
+<![endif]-->  <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" class=3D"nl2go-body-table" width=3D"100%" style=3D"backgr=
+ound-color: #ffffff; width: 100%;"><tr><td> <table cellspacing=3D"0" cellpa=
+dding=3D"0" border=3D"0" role=3D"presentation" width=3D"600" align=3D"cente=
+r" class=3D"r0-o" style=3D"table-layout: fixed; width: 600px;"><tr><td vali=
+gn=3D"top" class=3D"r1-i" style=3D"background-color: #ffffff;"> <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D=
+"100%" align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; width:=
+ 100%;"><tr><td class=3D"r4-i" style=3D"background-color: #ffffff; padding-=
+bottom: 20px; padding-top: 20px;"> <table width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"100%"=
+ valign=3D"top" class=3D"r5-c" style=3D"font-weight: normal;"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><td va=
+lign=3D"top" class=3D"r7-i" style=3D"padding-left: 15px; padding-right: 15p=
+x;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation"><tr><td class=3D"r2-c" align=3D"center"> <table cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D=
+"150" class=3D"r3-o" style=3D"table-layout: fixed; width: 150px;"><tr><td c=
+lass=3D"r8-i" style=3D"font-size: 0px; line-height: 0px; padding-top: 20px;=
+"> <img src=3D"https://f2xm1.img.ag.d.sendibm3.com/im/sh/z30lx3W91G2I.jpg?u=
+=3D1vcqsYC5HMzcSL9iqb6NhQ08JSFyQK" width=3D"150" border=3D"0" style=3D"disp=
+lay: block; width: 100%;" sib_img_id=3D"0"></td> </tr></table></td> </tr></=
+table></td> </tr></table></th> </tr></table></td> </tr></table><table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; width: =
+100%;"><tr><td class=3D"r9-i" style=3D"padding-bottom: 20px; padding-top: 2=
+0px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation"><tr><th width=3D"100%" valign=3D"top" class=3D"r5-=
+c" style=3D"font-weight: normal;"> <table cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r6-o" style=
+=3D"table-layout: fixed; width: 100%;"><tr><td valign=3D"top" class=3D"r7-i=
+" style=3D"padding-left: 10px; padding-right: 10px;"> <table width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr=
+><td class=3D"r10-c nl2go-default-textstyle" align=3D"left" style=3D"color:=
+ #3b3f44; font-family: arial,helvetica,sans-serif; font-size: 16px; line-he=
+ight: 1.5; word-break: break-word; padding-bottom: 15px; padding-top: 15px;=
+ text-align: left; valign: top;"> <div><h3 class=3D"default-heading3" style=
+=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-serif; fon=
+t-size: 26px; word-break: break-word;">Hello, product leaders!</h3><p style=
+=3D"margin: 0;">&nbsp;</p><p id=3D"isPasted" style=3D"margin: 0;">Happy New=
+ Year! January often feels like cracking open a new book. We don=E2=80=99t =
+know yet exactly what the year is going to hold. Will it be a thriller? A c=
+omedy? Fingers crossed it won=E2=80=99t turn out to be a zombie apocalypse =
+survival guide!</p><p style=3D"margin: 0;"><br></p><p style=3D"margin: 0;">=
+When we start with this metaphorical blank page in front of us, we can feel=
+ hopeful that it will turn out to be a narrative where we feel fulfilled an=
+d engaged in our work, inspired by our teams and the goals they=E2=80=99re =
+working toward, and committed to our own professional growth and developmen=
+t.</p><p style=3D"margin: 0;"><br></p><p style=3D"margin: 0;">If you=E2=80=
+=99re reading this newsletter, that means you=E2=80=99ve already carved som=
+e time for yourself on that last point, so you=E2=80=99re doing a great job=
+ so far!</p><p style=3D"margin: 0;"><br></p><p style=3D"margin: 0;">In this=
+ edition, we=E2=80=99re diving deep into annual reviews and the broader top=
+ic of reflection. How can you remove the administrative burden of reviews a=
+nd make them more meaningful for everyone involved?</p><p style=3D"margin: =
+0;"><br></p><p style=3D"margin: 0;">As always, in addition to everything I=
+=E2=80=99ve just mentioned, you=E2=80=99ll find plenty of other articles, v=
+ideos, and the usual range of product leadership resources to explore.</p><=
+/div> </td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"200" c=
+lass=3D"r12-o" style=3D"table-layout: fixed; width: 200px;"><tr><td class=
+=3D"r13-i" style=3D"font-size: 0px; line-height: 0px; padding-bottom: 15px;=
+ padding-top: 15px;"> <img src=3D"https://f2xm1.img.ag.d.sendibm3.com/im/sh=
+/OcYyiRGBi_Am.png?u=3D1vcqsYC5HMzcSMolItFs0pY3uaBbjM" width=3D"200" border=
+=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"1"></td> </tr><=
+/table></td> </tr><tr><td class=3D"r14-c" align=3D"center" style=3D"padding=
+-bottom: 30px; padding-top: 30px;"> <table width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" role=3D"presentation" height=3D"1" style=3D=
+"border-top-style: solid; background-clip: border-box; border-top-color: #e=
+aeaea; border-top-width: 1px; font-size: 1px; line-height: 1px;"><tr><td he=
+ight=3D"0" style=3D"font-size: 0px; line-height: 0px;">=C2=AD</td> </tr></t=
+able></td> </tr><tr><td class=3D"r10-c nl2go-default-textstyle" align=3D"le=
+ft" style=3D"color: #3b3f44; font-family: arial,helvetica,sans-serif; font-=
+size: 16px; line-height: 1.5; word-break: break-word; padding-bottom: 15px;=
+ padding-top: 15px; text-align: left; valign: top;"> <div><h3 class=3D"defa=
+ult-heading3" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvet=
+ica,sans-serif; font-size: 26px; word-break: break-word;">Beyond HR Forms: =
+A Product Leader=E2=80=99s Guide to Running Better Annual Reviews</h3></div=
+> </td> </tr><tr><td class=3D"r15-c" align=3D"center" style=3D"font-size: 0=
+px; line-height: 0px; padding-bottom: 15px; padding-top: 15px; valign: top;=
+"> <img src=3D"https://f2xm1.img.ag.d.sendibm3.com/im/sh/x-ArLfreb-uB.png?u=
+=3D1vcqsYC5HMzcSOTnlBPMKF5zVi7F2O" width=3D"580" border=3D"0" style=3D"disp=
+lay: block; width: 100%;" sib_img_id=3D"2"></td> </tr><tr><td class=3D"r10-=
+c nl2go-default-textstyle" align=3D"left" style=3D"color: #3b3f44; font-fam=
+ily: arial,helvetica,sans-serif; font-size: 16px; line-height: 1.5; word-br=
+eak: break-word; padding-bottom: 15px; padding-top: 15px; text-align: left;=
+ valign: top;"> <div><p id=3D"isPasted" style=3D"margin: 0;">The main topic=
+ for this edition of the newsletter is annual reviews. And since this newsl=
+etter goes out in January, I bet half of you have already done yours for la=
+st year and the other half still have them coming up. So yes, dedicating th=
+is edition to annual reviews is=E2=80=A6 tricky. But I thought it was still=
+ worth doing.</p><p style=3D"margin: 0;"><br></p><p style=3D"margin: 0;">Wh=
+y? Because even if you=E2=80=99ve just filed your forms with HR and wrapped=
+ all your 1:1 conversations, you might still benefit from taking an honest =
+look at how you did them. A small reflection now can make next year=E2=80=
+=99s reviews far more impactful. And if your reviews are still ahead of you=
+=E2=80=94even better.</p><p style=3D"margin: 0;"><br></p><h4 class=3D"defau=
+lt-heading4" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0; color: #1f2d3d=
+; font-family: arial,helvetica,sans-serif; font-size: 21px; word-break: bre=
+ak-word;"><span style=3D"font-style: normal; text-decoration: none;">=E2=AD=
+=90 Annual reviews shouldn=E2=80=99t be the only time your people get feedb=
+ack</span></h4><p style=3D"margin: 0;"><br></p><p style=3D"margin: 0;"><spa=
+n style=3D"font-weight: 400; font-style: normal; text-decoration: none;">If=
+ you=E2=80=99ve read&nbsp;</span><span style=3D"font-weight: 400; text-deco=
+ration: none;"><em>STRONG Product People</em></span><span style=3D"font-wei=
+ght: 400; font-style: normal; text-decoration: none;">, you already know th=
+is is one of the core principles I stand by. (And if you have not, the chap=
+ter on feedback is available as a&nbsp;</span><a href=3D"https://f2xm1.r.ag=
+.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dINmNvd1DF12w7HY26S/Avsk_RPu8pEL" style=
+=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"0" templating=3D=
+"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-decor=
+ation-skip: none; text-decoration-skip-ink: none;"><u>free downloadable res=
+ource here</u></span></a><span style=3D"font-weight: 400; font-style: norma=
+l; text-decoration: none;">).&nbsp;</span><span style=3D"font-style: normal=
+; text-decoration: none;"><strong>A once-a-year feedback cycle is never eno=
+ugh to support growth.</strong></span><span style=3D"font-weight: 400; font=
+-style: normal; text-decoration: none;">&nbsp;Our PMs=E2=80=94and frankly a=
+ll employees=E2=80=94need more frequent nudges, guidance, and clarity than =
+a single formal conversation can provide.</span></p></div> </td> </tr><tr><=
+td class=3D"r16-c" align=3D"center" style=3D"font-size: 0px; line-height: 0=
+px; padding-top: 15px; valign: top;"> <img src=3D"https://f2xm1.img.ag.d.se=
+ndibm3.com/im/sh/UGOTflAZ9Fqp.png?u=3D1vcqsYC5HMzcSQ8qDTYqdedv6q2sLQ" width=
+=3D"580" border=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"=
+3"></td> </tr><tr><td class=3D"r17-c nl2go-default-textstyle" align=3D"left=
+" style=3D"color: #3b3f44; font-family: arial,helvetica,sans-serif; font-si=
+ze: 16px; line-height: 1.5; word-break: break-word; padding-bottom: 15px; t=
+ext-align: left; valign: top;"> <div><p style=3D"margin: 0; text-align: cen=
+ter;"><span style=3D"font-size: 14px;">The ideal scenario: delivering prais=
+e and criticism constantly</span></p></div> </td> </tr><tr><td class=3D"r10=
+-c nl2go-default-textstyle" align=3D"left" style=3D"color: #3b3f44; font-fa=
+mily: arial,helvetica,sans-serif; font-size: 16px; line-height: 1.5; word-b=
+reak: break-word; padding-bottom: 15px; padding-top: 15px; text-align: left=
+; valign: top;"> <div><p class=3D"default" dir=3D"ltr" id=3D"isPasted" styl=
+e=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-=
+decoration: none;">But here=E2=80=99s the reality I see in many coaching en=
+gagements: Annual review season is the&nbsp;</span><span style=3D"font-weig=
+ht: 400; text-decoration: none;"><em>only</em></span><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">&nbsp;moment when so=
+me people finally receive well-prepared, role-specific, structured feedback=
+ from their manager.</span></p><p class=3D"default" dir=3D"ltr" style=3D"ma=
+rgin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><sp=
+an style=3D"font-weight: 400; font-style: normal; text-decoration: none;">T=
+hat=E2=80=99s why=E2=80=94if this is the moment your company formalizes=E2=
+=80=94you need to make it count.</span></p><p class=3D"default" dir=3D"ltr"=
+ style=3D"margin: 0;"><br></p><h4 class=3D"default-heading4" dir=3D"ltr" st=
+yle=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-serif; =
+font-size: 21px; word-break: break-word;"><span style=3D"font-style: normal=
+; text-decoration: none;">=F0=9F=8E=AF Most HR frameworks are role-agnostic=
+. Your feedback shouldn=E2=80=99t be.</span></h4><p class=3D"default" dir=
+=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" styl=
+e=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-=
+decoration: none;">HR forms are designed to work for multiple functions: Fi=
+nance, Marketing, Engineering, Product=E2=80=A6 They are useful, but they a=
+re&nbsp;</span><span style=3D"font-style: normal; text-decoration: none;"><=
+strong>not</strong></span><span style=3D"font-weight: 400; font-style: norm=
+al; text-decoration: none;">&nbsp;specific enough for product roles to be t=
+he sole framework you should use to prepare for your sessions.</span></p><p=
+ class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D"def=
+ault" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; fon=
+t-style: normal; text-decoration: none;">If you want the review to be meani=
+ngful, layer a role-specific lens on top.</span></p><p class=3D"default" di=
+r=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" sty=
+le=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text=
+-decoration: none;">That means:</span></p><p class=3D"default" dir=3D"ltr" =
+style=3D"margin: 0;"><br></p><ul style=3D"margin: 0;"><li dir=3D"ltr" style=
+=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: none;=
+"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font=
+-weight: 400; font-style: normal; text-decoration: none;">Reviewing your PM=
+=E2=80=99s impact&nbsp;</span><span style=3D"font-weight: 400; text-decorat=
+ion: none;"><em>as a product manager</em></span><span style=3D"font-weight:=
+ 400; font-style: normal; text-decoration: none;">, not just as an =E2=80=
+=9Cemployee.=E2=80=9D</span></p></li><li dir=3D"ltr" style=3D"margin: 0; fo=
+nt-weight: 400; font-style: normal; text-decoration: none;"><p class=3D"def=
+ault" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; fon=
+t-style: normal; text-decoration: none;">Assessing discovery work, stakehol=
+der management, prioritization, decision-making, crisp communication, and c=
+ontribution to team culture.</span></p></li><li dir=3D"ltr" style=3D"margin=
+: 0; font-weight: 400; font-style: normal; text-decoration: none;"><p class=
+=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 4=
+00; font-style: normal; text-decoration: none;">Grounding your feedback in =
+real examples of product practices, helping them see where their craft is s=
+trong=E2=80=94and where they might need to close a skill gap or even need e=
+xtra support.</span></p></li></ul><p style=3D"margin: 0;"><br></p><p style=
+=3D"margin: 0;"><span id=3D"isPasted" style=3D"font-weight: 400; font-style=
+: normal; text-decoration: none;">And yes: <span id=3D"isPasted" style=3D"f=
+ont-weight: 400; font-style: normal; text-decoration: none;">Using a clear =
+structure helps enormously. Whether it=E2=80=99s my&nbsp;</span><a href=3D"=
+https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIPRQNvAhYQariPTfPU/qb=
+lV8GkVmjl3" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D=
+"1" templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -=
+webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>PMwh=
+eel</u></span></a><span style=3D"font-weight: 400; font-style: normal; text=
+-decoration: none;">, your own rubric, or another role-specific model, choo=
+se something and stick with it.</span></span></p><p style=3D"margin: 0;"><b=
+r></p><h4 class=3D"default-heading4" dir=3D"ltr" id=3D"isPasted" style=3D"m=
+argin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-serif; font-siz=
+e: 21px; word-break: break-word;"><span style=3D"font-style: normal; text-d=
+ecoration: none;">A simple way to strengthen your annual review practice</s=
+pan></h4><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" s=
+tyle=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; te=
+xt-decoration: none;">If you=E2=80=99re still preparing for your upcoming r=
+eviews, or want to make next year smoother, here are a few reflections you =
+can start with.</span></p><p style=3D"margin: 0;"><br></p><p class=3D"defau=
+lt" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-style: normal; tex=
+t-decoration: none;"><strong>=F0=9F=92=9A Are you remembering the human sid=
+e of your employee?</strong></span></p><p style=3D"margin: 0;"><br></p><p c=
+lass=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weigh=
+t: 400; font-style: normal; text-decoration: none;">This may sound like a r=
+idiculous thing to say, but hear me out: Sometimes when we=E2=80=99re deepl=
+y involved in the technical process of annual reviews, we forget to think a=
+bout our employees as human beings. So it=E2=80=99s important to <strong>ma=
+ke sure you understand their hopes and dreams for the future</strong>. If y=
+ou haven=E2=80=99t already carved out time to have this type of big picture=
+ conversation with your team members, consider this a sign to do so!</span>=
+</p><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=
+=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-d=
+ecoration: none;">=F0=9F=92=A1&nbsp;</span><span style=3D"font-style: norma=
+l; text-decoration: none;"><strong>Have you given enough feedback throughou=
+t the year?</strong></span></p><p style=3D"margin: 0;"><br></p><p class=3D"=
+default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; =
+font-style: normal; text-decoration: none;">If not, what lightweight ritual=
+s could you introduce to make it easier? (Weekly quick feedback, quarterly =
+check-ins, etc.) And remember:&nbsp;</span><span style=3D"font-style: norma=
+l; text-decoration: none;"><strong>Feedback requires awareness</strong></sp=
+an><span style=3D"font-weight: 400; font-style: normal; text-decoration: no=
+ne;">.&nbsp;</span><span style=3D"font-weight: 400; font-style: normal; tex=
+t-decoration: none;">Make it a habit to actively look for moments to praise=
+ people, not just moments to correct their mistakes. Keep a simple place (a=
+ note on your phone, a doc, your Claude code repo, whatever works for you) =
+to capture both positive observations and opportunities for growth. This wa=
+y, when your next =E2=80=9Cmini feedback=E2=80=9D touchpoint comes around, =
+you aren=E2=80=99t relying on memory alone.</span></p><p style=3D"margin: 0=
+;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span styl=
+e=3D"font-style: normal; text-decoration: none;"><strong>Do you have a shar=
+ed language for discussing product skills in your org?</strong></span></p><=
+p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"ma=
+rgin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decorat=
+ion: none;">A&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/c=
+l/f/sh/6rqJfgq8dIR6SqDKBrq8nJXPIiW/nxKGWaKEP0ru" style=3D"color: #007c89; t=
+ext-decoration: none;" sib_link_id=3D"2" templating=3D"n"><span style=3D"fo=
+nt-weight: 400; font-style: normal; -webkit-text-decoration-skip: none; tex=
+t-decoration-skip-ink: none;"><u>craft-based framework</u></span></a><span =
+style=3D"font-weight: 400; font-style: normal; text-decoration: none;">&nbs=
+p;like the PMwheel can make conversations much clearer. This also ensures t=
+hat everyone involved in the feedback process=E2=80=94the person who is bei=
+ng reviewed as well as the manager or peer who is reviewing them=E2=80=94is=
+ using consistent criteria and limiting bias from this process.</span></p><=
+p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"ma=
+rgin: 0;"><span style=3D"font-style: normal; text-decoration: none;"><stron=
+g>=F0=9F=94=8D Are both of you bringing 360-degree feedback into the conver=
+sation=E2=80=94and do you have a system that makes this easy?</strong></spa=
+n></p><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" styl=
+e=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-=
+decoration: none;">Annual reviews get much richer when both leader and PM t=
+alk to a small set of peers, stakeholders, or cross-functional partners. To=
+ make this predictable and easy to schedule, put a simple rule in place. Fo=
+r example: Both of you pick three people, align on who they are, and inform=
+ them upfront. Everyone knows why these conversations are happening and get=
+s time blocked on their calendars. Ideally, this becomes a company-wide hab=
+it rather than a personal workaround=E2=80=94one that makes getting on peop=
+le=E2=80=99s calendars less of a hassle.</span></p><p style=3D"margin: 0;">=
+<br></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=
+=3D"font-style: normal; text-decoration: none;"><strong>And are you turning=
+ those insights into clear, role-specific examples?</strong></span></p><p s=
+tyle=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margi=
+n: 0;">When you have structured 360-degree input, it becomes much easier to=
+ pinpoint real behaviors. For example: =E2=80=9CSeveral stakeholders mentio=
+ned that in recent review meetings, your storytelling wasn=E2=80=99t strong=
+ enough to help Sales and Marketing understand why the team worked on a spe=
+cific initiative=E2=80=94or how they could contribute to its success.=E2=80=
+=9D Specific examples like this turn vague feedback into something your PM =
+can actually act on.</p><p style=3D"margin: 0;"><br></p><p class=3D"default=
+" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-style: normal; text-=
+decoration: none;"><strong>Are you evaluating your PM=E2=80=99s actual time=
+ distribution?</strong></span></p><p style=3D"margin: 0;"><br></p><p class=
+=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 4=
+00; font-style: normal; text-decoration: none;">Many PMs think they spend t=
+he majority of their time on important work like discovery, but their calen=
+dars tell a different story.</span></p><p class=3D"default" dir=3D"ltr" sty=
+le=3D"margin: 0;"><br></p><h4 class=3D"default-heading4" dir=3D"ltr" id=3D"=
+isPasted" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,=
+sans-serif; font-size: 21px; word-break: break-word;"><span style=3D"font-s=
+tyle: normal; text-decoration: none;">=F0=9F=93=9D Still ahead of your annu=
+al reviews? Borrow this structure:</span></h4><p style=3D"margin: 0;"><span=
+ style=3D"font-weight: 400; font-style: normal; text-decoration: none;"><br=
+></span></p><ol style=3D"margin: 0;"><li dir=3D"ltr" style=3D"margin: 0; fo=
+nt-style: normal; text-decoration: none;"><span style=3D"font-weight: 400; =
+font-style: normal; text-decoration: none;">Make sure you check in about th=
+eir larger hopes and dreams from time to time (these conversations are a ti=
+me for larger self-reflection for your team members, too).</span></li><li d=
+ir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: normal; text-d=
+ecoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><sp=
+an style=3D"font-weight: 400; font-style: normal; text-decoration: none;">S=
+tart with strengths (product-specific ones!).</span></p></li><li dir=3D"ltr=
+" style=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration=
+: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=
+=3D"font-weight: 400; font-style: normal; text-decoration: none;">Reflect o=
+n impact, not effort.</span></p></li><li dir=3D"ltr" style=3D"margin: 0; fo=
+nt-weight: 400; font-style: normal; text-decoration: none;"><p class=3D"def=
+ault" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; fon=
+t-style: normal; text-decoration: none;">Clarify skill gaps using a role-ba=
+sed model.</span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: =
+400; font-style: normal; text-decoration: none;"><p class=3D"default" dir=
+=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: =
+normal; text-decoration: none;">Discuss time distribution=E2=80=94what they=
+ actually spent their days and weeks on.</span></p></li><li dir=3D"ltr" sty=
+le=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: non=
+e;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"fo=
+nt-weight: 400; font-style: normal; text-decoration: none;">Agree on 2=E2=
+=80=933 development focus areas with clear =E2=80=9Clearning headlines.=E2=
+=80=9D (If you are lacking structure here, you could use the&nbsp;</span><a=
+ href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dISlVIVTgBFgi=
+ufKw1Y/DJAujipH6Rr-" style=3D"color: #007c89; text-decoration: none;" sib_l=
+ink_id=3D"3" templating=3D"n"><span style=3D"font-weight: 400; font-style: =
+normal; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;=
+"><u>Future Self Canvas</u></span></a><span style=3D"font-weight: 400; font=
+-style: normal; text-decoration: none;">).</span></p></li><li dir=3D"ltr" s=
+tyle=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: n=
+one;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"=
+font-weight: 400; font-style: normal; text-decoration: none;">Close with en=
+couragement and commit to ongoing support and regular check-ins.</span></p>=
+</li></ol><p style=3D"margin: 0;"><br></p><h4 class=3D"default-heading4" di=
+r=3D"ltr" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,=
+sans-serif; font-size: 21px; word-break: break-word;"><span style=3D"font-s=
+tyle: normal; text-decoration: none;">And if you=E2=80=99ve already complet=
+ed your reviews=E2=80=A6 reflect anyway</span></h4><p class=3D"default" dir=
+=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" styl=
+e=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-=
+decoration: none;">Ask yourself:</span></p><p class=3D"default" dir=3D"ltr"=
+ style=3D"margin: 0;"><br></p><ul style=3D"margin: 0;"><li dir=3D"ltr" styl=
+e=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: none=
+;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"fon=
+t-weight: 400; font-style: normal; text-decoration: none;">What worked well=
+ in my review conversations?</span></p></li><li dir=3D"ltr" style=3D"margin=
+: 0; font-weight: 400; font-style: normal; text-decoration: none;"><p class=
+=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 4=
+00; font-style: normal; text-decoration: none;">Where did I feel underprepa=
+red?</span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; f=
+ont-style: normal; text-decoration: none;"><p class=3D"default" dir=3D"ltr"=
+ style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; =
+text-decoration: none;">Which parts of the role were hardest to evaluate?</=
+span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-st=
+yle: normal; text-decoration: none;"><p class=3D"default" dir=3D"ltr" style=
+=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-d=
+ecoration: none;">What feedback did I avoid giving? Why?</span></p></li><li=
+ dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: normal; text=
+-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><=
+span style=3D"font-weight: 400; font-style: normal; text-decoration: none;"=
+>What structures or habits do I need to build earlier in the year?</span></=
+p></li></ul><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><=
+p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">And here=E2=80=99s a=
+ big one for many product leaders:&nbsp;</span><span style=3D"font-style: n=
+ormal; text-decoration: none;"><strong>How much time did the whole preparat=
+ion actually take=E2=80=94and where did the time go?&nbsp;</strong></span><=
+span style=3D"font-weight: 400; font-style: normal; text-decoration: none;"=
+>Annual reviews often feel painful not because of the conversation, but bec=
+ause the preparation is so heavy. So reflect on the breakdown. Where did yo=
+u spend the majority of your time?</span></p><p class=3D"default" dir=3D"lt=
+r" style=3D"margin: 0;"><br></p><ul style=3D"margin: 0;"><li dir=3D"ltr" st=
+yle=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: no=
+ne;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"f=
+ont-weight: 400; font-style: normal; text-decoration: none;">Was it gatheri=
+ng examples?</span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight=
+: 400; font-style: normal; text-decoration: none;"><p class=3D"default" dir=
+=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: =
+normal; text-decoration: none;">Was it digging through your notes?</span></=
+p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: no=
+rmal; text-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"mar=
+gin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decorati=
+on: none;">Was it coordinating 360-degree conversations?</span></p></li><li=
+ dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: normal; text=
+-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><=
+span style=3D"font-weight: 400; font-style: normal; text-decoration: none;"=
+>Or was it some internal process overhead that really shouldn=E2=80=99t be =
+this hard?</span></p></li></ul><p class=3D"default" dir=3D"ltr" style=3D"ma=
+rgin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><sp=
+an style=3D"font-weight: 400; font-style: normal; text-decoration: none;">S=
+ome effort is valuable=E2=80=94for example, having real conversations with =
+peers and stakeholders. But if you=E2=80=99re losing hours to admin, messy =
+templates, unclear expectations, or =E2=80=9Cplease fill out this long form=
+ in three different tools,=E2=80=9D that=E2=80=99s system overhead you can =
+(and should) challenge, escalate, or help improve ahead of next year.</span=
+></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p class=
+=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 4=
+00; font-style: normal; text-decoration: none;">And finally:&nbsp;</span><s=
+pan style=3D"font-style: normal; text-decoration: none;"><strong>What habit=
+s do I need to build earlier in the year to make this easier next time?</st=
+rong></span></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br><=
+/p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"fon=
+t-weight: 400; font-style: normal; text-decoration: none;">Because the lead=
+ers who give feedback regularly and keep simple notes along the way rarely =
+dread annual review season. They walk into these conversations prepared, gr=
+ounded, and confident. The work is distributed across the year, not squeeze=
+d into one frantic December (or January!) afternoon.</span></p></div> </td>=
+ </tr><tr><td class=3D"r14-c" align=3D"center" style=3D"padding-bottom: 30p=
+x; padding-top: 30px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" height=3D"1" style=3D"border-top-=
+style: solid; background-clip: border-box; border-top-color: #eaeaea; borde=
+r-top-width: 1px; font-size: 1px; line-height: 1px;"><tr><td height=3D"0" s=
+tyle=3D"font-size: 0px; line-height: 0px;">=C2=AD</td> </tr></table></td> <=
+/tr><tr><td class=3D"r10-c nl2go-default-textstyle" align=3D"left" style=3D=
+"color: #3b3f44; font-family: arial,helvetica,sans-serif; font-size: 16px; =
+line-height: 1.5; word-break: break-word; padding-bottom: 15px; padding-top=
+: 15px; text-align: left; valign: top;"> <div><h3 class=3D"default-heading3=
+" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-ser=
+if; font-size: 26px; word-break: break-word;">My recent writing</h3><p styl=
+e=3D"margin: 0;">&nbsp;</p><p class=3D"default" dir=3D"ltr" id=3D"isPasted"=
+ style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; =
+text-decoration: none;">I=E2=80=99ve been dedicating the majority of my wri=
+ting time lately to work on my&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.=
+sendibm3.com/mk/cl/f/sh/6rqJfgq8dIUQXkndAUfEeVnGZKa/3kmvI5mej21U" style=3D"=
+color: #007c89; text-decoration: none;" sib_link_id=3D"4" templating=3D"n">=
+<span style=3D"font-weight: 400; font-style: normal; -webkit-text-decoratio=
+n-skip: none; text-decoration-skip-ink: none;"><u>Leadership course</u></sp=
+an></a><span style=3D"font-weight: 400; font-style: normal; text-decoration=
+: none;">, but I=E2=80=99ve still found a bit of time to share some thought=
+s and updates on my blog.</span></p><p class=3D"default" dir=3D"ltr" style=
+=3D"margin: 0;"><br></p><ul style=3D"margin: 0;"><li dir=3D"ltr" style=3D"m=
+argin: 0; font-weight: 400; font-style: normal; text-decoration: none;"><p =
+class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a href=3D"https://f2xm1=
+.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIW5aD5meo4ma6vCCdc/visRoq-25lrK" s=
+tyle=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"5" templatin=
+g=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-d=
+ecoration-skip: none; text-decoration-skip-ink: none;"><u>Why Context, Not =
+Just Data, Will Define AI-Ready Product Teams</u></span></a><span style=3D"=
+font-weight: 400; font-style: normal; text-decoration: none;">&nbsp;=E2=80=
+=93 This topic will look familiar if you remember the last edition of this =
+newsletter. But I=E2=80=99m reminding you that it also exists as a blog pos=
+t in case you=E2=80=99d like to share it with your colleagues. As a quick r=
+efresher, it=E2=80=99s about the importance of providing the appropriate co=
+ntext (AKA organizational knowledge, rules, and objectives) to any AI tool =
+or agent you=E2=80=99re using.</span></p></li></ul><p style=3D"margin: 0;">=
+<br></p><p style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style=
+: normal; text-decoration: none;">I publish on&nbsp;</span><a href=3D"https=
+://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIXkcfNw97UKVi37pwe/3qODNbK=
+EteEh" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"6" t=
+emplating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webki=
+t-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>my blog</=
+u></span></a><span style=3D"font-weight: 400; font-style: normal; text-deco=
+ration: none;">&nbsp;on a regular basis. So make sure you come visit once i=
+n a while or follow me on social media (</span><a href=3D"https://f2xm1.r.a=
+g.d.sendibm3.com/mk/cl/f/sh/6rqJfgq8dIZPf7g5dQtsRJB3TFg/fVmwrU7UcW5C" style=
+=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"7" templating=3D=
+"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-decor=
+ation-skip: none; text-decoration-skip-ink: none;"><u>LinkedIn</u></span></=
+a><span style=3D"font-weight: 400; font-style: normal; text-decoration: non=
+e;">) to stay up to date on the latest.</span></p></div> </td> </tr><tr><td=
+ class=3D"r14-c" align=3D"center" style=3D"padding-bottom: 30px; padding-to=
+p: 30px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" height=3D"1" style=3D"border-top-style: solid;=
+ background-clip: border-box; border-top-color: #eaeaea; border-top-width: =
+1px; font-size: 1px; line-height: 1px;"><tr><td height=3D"0" style=3D"font-=
+size: 0px; line-height: 0px;">=C2=AD</td> </tr></table></td> </tr><tr><td c=
+lass=3D"r10-c nl2go-default-textstyle" align=3D"left" style=3D"color: #3b3f=
+44; font-family: arial,helvetica,sans-serif; font-size: 16px; line-height: =
+1.5; word-break: break-word; padding-bottom: 15px; padding-top: 15px; text-=
+align: left; valign: top;"> <div><h3 class=3D"default-heading3" style=3D"ma=
+rgin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-serif; font-size=
+: 26px; word-break: break-word;">Gems I found - I think you=E2=80=99ll like=
+ them as well</h3><p style=3D"margin: 0;">&nbsp;</p><h4 class=3D"default-he=
+ading4" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sa=
+ns-serif; font-size: 21px; word-break: break-word;"><span style=3D"color: #=
+000000;">Books I=E2=80=99m currently reading</span></h4><p style=3D"margin:=
+ 0;">&nbsp;</p><p class=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"ma=
+rgin: 0;"><span style=3D"font-style: normal; text-decoration: none;"><stron=
+g>=F0=9F=93=96&nbsp;</strong></span><a href=3D"https://f2xm1.r.ag.d.sendibm=
+3.com/mk/cl/f/sh/6rqJfgq8dIb4hZyF7kJQMuIz6Yi/MXqrFSo_dgmn" style=3D"color: =
+#007c89; text-decoration: none;" sib_link_id=3D"8" templating=3D"n"><span s=
+tyle=3D"-webkit-text-decoration-skip: none; text-decoration-skip-ink: none;=
+"><em><u><strong>Empire of AI</strong></u></em></span></a><span style=3D"fo=
+nt-style: normal; text-decoration: none;"><strong>&nbsp;=E2=80=93 Karen Hao=
+</strong></span><span style=3D"font-style: normal; text-decoration: none;">=
+<strong><br></strong></span><span style=3D"font-weight: 400; font-style: no=
+rmal; text-decoration: none;">All of us have been witnessing how AI (at lea=
+st the genAI chatbot version of it) took the world by storm and is now domi=
+nating every conversation in our industry. And of course we also know someh=
+ow how all of this unfolded, but reading it in such a dense, well-researche=
+d format was=E2=80=A6 let=E2=80=99s say =E2=80=9Cintense.=E2=80=9D This boo=
+k is a deeply reported look at how artificial intelligence is reshaping eco=
+nomies, societies, and the balance of power worldwide. Karen Hao brings cla=
+rity and her investigative rigor to unravel who holds influence in the AI l=
+andscape, how these technologies are built, and what this means for all of =
+us building digital products. It=E2=80=99s an eye-opening read for anyone w=
+ho wants to understand the forces shaping the systems we work within.</span=
+><span style=3D"font-weight: 400; font-style: normal; text-decoration: none=
+;"><br><br></span></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"=
+><span style=3D"font-style: normal; text-decoration: none;"><strong>=F0=9F=
+=93=96&nbsp;</strong></span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk=
+/cl/f/sh/6rqJfgq8dIcjk2GOc3iyIVQujrk/bVmfB8Ef490Z" style=3D"color: #007c89;=
+ text-decoration: none;" sib_link_id=3D"9" templating=3D"n"><span style=3D"=
+-webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><em><u=
+><strong>Architecture for Flow</strong></u></em></span></a><span style=3D"f=
+ont-style: normal; text-decoration: none;"><strong>&nbsp;=E2=80=93 Susanne =
+Kaiser</strong></span><span style=3D"font-style: normal; text-decoration: n=
+one;"><strong><br></strong></span><span style=3D"font-weight: 400; font-sty=
+le: normal; text-decoration: none;">If you=E2=80=99ve ever heard me talk ab=
+out org design, team topologies, or building more adaptive product organiza=
+tions, there=E2=80=99s a good chance Susanne Kaiser=E2=80=99s name has come=
+ up. Since we both live in Hamburg, our conversations=E2=80=94whether at a =
+friend=E2=80=99s dinner party or a professional meetup=E2=80=94always end u=
+p circling back to how systems shape the way teams collaborate.</span></p><=
+p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D"de=
+fault" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; fo=
+nt-style: normal; text-decoration: none;">Susanne has now brought her think=
+ing together in a beautifully structured book. And yes, I was lucky enough =
+to get my copy handed to me personally by the author herself, over lunch! I=
+ haven=E2=80=99t dived into it yet, but look forward to doing so soon!</spa=
+n></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p styl=
+e=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-=
+decoration: none;">=E2=86=92 More on books I've read&nbsp;</span><a href=3D=
+"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeFuYwWCmerRaQruJSFpI/=
+Ipm8PiuUE3uM" style=3D"color: #007c89; text-decoration: none;" sib_link_id=
+=3D"10" templating=3D"n"><span style=3D"font-weight: 400; font-style: norma=
+l; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>=
+here</u></span></a></p></div> </td> </tr><tr><td class=3D"r15-c" align=3D"c=
+enter" style=3D"font-size: 0px; line-height: 0px; padding-bottom: 15px; pad=
+ding-top: 15px; valign: top;"> <img src=3D"https://f2xm1.img.ag.d.sendibm3.=
+com/im/sh/Sc85N6_CY55u.png?u=3D1vcqsYC5HMzcSRnsfliKx4BqhxyVeS" width=3D"580=
+" border=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"4"></td=
+> </tr><tr><td class=3D"r14-c" align=3D"center" style=3D"padding-bottom: 30=
+px; padding-top: 30px;"> <table width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation" height=3D"1" style=3D"border-top=
+-style: solid; background-clip: border-box; border-top-color: #eaeaea; bord=
+er-top-width: 1px; font-size: 1px; line-height: 1px;"><tr><td height=3D"0" =
+style=3D"font-size: 0px; line-height: 0px;">=C2=AD</td> </tr></table></td> =
+</tr><tr><td class=3D"r10-c nl2go-default-textstyle" align=3D"left" style=
+=3D"color: #3b3f44; font-family: arial,helvetica,sans-serif; font-size: 16p=
+x; line-height: 1.5; word-break: break-word; padding-bottom: 15px; padding-=
+top: 15px; text-align: left; valign: top; word-wrap: break-word;"> <div><h3=
+ class=3D"default-heading3" style=3D"margin: 0; color: #1f2d3d; font-family=
+: arial,helvetica,sans-serif; font-size: 26px; word-break: break-word;"><sp=
+an style=3D"color: rgb(31, 45, 61);">Articles, posts, &amp; talks</span></h=
+3><p style=3D"margin: 0;">&nbsp;</p><h4 class=3D"default-heading4" dir=3D"l=
+tr" id=3D"isPasted" style=3D"margin: 0; color: #1f2d3d; font-family: arial,=
+helvetica,sans-serif; font-size: 21px; word-break: break-word;"><span style=
+=3D"font-style: normal; text-decoration: none;">Leadership &amp; Product Or=
+ganizations</span></h4><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;=
+"><span style=3D"font-style: normal; text-decoration: none;"><strong><br></=
+strong></span></p><ul style=3D"margin: 0;"><li dir=3D"ltr" style=3D"margin:=
+ 0; font-style: normal; text-decoration: none;"><p class=3D"default" dir=3D=
+"ltr" style=3D"margin: 0;"><span style=3D"font-style: normal; text-decorati=
+on: none;"><strong>Product team operations and dysfunction:&nbsp;</strong><=
+/span><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">John Cutler always stretches my thinking. My reaction <span style=
+=3D"color: rgb(59, 63, 68);">to his work is usually 8</span>0% =E2=80=9CHel=
+l yes=E2=80=9D and 20% =E2=80=9CWait, what did he just say?=E2=80=9D So if =
+you want to have the same stimulating sensation in your brain, check out&nb=
+sp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHe=
+G1QOf1jq1b4WhD3QYPY/7M7tWEOpUJ2i" style=3D"color: #007c89; text-decoration:=
+ none;" sib_link_id=3D"11" templating=3D"n"><span style=3D"font-weight: 400=
+; font-style: normal; -webkit-text-decoration-skip: none; text-decoration-s=
+kip-ink: none;"><u>his conversation with Randy Silver and the accompanying =
+article</u></span></a><span style=3D"font-weight: 400; font-style: normal; =
+text-decoration: none;">. This is a fantastic deep dive into how teams oper=
+ate (or get stuck) and why the =E2=80=9Cshipyard work=E2=80=9D of product i=
+s so hard.<br>&nbsp;</span></p></li><li dir=3D"ltr" style=3D"margin: 0; fon=
+t-weight: 400; font-style: normal; text-decoration: none;"><p class=3D"defa=
+ult" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-style: normal; te=
+xt-decoration: none;"><strong>The theater of leadership development:&nbsp;<=
+/strong></span><span style=3D"font-weight: 400; font-style: normal; text-de=
+coration: none;">A thoughtful, more philosophical&nbsp;</span><a href=3D"ht=
+tps://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG8Hqnqh1BkYcWVnOqzo/iVA=
+4S6yckk0q" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"=
+12" templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -=
+webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>take=
+ from House of Beautiful Business</u></span></a><span style=3D"font-weight:=
+ 400; font-style: normal; text-decoration: none;">&nbsp;on how we think abo=
+ut leadership growth. Since this edition of the newsletter dives deep into =
+development systems, I found this piece a refreshing counterbalance worth r=
+eflecting on.<br></span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/=
+f/sh/SMK1E8tHeGF9IwfeCLu2iLoXN9a4/MTMANn_rVXFF" style=3D"color: #007c89; te=
+xt-decoration: none;" sib_link_id=3D"13" templating=3D"n"><span style=3D"fo=
+nt-weight: 400; font-style: normal; text-decoration: none;">&nbsp;</span></=
+a></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style=
+: normal; text-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D=
+"margin: 0;"><span style=3D"font-style: normal; text-decoration: none;"><st=
+rong>The tensions of great PMs:&nbsp;</strong></span><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">Thor Mitchell shares=
+ a simple but powerful insight for annual reviews&nbsp;</span><a href=3D"ht=
+tps://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGM0l5UbNW3WoB7HLSAK/rB5=
+jdftbXJlg" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"=
+14" templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -=
+webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>in t=
+his LinkedIn post</u></span></a><span style=3D"font-weight: 400; font-style=
+: normal; text-decoration: none;">: Great PMs navigate contradictory streng=
+ths and know when to lean into each. This could be a helpful lens for your =
+next round of performance or growth conversations. =F0=9F=98=89</span></p><=
+/li></ul><p style=3D"margin: 0;"><br></p><h4 class=3D"default-heading4" dir=
+=3D"ltr" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,s=
+ans-serif; font-size: 21px; word-break: break-word;"><span style=3D"font-st=
+yle: normal; text-decoration: none;">AI, Technology &amp; Culture</span></h=
+4><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font=
+-weight: 400; font-style: normal; text-decoration: none;"><br></span></p><u=
+l style=3D"margin: 0;"><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400=
+; font-style: normal; text-decoration: none;"><p class=3D"default" dir=3D"l=
+tr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: norma=
+l; text-decoration: none;">=F0=9F=8E=A5&nbsp;</span><span style=3D"font-sty=
+le: normal; text-decoration: none;"><strong>Claude Code setup tutorial:&nbs=
+p;</strong></span><span style=3D"font-weight: 400; font-style: normal; text=
+-decoration: none;">I recommended this one in the last newsletter, but want=
+ed to mention it again as =E2=80=9Chow to start using Claude Code=E2=80=9D =
+comes up in so many coaching conversations.&nbsp;</span><a href=3D"https://=
+f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGSsDEJYYgD0u0Q1Jkka/hRqd82Wtq=
+Wdn" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"15" te=
+mplating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit=
+-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>Carl Vello=
+tti=E2=80=99s walkthrough</u></span></a><span style=3D"font-weight: 400; fo=
+nt-style: normal; text-decoration: none;">&nbsp;on Aakash Gupta=E2=80=99s P=
+roduct Growth Podcast was my personal starting point for getting Claude Cod=
+e set up properly. Clear, practical, and extremely generous.<br>&nbsp;</spa=
+n></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style=
+: normal; text-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D=
+"margin: 0;"><span style=3D"font-style: normal; text-decoration: none;"><st=
+rong>Using Claude Code safely:&nbsp;</strong></span><span style=3D"font-wei=
+ght: 400; font-style: normal; text-decoration: none;">Teresa Torres continu=
+es to double down on AI topics, and&nbsp;</span><a href=3D"https://f2xm1.r.=
+ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGZjfN8VjqMUzpilI3Kq/s_pUiyG6mBgJ" sty=
+le=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"16" templating=
+=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-de=
+coration-skip: none; text-decoration-skip-ink: none;"><u>this post</u></spa=
+n></a><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">&nbsp;is a must-read if you care about data security, privacy, and =
+safe usage=E2=80=94which, as leaders, we all should.<br><br></span></p></li=
+><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: normal; =
+text-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0=
+;"><span style=3D"font-style: normal; text-decoration: none;"><strong>AI zo=
+mbies in your org:&nbsp;</strong></span><a href=3D"https://f2xm1.r.ag.d.sen=
+dibm3.com/mk/cl/f/sh/SMK1E8tHeGgb7VxSv0Vz5f1VGLv6/tFXMJoHO6qRa" style=3D"co=
+lor: #007c89; text-decoration: none;" sib_link_id=3D"17" templating=3D"n"><=
+span style=3D"font-weight: 400; font-style: normal; -webkit-text-decoration=
+-skip: none; text-decoration-skip-ink: none;"><u>Barry O=E2=80=99Reilly=E2=
+=80=99s Halloween post</u></span></a><span style=3D"font-weight: 400; font-=
+style: normal; text-decoration: none;">&nbsp;is painfully accurate. He brea=
+ks down three types of doomed AI projects=E2=80=94Zombies, Ghosts, and Ghou=
+ls=E2=80=94and I=E2=80=99m sure many of you will recognize at least one. A =
+sharp, funny, and very real read.<br><br></span></p></li><li dir=3D"ltr" st=
+yle=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: no=
+ne;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"f=
+ont-style: normal; text-decoration: none;"><strong>Tech fascism:&nbsp;</str=
+ong></span><span style=3D"font-weight: 400; font-style: normal; text-decora=
+tion: none;">Paulina Borsook=E2=80=99s&nbsp;</span><span style=3D"font-weig=
+ht: 400; text-decoration: none;"><em>Cyberselfish</em></span><span style=3D=
+"font-weight: 400; font-style: normal; text-decoration: none;">&nbsp;diagno=
+sed Silicon Valley=E2=80=99s toxic techno-libertarian mindset long before t=
+he rest of us caught on. Her observations from 25 years ago feel even more =
+relevant today. Reading about her current situation made me stop=E2=80=A6 a=
+nd donate. If her work moved you, too (or you=E2=80=99d like to learn more =
+about it),&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f=
+/sh/SMK1E8tHeGnSZemQ6AfTBUKFEeVM/Dd1-tXh3sqfk" style=3D"color: #007c89; tex=
+t-decoration: none;" sib_link_id=3D"18" templating=3D"n"><span style=3D"fon=
+t-weight: 400; font-style: normal; -webkit-text-decoration-skip: none; text=
+-decoration-skip-ink: none;"><u>this LinkedIn post</u></span></a><span styl=
+e=3D"font-weight: 400; font-style: normal; text-decoration: none;">&nbsp;(a=
+nd the associated interview) is worth your time.<br><br></span></p></li><li=
+ dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: normal; text=
+-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><=
+span style=3D"font-style: normal; text-decoration: none;"><strong>OKRs for =
+AI:&nbsp;</strong></span><span style=3D"font-weight: 400; font-style: norma=
+l; text-decoration: none;">In the beginning of December, Sam Altman declare=
+d a =E2=80=9Ccode red=E2=80=9D at OpenAI, pausing advertising experiments, =
+AI shopping agents, health assistants, and a personal assistant called =E2=
+=80=9CPulse,=E2=80=9D all so the company could focus on making ChatGPT fast=
+er, more reliable, and personal.&nbsp;</span><a href=3D"https://f2xm1.r.ag.=
+d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGuK1nbNHKoxHJczCx5c/3mh3FzbjGfLG" style=
+=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"19" templating=
+=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-de=
+coration-skip: none; text-decoration-skip-ink: none;"><u>Christina Wodtke</=
+u></span></a><span style=3D"font-weight: 400; font-style: normal; text-deco=
+ration: none;">&nbsp;breaks down what these actions can teach us about OKRs=
+ (even if it=E2=80=99s unintentional on OpenAI=E2=80=99s part).&nbsp;<br><b=
+r></span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; fon=
+t-style: normal; text-decoration: none;"><p class=3D"default" dir=3D"ltr" s=
+tyle=3D"margin: 0;"><span style=3D"font-style: normal; text-decoration: non=
+e;"><strong>An eco-<span style=3D"color: rgb(59, 63, 68);">friendly&nbsp;</=
+span>AI option:&nbsp;</strong></span><span style=3D"font-weight: 400; font-=
+style: normal; text-decoration: none;">Most AI tools take more than they gi=
+ve, but&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh=
+/SMK1E8tHeFuabYf4oLkzynVRNt8K/KzahC4C9WiUj" style=3D"color: #007c89; text-d=
+ecoration: none;" sib_link_id=3D"20" templating=3D"n"><span style=3D"font-w=
+eight: 400; font-style: normal; -webkit-text-decoration-skip: none; text-de=
+coration-skip-ink: none;"><u>Christian Kroll and Ecosia</u></span></a><span=
+ style=3D"font-weight: 400; font-style: normal; text-decoration: none;">&nb=
+sp;seem to be bucking that trend. I=E2=80=99d love to see more companies pu=
+shing hard to find sustainable AI solutions.&nbsp;<br><br></span></p></li><=
+li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-style: normal; te=
+xt-decoration: none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"=
+><span style=3D"font-weight: 400; font-style: normal; text-decoration: none=
+;">=F0=9F=8E=A7&nbsp;</span><span style=3D"font-style: normal; text-decorat=
+ion: none;"><strong>Tristan Harris on Diary of a CEO:&nbsp;</strong></span>=
+<span style=3D"font-weight: 400; font-style: normal; text-decoration: none;=
+">Speaking of long before everyone else=E2=80=A6 I=E2=80=99ve followed Tris=
+tan Harris since his&nbsp;</span><span style=3D"font-weight: 400; text-deco=
+ration: none;"><em>Time Well Spent</em></span><span style=3D"font-weight: 4=
+00; font-style: normal; text-decoration: none;">&nbsp;days (I even wrote ab=
+out him back in 2017, but in German). His&nbsp;</span><a href=3D"https://f2=
+xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG1S3hU1zVuU4coBMBia/N3itDqlKWb6=
+o" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"21" temp=
+lating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-t=
+ext-decoration-skip: none; text-decoration-skip-ink: none;"><u>recent conve=
+rsation</u></span></a><span style=3D"font-weight: 400; font-style: normal; =
+text-decoration: none;">&nbsp;with Steven Bartlett is an excellent update o=
+n his thinking around AI is well worth your commute or workout time.</span>=
+</p></li></ul><p style=3D"margin: 0;"><br></p><h4 class=3D"default-heading4=
+" dir=3D"ltr" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvet=
+ica,sans-serif; font-size: 21px; word-break: break-word;"><span style=3D"fo=
+nt-style: normal; text-decoration: none; color: rgb(31, 45, 61);">Product C=
+raft &amp; Strategy</span></h4><p class=3D"default" dir=3D"ltr" style=3D"ma=
+rgin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decorat=
+ion: none;"><br></span></p><ul style=3D"margin: 0;"><li dir=3D"ltr" style=
+=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: none;=
+"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font=
+-weight: 400; font-style: normal; text-decoration: none;">=F0=9F=8E=A5&nbsp=
+;</span><span style=3D"font-style: normal; text-decoration: none;"><strong>=
+Storytelling with product data:&nbsp;</strong></span><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">Another Product at H=
+eart watch-party recommendation.&nbsp;</span><a href=3D"https://f2xm1.r.ag.=
+d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG8JVqIzAg3yAS6vKUIq/PRiD4W4AqsgP" style=
+=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"22" templating=
+=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-de=
+coration-skip: none; text-decoration-skip-ink: none;"><u>Andrey Vinitsky</u=
+></span></a><span style=3D"font-weight: 400; font-style: normal; text-decor=
+ation: none;">&nbsp;delivers a sharp, funny take on dashboards, data narrat=
+ives, and how to actually tell a compelling story with the metrics you coll=
+ect.<br><br></span></p></li><li style=3D"margin: 0;"><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">=F0=9F=8E=A5&nbsp;</=
+span><span style=3D"font-style: normal; text-decoration: none;"><strong>Liv=
+ing in bets:</strong></span><span style=3D"font-weight: 400; font-style: no=
+rmal; text-decoration: none;">&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.=
+sendibm3.com/mk/cl/f/sh/SMK1E8tHeGFAxz7wLqDSGHPfImt6/UXiK208XQZsD" style=3D=
+"color: #007c89; text-decoration: none;" sib_link_id=3D"23" templating=3D"n=
+"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-decorat=
+ion-skip: none; text-decoration-skip-ink: none;"><u>Andrew Skotzko</u></spa=
+n></a><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">=E2=80=99s Product at Heart talk is another standout=E2=80=94a look=
+ at escaping the =E2=80=9Ccontrol trap=E2=80=9D and moving toward a healthi=
+er, more strategic product cycle.</span></li></ul></div> </td> </tr><tr><td=
+ class=3D"r14-c" align=3D"center" style=3D"padding-bottom: 30px; padding-to=
+p: 30px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation" height=3D"1" style=3D"border-top-style: solid;=
+ background-clip: border-box; border-top-color: #eaeaea; border-top-width: =
+1px; font-size: 1px; line-height: 1px;"><tr><td height=3D"0" style=3D"font-=
+size: 0px; line-height: 0px;">=C2=AD</td> </tr></table></td> </tr><tr><td c=
+lass=3D"r10-c nl2go-default-textstyle" align=3D"left" style=3D"color: #3b3f=
+44; font-family: arial,helvetica,sans-serif; font-size: 16px; line-height: =
+1.5; word-break: break-word; padding-bottom: 15px; padding-top: 15px; text-=
+align: left; valign: top;"> <div><h3 class=3D"default-heading3" id=3D"isPas=
+ted" style=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-=
+serif; font-size: 26px; word-break: break-word;">Upskilling and Reflection =
+Ideas</h3><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p =
+class=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0;"><span st=
+yle=3D"font-weight: 400; font-style: normal; text-decoration: none;">Given =
+the timing of this newsletter, I imagine you're either deep in annual revie=
+w mode or you've just completed yours. We already covered some more structu=
+red approaches to reflection in the intro (and I'll share a few more at the=
+ end of this newsletter).&nbsp;</span></p><p style=3D"margin: 0;"><br></p><=
+p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">If all this reflecti=
+on has you thinking about ways you might want to improve your leadership sk=
+ills or help your team members develop specific aspects of their product cr=
+aft, here are a few specific steps you can take:</span></p><p style=3D"marg=
+in: 0;"><br></p><ul style=3D"margin: 0;"><li dir=3D"ltr" style=3D"margin: 0=
+; font-weight: 400; font-style: normal; text-decoration: none;"><p class=3D=
+"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400;=
+ font-style: normal; text-decoration: none;">Commit to a targeted, ongoing =
+approach to strengthening your leadership practice by signing up for my ema=
+il course,&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f=
+/sh/SMK1E8tHeGM2Q7wtX0MwM6iPH5TM/NyYCZ1Hm3vG4" style=3D"color: #007c89; tex=
+t-decoration: none;" sib_link_id=3D"24" templating=3D"n"><span style=3D"fon=
+t-weight: 400; font-style: normal; -webkit-text-decoration-skip: none; text=
+-decoration-skip-ink: none;"><u>From STRONG to Exceptional: Your 52-Week Le=
+adership Journey</u></span></a><span style=3D"font-weight: 400; font-style:=
+ normal; text-decoration: none;">.</span></p></li><li dir=3D"ltr" style=3D"=
+margin: 0; font-weight: 400; font-style: normal; text-decoration: none;"><p=
+ class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-wei=
+ght: 400; font-style: normal; text-decoration: none;">Prioritize community =
+and in-person connection with other product leaders by joining us for the&n=
+bsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tH=
+eGStsGlqiAWQRw19FO3c/AjRlXX0yuqaE" style=3D"color: #007c89; text-decoration=
+: none;" sib_link_id=3D"25" templating=3D"n"><span style=3D"font-weight: 40=
+0; font-style: normal; -webkit-text-decoration-skip: none; text-decoration-=
+skip-ink: none;"><u>Product at Heart Leadership Event</u></span></a><span s=
+tyle=3D"font-weight: 400; font-style: normal; text-decoration: none;">&nbsp=
+;in April.</span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: =
+400; font-style: normal; text-decoration: none;"><p class=3D"default" dir=
+=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: =
+normal; text-decoration: none;">Encourage your team's growth by sending the=
+m to the&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/s=
+h/SMK1E8tHeGZlKPantKfuXlJtDgds/ZH1NPh650w2r" style=3D"color: #007c89; text-=
+decoration: none;" sib_link_id=3D"26" templating=3D"n"><span style=3D"font-=
+weight: 400; font-style: normal; -webkit-text-decoration-skip: none; text-d=
+ecoration-skip-ink: none;"><u>Product at Heart</u></span></a><span style=3D=
+"font-weight: 400; font-style: normal; text-decoration: none;">&nbsp;confer=
+ence or workshops in June.</span></p></li></ul></div> </td> </tr><tr><td cl=
+ass=3D"r15-c" align=3D"center" style=3D"font-size: 0px; line-height: 0px; p=
+adding-bottom: 15px; padding-top: 15px; valign: top;"> <img src=3D"https://=
+f2xm1.img.ag.d.sendibm3.com/im/sh/1T1SHEBs63jT.jpg?u=3D1vcqsYC5HMzcSTSv83rp=
+GTjmJ5u8xU" width=3D"580" border=3D"0" style=3D"display: block; width: 100%=
+;" sib_img_id=3D"5"></td> </tr><tr><td class=3D"r14-c" align=3D"center" sty=
+le=3D"padding-bottom: 30px; padding-top: 30px;"> <table width=3D"100%" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" height=
+=3D"1" style=3D"border-top-style: solid; background-clip: border-box; borde=
+r-top-color: #eaeaea; border-top-width: 1px; font-size: 1px; line-height: 1=
+px;"><tr><td height=3D"0" style=3D"font-size: 0px; line-height: 0px;">=C2=
+=AD</td> </tr></table></td> </tr><tr><td class=3D"r10-c nl2go-default-texts=
+tyle" align=3D"left" style=3D"color: #3b3f44; font-family: arial,helvetica,=
+sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word; padd=
+ing-bottom: 15px; padding-top: 15px; text-align: left; valign: top;"> <div>=
+<h3 class=3D"default-heading3" style=3D"margin: 0; color: #1f2d3d; font-fam=
+ily: arial,helvetica,sans-serif; font-size: 26px; word-break: break-word;">=
+What's new with <em>STRONG Product People</em>?</h3><p style=3D"margin: 0;"=
+>&nbsp;</p><h4 class=3D"default-heading4" style=3D"margin: 0; color: #1f2d3=
+d; font-family: arial,helvetica,sans-serif; font-size: 21px; word-break: br=
+eak-word;"><span style=3D"color: rgb(31, 45, 61);">What I=E2=80=99m up to t=
+hese days</span></h4></div> </td> </tr><tr><td class=3D"r10-c nl2go-default=
+-textstyle" align=3D"left" style=3D"color: #3b3f44; font-family: arial,helv=
+etica,sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word=
+; padding-bottom: 15px; padding-top: 15px; text-align: left; valign: top;">=
+ <div><p class=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0;"=
+><span style=3D"font-weight: 400; font-style: normal; text-decoration: none=
+;">It=E2=80=99s been so exciting to see product leaders commit to their gro=
+wth by signing up for From STRONG to Exceptional. And over the next few wee=
+ks, we=E2=80=99re going to be starting our quarterly AMA calls, where parti=
+cipants get to share their wins and challenges, get personalized tips and a=
+dvice from me, and connect with peers who are on the same journey.</span></=
+p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D=
+"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400;=
+ font-style: normal; text-decoration: none;">Are you wishing you could be a=
+ part of all this? There=E2=80=99s no need to feel FOMO=E2=80=94the course =
+is open on an ongoing basis and you can enroll at any time.</span></p><p cl=
+ass=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p style=3D"margin=
+: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">=F0=9F=91=89</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/=
+cl/f/sh/SMK1E8tHeGgcmYPl4UpOdacdBzE8/_9Yn1e3ppQs8" style=3D"color: #007c89;=
+ text-decoration: none;" sib_link_id=3D"27" templating=3D"n"><span style=3D=
+"font-weight: 400; font-style: normal; text-decoration: none;">&nbsp;</span=
+><span style=3D"font-weight: 400; font-style: normal; -webkit-text-decorati=
+on-skip: none; text-decoration-skip-ink: none;"><u>Check out the course det=
+ails and sign up here</u></span></a></p></div> </td> </tr><tr><td class=3D"=
+r15-c" align=3D"center" style=3D"font-size: 0px; line-height: 0px; padding-=
+bottom: 15px; padding-top: 15px; valign: top;"> <img src=3D"https://f2xm1.i=
+mg.ag.d.sendibm3.com/im/sh/joBDdO_S7NTO.png?u=3D1vcqsYC5HMzcSV7xaM1JZtHhuDp=
+mGW" width=3D"580" border=3D"0" style=3D"display: block; width: 100%;" sib_=
+img_id=3D"6"></td> </tr><tr><td class=3D"r10-c nl2go-default-textstyle" ali=
+gn=3D"left" style=3D"color: #3b3f44; font-family: arial,helvetica,sans-seri=
+f; font-size: 16px; line-height: 1.5; word-break: break-word; padding-botto=
+m: 15px; padding-top: 15px; text-align: left; valign: top;"> <div><p class=
+=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0;"><span style=
+=3D"font-style: normal; text-decoration: none;"><strong><span style=3D"colo=
+r: rgb(59, 63, 68);">Happy birthday to&nbsp;</span></strong></span><span st=
+yle=3D"text-decoration: none; color: rgb(59, 63, 68);"><em><strong>STRONG P=
+roduct People</strong></em></span><span style=3D"font-style: normal; text-d=
+ecoration: none; color: rgb(59, 63, 68);"><strong>!</strong></span></p><p s=
+tyle=3D"margin: 0;"><br></p><p style=3D"margin: 0;"><span style=3D"font-wei=
+ght: 400; font-style: normal; text-decoration: none;">My first book,&nbsp;<=
+/span><span style=3D"font-weight: 400; text-decoration: none;"><em>STRONG P=
+roduct People</em></span><span style=3D"font-weight: 400; font-style: norma=
+l; text-decoration: none;">&nbsp;just celebrated its fifth birthday. For fi=
+ve years now, it=E2=80=99s been on your desks, your shelves, or in your bac=
+kpacks, providing actionable insights into managing your product team to it=
+s fullest potential. One of my favorite things since publishing this book h=
+as been chatting to you about it in person, either at my corporate book clu=
+bs or when I meet you at events. Please never stop sharing your insights an=
+d takeaways with me!</span></p></div> </td> </tr><tr><td class=3D"r15-c" al=
+ign=3D"center" style=3D"font-size: 0px; line-height: 0px; padding-bottom: 1=
+5px; padding-top: 15px; valign: top;"> <img src=3D"https://f2xm1.img.ag.d.s=
+endibm3.com/im/sh/DxZh1xNPi8-c.jpg?u=3D1vcqsYC5HMzcSWn02eAntIpdVLlPZY" widt=
+h=3D"580" border=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D=
+"7"></td> </tr><tr><td class=3D"r10-c nl2go-default-textstyle" align=3D"lef=
+t" style=3D"color: #3b3f44; font-family: arial,helvetica,sans-serif; font-s=
+ize: 16px; line-height: 1.5; word-break: break-word; padding-bottom: 15px; =
+padding-top: 15px; text-align: left; valign: top;"> <div><p class=3D"defaul=
+t" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0;"><span style=3D"font-sty=
+le: normal; text-decoration: none;"><strong>The =F0=9F=A7=AD PMwheel in act=
+ion</strong></span><span style=3D"font-style: normal; text-decoration: none=
+;"><strong><br></strong></span><span style=3D"font-weight: 400; font-style:=
+ normal; text-decoration: none;">I love seeing how people use my tools in t=
+heir day-to-day work, and&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendi=
+bm3.com/mk/cl/f/sh/SMK1E8tHeGnUEhEiFeysjPvNAHoO/biptYt3oAOjc" style=3D"colo=
+r: #007c89; text-decoration: none;" sib_link_id=3D"28" templating=3D"n"><sp=
+an style=3D"font-weight: 400; font-style: normal; -webkit-text-decoration-s=
+kip: none; text-decoration-skip-ink: none;"><u>this post</u></span></a><spa=
+n style=3D"font-weight: 400; font-style: normal; text-decoration: none;">&n=
+bsp;from Lisa Marie Reidt, Product @ SAG Digital, made me especially happy.=
+ She shares how the PMwheel helped spark clearer conversations around role =
+expectations and opened the door to more intentional growth discussions.</s=
+pan></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p cl=
+ass=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-style:=
+ normal; text-decoration: none;"><strong>Finally diving into Claude Code</s=
+trong></span></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><spa=
+n style=3D"font-weight: 400; font-style: normal; text-decoration: none;">I =
+finally found the time to set up Claude Code (mainly to improve my content =
+creation). Teresa Torres and Andrew Skotzko had a big influence on getting =
+me to finally make room for it and push it to the top of my to-do list. =F0=
+=9F=98=89</span></p><p style=3D"margin: 0;"><br></p><p class=3D"default" di=
+r=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style:=
+ normal; text-decoration: none;">While this is more about how I'm operating=
+ my business rather than a strictly product leadership topic, let me know i=
+f it's something you'd like me to share more about in the future.</span></p=
+><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"=
+margin: 0;"><span style=3D"font-style: normal; text-decoration: none;"><str=
+ong>First-ever PLwheel workshop at MENA Product Summit</strong></span></p><=
+p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-we=
+ight: 400; font-style: normal; text-decoration: none;">In January, I'll be =
+in Cairo for the&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/m=
+k/cl/f/sh/SMK1E8tHeGuLgq3fQp8MpFE78aOe/m-t6uwyfM3yl" style=3D"color: #007c8=
+9; text-decoration: none;" sib_link_id=3D"29" templating=3D"n"><span style=
+=3D"font-weight: 400; font-style: normal; -webkit-text-decoration-skip: non=
+e; text-decoration-skip-ink: none;"><u>MENA Product Summit</u></span></a><s=
+pan style=3D"font-weight: 400; font-style: normal; text-decoration: none;">=
+=E2=80=94and I'm incredibly excited to run the first live workshop based on=
+ the Product Leadership Wheel. Until now, teams and individuals have been u=
+sing the tool on their own or in coaching with me. This is the first time I=
+'ll be guiding a group of product leaders through the wheel, live and in pe=
+rson.</span></p><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D=
+"ltr" style=3D"margin: 0;"><span style=3D"font-style: normal; text-decorati=
+on: none;"><strong>Full speed ahead with Product at Heart 2026</strong></sp=
+an><span style=3D"font-weight: 400; font-style: normal; text-decoration: no=
+ne;">&nbsp;</span></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"=
+><span style=3D"font-weight: 400; font-style: normal; text-decoration: none=
+;">Tickets are now on sale for both the Leadership Event (which has been up=
+graded to a 1.5-day event in a new location with even more opportunities to=
+ connect with your peers) and the main conference. Act fast to take advanta=
+ge of&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/S=
+MK1E8tHeFucGb7Mxq4PWj6ZJWRM/yLUWE9Po0hU-" style=3D"color: #007c89; text-dec=
+oration: none;" sib_link_id=3D"30" templating=3D"n"><span style=3D"font-wei=
+ght: 400; font-style: normal; -webkit-text-decoration-skip: none; text-deco=
+ration-skip-ink: none;"><u>Early Bird pricing</u></span></a><span style=3D"=
+font-weight: 400; font-style: normal; text-decoration: none;">!</span><span=
+ style=3D"font-weight: 400; font-style: normal; text-decoration: none;"><br=
+><br></span></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span=
+ style=3D"font-weight: 400; font-style: normal; text-decoration: none;">We=
+=E2=80=99ve also officially announced the star-studded list of keynote spea=
+kers for the main conference: Christian Idiodi, Elaine Kasket, and Teresa T=
+orres!</span></p></div> </td> </tr><tr><td class=3D"r15-c" align=3D"center"=
+ style=3D"font-size: 0px; line-height: 0px; padding-bottom: 15px; padding-t=
+op: 15px; valign: top;"> <img src=3D"https://f2xm1.img.ag.d.sendibm3.com/im=
+/sh/IBa_evzH0bxR.png?u=3D1vcqsYC5HMzcSYS2UwKICiNZ6Th2sa" width=3D"580" bord=
+er=3D"0" style=3D"display: block; width: 100%;" sib_img_id=3D"8"></td> </tr=
+><tr><td class=3D"r10-c nl2go-default-textstyle" align=3D"left" style=3D"co=
+lor: #3b3f44; font-family: arial,helvetica,sans-serif; font-size: 16px; lin=
+e-height: 1.5; word-break: break-word; padding-bottom: 15px; padding-top: 1=
+5px; text-align: left; valign: top;"> <div><p style=3D"margin: 0;"><span id=
+=3D"isPasted" style=3D"font-weight: 400; font-style: normal; text-decoratio=
+n: none;">And if you=E2=80=99d like even more timely updates of what I=E2=
+=80=99m up to, you can always&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.s=
+endibm3.com/mk/cl/f/sh/SMK1E8tHeG1TijwK90DtcYPJHp1c/c1mO54tbnY-K" style=3D"=
+color: #007c89; text-decoration: none;" sib_link_id=3D"31" templating=3D"n"=
+><span style=3D"font-weight: 400; font-style: normal; -webkit-text-decorati=
+on-skip: none; text-decoration-skip-ink: none;"><u>find those here</u></spa=
+n></a><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">.</span></p></div> </td> </tr><tr><td class=3D"r10-c nl2go-default-=
+textstyle" align=3D"left" style=3D"color: #3b3f44; font-family: arial,helve=
+tica,sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word;=
+ padding-bottom: 15px; padding-top: 15px; text-align: left; valign: top;"> =
+<div><h4 class=3D"default-heading4" style=3D"margin: 0; color: #1f2d3d; fon=
+t-family: arial,helvetica,sans-serif; font-size: 21px; word-break: break-wo=
+rd;">=F0=9F=8E=99=EF=B8=8F Strong Conversations</h4><p style=3D"margin: 0;"=
+>&nbsp;</p><p class=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"margin=
+: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">I now have&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.sendibm3.com=
+/mk/cl/f/sh/SMK1E8tHeG8LAslHKANNiNi3G7bs/BxK9lAGU6gHU" style=3D"color: #007=
+c89; text-decoration: none;" sib_link_id=3D"32" templating=3D"n"><span styl=
+e=3D"font-weight: 400; font-style: normal; -webkit-text-decoration-skip: no=
+ne; text-decoration-skip-ink: none;"><u>a dedicated home for&nbsp;</u></spa=
+n><span style=3D"font-weight: 400; -webkit-text-decoration-skip: none; text=
+-decoration-skip-ink: none;"><em><u>All Things Product</u></em></span><span=
+ style=3D"font-weight: 400; font-style: normal; -webkit-text-decoration-ski=
+p: none; text-decoration-skip-ink: none;"><u>&nbsp;podcast episodes on my w=
+ebsite</u></span></a><span style=3D"font-weight: 400; font-style: normal; t=
+ext-decoration: none;">&nbsp;where you can find the latest episode informat=
+ion or share it with anyone who you think might enjoy it!</span></p><p clas=
+s=3D"default" dir=3D"ltr" style=3D"margin: 0;"><br></p><p class=3D"default"=
+ dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-sty=
+le: normal; text-decoration: none;">Here's the list of topics Teresa and I =
+covered this quarter:</span></p><p class=3D"default" dir=3D"ltr" style=3D"m=
+argin: 0;"><br></p><ul style=3D"margin: 0;"><li dir=3D"ltr" id=3D"isPasted"=
+ style=3D"margin: 0;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"=
+><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGFCd1aEVK=
+WroD0nEQC8/SPxE66scNPCt" target=3D"_blank" data-saferedirecturl=3D"https://=
+www.google.com/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKX=
+x3IkdaCbyby8JSXs4V6/d6ia2-uhm9OZ&amp;source=3Dgmail&amp;ust=3D1766565903769=
+000&amp;usg=3DAOvVaw2tBS7dYUFuFlCUhmmSEwXX" style=3D"color: #007c89; text-d=
+ecoration: underline;" sib_link_id=3D"33" templating=3D"n">End of Year Refl=
+ection</a> =E2=80=93 December 16, 2025</p></li><li dir=3D"ltr" style=3D"mar=
+gin: 0;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a href=3D"h=
+ttps://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGM45APBgUgLu2JXCimO/E5=
+esOERGvgUH" target=3D"_blank" data-saferedirecturl=3D"https://www.google.co=
+m/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3IkdaCbyby8J=
+SXs4V6/jN_0JNGxaHyx&amp;source=3Dgmail&amp;ust=3D1766565903769000&amp;usg=
+=3DAOvVaw3j8eX2HVbrZaFbuESV6VLt" style=3D"color: #007c89; text-decoration: =
+underline;" sib_link_id=3D"34" templating=3D"n">Role of Leadership in Trans=
+formations</a> =E2=80=93 December 9, 2025</p></li><li dir=3D"ltr" style=3D"=
+margin: 0;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a href=
+=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGSvXJE8reppzrcHB1=
+Me/SmJzwnEoqxGl" target=3D"_blank" data-saferedirecturl=3D"https://www.goog=
+le.com/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3IkdaCb=
+yby8JSXs4V6/2Eum7iHMFkth&amp;source=3Dgmail&amp;ust=3D1766565903769000&amp;=
+usg=3DAOvVaw2jdxpj8TqLvEPaM7Y74fLU" style=3D"color: #007c89; text-decoratio=
+n: underline;" sib_link_id=3D"35" templating=3D"n">Customer Interview Analy=
+sis</a> =E2=80=93 By the way, after we aired that episode, Anthropic did ex=
+actly what we were warning people about. Read more about this in <a href=3D=
+"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGZmzS362ozK5gv19Jwu/=
+yhGoVctn9W4H" target=3D"_blank" data-saferedirecturl=3D"https://www.google.=
+com/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3IkdaCbyby=
+8JSXs4V6/23qtr3n3DDFj&amp;source=3Dgmail&amp;ust=3D1766565903769000&amp;usg=
+=3DAOvVaw00K33rgBltGTp9_nwGYnD_" style=3D"color: #007c89; text-decoration: =
+underline; text-decoration-line: none;" sib_link_id=3D"36" templating=3D"n"=
+><u>Teresa=E2=80=99s post on LinkedIn</u></a>.</p></li><li dir=3D"ltr" styl=
+e=3D"margin: 0;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a h=
+ref=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGgeRas3Dz8oBWD=
+l7cXA/ALTcfgj5BAfN" target=3D"_blank" data-saferedirecturl=3D"https://www.g=
+oogle.com/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3Ikd=
+aCbyby8JSXs4V6/-UBJ1miUhiAp&amp;source=3Dgmail&amp;ust=3D1766565903769000&a=
+mp;usg=3DAOvVaw1eGhtYUaf-wLDI2q8VYvS5" style=3D"color: #007c89; text-decora=
+tion: underline; text-decoration-line: none;" sib_link_id=3D"37" templating=
+=3D"n"><u>Communities of Practice</u></a> =E2=80=93 November 25, 2025</p></=
+li><li dir=3D"ltr" style=3D"margin: 0;"><p class=3D"default" dir=3D"ltr" st=
+yle=3D"margin: 0;"><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/=
+SMK1E8tHeGnVtjh0P9IIHLWV5v7Q/ZcVCfBfJn6uf" target=3D"_blank" data-saferedir=
+ecturl=3D"https://www.google.com/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/=
+mk/cl/f/sh/1f8JIKXx3IkdaCbyby8JSXs4V6/yebai0_Jodw9&amp;source=3Dgmail&amp;u=
+st=3D1766565903769000&amp;usg=3DAOvVaw0LFA2gxyPIeJxMuPWickYx" style=3D"colo=
+r: #007c89; text-decoration: underline; text-decoration-line: none;" sib_li=
+nk_id=3D"38" templating=3D"n"><u>Dealing With Setbacks</u></a> =E2=80=93 No=
+vember 18, 2025</p></li><li dir=3D"ltr" style=3D"margin: 0;"><p class=3D"de=
+fault" dir=3D"ltr" style=3D"margin: 0;"><a href=3D"https://f2xm1.r.ag.d.sen=
+dibm3.com/mk/cl/f/sh/SMK1E8tHeGuNLsVxaJRmNApF4Dhg/My_Ka7MxVrYI" target=3D"_=
+blank" data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://f2xm1=
+.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3IkdaCbyby8JSXs4V6/AiemdIoDt9oL&amp=
+;source=3Dgmail&amp;ust=3D1766565903769000&amp;usg=3DAOvVaw2zkhsc46rOKWZanr=
+c-dO4N" style=3D"color: #007c89; text-decoration: underline; text-decoratio=
+n-line: none;" sib_link_id=3D"39" templating=3D"n"><u>Global Invoicing</u><=
+/a> =E2=80=93 November 11, 2025</p></li><li dir=3D"ltr" style=3D"margin: 0;=
+"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a href=3D"https://=
+f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeFudvdZf7KNp4ehhF9kO/sd9uduHFf=
+Qak" target=3D"_blank" data-saferedirecturl=3D"https://www.google.com/url?q=
+=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3IkdaCbyby8JSXs4V6/=
+cIoOEMXY_uC7&amp;source=3Dgmail&amp;ust=3D1766565903769000&amp;usg=3DAOvVaw=
+2h7DNvhYicesTbeyFTBZBg" style=3D"color: #007c89; text-decoration: underline=
+; text-decoration-line: none;" sib_link_id=3D"40" templating=3D"n"><u>AI At=
+ Home And Work</u></a> =E2=80=93 November 4, 2025</p></li><li dir=3D"ltr" s=
+tyle=3D"margin: 0;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><=
+a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG1VNmOcIUXJ=
+AU0RDSKe/hyb5eg6xfRS6" target=3D"_blank" data-saferedirecturl=3D"https://ww=
+w.google.com/url?q=3Dhttps://f2xm1.r.bh.d.sendibt3.com/mk/cl/f/sh/1f8JIKXx3=
+IkdaCbyby8JSXs4V6/ycg0yYLjXov5&amp;source=3Dgmail&amp;ust=3D176656590376900=
+0&amp;usg=3DAOvVaw2AStBGxp1d_QmMGPTcfP1d" style=3D"color: #007c89; text-dec=
+oration: underline; text-decoration-line: none;" sib_link_id=3D"41" templat=
+ing=3D"n"><u>Context is King</u></a> =E2=80=93 October 28, 2025. You may re=
+call that this was the topic of last quarter=E2=80=99s newsletter. Teresa a=
+nd I recorded this episode after I wrote that edition, so this episode is a=
+ great complement to that edition and offers a deeper dive with Teresa=E2=
+=80=99s perspective as well.</p></li></ul><h4 class=3D"default-heading4" st=
+yle=3D"margin: 0; color: #1f2d3d; font-family: arial,helvetica,sans-serif; =
+font-size: 21px; word-break: break-word;"><br>Guest Appearances</h4><p styl=
+e=3D"margin: 0;">&nbsp;</p><p style=3D"margin: 0;"><span id=3D"isPasted" st=
+yle=3D"font-weight: 400; font-style: normal; text-decoration: none;">No gue=
+st appearances as the year was winding down and I focused on all my own tas=
+ks. Looking forward to getting out there again in 2026!</span></p><p style=
+=3D"margin: 0;">&nbsp;</p><h4 class=3D"default-heading4" style=3D"margin: 0=
+; color: #1f2d3d; font-family: arial,helvetica,sans-serif; font-size: 21px;=
+ word-break: break-word;">=F0=9F=93=85 Chances to meet</h4><p style=3D"marg=
+in: 0;">&nbsp;</p><ul id=3D"isPasted" style=3D"margin: 0;"><li dir=3D"ltr" =
+style=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: =
+none;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a href=3D"htt=
+ps://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeG8MpvDZTegnGJJBBkuu/mPbv=
+_AdqgsfQ" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"4=
+2" templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -w=
+ebkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>MENA =
+Product Summit</u></span></a><span style=3D"font-weight: 400; font-style: n=
+ormal; text-decoration: none;">, Cairo, Egypt (January 30=E2=80=9331, 2026)=
+</span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-weight: 400; font-=
+style: normal; text-decoration: none;"><p class=3D"default" dir=3D"ltr" sty=
+le=3D"margin: 0;"><a href=3D"https://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/S=
+MK1E8tHeGFEI42WeoqHM8bvA3VA/aXodn3IiA4pP" style=3D"color: #007c89; text-dec=
+oration: none;" sib_link_id=3D"43" templating=3D"n"><span style=3D"font-wei=
+ght: 400; font-style: normal; -webkit-text-decoration-skip: none; text-deco=
+ration-skip-ink: none;"><u>World Beautiful Business Forum</u></span></a><sp=
+an style=3D"font-weight: 400; font-style: normal; text-decoration: none;">,=
+ Athens, Greece (May 7=E2=80=9310, 2026)</span></p></li><li dir=3D"ltr" sty=
+le=3D"margin: 0; font-weight: 400; font-style: normal; text-decoration: non=
+e;"><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><a href=3D"https:=
+//f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGM5kCrTpyzlRxuf8M5Q/Pb4hmyn=
+QigTl" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"44" =
+templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webk=
+it-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>Product =
+at Heart Leadership Event</u></span></a><span style=3D"font-weight: 400; fo=
+nt-style: normal; text-decoration: none;">, Hamburg, Germany (April 20=E2=
+=80=9321, 2026)</span></p></li><li dir=3D"ltr" style=3D"margin: 0; font-wei=
+ght: 400; font-style: normal; text-decoration: none;"><p class=3D"default" =
+dir=3D"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-styl=
+e: normal; text-decoration: none;">=F0=9F=92=9A&nbsp;</span><a href=3D"http=
+s://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGSxCLgR199FXnDP6efg/yZVjp=
+WkgKgeP" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"45=
+" templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; -we=
+bkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>Produc=
+t at Heart</u></span></a><span style=3D"font-weight: 400; font-style: norma=
+l; text-decoration: none;">, Hamburg, Germany (June 25=E2=80=9326, 2026)</s=
+pan></p></li></ul></div> </td> </tr><tr><td class=3D"r14-c" align=3D"center=
+" style=3D"padding-bottom: 30px; padding-top: 30px;"> <table width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" hei=
+ght=3D"1" style=3D"border-top-style: solid; background-clip: border-box; bo=
+rder-top-color: #eaeaea; border-top-width: 1px; font-size: 1px; line-height=
+: 1px;"><tr><td height=3D"0" style=3D"font-size: 0px; line-height: 0px;">=
+=C2=AD</td> </tr></table></td> </tr><tr><td class=3D"r10-c nl2go-default-te=
+xtstyle" align=3D"left" style=3D"color: #3b3f44; font-family: arial,helveti=
+ca,sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word; p=
+adding-bottom: 15px; padding-top: 15px; text-align: left; valign: top;"> <d=
+iv><h3 class=3D"default-heading3" style=3D"margin: 0; color: #1f2d3d; font-=
+family: arial,helvetica,sans-serif; font-size: 26px; word-break: break-word=
+;">Before You Leave - Last Note: My personal way to reflect=E2=80=94and how=
+ to find yours</h3></div> </td> </tr><tr><td class=3D"r10-c nl2go-default-t=
+extstyle" align=3D"left" style=3D"color: #3b3f44; font-family: arial,helvet=
+ica,sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word; =
+padding-bottom: 15px; padding-top: 15px; text-align: left; valign: top;"> <=
+div><p class=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0;"><=
+span style=3D"font-weight: 400; font-style: normal; text-decoration: none;"=
+>The last few weeks I found myself doing what I do every year around this t=
+ime: reflecting on the past 12 months and looking ahead to the next.</span>=
+</p><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=
+=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-d=
+ecoration: none;">For me, that reflection takes the form of a blog post. I =
+sit down, I write it all out=E2=80=94the highs, the lows, the unexpected tu=
+rns=E2=80=94and I share it publicly. (If you're curious,</span><a href=3D"h=
+ttps://f2xm1.r.ag.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGZoeUVOCJIjdcW94xFw/eN=
+wZFhFqkcpA" style=3D"color: #007c89; text-decoration: none;" sib_link_id=3D=
+"46" templating=3D"n"><span style=3D"font-weight: 400; font-style: normal; =
+-webkit-text-decoration-skip: none; text-decoration-skip-ink: none;"><u>&nb=
+sp;you can read this year's reflection here</u></span></a><span style=3D"fo=
+nt-weight: 400; font-style: normal; text-decoration: none;">.)</span></p><p=
+ style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"mar=
+gin: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decorati=
+on: none;">But here's the thing: My way isn't the only way.</span></p><p st=
+yle=3D"margin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margin=
+: 0;"><span style=3D"font-weight: 400; font-style: normal; text-decoration:=
+ none;">Some people flip through their physical calendar, month by month, r=
+emembering what happened when. Others open their &quot;what I'm grateful fo=
+r&quot; jar and read through slips of paper they collected throughout the y=
+ear. (Of course, this method assumes you already have the jar and you=E2=80=
+=99ve been adding to it all year!) Some meet with a close friend over coffe=
+e and talk through it together.</span></p></div> </td> </tr><tr><td class=
+=3D"r15-c" align=3D"center" style=3D"font-size: 0px; line-height: 0px; padd=
+ing-bottom: 15px; padding-top: 15px; valign: top;"> <img src=3D"https://f2x=
+m1.img.ag.d.sendibm3.com/im/sh/ErBJhe9uqew_.jpg?u=3D1vcqsYC5HMzcSa74xETmW7v=
+UhbcgBc" width=3D"580" border=3D"0" style=3D"display: block; width: 100%;" =
+sib_img_id=3D"9"></td> </tr><tr><td class=3D"r10-c nl2go-default-textstyle"=
+ align=3D"left" style=3D"color: #3b3f44; font-family: arial,helvetica,sans-=
+serif; font-size: 16px; line-height: 1.5; word-break: break-word; padding-b=
+ottom: 15px; padding-top: 15px; text-align: left; valign: top;"> <div><p cl=
+ass=3D"default" dir=3D"ltr" id=3D"isPasted" style=3D"margin: 0;"><span styl=
+e=3D"font-weight: 400; font-style: normal; text-decoration: none;">There's =
+no single &quot;right&quot; way to reflect.&nbsp;</span><span style=3D"font=
+-style: normal; text-decoration: none;"><strong>What matters is that you DO=
+ it</strong></span><span style=3D"font-weight: 400; font-style: normal; tex=
+t-decoration: none;">=E2=80=94that you create space to pause, to notice wha=
+t shaped you, and to think about what comes next.</span></p><p style=3D"mar=
+gin: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><spa=
+n style=3D"font-style: normal; text-decoration: none;"><strong>So here's my=
+ question for you as we head into 2026: What is your way of reflecting?</st=
+rong></span></p><p style=3D"margin: 0;"><br></p><p class=3D"default" dir=3D=
+"ltr" style=3D"margin: 0;"><span style=3D"font-weight: 400; font-style: nor=
+mal; text-decoration: none;">If you don't have a ritual yet, maybe this is =
+the year to start one. Find a few&nbsp;</span><a href=3D"https://f2xm1.r.ag=
+.d.sendibm3.com/mk/cl/f/sh/SMK1E8tHeGgg6dKLNTSDjRot3FqC/eiqwfp8nwPXV" style=
+=3D"color: #007c89; text-decoration: none;" sib_link_id=3D"47" templating=
+=3D"n"><span style=3D"font-weight: 400; font-style: normal; -webkit-text-de=
+coration-skip: none; text-decoration-skip-ink: none;"><u>good questions</u>=
+</span></a><span style=3D"font-weight: 400; font-style: normal; text-decora=
+tion: none;">. Make them your own. Create the ritual around it (grab a cup =
+of coffee, light a candle, whatever puts you in a reflective mood!). And se=
+e what you learn about yourself in the process.</span></p><p style=3D"margi=
+n: 0;"><br></p><p class=3D"default" dir=3D"ltr" style=3D"margin: 0;"><span =
+style=3D"font-weight: 400; font-style: normal; text-decoration: none;">Wish=
+ing you a meaningful start to 2026!</span></p></div> </td> </tr><tr><td cla=
+ss=3D"r18-c nl2go-default-textstyle" align=3D"left" style=3D"color: #3b3f44=
+; font-family: arial,helvetica,sans-serif; font-size: 16px; line-height: 1.=
+5; word-break: break-word; padding-bottom: 15px; padding-top: 35px; text-al=
+ign: left; valign: top;"> <div><p style=3D"margin: 0;"><span id=3D"isPasted=
+" style=3D"background-font-style: normal; text-decoration: none;"><strong>P=
+.S.</strong></span><span style=3D"background-font-weight: 400; font-style: =
+normal; text-decoration: none;">&nbsp;I work with Melissa Suzuno on my news=
+letter, blog, and other written content. If you're looking for support with=
+ any of your writing, you can&nbsp;</span><a href=3D"https://f2xm1.r.ag.d.s=
+endibm3.com/mk/cl/f/sh/SMK1E8tHeGnXYm9IYdbhpH7d1YQS/-ks2mt8JdrxY" style=3D"=
+color: #007c89; text-decoration: none;" sib_link_id=3D"48" templating=3D"n"=
+><span style=3D"background-font-weight: 400; font-style: normal; -webkit-te=
+xt-decoration-skip: none; text-decoration-skip-ink: none;"><u>reach out to =
+Melissa on LinkedIn</u></span></a><span style=3D"background-font-weight: 40=
+0; font-style: normal; text-decoration: none;">.</span></p></div> </td> </t=
+r></table></td> </tr></table></th> </tr></table></td> </tr></table><table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" align=3D"center" class=3D"r3-o" style=3D"table-layout: fixed; wid=
+th: 100%;"><tr><td class=3D"r19-i" style=3D"background-color: #eff2f7; padd=
+ing-bottom: 20px; padding-top: 20px;"> <table width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tr><th width=3D"1=
+00%" valign=3D"top" class=3D"r5-c" style=3D"font-weight: normal;"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r6-o" style=3D"table-layout: fixed; width: 100%;"><tr><t=
+d valign=3D"top" class=3D"r7-i" style=3D"padding-left: 15px; padding-right:=
+ 15px;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" role=3D"presentation"><tr><td class=3D"r11-c" align=3D"left"> <table=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" wid=
+th=3D"100%" class=3D"r20-o" style=3D"table-layout: fixed; width: 100%;"><tr=
+><td align=3D"center" valign=3D"top" class=3D"r21-i nl2go-default-textstyle=
+" style=3D"color: #3b3f44; font-family: arial,helvetica,sans-serif; word-br=
+eak: break-word; font-size: 18px; line-height: 1.5; padding-top: 15px; text=
+-align: center;"> <div><p style=3D"margin: 0;"><strong>STRONG Product Peopl=
+e</strong></p></div> </td> </tr></table></td> </tr><tr><td class=3D"r11-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r20-o" style=3D"table-layout: fi=
+xed; width: 100%;"><tr><td align=3D"center" valign=3D"top" class=3D"r22-i n=
+l2go-default-textstyle" style=3D"color: #3b3f44; font-family: arial,helveti=
+ca,sans-serif; word-break: break-word; font-size: 18px; line-height: 1.5; t=
+ext-align: center;"> <div><p style=3D"margin: 0; font-size: 14px;">Ritterst=
+r. 8, 22089, Hamburg</p></div> </td> </tr></table></td> </tr><tr><td class=
+=3D"r11-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" role=3D"presentation" width=3D"100%" class=3D"r20-o" style=3D"table=
+-layout: fixed; width: 100%;"><tr><td align=3D"center" valign=3D"top" class=
+=3D"r21-i nl2go-default-textstyle" style=3D"color: #3b3f44; font-family: ar=
+ial,helvetica,sans-serif; word-break: break-word; font-size: 18px; line-hei=
+ght: 1.5; padding-top: 15px; text-align: center;"> <div><p style=3D"margin:=
+ 0; font-size: 14px;">This email was sent to bjoern@waide.de</p></div> </td=
+> </tr></table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r20-o" style=3D"table-layout: fixed; width: 100%;"><tr><=
+td align=3D"center" valign=3D"top" class=3D"r22-i nl2go-default-textstyle" =
+style=3D"color: #3b3f44; font-family: arial,helvetica,sans-serif; word-brea=
+k: break-word; font-size: 18px; line-height: 1.5; text-align: center;"> <di=
+v><p style=3D"margin: 0; font-size: 14px;">You've received this email becau=
+se you've subscribed to our newsletter.</p></div> </td> </tr></table></td> =
+</tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r20=
+-o" style=3D"table-layout: fixed; width: 100%;"><tr><td align=3D"center" va=
+lign=3D"top" class=3D"r23-i nl2go-default-textstyle" style=3D"color: #3b3f4=
+4; font-family: arial,helvetica,sans-serif; word-break: break-word; font-si=
+ze: 18px; line-height: 1.5; padding-bottom: 15px; padding-top: 15px; text-a=
+lign: center;"> <div><p style=3D"margin: 0; font-size: 14px;"> <a href=3D"h=
+ttps://f2xm1.r.ag.d.sendibm3.com/mk/un/v2/sh/6rqJ8GqndAnmOusakEXuDs5eTsW/jL=
+SgaZMVK8nT" style=3D"color: #007c89; text-decoration: underline;">Unsubscri=
+be</a></p></div> </td> </tr></table></td> </tr></table></td> </tr></table><=
+/th> </tr></table></td> </tr></table></td> </tr></table></td> </tr></table>=
+   </body></html>
+
+
+---------?=_41244-3471506110717--

@@ -3,7 +3,10 @@
 import { useState } from 'react'
 import { ConnectionStatus } from '@/components/settings/ConnectionStatus'
 import { useSettingsStore } from '@/lib/stores/settings-store'
+import { NotificationBadge, NotificationBadgeMobile } from '@/components/sources/NotificationBadge'
 import type { SignalSourceStatus } from '@/types/signal-sources'
+import { useQueryClient } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
 interface CommandBarProps {
   emailStatus?: SignalSourceStatus
@@ -13,6 +16,8 @@ interface CommandBarProps {
 
 export function CommandBar({ emailStatus = 'not_configured', onSearch, showUnreadFilter = true }: CommandBarProps) {
   const openSettings = useSettingsStore((state) => state.openSettings)
+  const queryClient = useQueryClient()
+  const router = useRouter()
   const [isChecking, setIsChecking] = useState(false)
   const [checkResult, setCheckResult] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
@@ -40,10 +45,23 @@ export function CommandBar({ emailStatus = 'not_configured', onSearch, showUnrea
       }
 
       const imported = importData.imported || 0
+      const newPendingSources = importData.newPendingSources || 0
 
-      if (imported === 0) {
+      if (imported === 0 && newPendingSources === 0) {
         setCheckResult('✓ No new')
         setTimeout(() => setCheckResult(null), 3000)
+        return
+      }
+
+      if (imported === 0 && newPendingSources > 0) {
+        setCheckResult(`✓ ${newPendingSources} new source(s) pending approval`)
+        // Invalidate pending count query to update badge immediately
+        await queryClient.refetchQueries({ queryKey: ['pending-count'] })
+        setTimeout(() => {
+          setCheckResult(null)
+          // Navigate to settings with pending sources filter
+          router.push('/settings?tab=sources&filter=pending')
+        }, 2000)
         return
       }
 
@@ -138,13 +156,7 @@ export function CommandBar({ emailStatus = 'not_configured', onSearch, showUnrea
               {checkResult || (isChecking ? 'SYNCING...' : '⚡ SYNC')}
             </button>
 
-            <button
-              onClick={handleSettingsClick}
-              className="px-4 py-2.5 bg-white border-2 border-black hover:bg-black hover:text-white transition-colors font-serif text-lg"
-              aria-label="Settings"
-            >
-              ⚙
-            </button>
+            <NotificationBadge />
           </div>
 
           {/* Mobile: Search Icon + Burger Menu */}
@@ -216,13 +228,7 @@ export function CommandBar({ emailStatus = 'not_configured', onSearch, showUnrea
             >
               {checkResult || (isChecking ? 'SYNCING...' : '⚡ SYNC NOW')}
             </button>
-            <button
-              onClick={handleSettingsClick}
-              className="w-full px-4 py-3 bg-white hover:bg-black hover:text-white transition-colors font-display font-black text-sm text-left flex items-center gap-2"
-            >
-              <span className="text-base">⚙</span>
-              SETTINGS
-            </button>
+            <NotificationBadgeMobile />
           </div>
         )}
       </div>

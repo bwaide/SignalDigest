@@ -1,9 +1,12 @@
 'use client'
 
 import { ConnectionStatus } from '@/components/settings/ConnectionStatus'
+import { NotificationBadge } from '@/components/sources/NotificationBadge'
 import { useSettingsStore } from '@/lib/stores/settings-store'
 import type { SignalSourceStatus } from '@/types/signal-sources'
 import { useState } from 'react'
+import { useQueryClient } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
 interface HeaderProps {
   emailStatus?: SignalSourceStatus
@@ -11,6 +14,8 @@ interface HeaderProps {
 
 export function Header({ emailStatus = 'not_configured' }: HeaderProps) {
   const openSettings = useSettingsStore((state) => state.openSettings)
+  const queryClient = useQueryClient()
+  const router = useRouter()
   const [isChecking, setIsChecking] = useState(false)
   const [checkResult, setCheckResult] = useState<string | null>(null)
 
@@ -35,12 +40,25 @@ export function Header({ emailStatus = 'not_configured' }: HeaderProps) {
       }
 
       const imported = importData.imported || 0
+      const newPendingSources = importData.newPendingSources || 0
 
-      if (imported === 0) {
+      if (imported === 0 && newPendingSources === 0) {
         setCheckResult('✓ No new emails')
         setTimeout(() => {
           setCheckResult(null)
         }, 3000)
+        return
+      }
+
+      if (imported === 0 && newPendingSources > 0) {
+        setCheckResult(`✓ ${newPendingSources} new source(s) pending approval`)
+        // Invalidate pending count query to update badge immediately
+        await queryClient.refetchQueries({ queryKey: ['pending-count'] })
+        setTimeout(() => {
+          setCheckResult(null)
+          // Navigate to settings with pending sources filter
+          router.push('/settings?tab=sources&filter=pending')
+        }, 2000)
         return
       }
 
@@ -91,12 +109,7 @@ export function Header({ emailStatus = 'not_configured' }: HeaderProps) {
           >
             {checkResult || (isChecking ? 'Checking...' : '🔄 Check Now')}
           </button>
-          <button
-            onClick={openSettings}
-            className="rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent"
-          >
-            ⚙️ Settings
-          </button>
+          <NotificationBadge />
         </div>
       </div>
     </header>

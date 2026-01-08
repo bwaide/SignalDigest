@@ -1,6 +1,4 @@
 import { ImapFlow } from 'imapflow'
-import { classifyEmail } from './email-classifier'
-import type { SupabaseClient } from '@supabase/supabase-js'
 
 export interface ImapConfig {
   host: string
@@ -71,6 +69,19 @@ export function stripHtml(html: string): string {
   return html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
 }
 
+export function decodeQuotedPrintable(text: string): string {
+  // Decode quoted-printable encoding
+  // Remove soft line breaks (=\r\n or =\n)
+  text = text.replace(/=\r?\n/g, '')
+
+  // Decode =XX hex codes
+  text = text.replace(/=([0-9A-F]{2})/gi, (_match, hex) => {
+    return String.fromCharCode(parseInt(hex, 16))
+  })
+
+  return text
+}
+
 export async function connectToImap(config: ImapConfig): Promise<ImapFlow> {
   const client = new ImapFlow({
     host: config.host,
@@ -139,22 +150,45 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
     }
 
     // Extract boundary from Content-Type header
-    const boundaryMatch = source.match(/boundary=([^\s;]+)/i)
+    // Match boundary value including quotes if present, allowing special chars
+    const boundaryMatch = source.match(/boundary=["']?([^"'\r\n]+?)["']?(?:\s|;|$)/i)
 
     if (boundaryMatch) {
-      const boundary = boundaryMatch[1]
+      let boundary = boundaryMatch[1].trim()
+      // Remove quotes if present
+      boundary = boundary.replace(/^["']|["']$/g, '')
 
-      // Match text/plain section: from Content-Type to the boundary
-      // Handle both \r\n and \n line endings
-      const textPlainRegex = new RegExp(`Content-Type: text/plain[\\s\\S]*?\\r?\\n\\r?\\n([\\s\\S]*?)\\r?\\n?--${boundary}`, 'i')
+      // Escape special regex characters in the boundary
+      const escapedBoundary = boundary.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+      // Match text/plain section with headers to check for encoding
+      const textPlainRegex = new RegExp(`(Content-Type: text/plain[\\s\\S]*?)\\r?\\n\\r?\\n([\\s\\S]*?)\\r?\\n?--${escapedBoundary}`, 'i')
       const textMatch = source.match(textPlainRegex)
 
-      // Match text/html section
-      const textHtmlRegex = new RegExp(`Content-Type: text/html[\\s\\S]*?\\r?\\n\\r?\\n([\\s\\S]*?)\\r?\\n?--${boundary}`, 'i')
+      // Match text/html section with headers to check for encoding
+      const textHtmlRegex = new RegExp(`(Content-Type: text/html[\\s\\S]*?)\\r?\\n\\r?\\n([\\s\\S]*?)\\r?\\n?--${escapedBoundary}`, 'i')
       const htmlMatch = source.match(textHtmlRegex)
 
-      const rawText = textMatch ? textMatch[1].trim() : ''
-      const rawHtml = htmlMatch ? htmlMatch[1].trim() : ''
+      let rawText = ''
+      let rawHtml = ''
+
+      if (textMatch) {
+        const textHeaders = textMatch[1]
+        rawText = textMatch[2].trim()
+        // Check if quoted-printable encoding is used
+        if (/Content-Transfer-Encoding:\s*quoted-printable/i.test(textHeaders)) {
+          rawText = decodeQuotedPrintable(rawText)
+        }
+      }
+
+      if (htmlMatch) {
+        const htmlHeaders = htmlMatch[1]
+        rawHtml = htmlMatch[2].trim()
+        // Check if quoted-printable encoding is used
+        if (/Content-Transfer-Encoding:\s*quoted-printable/i.test(htmlHeaders)) {
+          rawHtml = decodeQuotedPrintable(rawHtml)
+        }
+      }
 
       if (rawText) {
         bodyText = rawText
@@ -208,9 +242,7 @@ export async function parseEmail(message: ImapMessage): Promise<EmailMessage> {
 
 export async function fetchUnreadEmails(
   client: ImapFlow,
-  limit: number = 50,
-  supabase?: SupabaseClient,
-  userId?: string
+  limit: number = 50
 ): Promise<EmailMessage[]> {
   await client.mailboxOpen('INBOX')
   const searchResults = await client.search({ seen: false }, { uid: true })
@@ -242,29 +274,7 @@ export async function fetchUnreadEmails(
         const email = await parseEmail(message as ImapMessage)
         console.log(`Successfully parsed email: ${email.subject}`)
 
-        // Classify email as newsletter or not
-        const classification = await classifyEmail(
-          { ...email, userId },
-          supabase
-        )
-
-        if (!classification.isNewsletter) {
-          console.log(`Skipping non-newsletter (confidence: ${classification.confidence}%):`, {
-            from: email.from,
-            subject: email.subject,
-            signals: classification.signals,
-            reason: classification.reason
-          })
-          skippedNonNewsletters++
-          continue
-        }
-
-        console.log(`Accepting newsletter (confidence: ${classification.confidence}%):`, {
-          from: email.from,
-          subject: email.subject,
-          signals: classification.signals
-        })
-
+        // Skip classification - Sources system handles filtering
         emails.push(email)
       } catch (error) {
         console.error(`Failed to parse email UID ${message.uid}:`, error)
