@@ -335,22 +335,29 @@ Deno.serve(async (req) => {
       )
     }
 
-    // Create Supabase client
+    // Create Supabase client with anon key for user JWT validation
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-    const supabase = createClient(supabaseUrl, supabaseKey)
+    const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')!
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+
+    // Use anon key client to validate user JWT
+    const supabaseAuth = createClient(supabaseUrl, supabaseAnonKey)
 
     // Get user ID from JWT
-    const { data: { user }, error: authError } = await supabase.auth.getUser(
+    const { data: { user }, error: authError } = await supabaseAuth.auth.getUser(
       authHeader.replace('Bearer ', '')
     )
 
     if (authError || !user) {
+      console.error('[EDGE-FUNCTION] Auth failed:', { authError: authError?.message, hasUser: !!user })
       return new Response(
-        JSON.stringify({ error: 'Unauthorized' }),
+        JSON.stringify({ error: 'Unauthorized', details: authError?.message }),
         { status: 401, headers: { 'Content-Type': 'application/json' } }
       )
     }
+
+    // Use service role client for database operations (to access Vault)
+    const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
     // Get email config
     const emailConfig = await getEmailConfig(supabase, user.id)
