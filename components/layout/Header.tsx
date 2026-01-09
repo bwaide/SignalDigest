@@ -73,9 +73,10 @@ export function Header({ emailStatus = 'not_configured' }: HeaderProps) {
       if (processResponse.ok && processData.success) {
         setCheckResult(`✓ Imported ${imported}, extracted ${processData.processed} nuggets`)
 
-        // Reload page after 2 seconds to show new nuggets
+        // Refresh server-side data to show new nuggets
         setTimeout(() => {
-          window.location.reload()
+          router.refresh()
+          setCheckResult(null)
         }, 2000)
       } else {
         setCheckResult(`⚠ Imported ${imported}, but processing failed`)

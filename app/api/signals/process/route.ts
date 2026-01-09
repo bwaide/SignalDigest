@@ -142,8 +142,24 @@ export async function POST(request: Request) {
           .eq('id', signal.id)
           .single()
 
-        if (!fullSignal || !fullSignal.raw_content) {
-          throw new Error('Signal has no content')
+        if (!fullSignal || !fullSignal.raw_content || fullSignal.raw_content.trim().length === 0) {
+          console.warn(`Signal has no content, marking as failed: ${signal.title}`)
+          // Mark signal as failed instead of throwing
+          await supabase
+            .from('signals')
+            .update({
+              status: 'failed',
+              error_message: 'No content available for extraction'
+            })
+            .eq('id', signal.id)
+
+          failed++
+          errors.push({
+            signal_id: signal.id,
+            title: signal.title,
+            error: 'No content available for extraction',
+          })
+          continue
         }
 
         // Extract nuggets using AI Gateway
