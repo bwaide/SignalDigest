@@ -285,15 +285,24 @@ export async function POST() {
     }
 
     // Production: Invoke Edge Function
-    const { data: { session } } = await supabase.auth.getSession()
+    console.log('[EMAIL-IMPORT] Production mode - getting session for Edge Function call')
+    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+    console.log('[EMAIL-IMPORT] Session retrieval result:', {
+      hasSession: !!session,
+      hasAccessToken: !!session?.access_token,
+      hasError: !!sessionError,
+      errorMessage: sessionError?.message
+    })
     const authToken = session?.access_token
 
     if (!authToken) {
+      console.log('[EMAIL-IMPORT] No auth token available, returning 401')
       return NextResponse.json(
         { success: false, error: 'No authentication token available' },
         { status: 401 }
       )
     }
+    console.log('[EMAIL-IMPORT] Auth token obtained, calling Edge Function')
 
     const functionUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/import-emails`
     const response = await fetch(functionUrl, {
