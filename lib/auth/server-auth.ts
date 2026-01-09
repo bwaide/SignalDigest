@@ -17,10 +17,18 @@ export async function authenticateRequest(): Promise<
   } = await supabase.auth.getUser()
 
   if (authError || !user) {
+    // Log authentication failure for debugging
+    console.error('[AUTH] Authentication failed:', {
+      hasError: !!authError,
+      errorMessage: authError?.message,
+      errorName: authError?.name,
+      hasUser: !!user,
+    })
+
     return {
       userId: null,
       error: NextResponse.json(
-        { success: false, error: 'Unauthorized' },
+        { success: false, error: 'Unauthorized', details: authError?.message },
         { status: 401 }
       ),
     }
