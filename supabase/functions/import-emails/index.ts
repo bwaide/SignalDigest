@@ -100,12 +100,15 @@ async function getPasswordFromVault(supabase: ReturnType<typeof createClient>, v
 
 async function fetchUnreadEmails(client: ImapFlow, limit: number = 50): Promise<EmailMessage[]> {
   // Select INBOX
-  await client.mailboxOpen('INBOX')
+  const mailbox = await client.mailboxOpen('INBOX')
+  console.log(`Mailbox opened: ${mailbox.path}, Total messages: ${mailbox.exists}, Unseen: ${mailbox.unseen}`)
 
   // Search for UNSEEN emails
   const searchResults = await client.search({ seen: false }, { uid: true })
+  console.log(`IMAP search returned ${searchResults?.length || 0} unread messages`)
 
   if (!searchResults || searchResults.length === 0) {
+    console.log('No unread messages found in INBOX')
     return []
   }
 
