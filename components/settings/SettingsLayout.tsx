@@ -9,8 +9,10 @@ interface Tab {
 
 const TABS: Tab[] = [
   { id: 'sources', label: 'SOURCES' },
+  { id: 'email', label: 'EMAIL' },
   { id: 'auto-sync', label: 'AUTO-SYNC' },
-  { id: 'preferences', label: 'PREFERENCES' }
+  { id: 'preferences', label: 'PREFERENCES' },
+  { id: 'api', label: 'API' }
 ]
 
 export function SettingsLayout({

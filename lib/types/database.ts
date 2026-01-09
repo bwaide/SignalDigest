@@ -132,6 +132,7 @@ export interface Database {
           approved_topics: string[]
           taxonomy_topics: string[]
           email_check_frequency: string
+          api_key_hash: string | null
           created_at: string
           updated_at: string
         }
@@ -142,6 +143,7 @@ export interface Database {
           approved_topics?: string[]
           taxonomy_topics?: string[]
           email_check_frequency?: string
+          api_key_hash?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -152,6 +154,7 @@ export interface Database {
           approved_topics?: string[]
           taxonomy_topics?: string[]
           email_check_frequency?: string
+          api_key_hash?: string | null
           created_at?: string
           updated_at?: string
         }
