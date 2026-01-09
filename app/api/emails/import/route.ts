@@ -5,8 +5,6 @@ import { connectToImap, fetchUnreadEmails, moveEmailToFolder } from '@/lib/email
 import { authenticateRequest } from '@/lib/auth/server-auth'
 import { rateLimiters } from '@/lib/simple-rate-limit'
 
-const DEV_MODE = process.env.NODE_ENV === 'development'
-
 export async function POST() {
   console.log('[EMAIL-IMPORT] POST request received')
   try {
@@ -61,10 +59,8 @@ export async function POST() {
       )
     }
 
-    // In dev mode, run import logic directly in API route
-    // (Edge Function has auth issues with local `supabase functions serve`)
-    if (DEV_MODE) {
-      console.log('DEV MODE: Running import logic directly in API route')
+    // Run import logic directly in API route (both dev and production)
+    console.log('[EMAIL-IMPORT] Running import logic in API route')
 
       try {
         // Get password from Vault (requires service role)
@@ -282,47 +278,6 @@ export async function POST() {
           { status: 500 }
         )
       }
-    }
-
-    // Production: Invoke Edge Function
-    console.log('[EMAIL-IMPORT] Production mode - getting session for Edge Function call')
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
-    console.log('[EMAIL-IMPORT] Session retrieval result:', {
-      hasSession: !!session,
-      hasAccessToken: !!session?.access_token,
-      hasError: !!sessionError,
-      errorMessage: sessionError?.message
-    })
-    const authToken = session?.access_token
-
-    if (!authToken) {
-      console.log('[EMAIL-IMPORT] No auth token available, returning 401')
-      return NextResponse.json(
-        { success: false, error: 'No authentication token available' },
-        { status: 401 }
-      )
-    }
-    console.log('[EMAIL-IMPORT] Auth token obtained, calling Edge Function')
-
-    const functionUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/import-emails`
-    console.log('[EMAIL-IMPORT] Function URL:', functionUrl)
-    console.log('[EMAIL-IMPORT] Auth token length:', authToken.length)
-    console.log('[EMAIL-IMPORT] Auth token prefix:', authToken.substring(0, 20) + '...')
-
-    const response = await fetch(functionUrl, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${authToken}`,
-        'Content-Type': 'application/json',
-        'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
-      },
-    })
-
-    console.log('[EMAIL-IMPORT] Edge Function response status:', response.status)
-    const result = await response.json()
-    console.log('[EMAIL-IMPORT] Edge Function response:', JSON.stringify(result))
-
-    return NextResponse.json(result, { status: response.status })
   } catch (error) {
     console.error('Import API error:', error)
     return NextResponse.json(
