@@ -305,6 +305,10 @@ export async function POST() {
     console.log('[EMAIL-IMPORT] Auth token obtained, calling Edge Function')
 
     const functionUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/import-emails`
+    console.log('[EMAIL-IMPORT] Function URL:', functionUrl)
+    console.log('[EMAIL-IMPORT] Auth token length:', authToken.length)
+    console.log('[EMAIL-IMPORT] Auth token prefix:', authToken.substring(0, 20) + '...')
+
     const response = await fetch(functionUrl, {
       method: 'POST',
       headers: {
@@ -314,7 +318,9 @@ export async function POST() {
       },
     })
 
+    console.log('[EMAIL-IMPORT] Edge Function response status:', response.status)
     const result = await response.json()
+    console.log('[EMAIL-IMPORT] Edge Function response:', JSON.stringify(result))
 
     return NextResponse.json(result, { status: response.status })
   } catch (error) {
