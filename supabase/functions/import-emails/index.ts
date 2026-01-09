@@ -419,8 +419,6 @@ Deno.serve(async (req) => {
         }
       }
 
-      await client.logout()
-
       return new Response(
         JSON.stringify({
           success: failed === 0,
@@ -433,7 +431,13 @@ Deno.serve(async (req) => {
         { headers: { 'Content-Type': 'application/json' } }
       )
     } finally {
-      await client.logout()
+      // Always close the IMAP connection
+      try {
+        await client.logout()
+      } catch (logoutError) {
+        // Ignore logout errors (connection may already be closed)
+        console.log('IMAP logout error (expected if already closed):', logoutError)
+      }
     }
   } catch (error) {
     console.error('Import error:', error)
