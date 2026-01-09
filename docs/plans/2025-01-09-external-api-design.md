@@ -10,10 +10,11 @@
 A read-only REST API that exposes nuggets to external systems (primarily a Claude-based Slack assistant). The API returns grouped nuggets with optional relevancy filtering, authenticated via API key.
 
 **Key characteristics:**
-- Single endpoint: `GET /api/external/nuggets`
+- Nuggets endpoint: `GET /api/external/nuggets`
+- Topics endpoint: `GET /api/external/topics`
 - API key authentication
 - Returns primary nuggets with related sources nested
-- Optional filtering by relevancy threshold, read status, date range
+- Optional filtering by status, topic, relevancy threshold, date range
 - Read-only (no mutations)
 
 ## Use Case
@@ -43,16 +44,26 @@ API key format: `sd_live_<32 random chars>` (e.g., `sd_live_a1b2c3d4e5f6g7h8i9j0
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
+| `status` | string | exclude archived | Filter by status: `unread`, `saved`, or `archived` |
+| `topic` | string | none | Filter by topic (e.g., `AI Development`) |
 | `min_relevancy` | number | none | Only return nuggets with score >= this value |
-| `unread_only` | boolean | `false` | Only return nuggets where `is_read = false` |
 | `since` | ISO datetime | none | Only return nuggets created after this timestamp |
-| `tags` | string (comma-separated) | none | Filter by topics, e.g. `AI Development,Business Strategy` |
-| `limit` | number | `100` | Maximum nuggets to return |
+| `tags` | string (comma-separated) | none | Filter by tags array |
+| `limit` | number | `100` | Maximum nuggets to return (max 500) |
 
-### Example Request
+### Example Requests
 
 ```bash
-curl "https://signal-digest.example.com/api/external/nuggets?min_relevancy=70&unread_only=true&since=2025-01-08T00:00:00Z" \
+# Get saved nuggets
+curl "https://signal-digest.example.com/api/external/nuggets?status=saved" \
+  -H "Authorization: Bearer sd_live_abc123..."
+
+# Get unread nuggets about AI with high relevancy
+curl "https://signal-digest.example.com/api/external/nuggets?status=unread&topic=AI%20Development&min_relevancy=70" \
+  -H "Authorization: Bearer sd_live_abc123..."
+
+# Get all nuggets since yesterday
+curl "https://signal-digest.example.com/api/external/nuggets?since=2025-01-08T00:00:00Z" \
   -H "Authorization: Bearer sd_live_abc123..."
 ```
 
@@ -66,12 +77,13 @@ curl "https://signal-digest.example.com/api/external/nuggets?min_relevancy=70&un
       "title": "Anthropic releases Claude 3.5 Opus",
       "description": "New flagship model with improved reasoning...",
       "relevancy_score": 95,
+      "topic": "AI Development",
       "tags": ["AI Development"],
       "source": "The Batch",
       "link": "https://anthropic.com/news/...",
       "published_date": "2025-01-08T10:00:00Z",
       "created_at": "2025-01-08T14:30:00Z",
-      "is_read": false,
+      "status": "unread",
       "user_notes": null,
       "related_sources": [
         {
@@ -119,6 +131,45 @@ curl "https://signal-digest.example.com/api/external/nuggets?min_relevancy=70&un
 {
   "error": "bad_request",
   "message": "Invalid value for min_relevancy: must be 0-100"
+}
+```
+
+## Topics Endpoint
+
+```
+GET /api/external/topics
+```
+
+Returns all topics with nugget counts, useful for building topic-based navigation or filtering.
+
+### Example Request
+
+```bash
+curl "https://signal-digest.example.com/api/external/topics" \
+  -H "Authorization: Bearer sd_live_abc123..."
+```
+
+### Response Format
+
+```json
+{
+  "topics": [
+    {
+      "topic": "AI Development",
+      "count": 25,
+      "unread_count": 12,
+      "saved_count": 5
+    },
+    {
+      "topic": "Business Strategy",
+      "count": 18,
+      "unread_count": 8,
+      "saved_count": 3
+    }
+  ],
+  "meta": {
+    "total_topics": 2
+  }
 }
 ```
 

@@ -14,12 +14,13 @@ interface NuggetResponse {
   title: string
   description: string
   relevancy_score: number
+  topic: string | null
   tags: string[]
   source: string
   link: string | null
   published_date: string
   created_at: string
-  is_read: boolean
+  status: 'unread' | 'saved' | 'archived'
   user_notes: string | null
   related_sources: RelatedSource[]
 }
@@ -30,8 +31,9 @@ interface ApiResponse {
     total: number
     returned: number
     filters_applied: {
+      status: string | null
+      topic: string | null
       min_relevancy: number | null
-      unread_only: boolean
       since: string | null
       tags: string[] | null
     }
@@ -53,11 +55,21 @@ export async function GET(request: NextRequest) {
 
     // 2. Parse query parameters
     const { searchParams } = new URL(request.url)
+    const statusParam = searchParams.get('status')
+    const topicParam = searchParams.get('topic')
     const minRelevancyParam = searchParams.get('min_relevancy')
-    const unreadOnly = searchParams.get('unread_only') === 'true'
     const since = searchParams.get('since')
     const tagsParam = searchParams.get('tags')
     const limitParam = searchParams.get('limit')
+
+    // Validate status
+    const validStatuses = ['unread', 'saved', 'archived']
+    if (statusParam && !validStatuses.includes(statusParam)) {
+      return NextResponse.json(
+        { error: 'bad_request', message: `Invalid value for status: must be one of ${validStatuses.join(', ')}` },
+        { status: 400 }
+      )
+    }
 
     // Validate min_relevancy
     let minRelevancy: number | null = null
@@ -105,15 +117,21 @@ export async function GET(request: NextRequest) {
       .select('*')
       .eq('user_id', user.id)
       .eq('is_primary', true)
-      .eq('is_archived', false)
       .order('created_at', { ascending: false })
       .limit(limit)
 
+    // Filter by status (default: exclude archived)
+    if (statusParam) {
+      query = query.eq('status', statusParam)
+    } else {
+      // By default, exclude archived nuggets
+      query = query.neq('status', 'archived')
+    }
+    if (topicParam) {
+      query = query.eq('topic', topicParam)
+    }
     if (minRelevancy !== null) {
       query = query.gte('relevancy_score', minRelevancy)
-    }
-    if (unreadOnly) {
-      query = query.eq('is_read', false)
     }
     if (since) {
       query = query.gte('created_at', since)
@@ -168,12 +186,13 @@ export async function GET(request: NextRequest) {
       title: nugget.title,
       description: nugget.description,
       relevancy_score: nugget.relevancy_score,
+      topic: nugget.topic,
       tags: nugget.tags,
       source: nugget.source,
       link: nugget.link,
       published_date: nugget.published_date,
       created_at: nugget.created_at,
-      is_read: nugget.is_read,
+      status: nugget.status,
       user_notes: nugget.user_notes,
       related_sources: nugget.duplicate_group_id
         ? relatedSourcesMap.get(nugget.duplicate_group_id) || []
@@ -186,8 +205,9 @@ export async function GET(request: NextRequest) {
         total: nuggets.length,
         returned: nuggets.length,
         filters_applied: {
+          status: statusParam,
+          topic: topicParam,
           min_relevancy: minRelevancy,
-          unread_only: unreadOnly,
           since: since,
           tags: tags,
         },
