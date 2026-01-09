@@ -8,10 +8,16 @@ import { rateLimiters } from '@/lib/simple-rate-limit'
 const DEV_MODE = process.env.NODE_ENV === 'development'
 
 export async function POST() {
+  console.log('[EMAIL-IMPORT] POST request received')
   try {
     // Authenticate the request
+    console.log('[EMAIL-IMPORT] Attempting authentication')
     const auth = await authenticateRequest()
-    if (auth.error) return auth.error
+    if (auth.error) {
+      console.log('[EMAIL-IMPORT] Authentication failed, returning error')
+      return auth.error
+    }
+    console.log('[EMAIL-IMPORT] Authentication successful, userId:', auth.userId)
 
     const userId = auth.userId
 
