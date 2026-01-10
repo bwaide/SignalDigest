@@ -249,8 +249,9 @@ export function ApiTab() {
           <div>
             <label className="block text-sm font-bold mb-2">Query Parameters:</label>
             <div className="p-3 bg-gray-100 border-2 border-black text-sm space-y-1">
+              <p><code className="font-mono">status</code> - Filter by status: unread, saved, archived</p>
+              <p><code className="font-mono">topic</code> - Filter by topic name</p>
               <p><code className="font-mono">min_relevancy</code> - Minimum relevancy score (0-100)</p>
-              <p><code className="font-mono">unread_only</code> - Only unread nuggets (true/false)</p>
               <p><code className="font-mono">since</code> - ISO datetime to filter from</p>
               <p><code className="font-mono">tags</code> - Comma-separated topic tags</p>
               <p><code className="font-mono">limit</code> - Max results (default: 100, max: 500)</p>
@@ -260,9 +261,21 @@ export function ApiTab() {
           <div>
             <label className="block text-sm font-bold mb-2">Example:</label>
             <code className="block p-3 bg-gray-100 border-2 border-black font-mono text-xs overflow-x-auto whitespace-pre">
-{`curl "${typeof window !== 'undefined' ? window.location.origin : ''}/api/external/nuggets?min_relevancy=70&unread_only=true" \\
+{`curl "${typeof window !== 'undefined' ? window.location.origin : ''}/api/external/nuggets?status=saved&topic=AI%20Development" \\
   -H "Authorization: Bearer sd_live_xxx..."`}
             </code>
+          </div>
+
+          <div className="pt-2 border-t border-gray-200">
+            <a
+              href="/api-docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-black font-display font-black text-sm hover:bg-black hover:text-white transition-colors"
+            >
+              VIEW FULL API DOCS
+              <span aria-hidden="true">&#8599;</span>
+            </a>
           </div>
         </div>
       </div>
