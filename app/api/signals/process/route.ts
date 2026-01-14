@@ -42,11 +42,13 @@ export async function POST(request: Request) {
       }
 
       userId = signal.user_id
+      console.log(`[Process] CRON request received for signal ${signalId} (user: ${userId})`)
     } else {
       // Regular user authentication
       const auth = await authenticateRequest()
       if (auth.error) return auth.error
       userId = auth.userId
+      console.log(`[Process] User request received (user: ${userId})`)
     }
 
     // Rate limit signal processing to prevent excessive LLM costs
@@ -71,7 +73,9 @@ export async function POST(request: Request) {
       )
     }
 
-    const supabase = await createClient()
+    // Use service role client for CRON requests (no user session/cookies available)
+    // Use regular client for user requests (respects RLS with user session)
+    const supabase = isCronRequest ? createServiceRoleClient() : await createClient()
 
     // Get user's taxonomy topics for extraction
     const { data: userSettings } = await supabase
@@ -117,10 +121,14 @@ export async function POST(request: Request) {
     }
 
     if (!pendingSignals || pendingSignals.length === 0) {
+      const message = signalId
+        ? `Signal ${signalId} not found or already processed`
+        : 'No pending signals to process'
+      console.log(`[Process] ${message} (userId: ${userId}, signalId: ${signalId || 'all'})`)
       return NextResponse.json({
         success: true,
         processed: 0,
-        message: signalId ? 'Signal not found or already processed' : 'No pending signals to process',
+        message,
       })
     }
 
@@ -136,14 +144,37 @@ export async function POST(request: Request) {
         console.log(`Processing signal: ${signal.title}`)
 
         // Get full signal data with source information
-        const { data: fullSignal } = await supabase
+        // Use LEFT JOIN (no !inner) so signals without sources still work
+        const { data: fullSignal, error: signalError } = await supabase
           .from('signals')
-          .select('*, sources!inner(extraction_strategy_id)')
+          .select('*, sources(extraction_strategy_id)')
           .eq('id', signal.id)
           .single()
 
-        if (!fullSignal || !fullSignal.raw_content || fullSignal.raw_content.trim().length === 0) {
-          console.warn(`Signal has no content, marking as failed: ${signal.title}`)
+        if (signalError) {
+          console.error(`[Process] Failed to fetch signal ${signal.id}:`, signalError)
+          failed++
+          errors.push({
+            signal_id: signal.id,
+            title: signal.title,
+            error: `Database error: ${signalError.message}`,
+          })
+          continue
+        }
+
+        if (!fullSignal) {
+          console.error(`[Process] Signal ${signal.id} not found in database (may have been deleted)`)
+          failed++
+          errors.push({
+            signal_id: signal.id,
+            title: signal.title,
+            error: 'Signal not found in database',
+          })
+          continue
+        }
+
+        if (!fullSignal.raw_content || fullSignal.raw_content.trim().length === 0) {
+          console.warn(`[Process] Signal ${signal.id} has no content, marking as failed: "${signal.title}"`)
           // Mark signal as failed instead of throwing
           await supabase
             .from('signals')
@@ -181,7 +212,8 @@ export async function POST(request: Request) {
           approvedTopics: taxonomyTopics,
         })
 
-        console.log(`Using extraction strategy: ${strategy.name} (${strategy.id}) for signal: ${fullSignal.title}`)
+        console.log(`[Process] Using extraction strategy: ${strategy.name} (${strategy.id}) for signal: ${fullSignal.title}`)
+        console.log(`[Process] Calling AI Gateway for signal ${signal.id} (content length: ${fullSignal.raw_content.length} chars)`)
 
         const response = await fetch(`${aiGatewayUrl}/chat/completions`, {
           method: 'POST',
@@ -207,15 +239,19 @@ export async function POST(request: Request) {
         })
 
         if (!response.ok) {
-          await response.text()
-          throw new Error(`OpenAI API error: ${response.status}`)
+          const errorBody = await response.text()
+          console.error(`[Process] AI Gateway error for signal ${signal.id}: status=${response.status}, body=${errorBody.substring(0, 500)}`)
+          throw new Error(`AI Gateway error: ${response.status}`)
         }
+
+        console.log(`[Process] AI Gateway response received for signal ${signal.id}: status=${response.status}`)
 
         const data = await response.json()
         const content = data.choices?.[0]?.message?.content
 
         if (!content) {
-          throw new Error('No content in OpenAI response')
+          console.error(`[Process] AI Gateway returned empty content for signal ${signal.id}:`, JSON.stringify(data).substring(0, 500))
+          throw new Error('No content in AI Gateway response')
         }
 
         // Parse JSON response
@@ -223,13 +259,21 @@ export async function POST(request: Request) {
         try {
           extraction = JSON.parse(content)
         } catch {
-          console.error('Failed to parse OpenAI response:', content)
+          console.error(`[Process] Failed to parse AI response as JSON for signal ${signal.id}:`, content.substring(0, 1000))
           throw new Error('Failed to parse AI response as JSON')
         }
 
         // Validate extraction has nuggets
         if (!extraction.nuggets || !Array.isArray(extraction.nuggets)) {
+          console.error(`[Process] Invalid extraction format for signal ${signal.id}: missing nuggets array. Response:`, content.substring(0, 500))
           throw new Error('Invalid extraction format: missing nuggets array')
+        }
+
+        console.log(`[Process] AI extracted ${extraction.nuggets.length} nugget(s) from signal ${signal.id}: "${signal.title}"`)
+
+        // Handle case where AI returns empty nuggets array (valid but notable)
+        if (extraction.nuggets.length === 0) {
+          console.warn(`[Process] AI returned empty nuggets array for signal ${signal.id}: "${signal.title}". This may indicate the content had no extractable insights.`)
         }
 
         // Create nuggets in database
@@ -269,7 +313,7 @@ export async function POST(request: Request) {
           .update({ status: 'processed' })
           .eq('id', signal.id)
 
-        console.log(`Created ${nuggets.length} nugget(s) for signal: ${signal.title}`)
+        console.log(`[Process] Successfully created ${nuggets.length} nugget(s) for signal ${signal.id}: "${signal.title}"`)
         processed++
       } catch (error: unknown) {
         failed++
@@ -279,9 +323,11 @@ export async function POST(request: Request) {
           title: signal.title,
           error: errorMessage,
         })
-        console.error(`Failed to process signal "${signal.title}":`, error)
+        console.error(`[Process] Failed to process signal ${signal.id} "${signal.title}":`, error)
       }
     }
+
+    console.log(`[Process] Completed: processed=${processed}, failed=${failed}, total=${pendingSignals.length}`)
 
     return NextResponse.json({
       success: failed === 0,

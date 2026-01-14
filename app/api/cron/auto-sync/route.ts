@@ -247,18 +247,13 @@ export async function POST(request: Request) {
               if (!insertError && insertedSignal) {
                 totalImported++
 
-                // Mark as SEEN in mailbox
+                // Mark as SEEN in mailbox (prevents re-import, but email stays in INBOX)
                 await connection.messageFlagsAdd(email.uid, ['\\Seen'], { uid: true })
 
-                // Move to archive folder if configured (only for active sources)
-                if (shouldProcessSignal) {
-                  const archiveFolder = emailConfig.archive_folder
-                  if (archiveFolder && archiveFolder.trim()) {
-                    await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
-                  }
-                }
-
                 // Trigger nugget extraction only for active sources
+                let processingSucceeded = false
+                let extractedNuggets = 0
+
                 if (shouldProcessSignal) {
                   try {
                     const processUrl = new URL('/api/signals/process', process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000')
@@ -271,11 +266,35 @@ export async function POST(request: Request) {
                       body: JSON.stringify({ signal_id: insertedSignal.id }),
                     })
 
-                    if (!processResponse.ok) {
+                    if (processResponse.ok) {
+                      const processResult = await processResponse.json()
+                      processingSucceeded = processResult.success && processResult.processed > 0
+                      extractedNuggets = processResult.processed || 0
+                      console.log(`Signal ${insertedSignal.id} processing: success=${processResult.success}, processed=${processResult.processed}, failed=${processResult.failed || 0}`)
+                    } else {
                       console.error(`Failed to process signal ${insertedSignal.id}:`, await processResponse.text())
                     }
                   } catch (processError) {
                     console.error(`Failed to trigger processing for signal ${insertedSignal.id}:`, processError)
+                  }
+                } else {
+                  // For paused sources, we import but don't process - consider this "succeeded" for archiving
+                  processingSucceeded = true
+                }
+
+                // Move to archive folder ONLY if processing succeeded AND nuggets were extracted
+                // This prevents "losing" emails that failed to process
+                const archiveFolder = emailConfig.archive_folder
+                if (archiveFolder && archiveFolder.trim()) {
+                  if (processingSucceeded && extractedNuggets > 0) {
+                    await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
+                    console.log(`Archived email UID ${email.uid} after extracting ${extractedNuggets} nugget(s)`)
+                  } else if (!shouldProcessSignal) {
+                    // Paused sources: archive without processing
+                    await moveEmailToFolder(connection, email.uid, archiveFolder.trim())
+                    console.log(`Archived email UID ${email.uid} (paused source, no processing)`)
+                  } else {
+                    console.warn(`NOT archiving email UID ${email.uid} - processing succeeded: ${processingSucceeded}, nuggets: ${extractedNuggets}. Email will remain in INBOX for inspection.`)
                   }
                 }
               } else {
