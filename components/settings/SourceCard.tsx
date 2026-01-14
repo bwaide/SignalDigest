@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { SignalHistoryModal } from './SignalHistoryModal'
 
 interface Source {
   id: string
@@ -23,6 +24,7 @@ const STRATEGIES = [
 export function SourceCard({ source }: { source: Source }) {
   const queryClient = useQueryClient()
   const [strategy, setStrategy] = useState(source.extraction_strategy_id)
+  const [showHistory, setShowHistory] = useState(false)
 
   const updateMutation = useMutation({
     mutationFn: async (updates: any) => {
@@ -153,7 +155,16 @@ export function SourceCard({ source }: { source: Source }) {
 
       {/* Timestamp */}
       <div className="px-4 py-3 text-sm flex items-center justify-between">
-        <span>Last seen: <span className="font-bold">{formatTimestamp(source.last_signal_at)}</span></span>
+        <span>
+          Last seen: <span className="font-bold">{formatTimestamp(source.last_signal_at)}</span>
+          {' · '}
+          <button
+            onClick={() => setShowHistory(true)}
+            className="text-[hsl(var(--electric-blue))] hover:underline font-medium"
+          >
+            View history →
+          </button>
+        </span>
         {source.status === 'pending' && (
           <span className="px-3 py-1 bg-yellow-400 text-black font-bold text-xs border border-black">
             PENDING APPROVAL
@@ -165,6 +176,14 @@ export function SourceCard({ source }: { source: Source }) {
           </span>
         )}
       </div>
+
+      {/* Signal History Modal */}
+      <SignalHistoryModal
+        sourceId={source.id}
+        sourceName={source.display_name}
+        isOpen={showHistory}
+        onClose={() => setShowHistory(false)}
+      />
     </div>
   )
 }
