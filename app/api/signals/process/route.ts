@@ -296,6 +296,7 @@ export async function POST(request: Request) {
             tags: additionalTags,
             is_read: false,
             is_archived: false,
+            is_primary: true,  // Mark as primary (deduplication may change this later)
           }
         })
 
