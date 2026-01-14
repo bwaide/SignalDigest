@@ -41,17 +41,23 @@ interface ApiResponse {
 }
 
 export async function GET(request: NextRequest) {
+  const startTime = Date.now()
+  console.log('[External API /nuggets] Request received')
+
   try {
     // 1. Validate API key
     const authHeader = request.headers.get('authorization')
     const user = await validateApiKey(authHeader)
 
     if (!user) {
+      console.log('[External API /nuggets] Unauthorized - invalid or missing API key')
       return NextResponse.json(
         { error: 'unauthorized', message: 'Invalid or missing API key' },
         { status: 401 }
       )
     }
+
+    console.log(`[External API /nuggets] Authenticated user: ${user.id}`)
 
     // 2. Parse query parameters
     const { searchParams } = new URL(request.url)
@@ -214,6 +220,7 @@ export async function GET(request: NextRequest) {
       },
     }
 
+    console.log(`[External API /nuggets] Success: returned ${nuggets.length} nuggets in ${Date.now() - startTime}ms`)
     return NextResponse.json(response)
   } catch (error) {
     console.error('[External API] Unexpected error:', error)

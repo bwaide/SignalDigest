@@ -17,17 +17,23 @@ interface TopicsResponse {
 }
 
 export async function GET(request: NextRequest) {
+  const startTime = Date.now()
+  console.log('[External API /topics] Request received')
+
   try {
     // 1. Validate API key
     const authHeader = request.headers.get('authorization')
     const user = await validateApiKey(authHeader)
 
     if (!user) {
+      console.log('[External API /topics] Unauthorized - invalid or missing API key')
       return NextResponse.json(
         { error: 'unauthorized', message: 'Invalid or missing API key' },
         { status: 401 }
       )
     }
+
+    console.log(`[External API /topics] Authenticated user: ${user.id}`)
 
     // 2. Get topics with counts
     const supabase = createServiceRoleClient()
@@ -79,6 +85,7 @@ export async function GET(request: NextRequest) {
       },
     }
 
+    console.log(`[External API /topics] Success: returned ${topics.length} topics in ${Date.now() - startTime}ms`)
     return NextResponse.json(response)
   } catch (error) {
     console.error('[External API] Unexpected error:', error)
