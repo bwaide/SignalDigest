@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { validateClient, createAuthorizationCode, getBaseUrl } from '@/lib/mcp/oauth'
-import { validateApiKey } from '@/lib/auth/api-key'
+import { createClient } from '@/lib/supabase/server'
 
 /**
- * GET: Renders the authorization page where users enter their API key.
+ * GET: Check if user is logged in via Supabase session.
+ * If yes → show consent page. If no → redirect to login.
  * Claude Desktop opens this in the browser during the OAuth flow.
  */
 export async function GET(request: NextRequest) {
@@ -39,10 +40,30 @@ export async function GET(request: NextRequest) {
     })
   }
 
+  // Check if user is already logged in via Supabase session
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) {
+    // Not logged in — redirect to login page with returnTo back to this authorize URL
+    const baseUrl = getBaseUrl(request)
+    const returnTo = `/api/mcp/oauth/authorize?${searchParams.toString()}`
+    const loginUrl = `${baseUrl}/auth/login?returnTo=${encodeURIComponent(returnTo)}`
+    return NextResponse.redirect(loginUrl, 302)
+  }
+
   const baseUrl = getBaseUrl(request)
 
-  // Render the login form
-  const html = renderLoginPage(baseUrl, clientId, redirectUri, state, codeChallenge, codeChallengeMethod || 'S256')
+  // User is logged in — show consent page
+  const html = renderConsentPage(
+    baseUrl,
+    user.email || user.id,
+    clientId,
+    redirectUri,
+    state,
+    codeChallenge,
+    codeChallengeMethod || 'S256'
+  )
 
   return new NextResponse(html, {
     status: 200,
@@ -51,19 +72,18 @@ export async function GET(request: NextRequest) {
 }
 
 /**
- * POST: Processes the API key form submission.
- * Validates the key, creates an auth code, and redirects back to the client.
+ * POST: User clicked "Authorize" on the consent page.
+ * Verifies session, creates auth code, redirects to Claude's callback.
  */
 export async function POST(request: NextRequest) {
   const formData = await request.formData()
-  const apiKey = formData.get('api_key') as string
   const clientId = formData.get('client_id') as string
   const redirectUri = formData.get('redirect_uri') as string
   const state = formData.get('state') as string | null
   const codeChallenge = formData.get('code_challenge') as string
   const codeChallengeMethod = formData.get('code_challenge_method') as string
 
-  if (!apiKey || !clientId || !redirectUri || !codeChallenge) {
+  if (!clientId || !redirectUri || !codeChallenge) {
     return new NextResponse(renderErrorPage('Missing required fields.'), {
       status: 400,
       headers: { 'Content-Type': 'text/html' },
@@ -79,28 +99,19 @@ export async function POST(request: NextRequest) {
     })
   }
 
-  // Validate the API key using existing auth infrastructure
-  const user = await validateApiKey(`Bearer ${apiKey}`)
+  // Verify user is still logged in via Supabase session
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
-    const baseUrl = getBaseUrl(request)
-    const html = renderLoginPage(
-      baseUrl,
-      clientId,
-      redirectUri,
-      state,
-      codeChallenge,
-      codeChallengeMethod,
-      'Invalid API key. Please check and try again.'
-    )
-    return new NextResponse(html, {
-      status: 200,
+    return new NextResponse(renderErrorPage('Session expired. Please log in again.'), {
+      status: 401,
       headers: { 'Content-Type': 'text/html' },
     })
   }
 
   try {
-    // Create authorization code
+    // Create authorization code using the session user's ID
     const code = await createAuthorizationCode(
       clientId,
       user.id,
@@ -126,14 +137,14 @@ export async function POST(request: NextRequest) {
   }
 }
 
-function renderLoginPage(
+function renderConsentPage(
   baseUrl: string,
+  userEmail: string,
   clientId: string,
   redirectUri: string,
   state: string | null,
   codeChallenge: string,
   codeChallengeMethod: string,
-  errorMessage?: string
 ): string {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -162,60 +173,75 @@ function renderLoginPage(
       width: 100%;
     }
     h1 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #fff; }
-    p { font-size: 0.875rem; color: #a3a3a3; margin-bottom: 1.5rem; line-height: 1.5; }
-    label { display: block; font-size: 0.8125rem; color: #d4d4d4; margin-bottom: 0.5rem; }
-    input[type="password"] {
-      width: 100%;
-      padding: 0.625rem 0.75rem;
+    .subtitle { font-size: 0.875rem; color: #a3a3a3; margin-bottom: 1.5rem; line-height: 1.5; }
+    .user-info {
       background: #0a0a0a;
-      border: 1px solid #404040;
+      border: 1px solid #262626;
       border-radius: 8px;
-      color: #fff;
-      font-size: 0.875rem;
-      font-family: 'SF Mono', Monaco, monospace;
-      outline: none;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.8125rem;
     }
-    input[type="password"]:focus { border-color: #3b82f6; }
-    button {
-      width: 100%;
+    .user-label { color: #737373; margin-bottom: 0.25rem; }
+    .user-email { color: #e5e5e5; font-weight: 500; }
+    .permissions {
+      margin-bottom: 1.5rem;
+      font-size: 0.8125rem;
+    }
+    .permissions-title { color: #d4d4d4; margin-bottom: 0.5rem; font-weight: 500; }
+    .permissions ul { list-style: none; padding: 0; }
+    .permissions li {
+      padding: 0.375rem 0;
+      color: #a3a3a3;
+    }
+    .permissions li::before {
+      content: "\\2713  ";
+      color: #22c55e;
+    }
+    .buttons { display: flex; gap: 0.75rem; }
+    .btn {
+      flex: 1;
       padding: 0.625rem;
-      background: #3b82f6;
-      color: #fff;
-      border: none;
       border-radius: 8px;
       font-size: 0.875rem;
       font-weight: 500;
       cursor: pointer;
-      margin-top: 1rem;
+      border: none;
+      text-align: center;
+      text-decoration: none;
     }
-    button:hover { background: #2563eb; }
-    .error {
-      background: #451a1a;
-      border: 1px solid #7f1d1d;
-      color: #fca5a5;
-      padding: 0.625rem;
-      border-radius: 8px;
-      font-size: 0.8125rem;
-      margin-bottom: 1rem;
-    }
-    .hint { font-size: 0.75rem; color: #737373; margin-top: 0.5rem; }
+    .btn-primary { background: #3b82f6; color: #fff; }
+    .btn-primary:hover { background: #2563eb; }
+    .btn-secondary { background: #262626; color: #a3a3a3; }
+    .btn-secondary:hover { background: #333; color: #e5e5e5; }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>Signal Digest</h1>
-    <p>An application is requesting access to your news digest via MCP. Enter your API key to authorize.</p>
-    ${errorMessage ? `<div class="error">${escapeHtml(errorMessage)}</div>` : ''}
+    <p class="subtitle">An application is requesting access to your news digest via MCP.</p>
+    <div class="user-info">
+      <div class="user-label">Signed in as</div>
+      <div class="user-email">${escapeHtml(userEmail)}</div>
+    </div>
+    <div class="permissions">
+      <div class="permissions-title">This will allow access to:</div>
+      <ul>
+        <li>Read your news nuggets and topics</li>
+        <li>Search your digest</li>
+        <li>View processing status</li>
+      </ul>
+    </div>
     <form method="POST" action="${escapeHtml(baseUrl)}/api/mcp/oauth/authorize">
       <input type="hidden" name="client_id" value="${escapeHtml(clientId)}">
       <input type="hidden" name="redirect_uri" value="${escapeHtml(redirectUri)}">
       ${state ? `<input type="hidden" name="state" value="${escapeHtml(state)}">` : ''}
       <input type="hidden" name="code_challenge" value="${escapeHtml(codeChallenge)}">
       <input type="hidden" name="code_challenge_method" value="${escapeHtml(codeChallengeMethod)}">
-      <label for="api_key">API Key</label>
-      <input type="password" id="api_key" name="api_key" placeholder="sd_live_..." required autocomplete="off" autofocus>
-      <p class="hint">Find your API key in Signal Digest Settings → API Access.</p>
-      <button type="submit">Authorize</button>
+      <div class="buttons">
+        <a href="${escapeHtml(redirectUri)}?error=access_denied" class="btn btn-secondary">Deny</a>
+        <button type="submit" class="btn btn-primary">Authorize</button>
+      </div>
     </form>
   </div>
 </body>

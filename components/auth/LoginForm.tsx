@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 export function LoginForm() {
   const [email, setEmail] = useState('')
@@ -12,6 +12,8 @@ export function LoginForm() {
   const [message, setMessage] = useState<string | null>(null)
   const [mode, setMode] = useState<'login' | 'magic-link'>('login')
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const returnTo = searchParams.get('returnTo')
   const supabase = createClient()
 
   const handleEmailPassword = async (e: React.FormEvent) => {
@@ -28,8 +30,13 @@ export function LoginForm() {
 
       if (error) throw error
 
-      router.push('/')
-      router.refresh()
+      // Redirect to returnTo if provided (e.g. MCP OAuth flow), otherwise home
+      if (returnTo && returnTo.startsWith('/')) {
+        window.location.href = returnTo
+      } else {
+        router.push('/')
+        router.refresh()
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred')
     } finally {
@@ -44,10 +51,15 @@ export function LoginForm() {
     setMessage(null)
 
     try {
+      // Pass returnTo as the callback's `next` param so the user returns to the right page
+      const callbackUrl = returnTo
+        ? `${window.location.origin}/auth/callback?next=${encodeURIComponent(returnTo)}`
+        : `${window.location.origin}/auth/callback`
+
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: callbackUrl,
         },
       })
 
