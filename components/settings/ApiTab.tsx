@@ -118,6 +118,16 @@ export function ApiTab() {
     }
   }
 
+  const handleCopyMcpUrl = async () => {
+    const url = `${window.location.origin}/api/mcp`
+    try {
+      await navigator.clipboard.writeText(url)
+      alert('MCP server URL copied to clipboard')
+    } catch {
+      prompt('Copy this MCP server URL:', url)
+    }
+  }
+
   const handleDismissKey = () => {
     const confirmed = window.confirm(
       'Have you copied the API key? It will not be shown again after you dismiss this.'
@@ -279,6 +289,107 @@ export function ApiTab() {
           </div>
         </div>
       </div>
+
+      {/* MCP Server Card */}
+      <div className="border-2 border-black bg-white">
+        <div className="p-6 border-b-2 border-black">
+          <h2 className="font-display font-black text-xl mb-2">MCP SERVER</h2>
+          <p className="text-sm text-gray-600">
+            Connect Claude Desktop or other MCP clients to access your digest with AI
+          </p>
+        </div>
+
+        <div className="p-6 space-y-5">
+          <div>
+            <label className="block text-sm font-bold mb-2">Server URL:</label>
+            <div className="flex gap-2">
+              <code className="flex-1 p-3 bg-gray-100 border-2 border-black font-mono text-sm">
+                {typeof window !== 'undefined' ? window.location.origin : ''}/api/mcp
+              </code>
+              <button
+                onClick={handleCopyMcpUrl}
+                className="px-4 py-2 bg-white border-2 border-black font-display font-black text-sm hover:bg-black hover:text-white transition-colors"
+              >
+                COPY
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-2">Authentication:</label>
+            <p className="text-sm text-gray-600">
+              Uses OAuth 2.1 with your Signal Digest login. When you add this server in Claude Desktop, you&apos;ll be redirected to sign in with your account.
+            </p>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-2">How to connect:</label>
+            <div className="p-3 bg-gray-100 border-2 border-black text-sm space-y-2">
+              <p><span className="font-mono font-bold">1.</span> Open Claude Desktop settings</p>
+              <p><span className="font-mono font-bold">2.</span> Go to <span className="font-bold">Connectors</span> and add a new MCP server</p>
+              <p><span className="font-mono font-bold">3.</span> Paste the server URL above</p>
+              <p><span className="font-mono font-bold">4.</span> Sign in when prompted in the browser</p>
+              <p><span className="font-mono font-bold">5.</span> Click <span className="font-bold">Authorize</span> to grant access</p>
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-3">Available tools:</label>
+            <div className="space-y-3">
+              <McpToolCard
+                name="get_morning_briefing"
+                description="Get today's news briefing: high-relevancy nuggets grouped by topic. Perfect for a morning summary of what matters."
+                params={['min_relevancy (0-100, default: 70)']}
+              />
+              <McpToolCard
+                name="get_nuggets"
+                description="Query nuggets with filters. Returns AI-extracted information from newsletters with relevancy scores, topics, and tags."
+                params={['topic', 'status (unread, saved, archived)', 'min_relevancy (0-100)', 'since (ISO date)', 'tags', 'limit (max 500)']}
+              />
+              <McpToolCard
+                name="get_topics"
+                description="List all available topics with counts of total, unread, and saved nuggets."
+                params={[]}
+              />
+              <McpToolCard
+                name="search_nuggets"
+                description="Search across all nuggets by text. Matches titles and descriptions, sorted by relevancy."
+                params={['query (required)', 'limit (max 100)']}
+              />
+              <McpToolCard
+                name="trigger_import"
+                description="Check signal processing status: pending imports, recent processing, and failures."
+                params={[]}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-2">Example prompt for Claude:</label>
+            <code className="block p-3 bg-gray-100 border-2 border-black font-mono text-xs italic">
+              &quot;Give me a morning briefing of today&apos;s most relevant news from my newsletters&quot;
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function McpToolCard({ name, description, params }: { name: string; description: string; params: string[] }) {
+  return (
+    <div className="p-3 bg-gray-50 border border-gray-200">
+      <code className="font-mono font-bold text-sm text-[hsl(var(--electric-blue))]">{name}</code>
+      <p className="text-xs text-gray-600 mt-1">{description}</p>
+      {params.length > 0 && (
+        <div className="mt-1.5 flex flex-wrap gap-1.5">
+          {params.map((p) => (
+            <span key={p} className="inline-block px-1.5 py-0.5 bg-gray-200 text-xs font-mono rounded">
+              {p}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
