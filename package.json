@@ -15,7 +15,7 @@
     "@supabase/supabase-js": "^2.89.0",
     "@tanstack/react-query": "^5.90.15",
     "bcryptjs": "^3.0.3",
-    "imapflow": "^1.2.4",
+    "imapflow": "^1.7.8",
     "jsdom": "^24.1.0",
     "next": "16.4.3",
     "react": "19.2.3",
